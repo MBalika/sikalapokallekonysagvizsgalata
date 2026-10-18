@@ -1,0 +1,412 @@
+<a class="sr" href="#attekintes">Ugrás a tartalomra</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Síkalapok állékonyságvizsgálata – az oldal teteje">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="var(--plum)"/><path d="M8 24h18M11 24v-4h12v4M17 20V9" stroke="var(--paper)" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 11l14 -3" stroke="var(--c1)" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span>Síkalapok állékonyságvizsgálata<small>BME Alapozás – interaktív tananyag</small></span>
+    </a>
+    <span class="sp"></span>
+    <a class="tbtn hide-s" href="#videok">Videók</a>
+    <a class="tbtn hide-s" href="https://sikalapok-stabilitas.vercel.app/" target="_blank" rel="noopener">Mintapéldák és kalkulátorok</a>
+    <button class="tbtn" id="themeBtn" type="button">Sötét téma</button>
+  </div>
+</header>
+<nav class="ledger" aria-label="Igazolólap: a négy szimulátor kihasználtsága">
+  <div class="wrap">
+    <div class="lt">Igazolólap<span>Λ = E<sub>d</sub>/R<sub>d</sub> a négy szimulátorban</span></div>
+    <a class="lc k1" data-mode="csuszas" href="#sim-csuszas"><b>Elcsúszás</b><span class="v">–</span><span class="bar"><i></i></span></a>
+    <a class="lc k2" data-mode="borulas" href="#sim-borulas"><b>Felborulás</b><span class="v">–</span><span class="bar"><i></i></span></a>
+    <a class="lc k3" data-mode="feluszas" href="#sim-feluszas"><b>Felúszás</b><span class="v">–</span><span class="bar"><i></i></span></a>
+    <a class="lc k4" data-mode="altalanos" href="#sim-altalanos"><b>Általános</b><span class="v">–</span><span class="bar"><i></i></span></a>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Síkalapok <span class="l2">állékonyság&shy;vizsgálata</span></h1>
+      <p class="lead">Egy alaptest négyféleképpen veszítheti el az állékonyságát: elcsúszik az alapsíkon, felborul, felúszik, vagy a környező talajjal együtt megcsúszik. Mind a négyet külön kell igazolni. Ezen az oldalon szimulátorokkal, animációkkal és kvízekkel járhatod végig, mi dönti el az egyes esetekben.</p>
+      <div class="ctas"><a class="btn" href="#elcsuszas">Kezdés az elcsúszással</a><a class="btn ghost" href="#videok">Az öt animációs videó</a></div>
+      <p class="small muted" style="margin-top:18px">A felső sávban (igazolólap) mindig látod, hol tart a négy szimulátor: a sáv a kihasználtságot mutatja, a jelölés 1,0-nál van.</p>
+    </div>
+    <figure class="stage" style="margin:0">
+      <canvas id="heroCv" width="640" height="420" role="img" aria-label="Animáció: a négy tönkremeneteli mód – elcsúszás, felborulás, felúszás, általános állékonyságvesztés"></canvas>
+      <div class="modes" role="group" aria-label="Tönkremeneteli mód választása">
+        <button class="k1" type="button">Elcsúszás</button><button class="k2" type="button">Felborulás</button><button class="k3" type="button">Felúszás</button><button class="k4" type="button">Általános</button>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== ÁTTEKINTÉS ===================== -->
+<section class="chap k0" id="attekintes">
+  <div class="wrap">
+    <div class="chead"><div class="code"><span>E<sub>d</sub> ≤ R<sub>d</sub></span></div><h2>Négy igazolás, egy gondolat</h2><p>Hatás tervezési értéke ≤ ellenállás tervezési értéke – négy különböző tönkremenetelre.</p></div>
+    <div class="cols">
+      <div>
+        <p>Az alaptestek méreteinek meghatározásával párhuzamosan – vagy azt követően – azt is igazolni kell, hogy a létesítmény az EC7 szerint kellő állékonysági biztonsággal rendelkezik <b>elcsúszással, felborulással és felúszással</b> szemben. Bizonyos helyzetekben – rézsű, munkagödör, part vagy üreg közelében – az <b>általános állékonyságot</b> is ellenőrizni kell.</p>
+        <p>A közös menet mindegyiknél ugyanaz: felírjuk a hatások tervezési értékét (E<sub>d</sub>) és az ellenállás tervezési értékét (R<sub>d</sub>), majd igazoljuk, hogy E<sub>d</sub> ≤ R<sub>d</sub>. A felborulásnál nyomatékokat vetünk össze: M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>. Ahol a talaj szilárdsága számít, ott <b>drénezett és drénezetlen</b> állapotra is.</p>
+        <p>A kettő hányadosa a <b>kihasználtság</b>: Λ = E<sub>d</sub> / R<sub>d</sub>. Ha Λ ≤ 1,0, az alaptest az adott határállapotra megfelel. Az igazolólap is ezt mutatja.</p>
+      </div>
+      <div class="tblw" style="margin-top:0">
+        <table class="tbl">
+          <thead><tr><th>Határállapot</th><th>Típus</th><th>Mi áll ellen?</th><th>Tényezők (MSZ EN 1997-1)</th></tr></thead>
+          <tbody>
+            <tr class="k1"><td><span class="dot"></span>Elcsúszás</td><td>GEO, DA-2*</td><td>talp alatti nyírás, földellenállás</td><td>γ<sub>R;h</sub> = 1,1</td></tr>
+            <tr class="k2"><td><span class="dot"></span>Felborulás</td><td>EQU</td><td>stabilizáló nyomaték</td><td>γ<sub>G;dst</sub> = 1,1; γ<sub>G;stb</sub> = 0,9; γ<sub>Q;dst</sub> = 1,5</td></tr>
+            <tr class="k3"><td><span class="dot"></span>Felúszás</td><td>UPL</td><td>önsúly, leterhelés, súrlódás, horgony</td><td>γ<sub>G;dst</sub> = 1,00; γ<sub>G;stb</sub> = 0,90; γ<sub>Q;dst</sub> = 1,50</td></tr>
+            <tr class="k4"><td><span class="dot"></span>Általános állékonyság</td><td>GEO, DA-3</td><td>nyírószilárdság a csúszólapon</td><td>γ<sub>G</sub> = 1,0; γ<sub>Q</sub> = 1,3; szilárdság csökkentve</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="note"><b>Megjegyzés a jegyzethez.</b> A jegyzet 1.1 fejezetcíme és az előadás 3. diája az elcsúszást EQU-nak írja, a szöveg és a 2. dia viszont GEO-nak. Az EC7 szerint az elcsúszás <b>GEO</b> határállapot: a talaj nyírószilárdsága áll ellen. Ezen az oldalon így szerepel.</div>
+    <div class="panel k0">
+      <div class="ph"><h4>Melyik a kritikus?</h4><p>Nyolc helyzet – melyik határállapot fenyeget leginkább? Kattints a válaszra.</p></div>
+      <div class="pb"><div class="sorter" id="sorter"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ELCSÚSZÁS ===================== -->
+<section class="chap k1" id="elcsuszas">
+  <div class="wrap">
+    <div class="chead"><div class="code">GEO</div><h2>Elcsúszás az alapsíkon</h2><p>Ha a teher nem merőleges az alapsíkra, a vízszintes összetevőnek a talp alatti nyírás és a földellenállás áll ellen.</p></div>
+    <button class="vlink" data-video="v1" type="button"></button>
+    <div class="cols">
+      <div>
+        <p>Ferde teher éri például a támfalak és hídfők alaptestét (földnyomás), a keretek talppontját (vízszintes reakció) vagy a szélnek kitett szerkezeteket. Ilyenkor az „elcsúszási törés” veszélyét is ellenőrizni kell:</p>
+        <div class="eq"><div class="f">H<sub>d</sub> ≤ R<sub>d</sub> + R<sub>p;d</sub></div><div class="w"><div>H<sub>d</sub> – az alapsíkon működő vízszintes erő tervezési értéke, az alapra átadódó aktív földnyomással együtt</div><div>R<sub>d</sub> – az alapsíkon az elcsúszást akadályozó nyírási ellenállás tervezési értéke</div><div>R<sub>p;d</sub> – az alaptest H<sub>d</sub>-vel szemközti oldalán működő földellenállás tervezési értéke</div></div></div>
+        <p>R<sub>d</sub>-t és R<sub>p;d</sub>-t a vizsgált határállapotban várható mozgásokkal összhangban kell felvenni: nagy elmozdulásnál a nyírószilárdság csúcsértéke utáni viselkedés a jellemző. Az MSZ EN 1997-1 nemzeti melléklete szerinti DA-2* módszer az ellenállásra alkalmazott parciális tényezőt írja elő.</p>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Drénezett állapot – hosszú távon</h3>
+        <div class="eq"><div class="f">R<sub>d</sub> = V′<sub>k</sub> · tg δ<sub>k</sub> / γ<sub>R;h</sub></div><div class="w"><div>V′<sub>k</sub> – a függőleges erő karakterisztikus értéke; esetleges hatás csak akkor, ha a H<sub>d</sub>-vel biztosan együtt működik</div><div>δ<sub>k</sub> – alaptest és talaj közti súrlódási szög a kritikus állapotbeli φ′<sub>cv;k</sub>-ból</div><div>γ<sub>R;h</sub> = 1,1</div></div></div>
+        <p>A hatékony kohéziót (c′) általában helyénvaló figyelmen kívül hagyni: a víztartalomtól és a konzisztenciától erősen függ, mekkora tapadás jön létre a kötött talaj és az alaptest között.</p>
+      </div>
+    </div>
+    <div class="panel k1">
+      <div class="ph"><h4>Monolit vagy előregyártott?</h4><p>Helyben betonozott alaptestnél δ = φ′<sub>cv;k</sub>, sima, előregyártott alaptestnél csak ⅔·φ′<sub>cv;k</sub>. Példa: szögtámfal, V′<sub>k</sub> = 162 kN/m, H<sub>d</sub> = 65 kN/m.</p></div>
+      <div class="pb">
+        <canvas id="microCv" width="760" height="300" role="img" aria-label="Az alaptest és a talaj érintkezése nagyítva"></canvas>
+        <div class="ctrl">
+          <div class="rg"><label>Alaptest<span></span></label><div class="seg" id="mi_typ"><button class="on" data-v="mono" type="button">Helyben betonozott</button><button data-v="pre" type="button">Előregyártott</button></div></div>
+          <div class="rg"><label for="mi_phi">φ′<sub>cv;k</sub> <output data-out="mi_phi"></output></label><input type="range" id="mi_phi" min="24" max="38" step="1" value="30"></div>
+        </div>
+        <div class="readout"><div class="ro"><span>δ<sub>k</sub></span><b id="mi_delta"></b></div><div class="ro"><span>tg δ<sub>k</sub></span><b id="mi_tg"></b></div><div class="ro"><span>R<sub>d</sub></span><b id="mi_rd"></b></div><div class="ro"><span>Λ = H<sub>d</sub>/R<sub>d</sub></span><b id="mi_lam"></b></div></div>
+      </div>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Drénezetlen állapot – rövid távon</h3>
+        <div class="eq"><div class="f">R<sub>d</sub> = A<sub>c</sub> · c<sub>u;k</sub> / γ<sub>R;h</sub></div><div class="w"><div>A<sub>c</sub> – a nyomott alapfelület</div><div>c<sub>u;k</sub> – a drénezetlen nyírószilárdság karakterisztikus értéke az alapsíkon</div></div></div>
+        <p>Az alap és a talaj között hézag keletkezhet, víz vagy levegő juthat az alapfelülethez. Ezért a következő korlátozást is ellenőrizni kell:</p>
+        <div class="eq mini"><div class="f">R<sub>d</sub> ≤ 0,4 · V<sub>d</sub></div><div class="w">Nem szabad nagyobb nyírási ellenállásra számítani, mint az alapot terhelő függőleges erő 40 százaléka. Csak akkor hagyható el, ha a szívás (suction) a hézag kialakulását ott is megakadályozza, ahol nincs pozitív talpfeszültség – ez ritkán teljesül.</div></div>
+        <p class="small muted">Példa: A<sub>c</sub> = 2,0 m²/m, c<sub>u;k</sub> = 60 kPa → A<sub>c</sub>·c<sub>u;k</sub>/1,1 = 109 kN/m; V<sub>d</sub> = 180 kN/m → 0,4·V<sub>d</sub> = 72 kN/m, tehát R<sub>d</sub> = 72 kN/m – a korlát dönt.</p>
+      </div>
+      <div>
+        <h3>Földellenállás – R<sub>p;d</sub></h3>
+        <p>A teljes passzív földellenállás csak jelentős összenyomódás hatására mobilizálódik, ezért jellemzően annak csak egy bizonyos hányada, <b>fele–kétharmada</b> vehető figyelembe. Gondolni kell arra is, hogy az alaptest homlokfala mellől az erózió vagy valamilyen emberi beavatkozás eltávolíthatja a talajt, agyagban pedig a szezonális víztartalom-változás miatt a talaj elválhat a homlokfaltól.</p>
+        <p class="small muted">Több tervezési segédlet és szoftver a biztonság javára R<sub>p;d</sub> = 0-val számol; a ½–⅔ hányad a jegyzet ajánlása, ha a talaj biztosan megmarad.</p>
+      </div>
+    </div>
+    <div class="panel k1">
+      <div class="ph"><h4>Mobilizált földellenállás</h4><p>Mekkora elmozdulásnál mennyi ébred a passzív ellenállásból? (szemléltető görbe)</p></div>
+      <div class="pb">
+        <canvas id="pasCv" width="760" height="320" role="img" aria-label="Mobilizált földellenállás az elmozdulás függvényében"></canvas>
+        <div class="ctrl">
+          <div class="rg"><label for="pa_u">Elmozdulás az alapmélység arányában <output data-out="pa_u"></output></label><input type="range" id="pa_u" min="0" max="10" step="0.1" value="1.5"></div>
+          <div class="rg"><label>Talaj a homlokfal előtt<span></span></label><div class="seg" id="pa_lost"><button class="on" data-v="0" type="button">Megvan</button><button data-v="1" type="button">Közműárkot ástak elé</button></div></div>
+        </div>
+      </div>
+    </div>
+    <h3 id="sim-csuszas">3D szimulátor: szögtámfal</h3>
+    <p>Állítsd a támfal magasságát, a talp szélességét, a talajt és a háttöltésen álló esetleges terhet. A nyilak hossza arányos: piros H<sub>d</sub>, zöld R<sub>d</sub>, kék R<sub>p;d</sub>. Ha a kihasználtság 1 fölé megy, a fal elcsúszik.</p>
+    <div class="panel k1">
+      <div class="sim" data-sim="csuszas">
+        <div class="view"><div class="hud"></div><div class="hint">húzással forgatható, görgővel nagyítható</div></div>
+        <div class="side">
+          <div class="ctrl">
+            <div class="rg"><label for="cs_h">Megtámasztott magasság (talptól) <output data-out="cs_h"></output></label><input type="range" id="cs_h" min="2.5" max="6" step="0.1" value="3.9" data-fmt="1" data-u=" m"></div>
+            <div class="rg"><label for="cs_B">Talpszélesség B <output data-out="cs_B"></output></label><input type="range" id="cs_B" min="1.6" max="4.5" step="0.05" value="2.6" data-fmt="2" data-u=" m"></div>
+            <div class="rg"><label for="cs_phi">φ′<sub>cv;k</sub> <output data-out="cs_phi"></output></label><input type="range" id="cs_phi" min="24" max="38" step="1" value="30" data-u="°"></div>
+            <div class="rg"><label for="cs_q">Esetleges teher a töltésen q <output data-out="cs_q"></output></label><input type="range" id="cs_q" min="0" max="20" step="1" value="0" data-u=" kPa"></div>
+            <div class="rg"><label>Állapot<span></span></label><div class="seg" id="cs_dr"><button class="on" data-v="d" type="button">Drénezett (homok)</button><button data-v="u" type="button">Drénezetlen (agyag)</button></div></div>
+            <div class="rg"><label for="cs_cu">c<sub>u;k</sub> <output data-out="cs_cu"></output></label><input type="range" id="cs_cu" min="15" max="120" step="5" value="60" data-u=" kPa"></div>
+            <div class="rg"><label>Alaptest<span></span></label><div class="seg" id="cs_typ"><button class="on" data-v="mono" type="button">Monolit</button><button data-v="pre" type="button">Előregyártott</button></div></div>
+            <div class="rg"><label>Földellenállás hányada<span></span></label><div class="seg" id="cs_rp"><button class="on" data-v="0" type="button">0</button><button data-v="0.5" type="button">½</button><button data-v="0.6667" type="button">⅔</button></div></div>
+          </div>
+          <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
+          <p class="small muted" style="margin-top:10px">Modell: 1 m-es faldarab; γ = 19 kN/m³, K<sub>a</sub> = tg²(45° − φ/2); H<sub>d</sub> = 1,35·E<sub>a</sub> + 1,5·E<sub>a,q</sub>; R<sub>p;d</sub> = hányad · E<sub>p</sub>/1,4 (γ<sub>R;e</sub> = 1,4); drénezetlenül V<sub>d</sub> = V<sub>k</sub>. A q függőleges hatását a talpon nem számítjuk.</p>
+        </div>
+      </div>
+    </div>
+    <h3>Ha nem felel meg</h3>
+    <div class="split">
+      <div class="box"><h4>Szerkezeti lehetőségek</h4><ul><li><b>Fogazat</b> a talp alatt: a csúszólapot lejjebb, a talajba kényszeríti, előtte passzív ellenállás ébred.</li><li><b>Nagyobb önsúly</b>, szélesebb talp – több talpra eső föld: nagyobb V′<sub>k</sub>.</li><li><b>Mélyebb alapsík</b> – nagyobb, biztosabb földellenállás.</li><li>Helyben betonozott, érdes talp az előregyártott helyett.</li></ul></div>
+      <div class="box"><h4>Óvatosan a fogazattal</h4><p class="small" style="margin:0">A források szerint a fogazat haszna vegyes: szilárd talajban és sima, előregyártott talpnál sokat segít; sekély fogazatnál viszont, ha a rá ható aktív nyomást is számítjuk, a biztonság akár romolhat is (egy számpéldában 1,39-ről 1,24-re). A fogazat aljáig számítható passzív ellenállással csak akkor számoljunk, ha az biztosan megmarad.</p><p class="src" style="margin-top:8px">Forrás: Enercalc segédlet; a kutatási összefoglaló alapján.</p></div>
+    </div>
+    <div class="case k1"><div class="yr">1911</div><div><h4>Austin-gát, Pennsylvania, USA</h4><p>A 15 m magas gravitációs gát 1910 januárjában a gyors feltöltés után az alapján elcsúszott: a lábnál kb. 46 cm-t, a koronán kb. 79 cm-t mozdult. A csúszólap agyaggal kitöltött réteghézagok mentén alakult ki, a gát alá jutó víz felhajtóereje tovább csökkentette a biztonságot. 1911. szeptember 30-án a gát tönkrement – 78 ember halt meg. <span class="src">(damfailures.org; ASDSO 2021)</span></p></div></div>
+    <div class="quiz k1" id="q1"><div class="qh"><h4>Kvíz – elcsúszás</h4><div class="dots"></div></div></div>
+  </div>
+</section>
+
+<!-- ===================== FELBORULÁS ===================== -->
+<section class="chap k2" id="felborulas">
+  <div class="wrap">
+    <div class="chead"><div class="code">EQU</div><h2>Felborulás és külpontosság</h2><p>Nagy külpontosságú tehernél a felborító nyomaték nem érheti el a stabilizálót.</p></div>
+    <button class="vlink" data-video="v2" type="button"></button>
+    <div class="cols">
+      <div>
+        <p>Ha az alapsíkon a teher nagy külpontossággal adódik át, felmerül az alap és az alátámasztott szerkezet felborulásának veszélye. Ezt a helyzeti állékonyság elvesztéseként (EQU) értelmezzük, és a felborító, illetve az ezt akadályozó nyomatékok összevetésével ellenőrizzük:</p>
+        <div class="eq"><div class="f">M<sub>dst;d</sub> ≤ M<sub>stb;d</sub></div><div class="w"><div>Mindkét nyomatékot a hatások tervezési értékéből számítjuk.</div><div>Állandó: γ<sub>G;dst</sub> = 1,1; γ<sub>G;stb</sub> = 0,9 · esetleges felborító: γ<sub>Q;dst</sub> = 1,5 · kedvező esetleges: 0</div></div></div>
+        <h3>Hova írjuk fel a nyomatékot?</h3>
+        <p><b>Szilárd kőzeten</b> álló alapnál az alap sarokpontjára (sarokvonalára). <b>Talajon</b> álló alapnál – mivel a sarok alatt a talaj benyomódik – első közelítésben a sarokponttól <b>B/10</b> távolságra lévő pontra. A 3D szimulátorban mindkettőt kipróbálhatod.</p>
+      </div>
+      <div>
+        <h3 style="margin-top:0">A külpontosság korlátozása</h3>
+        <p>A szabvány külön óvintézkedést ír elő, ha a teher külpontossága derékszögű alaprajznál az alaptest szélességének <b>1/3</b>-át, kör alaprajznál a sugár <b>0,6</b>-szeresét meghaladja. Ilyenkor a talpfeszültség az alaptest egyik oldalára koncentrálódik, az élfeszültség jelentősen megnő, a teherbírás szempontjából figyelembe vehető hasznos alapfelület pedig lecsökken – az alapsík fele már nem „dolgozik”.</p>
+        <p>A DA-2* módszerben a külpontosságot a hatások <b>karakterisztikus</b> értékéből kell megállapítani; a parciális tényezők nem módosítják.</p>
+        <p>A korábbi, EC7 előtti hazai gyakorlat szigorúbb volt: a teljes alapfelületnek „dolgoznia” kellett, a külpontosságot <b>B/6</b>-ban korlátoztuk – az eredőnek a belső magon belül kellett metszenie az alapsíkot.</p>
+      </div>
+    </div>
+    <div class="panel k2">
+      <div class="ph"><h4>Külpontosság és talpfeszültség</h4><p>Húzd a csúszkát: hogyan változik a feszültségeloszlás, a nyomott hossz és a hasznos szélesség?</p></div>
+      <div class="pb">
+        <canvas id="eccCv" width="780" height="360" role="img" aria-label="Talpfeszültség-eloszlás és belső mag a külpontosság függvényében"></canvas>
+        <div class="ctrl"><div class="rg"><label for="ec_er">Külpontosság <output data-out="ec_er"></output></label><input type="range" id="ec_er" min="0" max="0.45" step="0.005" value="0.12"></div></div>
+        <div class="readout"><div class="ro"><span>e/B</span><b id="ec_e"></b></div><div class="ro"><span>Nyomott hossz</span><b id="ec_c"></b></div><div class="ro"><span>Sarokfeszültség</span><b id="ec_s"></b></div><div class="ro"><span>Hasznos szélesség B′ = B − 2e</span><b id="ec_b"></b></div></div>
+        <div id="ec_state" class="verdict ok"></div>
+      </div>
+    </div>
+    <h3 id="sim-borulas">3D szimulátor: reklámtábla</h3>
+    <p>Egy 6×3 m-es tábla 8 m magas oszlopon, négyzetes alaptesten. Állítsd a szél nyomását és a talp méretét, és válts talaj és kőzet között. A lila oszlopok a talpfeszültséget mutatják.</p>
+    <div class="panel k2">
+      <div class="sim" data-sim="borulas">
+        <div class="view"><div class="hud"></div><div class="hint">húzással forgatható, görgővel nagyítható</div></div>
+        <div class="side">
+          <div class="ctrl">
+            <div class="rg"><label for="bo_w">Szélnyomás a táblán w<sub>k</sub> <output data-out="bo_w"></output></label><input type="range" id="bo_w" min="0.2" max="2.2" step="0.05" value="0.8" data-fmt="2" data-u=" kN/m²"></div>
+            <div class="rg"><label for="bo_B">Alaptest B × B <output data-out="bo_B"></output></label><input type="range" id="bo_B" min="2" max="5" step="0.1" value="3" data-fmt="1" data-u=" m"></div>
+            <div class="rg"><label>Altalaj<span></span></label><div class="seg" id="bo_soil"><button class="on" data-v="S" type="button">Talaj (B/10)</button><button data-v="K" type="button">Kőzet (sarok)</button></div></div>
+          </div>
+          <div class="lam"><div class="t"><span>M<sub>dst;d</sub> / M<sub>stb;d</sub></span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
+          <p class="small muted" style="margin-top:10px">Modell: F<sub>w;k</sub> = w<sub>k</sub> · 18 m², karja 10,7 m a talpsíktól; G<sub>k</sub> = 25 kN + alaptest (1,0 m, 25 kN/m³) + 0,2 m földtakarás. Az oszlop szélterhét elhanyagoljuk.</p>
+        </div>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact k2"><div class="n">4×</div><h4>e = B/3-nál</h4><p>a nyomott hossz B/2, a sarokfeszültség az átlagos talpfeszültség négyszerese.</p></div>
+      <div class="fact k2"><div class="n">0,59<small>·r</small></div><h4>Kör alaprajz</h4><p>A belső mag sugara r/4. A „hézag legfeljebb a súlypontig” határ e ≈ 0,59·r – az EC7 0,6·r értéke.</p></div>
+      <div class="fact k2"><div class="n">6,7<small>m</small></div><h4>Szélerőmű síkalapja</h4><p>Egy Vestas V126 statikájában (R = 13,8 m, M = 149 MNm) e = 6,7 m &lt; 0,59·R = 8,1 m.<br><span class="src">uvp-verbund.de, statikai számítás</span></p></div>
+    </div>
+    <div class="split">
+      <div class="box"><h4>Rövid idejű vagy tartós?</h4><p class="small" style="margin:0">Nem mindegy, hogy a felborító hatás rövid idejű (pl. szélteher) vagy tartós (pl. földnyomás). Szélrohamnál a talp átmenetileg elemelkedik, majd visszaül; tartós külpontos tehernél az alap fokozatosan megbillenhet. A szélerőművekre vonatkozó német irányelv ezért kvázi-állandó teherre nem enged hézagot, szélsőséges teherre legfeljebb a súlypontig.</p></div>
+      <div class="box"><h4>Ha nem felel meg</h4><ul><li>nagyobb talp – nő a kar és az önsúly, csökken e/B;</li><li>mélyebb alap – több földtakarás, nagyobb önsúly;</li><li>a talp eltolása az eredő alá (külpontos alaptest).</li></ul></div>
+    </div>
+    <div class="note"><b>Talajon a GEO-vizsgálat is számít.</b> Az EC7 felfogásában a merev testként való felborulás (EQU) a geotechnikában ritka, főleg kőzeten álló alapoknál mértékadó; talajon a nagy külpontosság a teherbírás vizsgálatában (B′ = B − 2e hasznos szélességgel) is megjelenik. Az új EC7 ezt külön is választja: <b>felborulás</b> (statikus egyensúly) és <b>átfordulás</b> (forgásos talajtörés).</div>
+    <div class="quiz k2" id="q2"><div class="qh"><h4>Kvíz – felborulás</h4><div class="dots"></div></div></div>
+  </div>
+</section>
+
+<!-- ===================== FELÚSZÁS ===================== -->
+<section class="chap k3" id="feluszas">
+  <div class="wrap">
+    <div class="chead"><div class="code">UPL</div><h2>Felúszás</h2><p>Kis önsúlyú, nagy térfogatú műtárgyra magas talajvíznél nagyobb felhajtóerő hathat, mint az állandó terhek összege.</p></div>
+    <button class="vlink" data-video="v3" type="button"></button>
+    <div class="cols">
+      <div>
+        <p>A tervezési gyakorlatban számtalan esetben előfordul, hogy kis önsúlyú, de nagy „térfogatú” műtárgyra – földalatti tartály, gyalogos aluljáró, földalatti garázs – magas talajvízálláskor nagyobb felhajtóerő hat, mint az állandó terhek összege. Az Eurocode erre külön teherbírási határállapotot jelöl meg: <b>UPL</b> (uplift).</p>
+        <div class="eq"><div class="f">V<sub>dst;d</sub> ≤ G<sub>stb;d</sub> + R<sub>d</sub></div><div class="w"><div>V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub> – a felhajtóerő (A<sub>k</sub>: a talajvíz alatti bemerülő térfogat, γ<sub>w</sub> = 10 kN/m³)</div><div>G<sub>stb;d</sub> = G<sub>sz;d</sub> + G<sub>t;d</sub> – a szerkezet és a leterhelő talaj súlya, γ<sub>G;stb</sub>-vel</div><div>R<sub>d</sub> = T<sub>d</sub> + P<sub>d</sub> – súrlódás a szerkezet és a talaj között, illetve horgonyerő</div></div></div>
+        <p>A kihasználtság: Λ = V<sub>dst;d</sub> / (G<sub>stb;d</sub> + R<sub>d</sub>).</p>
+      </div>
+      <div>
+        <div class="tblw" style="margin-top:0"><table class="tbl"><thead><tr><th colspan="2">UPL – a hatások parciális tényezői</th></tr></thead><tbody><tr><td>γ<sub>G;dst</sub></td><td>1,00 – állandó, állékonyságcsökkentő (felhajtóerő)</td></tr><tr><td>γ<sub>G;stb</sub></td><td>0,90 – állandó, állékonyságnövelő (önsúly)</td></tr><tr><td>γ<sub>Q;dst</sub></td><td>1,50 – esetleges, állékonyságcsökkentő</td></tr><tr><td>γ<sub>Q;stb</sub></td><td>0 – esetleges, állékonyságnövelő</td></tr></tbody></table></div>
+        <p>A felúszással szembeni globális biztonság többnyire csak γ<sub>G;dst</sub> / γ<sub>G;stb</sub> = 1,0 / 0,9 = <b>1,11</b>. Ezért különösen fontos a vízszintek óvatos felvétele, vagy a veszélyt csökkentő óvintézkedések bevezetése.</p>
+        <p class="small muted">A súrlódás és a horgonyok ellenállására az EN 1997-1 ajánlása γ<sub>s;t</sub> = γ<sub>a</sub> = 1,4 (az AC:2010 helyesbítés óta stabilizáló állandó teherként csak a nemzeti melléklet engedélyével vehetők). A magyar NA értékeit a szabványban érdemes ellenőrizni.</p>
+      </div>
+    </div>
+    <h3>A talajvízszint a legérzékenyebb adat</h3>
+    <div class="cols">
+      <div>
+        <p>Az épületek, műtárgyak felúszással szembeni ellenőrzésekor a talajvízszint geometriai adatként kezelendő: tervezési értékét vagy közvetlenül, vagy a karakterisztikus érték biztonsági tartalékkal való növelésével származtatjuk. A 30×15 m-es példagarázsnál <b>1 m-rel magasabb víz +4500 kN, azaz +20%</b> felhajtóerőt jelent.</p>
+      </div>
+      <div>
+        <p>Duna-közeli telken a tartós árvizet a part menti talajvíz is követi: Dél-Budán az 1965-ös árvíz után a talajvíz a part mentén több mint 3 m-rel emelkedett, és megközelítette a folyó maximális szintjét. A budapesti mértékadó árvízszint (MÁSZ) a Vigadó térnél 104,24 mBf – az 1%-os valószínűségű jégmentes árvíz vízhozamából származtatva.</p>
+      </div>
+    </div>
+    <div class="panel k3">
+      <div class="ph"><h4>Árvíz a part mögött</h4><p>Budapesti dunai szintek mBf-ben (Vigadó téri vízmérce: 0 cm = 94,97 mBf). Szemléltető metszet, nem méretarányos vízszintesen.</p></div>
+      <div class="pb"><canvas id="dunaCv" width="1000" height="400" role="img" aria-label="Metszet: Duna árvízszintek, a part menti talajvíz és egy mélygarázs"></canvas></div>
+    </div>
+    <p class="src">Források: 74/2014. (XII. 23.) BM rendelet; Csoma &amp; Gálos, Periodica Polytechnica 2012; a vízmérce-átszámítás saját levezetés.</p>
+    <h3 id="sim-feluszas">3D szimulátor: mélygarázs</h3>
+    <p>30×15 m-es, 6 m mély garázsdoboz, 0,4 m-es falakkal, két födémmel. Kezdetben a 0,6 m-es alaplemez nem elég (Λ = 1,39). Próbáld megfelelővé tenni a négy védekezési móddal!</p>
+    <div class="panel k3">
+      <div class="sim" data-sim="feluszas">
+        <div class="view"><div class="hud"></div><div class="hint">húzással forgatható, görgővel nagyítható</div></div>
+        <div class="side">
+          <div class="ctrl">
+            <div class="rg"><label for="fu_gw">Tervezési talajvízszint <output data-out="fu_gw"></output></label><input type="range" id="fu_gw" min="-5" max="0" step="0.1" value="-1" data-fmt="1" data-u=" m"></div>
+            <div class="rg"><label for="fu_t">Alaplemez vastagsága t <output data-out="fu_t"></output></label><input type="range" id="fu_t" min="0.4" max="1.8" step="0.02" value="0.6" data-fmt="2" data-u=" m"></div>
+            <div class="rg"><label for="fu_o">a) Talplemez túlnyújtása <output data-out="fu_o"></output></label><input type="range" id="fu_o" min="0" max="1.5" step="0.1" value="0" data-fmt="1" data-u=" m"></div>
+            <div class="rg"><label for="fu_n">b) Mikrocölöpök (429 kN/db) <output data-out="fu_n"></output></label><input type="range" id="fu_n" min="0" max="30" step="1" value="0" data-u=" db"></div>
+            <div class="rg"><label for="fu_f">d) Az alsó szint elárasztása <output data-out="fu_f"></output></label><input type="range" id="fu_f" min="0" max="3" step="0.1" value="0" data-fmt="1" data-u=" m"></div>
+          </div>
+          <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
+          <p class="small muted" style="margin-top:10px">c) A leszívást a talajvízszint csúszkával modellezheted. Saját szemléltető példa: falak 0,4 m, födémek 0,35 és 0,30 m, oldalsúrlódás nélkül; a perem talaja a víz felett 19, alatta 20 kN/m³.</p>
+        </div>
+      </div>
+    </div>
+    <h3>Négy védekezési mód</h3>
+    <div class="facts">
+      <div class="fact k3"><div class="n">a)</div><h4>Talplemez túlnyújtása</h4><p>Az oldalfalakon túl, ha van rá hely: a peremre ráülő talaj is leterhel. A példában 1 m-es túlnyújtással 1,28 m helyett 0,67 m-es lemez elég – de a felhajtóerő a túlnyúló peremre is hat.</p></div>
+      <div class="fact k3"><div class="n">b)</div><h4>Lehorgonyzás</h4><p>Cölöppel, réspillérrel, talajhorgonnyal. 0,6 m-es lemeznél kb. 6300 kN hiányzik: globálisan legalább 15 db 600 kN karakterisztikus ellenállású GEWI mikrocölöp – a lemez hajlítása miatt a gyakorlatban sűrűbb raszter.</p></div>
+      <div class="fact k3"><div class="n">c)</div><h4>Talajvízszint leszívása</h4><p>Az építmény környezetében, ritkán előforduló magas vízálláskor (pl. közeli folyó árhulláma), vagy a szerkezet alatti víznyomás drénezéses csökkentése. Csak felügyelt rendszerrel: a szivattyú leállhat, a szűrő eltömődhet.</p></div>
+      <div class="fact k3"><div class="n">d)</div><h4>Időszakos elárasztás</h4><p>Az építmény egy részét – pl. a mélygarázs alsó szintjét – vízzel töltjük. A példában 2 m víz kb. 8300 kN ballaszt: a 0,6 m-es lemezzel Λ = 0,95.</p></div>
+    </div>
+    <h3>Esetek</h3>
+    <div class="case k3"><div class="yr">2013</div><div><h4>Kossuth tér, Budapest – munkagödör elárasztása</h4><p>A dunai árvíz idején a még épülő négyszintes mélygarázs munkagödre nem bírta volna a megnövekedett talajvíznyomást, ezért kb. 60 000 m³ vizet engedtek bele, 8 m mélységig; az ár levonulása után kiszivattyúzták. Az építés közbeni állapot gyakran kedvezőtlenebb a véglegesnél. <span class="src">(hvg.hu, 444.hu, 2013)</span></p></div></div>
+    <div class="case k3"><div class="yr">2015</div><div><h4>Oldsmar, Florida – kiemelkedő medence</h4><p>Kb. 16 napos esőzés után egy medence pereme előbb 48, majd 99 cm-rel emelkedett ki a földből. Ausztrál hatósági tájékoztatók külön figyelmeztetnek: az üres, különösen az üvegszálas medence árvíz után „kiugorhat” a talajból. <span class="src">(Bay News 9; Queensland 2011)</span></p></div></div>
+    <div class="case k3"><div class="yr">19 cm</div><div><h4>Mélygarázs, Dél-Kína</h4><p>Toronyház alatti parkolópince alaplemeze heves esőzés, rossz vízelvezetés és laza visszatöltés után 0,194 m-t emelkedett; kb. 47 oszlop megrepedt. Javítás: nyomáscsökkentő furatok a lemezen, szivattyú, többletleterhelés. <span class="src">(MDPI Buildings, 2023)</span></p></div></div>
+    <div class="case k3"><div class="yr">≈1985</div><div><h4>Scaramanga szárazdokk, Görögország</h4><p>Az 1,2 m vastag, feszített horgonyokkal lehorgonyzott fenéklemez a horgonypászmák feszültségkorróziós szakadása után kupolaszerűen felemelkedett és felrepedt – a talajvíz elárasztotta a dokkot. Utána nyomáscsökkentett fenékre építették át. <span class="src">(Proc. ICE, 1992)</span></p></div></div>
+    <div class="quiz k3" id="q3"><div class="qh"><h4>Kvíz – felúszás</h4><div class="dots"></div></div></div>
+  </div>
+</section>
+
+<!-- ===================== ÁLTALÁNOS ÁLLÉKONYSÁG ===================== -->
+<section class="chap k4" id="altalanos">
+  <div class="wrap">
+    <div class="chead"><div class="code">GEO</div><h2>Általános állékonyság</h2><p>Az alapot és a környező talajtömeget együtt vizsgáljuk – a teherbírás megfelelhet, a rézsű nem.</p></div>
+    <button class="vlink" data-video="v4" type="button"></button>
+    <div class="cols">
+      <div>
+        <p>Síkalapozásnál az általános állékonyságot elsősorban akkor kell vizsgálni, ha a síkalap a következő helyek valamelyikére kerül:</p>
+        <ul><li>természetes vagy mesterséges rézsűbe vagy annak közelébe;</li><li>földkiemelés vagy támfal közelébe;</li><li>folyópart, csatorna, tó, tározó vagy tengerpart közelébe;</li><li>alábányászott területre vagy föld alatti szerkezetek közelébe.</li></ul>
+        <p>Ha fennáll az állékonyságvesztés esélye, analitikus vagy numerikus módszerrel ki kell mutatni, hogy a terhelt alaptestet is magában foglaló földtömeg állékonyságvesztésének elfogadhatóan kicsi a valószínűsége. Az állékonyságvesztést általában nem egyetlen alaptest okozza: <b>több alaptest együttes terhe</b> váltja ki egy lejtős vagy alábányászott földtest elmozdulását.</p>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Csúszólapos vizsgálat</h3>
+        <p>Az igazolás rézsűállékonysági számítással történik: körhengeres (rétegzett talajban szükség esetén más alakú) csúszólap, lamellás módszer, a legkedvezőtlenebb csúszólap keresése. Az alap terhe hatásként lép be azokra a lamellákra, amelyek felett áll. Drénezett (c′, φ′) és drénezetlen (c<sub>u</sub>) állapotra is vizsgálunk; a vízviszonyok rendszerint mértékadók.</p>
+        <div class="eq"><div class="f">DA-3: γ<sub>G</sub> = 1,0 · γ<sub>Q</sub> = 1,3</div><div class="w"><div>tg φ′<sub>d</sub> = tg φ′<sub>k</sub> / γ<sub>φ</sub>, c′<sub>d</sub> = c′<sub>k</sub> / γ<sub>c</sub></div><div>A jegyzet szerint γ<sub>φ</sub> = γ<sub>c</sub> = 1,35; az EN 1997-1 ajánlott M2 értéke 1,25 (c<sub>u</sub>-ra 1,4) – a magyar NA értékét érdemes a szabványban ellenőrizni.</div></div></div>
+      </div>
+    </div>
+    <div class="panel k4" id="sim-altalanos-2d">
+      <div class="ph"><h4>Csúszólap-keresés egy ház alatt</h4><p>8 m magas löszrézsű, a koronán egy ház két sávalappal (72 + 18 kN/m). Egyszerűsített Bishop-módszer, DA-3 szerint csökkentett szilárdsággal.</p></div>
+      <div class="pb">
+        <canvas id="slopeCv" width="820" height="430" role="img" aria-label="Rézsű csúszólap-kereséssel"></canvas>
+        <div class="ctrl">
+          <div class="rg"><label for="sl_s">A ház távolsága a rézsűéltől <output data-out="sl_s"></output></label><input type="range" id="sl_s" min="0.4" max="10" step="0.2" value="0.8"></div>
+          <div class="rg"><label for="sl_ru">Pórusvíznyomás-arány r<sub>u</sub> (átázás) <output data-out="sl_ru"></output></label><input type="range" id="sl_ru" min="0" max="0.4" step="0.02" value="0"></div>
+          <div class="rg"><label>Rézsűhajlás<span></span></label><div class="seg" id="sl_n"><button class="on" data-v="1.5" type="button">1 : 1,5</button><button data-v="2" type="button">1 : 2</button></div></div>
+          <div class="rg"><label>γ<sub>φ</sub> = γ<sub>c</sub><span></span></label><div class="seg" id="sl_gm"><button data-v="1.25" type="button">1,25 (EN)</button><button class="on" data-v="1.35" type="button">1,35 (jegyzet)</button></div></div>
+          <div class="rg"><label>Próbakörök középpontjai<span></span></label><div class="seg" id="sl_tr"><button class="on" data-v="1" type="button">Látszik</button><button data-v="0" type="button">Rejtve</button></div></div>
+        </div>
+        <div class="readout"><div class="ro"><span>Biztonság a mértékadó körön F<sub>d</sub></span><b id="sl_F"></b></div><div class="ro"><span>Kihasználtság Λ = 1/F<sub>d</sub></span><b id="sl_L"></b></div><div class="ro"><span>A csúszólap a rézsűél mögött</span><b id="sl_x"></b></div></div>
+        <p class="small muted" style="margin-top:10px">Talaj: c′<sub>k</sub> = 14 kPa, φ′<sub>k</sub> = 28°, γ = 19 kN/m³. A pontok színe a próbakör biztonságát jelzi (piros: F &lt; 1). Szemléltető számítás – tervezéshez igazolt programot használj.</p>
+      </div>
+    </div>
+    <h3 id="sim-altalanos">3D szimulátor: ház a rézsű tetején</h3>
+    <div class="panel k4">
+      <div class="sim" data-sim="altalanos">
+        <div class="view"><div class="hud"></div><div class="hint">húzással forgatható, görgővel nagyítható</div></div>
+        <div class="side">
+          <div class="ctrl">
+            <div class="rg"><label for="al_s">Távolság a rézsűéltől <output data-out="al_s"></output></label><input type="range" id="al_s" min="0.4" max="10" step="0.2" value="0.8" data-fmt="1" data-u=" m"></div>
+            <div class="rg"><label for="al_ru">Átázás r<sub>u</sub> <output data-out="al_ru"></output></label><input type="range" id="al_ru" min="0" max="0.4" step="0.02" value="0" data-fmt="2"></div>
+            <div class="rg"><label>Rézsűhajlás<span></span></label><div class="seg" id="al_slope"><button class="on" data-v="1.5" type="button">1 : 1,5</button><button data-v="2" type="button">1 : 2</button></div></div>
+            <div class="rg"><label>γ<sub>φ</sub> = γ<sub>c</sub><span></span></label><div class="seg" id="al_gm"><button data-v="1.25" type="button">1,25</button><button class="on" data-v="1.35" type="button">1,35</button></div></div>
+          </div>
+          <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
+          <p class="small muted" style="margin-top:10px">A piros szaggatott vonal a mértékadó csúszólap; ha Λ &gt; 1, a csúszó tömeg a házzal együtt elmozdul.</p>
+        </div>
+      </div>
+    </div>
+    <div class="split">
+      <div class="box"><h4>Megoldások</h4><ul><li>az alapot távolabb visszük a rézsűéltől;</li><li>mélyebbre alapozunk – a csúszólap alá;</li><li>laposítjuk vagy megtámasztjuk a rézsűt;</li><li>víztelenítünk, rendezzük a felszíni vízelvezetést.</li></ul></div>
+      <div class="box"><h4>Mennyi a „távol”?</h4><p class="small" style="margin:0">Meyerhof kísérletei szerint a rézsű teherbírás-csökkentő hatása kb. 2–6·B távolságig érződik. Az amerikai IBC 1808.7 lefelé eső rézsű koronáján H/3 (legfeljebb 12,2 m), felfelé emelkedő rézsű tövénél H/2 (legfeljebb 4,6 m) távolságot ír elő – csak állékony rézsűre. Ezek tájékoztató értékek; az igazolás a csúszólapos számítás.</p><p class="src" style="margin-top:8px">structville.com (Meyerhof 1957); CBC/IBC 1808.7</p></div>
+    </div>
+    <h3>Esetek</h3>
+    <div class="case k4"><div class="yr">2011</div><div><h4>Kulcs – löszpart</h4><p>53 ingatlan került veszélybe, legalább 14 épületet le kellett bontani; a szakértők előre figyelmeztettek, de a partfal megerősítésére nem jutott pénz. <span class="src">(index.hu, 2011)</span></p></div></div>
+    <div class="case k4"><div class="yr">2008</div><div><h4>Dunaszekcső, Hold-hegy</h4><p>A 70 m magas löszfal 2008 februárjában megcsúszott és kb. 10 m-t süllyedt, a Duna medrében zátony keletkezett. A kutatások szerint a mozgást főleg a talajvízszint változása vezérli – hatása kb. tízszerese a Duna vízszintjének. <span class="src">(infostart.hu; Bányai et al., Geomorphology 2014)</span></p></div></div>
+    <div class="case k4"><div class="yr">1914</div><div><h4>Balatonkenese – magaspart</h4><p>Csapadékos időszak után kb. 100 000 m³ lösz sodort a Balatonba egy vasúti szerelvényt; a mozdonyvezető időben megállt, áldozat nem volt. <span class="src">(economx.hu)</span></p></div></div>
+    <div class="case k4"><div class="yr">1972</div><div><h4>Po Shan Road, Hongkong</h4><p>Három egymást követő napon napi 200 mm feletti eső, a rézsű lábánál egy 13 m mély, megtámasztatlan bevágás: kb. 80 000 t föld csúszott le 7–10 másodperc alatt, egy 12–13 emeletes lakóház leszakadt az alapjáról és ledőlt. 67 ember halt meg. <span class="src">(GEO/CEDD; Vail 1984)</span></p></div></div>
+    <div class="case k4"><div class="yr">2009</div><div><h4>Lotus Riverside, Sanghaj</h4><p>Egy 13 emeletes, cölöpalapozású ház szinte épen dőlt fel: az egyik oldalon mélygarázs-gödröt ástak, a kitermelt földet a másik oldalon, a patakparton kb. 10 m magasra halmozták. Cölöpös épület volt, és a hivatalos okot egy későbbi elemzés vitatja – a „töltés az épület mellett” veszélyét viszont jól mutatja. <span class="src">(geoprac.net; ASCE JGGE 2020)</span></p></div></div>
+    <div class="note"><b>Kontraszt: Transcona, 1913.</b> A winnipegi gabonasiló 24 óra alatt kb. 27°-ra billent – ez azonban a lemezalap alatti talajtörés (teherbírás, GEO) volt, nem általános állékonyságvesztés és nem merev testként való felborulás.</div>
+    <div class="quiz k4" id="q4"><div class="qh"><h4>Kvíz – általános állékonyság</h4><div class="dots"></div></div></div>
+  </div>
+</section>
+
+<!-- ===================== ÚJ EUROCODE ===================== -->
+<section class="chap k5" id="ujec">
+  <div class="wrap">
+    <div class="chead"><div class="code">2G</div><h2>Mi változik az új Eurocode 7-ben?</h2><p>A határállapotok maradnak – a tényezők hozzárendelése változik.</p></div>
+    <div class="split">
+      <div class="box"><h4>Most – DA-2 szerinti igazolás</h4><ul><li>EQU: külön tényező a stabilizáló és destabilizáló hatásra (γ<sub>G;stb</sub> = 0,9; γ<sub>G;dst</sub> = 1,1)</li><li>elcsúszás, teherbírás: DA2 (A1 + M1 + R2)</li><li>talajparaméterek jellemző értékkel, az ellenállás γ<sub>R</sub>-rel csökkentve</li><li>általános állékonyság: DA-3</li></ul></div>
+      <div class="box"><h4>Új – igazolási esetek + MFA / RFA</h4><ul><li>egyensúly és felhajtóerő: VC2</li><li>síkalap, rézsű, támfal: VC3 (MFA – tg φ′ és c′ tényezővel)</li><li>RFA: az ellenállás γ<sub>R</sub>-rel (teherbírás ≈ 1,4, elcsúszás 1,1); RFA-n belül VC1 vagy VC4 (≈ DA-2*)</li><li>az értékeket a nemzeti melléklet adja – ez még nem készült el</li></ul></div>
+    </div>
+    <div class="tblw"><table class="tbl"><thead><tr><th>Igazolási eset</th><th>Mire?</th><th>Régi megfelelője</th><th>Hatástényezők (tartós helyzet)</th></tr></thead><tbody>
+      <tr><td>VC1</td><td>szerkezeti ellenállás, alapozás általában</td><td>STR, DA2</td><td>G: 1,35·k<sub>F</sub>; Q: 1,5·k<sub>F</sub></td></tr>
+      <tr><td>VC2</td><td>statikus egyensúly, felhajtóerő</td><td>EQU, UPL</td><td>G: 1,0 kedvező</td></tr>
+      <tr><td>VC3</td><td>a hatás és az ellenállás is a talajból: rézsű, általános állékonyság</td><td>GEO, ≈ DA-3</td><td>G: 1,0; Q: 1,3 + M2 anyagtényezők</td></tr>
+      <tr><td>VC4</td><td>a tényező a hatás következményére (pl. támfalak)</td><td>≈ DA-2*</td><td>E: 1,35·k<sub>F</sub></td></tr>
+    </tbody></table></div>
+    <div class="cols">
+      <div>
+        <h3>Síkalapoknál</h3>
+        <ul><li>A teherbírási képlet a főszövegbe került, várhatóan terephajlás-tényezővel.</li><li>A <b>felborulás</b> (statikus egyensúly, talajtörés nélkül) és az <b>átfordulás</b> (forgásos teherbírási törés) külön vizsgálat.</li><li>A külpontosság határa e ≤ B/3, kör alaprajznál <b>0,59·r</b>; használhatósági állapotban az alap szélén ne nyíljon rés.</li><li>A drénezetlen elcsúszás 0,4-es korlátja megmarad; az elcsúszás és a teherbírás tényezői számszerűen nem változnak (1,1 és 1,4).</li></ul>
+      </div>
+      <div>
+        <h3>Új fogalmak</h3>
+        <ul><li><b>Talajmodell</b> (Ground Model) → <b>geotechnikai tervezési modell</b>: kötelező gondolatmenet.</li><li>A <b>geotechnikai kategória</b> a következményi osztály (CC) és a talajviszonyok bonyolultsága (GCC) együtteséből adódik.</li><li>Az általános állékonyság az <b>EN 1997-3 4. fejezetébe</b> (rézsűk, bevágások, töltések) kerül; új fogalom a hatászóna.</li><li>Karakterisztikus helyett <b>reprezentatív</b> érték.</li></ul>
+      </div>
+    </div>
+    <div class="tline">
+      <div><b>2024</b><span>EN 1997-1 és -2 megjelenik</span></div>
+      <div><b>2025</b><span>EN 1997-3 megjelenik</span></div>
+      <div><b>2026. márc. 30.</b><span>a szövegek a nemzeti szabványügyi testületeknél</span></div>
+      <div><b>2027. szept. 30.</b><span>nemzeti bevezetés határideje</span></div>
+      <div><b>2028. márc. 30.</b><span>az első generáció visszavonása</span></div>
+    </div>
+    <p class="src">Források: JRC Eurocodes (ütemterv); Burlon, Szilvágyi, Moormann & Lesny (ICSMGE 2026); Lesny & Orr (ECSMGE 2024). A végleges szövegeket és a magyar nemzeti mellékletet a megjelenés után érdemes ellenőrizni.</p>
+    <button class="vlink" data-video="v5" type="button"></button>
+    <div class="quiz k5" id="q5"><div class="qh"><h4>Kvíz – az új Eurocode</h4><div class="dots"></div></div></div>
+  </div>
+</section>
+
+<!-- ===================== VIDEÓK ===================== -->
+<section class="chap k0" id="videok">
+  <div class="wrap">
+    <div class="chead"><div class="code">▶</div><h2>Animációs videók</h2><p>Öt rövid 3D animáció a négy határállapotról és az összefoglalóról – egyenként kb. két perc.</p></div>
+    <div class="vgrid"><button class="vcard" data-video="v1" type="button"></button><button class="vcard" data-video="v2" type="button"></button><button class="vcard" data-video="v3" type="button"></button><button class="vcard" data-video="v4" type="button"></button><button class="vcard" data-video="v5" type="button"></button></div>
+  </div>
+</section>
+
+<!-- ===================== IGAZ / HAMIS ===================== -->
+<section class="chap k0" id="igazhamis">
+  <div class="wrap">
+    <div class="chead"><div class="code">?</div><h2>Igaz vagy hamis?</h2><p>Negyven állítás mind a négy határállapotból – azonnali magyarázattal.</p></div>
+    <div class="tfbar"><span id="tfscore"></span><button id="tfReset" type="button">Újrakezdés</button></div>
+    <div class="tfgrid" id="tfgrid"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><b>Síkalapok állékonyságvizsgálata</b> – interaktív tananyag a BME Építőmérnöki Kar Alapozás tárgyához, a „Síkalapok állékonyság- és stabilitásvizsgálata” jegyzet és előadás alapján, webes forrásokkal kiegészítve.</p>
+      <p class="small">A szimulátorok és példák szemléltető modellek; tervezéshez a hatályos szabványokat, a nemzeti mellékletet és igazolt programokat kell használni.</p>
+    </div>
+    <div class="links small">
+      <a href="https://sikalapok-stabilitas.vercel.app/" target="_blank" rel="noopener">Gyakorlati segédlet: mintapéldák és kalkulátorok</a>
+      <a href="https://sikalapok-sullyedesszamitasa.vercel.app/" target="_blank" rel="noopener">Síkalapok süllyedésszámítása</a>
+      <a href="https://vedekezesakarossullyedesekellen.vercel.app/" target="_blank" rel="noopener">Védekezés a káros süllyedések ellen</a>
+      <a href="https://kedvezotlen-altalaj.vercel.app/" target="_blank" rel="noopener">Alapozás kedvezőtlen altalajon</a>
+    </div>
+  </div>
+</footer>
+<button class="totop" type="button" aria-label="Vissza a lap tetejére">↑</button>
+<div class="vmodal" id="vmodal" role="dialog" aria-modal="true" aria-label="Videó"><div class="vbox"><div class="mh"><span></span><button id="vfs" type="button">Teljes képernyő</button><button id="vclose" type="button">Bezárás</button></div><div class="frame"></div></div></div>
+<!--SCRIPTS-->
