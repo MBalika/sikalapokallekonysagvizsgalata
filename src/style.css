@@ -49,19 +49,14 @@ sub { font-size: .7em; line-height: 0; }
 @media (max-width: 560px) { .top .wrap { gap: 8px; } .brand { white-space: normal; font-size: 14px; line-height: 1.12; min-width: 0; } .brand svg { width: 30px; height: 30px; } .tbtn { padding: 6px 11px; font-size: 13px; } }
 /* ---- igazolólap (ragadós sáv) ---- */
 .ledger { position: sticky; top: 58px; z-index: 45; background: color-mix(in srgb, var(--paper2) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-.ledger .wrap { display: grid; grid-template-columns: auto repeat(4, 1fr); gap: 10px; align-items: center; padding-top: 8px; padding-bottom: 8px; }
-.ledger .lt { font: 700 13px/1.2 var(--fd); color: var(--ink2); max-width: 150px; }
-.ledger .lt span { display: block; font: 400 11.5px/1.25 var(--fb); color: var(--mute); }
-.lc { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; gap: 2px 8px; padding: 6px 10px; border-radius: var(--r2); text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--line); transition: border-color .2s; }
+.ledger .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding-top: 8px; padding-bottom: 8px; }
+.lc { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 38px; padding: 6px 12px; border-radius: var(--r2); text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--line); font: 700 14px/1.2 var(--fd); white-space: nowrap; transition: border-color .2s, background-color .2s; }
+.lc::before { content: ''; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--k); }
 .lc:hover { border-color: var(--k); }
-.lc b { font: 700 13.5px/1.2 var(--fd); }
-.lc .v { font: 800 15px/1.2 var(--fd); font-variant-numeric: tabular-nums; text-align: right; }
-.lc .bar { grid-column: 1 / -1; height: 6px; border-radius: 6px; background: var(--line); position: relative; overflow: hidden; }
-.lc .bar i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 6px; background: var(--ok); transition: width .35s, background .35s; }
-.lc .bar::after { content: ''; position: absolute; left: 66.67%; top: -2px; bottom: -2px; width: 2px; background: var(--ink2); opacity: .5; }
-.lc.fail .v { color: var(--bad); } .lc.fail .bar i { background: var(--bad); } .lc.warn .bar i { background: var(--warn); }
-@media (max-width: 820px) { .ledger .wrap { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; padding-top: 6px; padding-bottom: 6px; } .ledger .lt { display: none; } .lc { grid-template-columns: minmax(0, 1fr); gap: 1px; padding: 5px 7px; min-width: 0; } .lc b { font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .lc .v { font-size: 13px; text-align: left; } .lc .bar { height: 5px; } }
-@media (max-width: 420px) { .lc b { font-size: 10px; letter-spacing: -.02em; } }
+.lc.on { border-color: var(--k); background: color-mix(in srgb, var(--k) 13%, var(--card)); }
+.lc:focus-visible { outline: 2px solid var(--k); outline-offset: 2px; }
+@media (max-width: 820px) { .ledger .wrap { gap: 6px; padding-top: 6px; padding-bottom: 6px; } .lc { font-size: 12.5px; gap: 6px; padding: 5px 6px; min-height: 34px; } .lc .lx { display: none; } }
+@media (max-width: 420px) { .lc { font-size: 11.5px; gap: 5px; padding: 5px 4px; } .lc::before { width: 6px; height: 6px; } }
 /* ---- hős ---- */
 .hero { padding: 54px 0 30px; }
 .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 40px; align-items: center; }

@@ -444,5 +444,8 @@ class Sim {
 }
 document.querySelectorAll('.sim[data-sim]').forEach(el => { el._sim = new Sim(el, el.dataset.sim); });
 // videó megnyitásakor a szimulátorok felszabadítják a GPU-t, bezáráskor a láthatók újraépülnek
+// betöltéskor minden szimulátor egyszer felépül, hogy a panelek szövegei (Λ, magyarázat, kapcsolók) már a helyükön legyenek
+// és görgetéskor ne ugráljon az oldal; ami messze van, azonnal elengedi a WebGL-kontextust
+(function prime(i) { const s = SIMS[i]; if (!s) return; if (!s.alive && !window.__simPause) { s.init(); const r = s.view.getBoundingClientRect(); if (!(r.bottom > -700 && r.top < innerHeight + 700)) s.free(); } setTimeout(() => prime(i + 1), 40); })(0);
 addEventListener('sims:pause', () => { window.__simPause = true; SIMS.forEach(s => s.free()); });
 addEventListener('sims:resume', () => { window.__simPause = false; SIMS.forEach(s => { const r = s.view.getBoundingClientRect(); if (r.bottom > -700 && r.top < innerHeight + 700) s.init(); }); });

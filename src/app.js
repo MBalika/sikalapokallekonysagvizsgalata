@@ -100,14 +100,26 @@ document.addEventListener('DOMContentLoaded', () => { guardAll(document.body); l
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { label(); dispatchEvent(new Event('themechange')); });
   label();
 })();
+// ugrópontok: a célfejezet címe pontosan a ragadós fejléc + igazolólap alá kerüljön (a magasságuk képernyőnként más)
+(function stickyOffset() {
+  const hd = $('.top'), lg = $('.ledger'); if (!hd) return;
+  const set = () => { const h = hd.offsetHeight + (lg ? lg.offsetHeight : 0); document.documentElement.style.scrollPaddingTop = (h + 8) + 'px'; if (lg) lg.style.top = hd.offsetHeight + 'px';
+    // a fejezet felső térközét átugorjuk: a fejezetcím közvetlenül a sáv alatt jelenik meg
+    $$('.chap[id]').forEach((sec) => { const pt = parseFloat(getComputedStyle(sec).paddingTop) || 0; sec.style.scrollMarginTop = -Math.max(0, pt - 12) + 'px'; }); };
+  set(); addEventListener('resize', set, { passive: true }); addEventListener('load', set);
+  if (window.ResizeObserver) new ResizeObserver(set).observe(hd);
+})();
 (function totop() { const b = $('.totop'); if (!b) return; addEventListener('scroll', () => b.classList.toggle('on', scrollY > 900), { passive: true }); b.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' })); })();
 
-// --- igazolólap: a négy szimulátor aktuális kihasználtsága ---
-window.LEDGER = {
-  set(mode, v) { const c = document.querySelector(`.lc[data-mode="${mode}"]`); if (!c) return; c.querySelector('.v').textContent = (v > 9.99 ? '> 9,99' : fmt(v, 2)) + (v > 1 ? ' ✗' : ' ✓'); c.querySelector('.bar i').style.width = clamp(v / 1.5, 0, 1) * 100 + '%'; c.classList.toggle('fail', v > 1); c.classList.toggle('warn', v > 0.9 && v <= 1); c.title = `Kihasználtság: ${fmt(v, 2)}`; },
-};
-// a 3D-től függetlenül is kiszámoljuk a kezdőértékeket (ha nincs WebGL)
-addEventListener('DOMContentLoaded', () => { const M = window.MECH; if (!M) return; LEDGER.set('csuszas', M.sliding({}).lam); LEDGER.set('borulas', M.overturn({}).lam); LEDGER.set('feluszas', M.uplift({}).lam); setTimeout(() => LEDGER.set('altalanos', M.slope({}).lam), 50); });
+// --- témaválasztó sáv: a négy vizsgálati téma, az éppen olvasott kiemelve ---
+window.LEDGER = { set() {} };
+(function topics() {
+  const links = $$('.ledger .lc'); if (!links.length) return;
+  const secs = links.map((a) => document.querySelector(a.getAttribute('href')));
+  let raf = 0; const upd = () => { raf = 0; const lg = $('.ledger'), y = (lg ? lg.getBoundingClientRect().bottom : 120) + 40;
+    links.forEach((a, i) => { const r = secs[i] && secs[i].getBoundingClientRect(); const on = !!r && r.top <= y && r.bottom > y; a.classList.toggle('on', on); if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); }); };
+  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(upd); }, { passive: true }); addEventListener('resize', upd); upd();
+})();
 
 // --- videók ---
 const VIDEOS = {
