@@ -66,25 +66,28 @@ function groupGuard(block) {
   let pos = 0; for (const nd of nodes) { const v = nd.nodeValue; let out = '', ch = false; for (let i = 0; i < v.length; i++) { if (mark[pos + i] && v[i] === ' ') { out += NB + WJ; ch = true; } else out += v[i]; } if (ch) nd.nodeValue = out; pos += v.length; }
 }
 // elválasztás (magyar minták, Hyphenopoly): csak sorkizárt blokkokban; összetartozó csoportba (NBSP+WJ) nem kerül lágy kötőjel
-const WJ = '\u2060', SHY = '\u00AD';
+const WJ = '\u2060', SHY = '\u00AD', ZW = /\u200B/g;
 const JSEL = 'main p, main li, main dd, main figcaption, main .note, main .eq .w > div, main .verdict, main .fb, footer p';
 const NOHY = 'sub,sup,code,pre,script,style,button,label,output,td,th,.nw,.formula,.eq .f,.hud,.lbl3';
 let HYPH = null;
 function hyphBlock(block) {
   if (!HYPH) return; const w = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null); let n;
-  while ((n = w.nextNode())) { const v = n.nodeValue; if (v.length < 6) continue; const pe = n.parentElement; if (!pe || pe.closest(NOHY)) continue;
-    const out = v.split(' ').map(tok => {
+  while ((n = w.nextNode())) { const v0 = n.nodeValue; if (v0.length < 6) continue; const pe = n.parentElement; if (!pe || pe.closest(NOHY)) continue;
+    // idempotens: a korábbi futásokból maradt nulla szélességű szóközöket eltávolítjuk, újat nem teszünk be
+    const v = v0.replace(ZW, ''); const out = v.split(' ').map(tok => {
       if (tok.indexOf(SHY) >= 0 || tok.length < 6) return tok;
       if (tok.indexOf(WJ) >= 0) { if (tok.length <= 16) return tok; const k = tok.lastIndexOf(WJ); const last = tok.slice(k + 1); return /^[\p{L}]{6,}/u.test(last) ? tok.slice(0, k + 1) + HYPH(last) : tok; }
-      return tok.split(NB).map(p => p.length >= 6 && /^[\p{L}]/u.test(p) ? HYPH(p) : p).join(NB); }).join(' ');
-    if (out !== v) n.nodeValue = out; }
+      return tok.split(NB).map(p => p.length >= 6 && /^[\p{L}]/u.test(p) ? HYPH(p) : p).join(NB); }).join(' ').replace(ZW, '');
+    if (out !== v0) n.nodeValue = out; }
 }
 function hyphAll(root) { if (!HYPH || !root.querySelectorAll) return; const list = root.matches && root.matches(JSEL) ? [root] : []; list.push(...root.querySelectorAll(JSEL)); const anc = root.closest && root.closest(JSEL); if (anc) list.push(anc); list.forEach(hyphBlock); }
 function guardAll(root) { guardText(root); const list = root.matches && root.matches(BLOCKSEL) ? [root] : []; root.querySelectorAll && list.push(...root.querySelectorAll(BLOCKSEL)); list.forEach(groupGuard); hyphAll(root); }
-addEventListener('DOMContentLoaded', () => { const H = window.Hyphenopoly; if (!H || !H.hyphenators) return; const pr = H.hyphenators.hu; if (!pr) return; pr.then((f) => { HYPH = (t) => f(t, '.hyphenate'); hyphAll(document.body); }).catch(() => {}); });
+addEventListener('DOMContentLoaded', () => { const H = window.Hyphenopoly; if (!H || !H.hyphenators) return; const pr = H.hyphenators.hu; if (!pr) return; pr.then((f) => { HYPH = (t) => f(t, '.hyphenate'); hyphAll(document.body); if (MO) MO.takeRecords(); }).catch(() => {}); });
+let MO = null;
 window.U = { $, $$, clamp, lerp, fmt, H, css, bindRange, fillRange, seg, hiCanvas, richCtx, guardText, guardAll };
 document.addEventListener('DOMContentLoaded', () => { guardAll(document.body); let pend = new Set(), sch = false;
-  new MutationObserver((ms) => { for (const m of ms) pend.add(m.target.nodeType === 3 ? m.target.parentNode : m.target); if (!sch) { sch = true; requestAnimationFrame(() => { sch = false; const L = [...pend]; pend = new Set(); L.forEach((e) => { if (!e || !e.isConnected) return; const b = e.closest ? (e.closest(BLOCKSEL) || e) : e; guardAll(b); }); }); } }).observe(document.body, { childList: true, subtree: true, characterData: true }); });
+  // a saját módosításaink által keltett változásokat eldobjuk (takeRecords), így az őr nem hívhatja meg önmagát újra és újra
+  MO = new MutationObserver((ms) => { for (const m of ms) pend.add(m.target.nodeType === 3 ? m.target.parentNode : m.target); if (!sch) { sch = true; requestAnimationFrame(() => { sch = false; const L = [...pend]; pend = new Set(); L.forEach((e) => { if (!e || !e.isConnected) return; const b = e.closest ? (e.closest(BLOCKSEL) || e) : e; guardAll(b); }); MO.takeRecords(); }); } }); MO.observe(document.body, { childList: true, subtree: true, characterData: true }); });
 
 // --- téma ---
 (function theme() {
@@ -118,8 +121,8 @@ window.VIDEOS = VIDEOS;
 (function videos() {
   const modal = $('#vmodal'); if (!modal) return; const frame = $('.frame', modal), title = $('.mh span', modal);
   let last = null;
-  const open = (k, from) => { const v = VIDEOS[k]; if (!v) return; last = from; title.textContent = v.t; frame.innerHTML = ''; frame.appendChild(H('iframe', { src: `video/${k}.html#autoplay`, title: v.t, allow: 'autoplay; fullscreen' })); modal.classList.add('on'); document.body.style.overflow = 'hidden'; $('#vclose').focus(); };
-  const close = () => { modal.classList.remove('on'); frame.innerHTML = ''; document.body.style.overflow = ''; if (last) last.focus(); };
+  const open = (k, from) => { const v = VIDEOS[k]; if (!v) return; last = from; window.dispatchEvent(new Event('sims:pause')); title.textContent = v.t; frame.innerHTML = ''; frame.appendChild(H('iframe', { src: `video/${k}.html#autoplay`, title: v.t, allow: 'autoplay; fullscreen' })); modal.classList.add('on'); document.body.style.overflow = 'hidden'; $('#vclose').focus(); };
+  const close = () => { modal.classList.remove('on'); frame.innerHTML = ''; document.body.style.overflow = ''; if (last) last.focus(); setTimeout(() => window.dispatchEvent(new Event('sims:resume')), 60); };
   $('#vclose').addEventListener('click', close); modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
   addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('on')) close(); });
   addEventListener('message', (e) => { if (e.data === 'vclose') close(); });

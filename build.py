@@ -18,7 +18,7 @@ head = """<title>Síkalapok állékonyságvizsgálata</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800;62..125,900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <script src="vendor/hyphenopoly/Hyphenopoly_Loader.js"></script>
-<script>if (window.Hyphenopoly) Hyphenopoly.config({ require: { hu: "FORCEHYPHENOPOLY" }, setup: { hide: "none", selectors: { ".hyphenate": { minWordLength: 6 } } } });</script>
+<script>if (window.Hyphenopoly) Hyphenopoly.config({ require: { hu: "FORCEHYPHENOPOLY" }, setup: { hide: "none", selectors: { ".hyphenate": { minWordLength: 6, compound: "auto" } } } });</script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 """
 

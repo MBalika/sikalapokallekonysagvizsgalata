@@ -10,7 +10,7 @@ const C = window.CALC;
   try { renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' }); }
   catch (e) { window.CALC3D = { ok: false, msg: 'A 3D nézethez WebGL-képes böngésző szükséges.' }; const m = host.querySelector('.cx-3dmsg'); if (m) m.textContent = window.CALC3D.msg; return; }
   const F = C.F, NB = ' ', u_ = C.util.u_;
-  renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+  renderer.setPixelRatio(Math.min(1.5, window.devicePixelRatio || 1));
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05; renderer.outputColorSpace = THREE.SRGBColorSpace;
   host.appendChild(renderer.domElement);
@@ -257,12 +257,15 @@ const C = window.CALC;
   const vtmp = new THREE.Vector3();
   function placeLabels() { const w = host.clientWidth, h = host.clientHeight; for (const L of LBL) { vtmp.copy(L.p).project(camera); if (vtmp.z > 1 || vtmp.z < -1) { L.el.style.display = 'none'; continue; } L.el.style.display = ''; const x = (vtmp.x * 0.5 + 0.5) * w, y = (-vtmp.y * 0.5 + 0.5) * h; L.el.style.transform = `translate(${Math.round(Math.min(w - 4 - L.el.offsetWidth, Math.max(4, x - L.el.offsetWidth / 2)))}px, ${Math.round(Math.min(h - 24, Math.max(4, y - 26)))}px)`; } }
   function frame() {
-    raf = 0; if (!(visible && active)) return;
+    raf = 0; if (!(visible && active) || held) return;
     if (anim) { const t = Math.min(1, (performance.now() - anim.t0) / 550), e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; camera.position.lerpVectors(anim.p0, anim.p1, e); controls.target.lerpVectors(anim.t0g, anim.t1, e); dirty = true; if (t >= 1) anim = null; }
     const moved = controls.update(); if (moved || dirty) { renderer.render(scene, camera); placeLabels(); dirty = false; }
     raf = requestAnimationFrame(frame);
   }
-  function kick() { if (!raf && visible && active) raf = requestAnimationFrame(frame); }
+  let held = false;   // videó lejátszása közben nem rajzol
+  function kick() { if (!raf && visible && active && !held) raf = requestAnimationFrame(frame); }
+  window.addEventListener('sims:pause', () => { held = true; });
+  window.addEventListener('sims:resume', () => { held = false; dirty = true; kick(); });
   let pend = 0; const schedule = () => { cancelAnimationFrame(pend); pend = requestAnimationFrame(() => { if (active) { resize(); build(); kick(); } }); };
   window.addEventListener('calc:update', (e) => { DET = e.detail; active = DET.view === '3d'; if (active) schedule(); });
   window.addEventListener('calc:view', (e) => { active = e.detail.view === '3d'; if (active) { const d = C.current && C.current(); if (d) DET = d; schedule(); } });

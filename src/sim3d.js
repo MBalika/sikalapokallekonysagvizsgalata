@@ -26,7 +26,9 @@ function tex() {
   };
   return TX;
 }
-function mat(t, rep = 0.5, color = 0xffffff, opts = {}) { const m = new THREE.MeshStandardMaterial({ map: t.clone(), color, roughness: 0.92, ...opts }); m.map.repeat.set(rep, rep); m.map.needsUpdate = true; return m; }
+const TEXC = new Map();
+function texRep(t, rep) { const k = t.uuid + '|' + rep; let c = TEXC.get(k); if (!c) { c = t.clone(); c.repeat.set(rep, rep); c.needsUpdate = true; TEXC.set(k, c); } return c; }
+function mat(t, rep = 0.5, color = 0xffffff, opts = {}) { return new THREE.MeshStandardMaterial({ map: texRep(t, rep), color, roughness: 0.92, ...opts }); }
 function sec(m) { if (!m._sec) { const c = m.clone(); c.color = m.color.clone().multiplyScalar(0.6); c.roughness = 1; m._sec = c; } return [m._sec, m]; }
 function ext(pts, z0 = 0, z1 = -6, holes = []) { const s = new THREE.Shape(pts.map(p => new THREE.Vector2(p[0], p[1]))); holes.forEach(h => s.holes.push(new THREE.Path(h.map(p => new THREE.Vector2(p[0], p[1]))))); const g = new THREE.ExtrudeGeometry(s, { depth: z0 - z1, bevelEnabled: false, curveSegments: 4 }); g.translate(0, 0, z1); return g; }
 function box(w, h, d, m, x = 0, y = 0, z = 0) { const o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); o.position.set(x, y, z); o.castShadow = true; o.receiveShadow = true; return o; }
@@ -36,10 +38,26 @@ function house(w = 6, d = 7, h = 2.8) { const g = new THREE.Group(); const wm = 
   g.add(box(w, h, d, wm, 0, h / 2, -d / 2)); const sh = new THREE.Shape([new THREE.Vector2(-w / 2 - 0.4, 0), new THREE.Vector2(w / 2 + 0.4, 0), new THREE.Vector2(0, 2.0)]); const roof = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: d + 0.8, bevelEnabled: false }), rm); roof.position.set(0, h, -d - 0.4); roof.castShadow = true; g.add(roof);
   g.add(box(1.1, 1.1, 0.06, gl, -w / 4, 1.5, 0.02)); g.add(box(0.9, 1.9, 0.06, new THREE.MeshStandardMaterial({ color: 0x6b4a2c }), w / 4, 0.95, 0.02)); return g; }
 
+// a GPU-memória kímélése: egyszerre csak a képernyő közelében lévő szimulátorok élnek; a többi felszabadítja a WebGL-kontextusát
+const SIMS = [];
+// GPU-erőforrások felszabadítása; a keep halmazban lévő (közös) anyagokat nem bántja
+function disposeTree(o, keep) { o.traverse(c => { if (c.geometry) c.geometry.dispose(); const m = c.material; if (m) (Array.isArray(m) ? m : [m]).forEach(x => x && x.dispose && !(keep && keep.has(x)) && x.dispose()); }); }
+const geoOnly = (o) => o.traverse(c => { if (c.geometry) c.geometry.dispose(); });
 class Sim {
   constructor(root, mode) {
     this.root = root; this.mode = mode; this.view = root.querySelector('.view'); this.hud = root.querySelector('.hud');
-    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); this.renderer.setPixelRatio(Math.min(2, devicePixelRatio)); this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    this._bound = new Set(); this.alive = false; this.visible = false; this._raf = null; this.state = {};
+    this._ro = new ResizeObserver(() => { if (this.alive) this.resize(); }); this._ro.observe(this.view);
+    new IntersectionObserver((es) => { this.visible = es[0].isIntersecting; if (this.visible && this.alive) this.loop(); }, { threshold: 0.05 }).observe(this.view);
+    new IntersectionObserver((es) => { if (es[0].isIntersecting && !this.alive && !window.__simPause) this.init(); }, { rootMargin: '700px 0px' }).observe(this.view);
+    new IntersectionObserver((es) => { if (!es[0].isIntersecting && this.alive) this.free(); }, { rootMargin: '1800px 0px' }).observe(this.view);
+    this._base = new Set([...Object.keys(this), '_base']); SIMS.push(this);
+  }
+  init() {
+    if (this.alive) return;
+    try {
+      this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' }); this.renderer.setPixelRatio(Math.min(1.5, devicePixelRatio)); this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    } catch (e) { this.view.insertAdjacentHTML('beforeend', '<p style="padding:20px">A 3D nézethez WebGL kell.</p>'); return; }
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping; this.renderer.toneMappingExposure = 1.05; this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.view.appendChild(this.renderer.domElement);
     this.scene = new THREE.Scene(); this.camera = new THREE.PerspectiveCamera(38, 1.6, 0.1, 500);
@@ -47,20 +65,30 @@ class Sim {
     const hemi = new THREE.HemisphereLight(0xdfe8ff, 0x6b5a44, 1.1); this.scene.add(hemi);
     const sun = new THREE.DirectionalLight(0xfff1dc, 2.4); sun.position.set(-12, 22, 18); sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024); Object.assign(sun.shadow.camera, { left: -30, right: 30, top: 30, bottom: -30, near: 1, far: 90 }); this.scene.add(sun); this.sun = sun;
     const fill = new THREE.DirectionalLight(0xffffff, 0.7); fill.position.set(6, 4, 20); this.scene.add(fill);
-    this.T = tex(); this.state = {}; this.anim = 0; this.visible = false; this.dirty = true; this.t0 = performance.now();
-    new ResizeObserver(() => this.resize()).observe(this.view); this.resize();
-    new IntersectionObserver((es) => { this.visible = es[0].isIntersecting; if (this.visible) this.loop(); }, { threshold: 0.05 }).observe(this.view);
-    this['build_' + mode]();
+    this.T = tex(); this.anim = 0; this.dirty = true; this.t0 = performance.now(); this.alive = true;
+    this.resize();
+    try { this['build_' + this.mode](); } catch (e) { console.error('3D hiba', e); }
+    if (this.visible) this.loop();
+  }
+  free() {
+    if (!this.alive) return;
+    // a közös textúrák eseményfigyelőit is leválasztjuk a régi rendererről
+    for (const t of [...Object.values(TX || {}), ...TEXC.values()]) t.dispose(); this.alive = false; if (this._raf) cancelAnimationFrame(this._raf); this._raf = null;
+    try { disposeTree(this.scene); this.controls.dispose(); this.renderer.dispose(); this.renderer.forceContextLoss(); } catch (e) {}
+    this.renderer.domElement.remove(); this.view.querySelectorAll('.lbls, .pip').forEach(e => e.remove());
+    const base = this._base; for (const k of Object.keys(this)) if (!base.has(k) && k !== 'alive' && k !== '_base') delete this[k];
+    this.state = {};
   }
   resize() { const w = this.view.clientWidth, h = this.view.clientHeight; if (!w || !h) return; this.renderer.setSize(w, h, false); this.camera.aspect = w / h; this.camera.updateProjectionMatrix(); this.dirty = true; this.fitView(); }
   // a kezdő nézet a panel arányához igazodik: a megadott szélesség és magasság biztosan beleférjen
   fitView() { const F = this.fit; if (!F || this._userCam || !this.controls) return; const vf = this.camera.fov * Math.PI / 360, hf = Math.atan(Math.tan(vf) * this.camera.aspect);
     const d = Math.max(F.h / 2 / Math.tan(vf), F.w / 2 / Math.tan(hf)); const dir = this.camera.position.clone().sub(this.controls.target).normalize(); this.camera.position.copy(this.controls.target).addScaledVector(dir, d); }
-  loop() { if (this._raf) return; const step = () => { this._raf = null; if (!this.visible) return; const t = (performance.now() - this.t0) / 1000; this.controls.update(); if (this.tick) this.tick(t); this.renderer.render(this.scene, this.camera); if (this.post) this.post(t); this._raf = requestAnimationFrame(step); }; this._raf = requestAnimationFrame(step); }
+  loop() { if (this._raf || !this.alive) return; const step = () => { this._raf = null; if (!this.visible || !this.alive) return; const t = (performance.now() - this.t0) / 1000; this.controls.update(); if (this.tick) this.tick(t); this.renderer.render(this.scene, this.camera); if (this.post) this.post(t); this._raf = requestAnimationFrame(step); }; this._raf = requestAnimationFrame(step); }
   setHud(items) { this.hud.innerHTML = items.map(s => `<span>${s}</span>`).join(''); }
   ctl(id) { return this.root.querySelector('#' + id); }
-  bindAll(ids, fn) { ids.forEach(id => { const e = this.ctl(id); if (!e) return; if (e.type === 'range') U.bindRange(id, () => fn()); }); }
-  segAll(ids, fn) { ids.forEach(id => U.seg(this.root.querySelector('#' + id), (v) => { this.state[id] = v; fn(); })); }
+  bindAll(ids, fn) { ids.forEach(id => { const e = this.ctl(id); if (!e) return; if (e.type !== 'range') return; if (this._bound.has(id)) return; this._bound.add(id); U.bindRange(id, () => { if (this.alive) fn(); }); }); }
+  segAll(ids, fn) { ids.forEach(id => { const el = this.root.querySelector('#' + id); if (!el) return; const on = el.querySelector('button.on'); if (on) this.state[id] = on.dataset.v;
+    if (this._bound.has('s:' + id)) return; this._bound.add('s:' + id); U.seg(el, (v) => { this.state[id] = v; if (this.alive) fn(); }); }); }
   lam(v, sub) { const el = this.root.querySelector('.lam'); if (!el) return; const b = el.querySelector('b'), bar = el.querySelector('.bar i'), s = el.querySelector('.sub'); b.textContent = (v > 9.99 ? '> 9,99' : fmt(v, 2)); bar.style.width = clamp(v / 1.5, 0, 1) * 100 + '%'; el.classList.toggle('fail', v > 1); el.classList.toggle('warn', v > 0.9 && v <= 1); if (s && sub) s.innerHTML = sub; window.LEDGER && window.LEDGER.set(this.mode, v); }
   ground(x0, x1, y, z0 = -26, z1 = 26) { const m = new THREE.Mesh(new THREE.PlaneGeometry(x1 - x0, z1 - z0).rotateX(-Math.PI / 2), mat(this.T.grass, 0.25)); m.position.set((x0 + x1) / 2, y - 0.005, (z0 + z1) / 2 - 0); m.receiveShadow = true; this.scene.add(m); return m; }
 
@@ -101,7 +129,7 @@ class Sim {
     const phE = (drained ? phi : 0) * Math.PI / 180, key = [h, B, phE].join('|');
     if (key !== this._key) { this._key = key;
       if (this.soilG) { this.scene.remove(this.soilG); this.soilG.geometry.dispose(); } if (this.fillG) { this.scene.remove(this.fillG); this.fillG.geometry.dispose(); }
-      for (const g of [this.rearG, this.frontG]) { g.traverse(o => { if (o.geometry) o.geometry.dispose(); }); g.clear(); }
+      for (const g of [this.rearG, this.frontG]) { geoOnly(g); g.clear(); }
       const yb = -D, yt = -D + tB, tA = Math.tan(Math.PI / 4 + phE / 2), Lp = D / Math.tan(Math.PI / 4 - phE / 2);
       const xA0 = x0 - (0 - yt) / tA, xa = x0 - (ftop - yt) / tA;   // aktív csúszólap: a sarok hátsó élétől 45° + φ/2 alatt
       const gm = sec(drained ? this.mSoil : this.mClay), add = (grp, pts, m, cast) => { const o = new THREE.Mesh(ext(pts), m); o.receiveShadow = true; o.castShadow = !!cast; grp.add(o); return o; };
@@ -112,7 +140,7 @@ class Sim {
       this.rearSoil = add(this.rearG, [[x0, yt], [xs0, yt], [xs0, 0], [xA0, 0]], gm); add(this.rearG, [[xA0, 0], [xs0, 0], [xs0, ftop], [xa, ftop]], sec(this.mFill), true);
       // elöl: a passzív ék (a talp orra fölötti földdel együtt)
       this.frontSoil = add(this.frontG, [[xs1, 0], [xs1, yt], [x1, yt], [x1, yb], [x1 + Lp, 0]], gm);
-      this.wall.clear();
+      geoOnly(this.wall); this.wall.clear();
       const prof = [[x0, yb], [x1, yb], [x1, yt], [xs1, yt], [xs1 - 0.03, ftop + 0.1], [xs0, ftop + 0.1], [xs0, yt], [x0, yt]];
       const w = new THREE.Mesh(ext(prof, 0.02, -6), this.mConc); w.castShadow = true; w.receiveShadow = true; this.wall.add(w);
       this.geo = { x0, x1, xs0, xs1, yb, yt, ftop, D, xa, xA0, Lp }; this._gapU = -1;
@@ -263,7 +291,7 @@ class Sim {
     this.setLbl('w', `F<sub>w;d</sub> = ${fmt(r.Fd, 0)} kN`, -1.6 - r.Fd / 9, 10.35, 0);
     this.setLbl('g', `G<sub>k</sub> = ${fmt(r.Gk, 0)} kN`, -0.75, 1.85, 0);
     // talpfeszültség-test
-    this.sg.traverse(o => { if (o.geometry) o.geometry.dispose(); }); this.sg.clear();
+    disposeTree(this.sg); this.sg.clear();
     const inside = r.e < B / 2;
     if (inside) {
       const x0 = r.e <= B / 6 ? -B / 2 : B / 2 - 3 * (B / 2 - r.e), sR = r.sig(B / 2), sL = r.e <= B / 6 ? r.sig(-B / 2) : 0;
@@ -338,7 +366,7 @@ class Sim {
     if (key !== this._key) { this._key = key;
       if (this.soilG) { this.scene.remove(this.soilG); this.soilG.geometry.dispose(); }
       this.soilG = new THREE.Mesh(ext([[-36, -18], [36, -18], [36, 0], [X, 0], [X, bot], [-X, bot], [-X, 0], [-36, 0]], 0, -8.5), sec(this.mSoil)); this.soilG.receiveShadow = true; this.scene.add(this.soilG);
-      this.box.clear(); const D = 8.5, z = 0.02, m = this.mConc;
+      disposeTree(this.box, new Set([this.mConc])); this.box.clear(); const D = 8.5, z = 0.02, m = this.mConc;
       const add = (w, h, d, x, y, zz) => { this.box.add(box(w, h, d, m, x, y, zz)); };
       add(30, 0.35, D, 0, -0.175, z - D / 2); add(23.2, 0.3, D, -3, -3.0, z - D / 2); add(0.4, 6, D, -14.8, -3, z - D / 2); add(0.4, 6, D, 14.8, -3, z - D / 2); add(30, 6, 0.4, 0, -3, z - D + 0.2);
       add(30 + 2 * o, t, D, 0, bot + t / 2, z - D / 2);
@@ -346,7 +374,7 @@ class Sim {
       const cc = [0xc0392b, 0x2e86de, 0xdfe4ea, 0x2d3436, 0xf0a33a, 0x6c5ce7]; let k = 0; for (const y of [-2.85, bot + t]) for (const x of [-11, -5, 1]) { const car = new THREE.Group(); const cm = new THREE.MeshStandardMaterial({ color: cc[k++ % 6], roughness: 0.4, metalness: 0.3 }); car.add(box(4.2, 0.65, 1.8, cm, 0, 0.55, 0), box(2.2, 0.55, 1.6, new THREE.MeshStandardMaterial({ color: 0x24303a }), -0.2, 1.15, 0)); car.position.set(x, y, -2.4); this.box.add(car); }
     }
     // horgonyok
-    this.anch.clear(); const sm = new THREE.MeshStandardMaterial({ color: 0x8a929b, metalness: 0.6, roughness: 0.4 }); const nv = Math.min(n, 14);
+    disposeTree(this.anch); this.anch.clear(); const sm = new THREE.MeshStandardMaterial({ color: 0x8a929b, metalness: 0.6, roughness: 0.4 }); const nv = Math.min(n, 14);
     for (let i = 0; i < nv; i++) { const x = nv === 1 ? 0 : -13 + 26 * i / (nv - 1); const a = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 8, 8), sm); a.position.set(x, bot - 4, -0.3); this.anch.add(a); }
     // talajvíz
     const top = Math.min(gw, 0), hw = Math.max(0, top - (-18));
@@ -414,4 +442,7 @@ class Sim {
     this.lam(r.lam, `mértékadó kör: középpont (${fmt(c ? c.xc : 0, 1)}; ${fmt(c ? c.yc : 0, 1)}) m, r = ${fmt(c ? c.r : 0, 1)} m · egyszerűsített Bishop`);
   }
 }
-document.querySelectorAll('.sim[data-sim]').forEach(el => { try { el._sim = new Sim(el, el.dataset.sim); } catch (e) { console.error('3D hiba', e); el.querySelector('.view').innerHTML = '<p style="padding:20px">A 3D nézethez WebGL kell.</p>'; } });
+document.querySelectorAll('.sim[data-sim]').forEach(el => { el._sim = new Sim(el, el.dataset.sim); });
+// videó megnyitásakor a szimulátorok felszabadítják a GPU-t, bezáráskor a láthatók újraépülnek
+addEventListener('sims:pause', () => { window.__simPause = true; SIMS.forEach(s => s.free()); });
+addEventListener('sims:resume', () => { window.__simPause = false; SIMS.forEach(s => { const r = s.view.getBoundingClientRect(); if (r.bottom > -700 && r.top < innerHeight + 700) s.init(); }); });
