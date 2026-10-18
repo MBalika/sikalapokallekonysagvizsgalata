@@ -44,7 +44,7 @@
         g.save(); g.translate(piv.x, piv.y); g.rotate(th); g.translate(-piv.x, -piv.y);
         g.fillStyle = C.conc; g.strokeStyle = C.ink; g.lineWidth = 2; g.fillRect(260, ground + 10, 100, 40); g.strokeRect(260, ground + 10, 100, 40);
         g.fillStyle = C.ink2; g.fillRect(304, ground - 110, 12, 120);
-        g.fillStyle = C.c2; g.fillRect(250, ground - 170, 120, 64); g.fillStyle = C.card; g.font = '800 18px Archivo, sans-serif'; g.textAlign = 'center'; g.fillText('M ≤ M', 310, ground - 132);
+        g.fillStyle = C.c2; g.fillRect(250, ground - 170, 120, 64); g.fillStyle = C.card; g.font = '800 18px Archivo, sans-serif'; g.textAlign = 'center'; g.fillText('M_{dst} ≤ M_{stb}', 310, ground - 132);
         g.restore();
         g.fillStyle = C.c2; g.beginPath(); g.arc(piv.x, piv.y, 6, 0, 7); g.fill(); label(g, 'forgáspont', piv.x + 12, piv.y + 14, C.c2, 13);
       }
@@ -100,7 +100,7 @@
     const draw = () => { const C = col(); g.clearRect(0, 0, W, Hh); const L = 70, R = W - 30, T = 30, B = Hh - 50; const sx = (v) => L + v / 10 * (R - L), sy = (v) => B - v * (B - T);
       g.strokeStyle = C.line; g.lineWidth = 1; for (const v of [0.5, 0.667, 1]) { g.beginPath(); g.moveTo(L, sy(v)); g.lineTo(R, sy(v)); g.stroke(); }
       g.strokeStyle = C.ink2; g.lineWidth = 1.5; g.beginPath(); g.moveTo(L, T); g.lineTo(L, B); g.lineTo(R, B); g.stroke();
-      label(g, 'Ep / Ep,max', L - 8, T - 12, C.ink2, 13, 'left'); label(g, 'elmozdulás / alapmélység (%)', R, B + 30, C.ink2, 13, 'right');
+      label(g, 'E_p / E_{p,max}', L - 8, T - 12, C.ink2, 13, 'left'); label(g, 'elmozdulás / alapmélység (%)', R, B + 30, C.ink2, 13, 'right');
       for (let v = 0; v <= 10; v += 2) label(g, String(v), sx(v), B + 14, C.mute, 12, 'center', 600);
       label(g, '½', L - 14, sy(0.5), C.c1, 14, 'center'); label(g, '⅔', L - 14, sy(0.667), C.c1, 14, 'center'); label(g, '1', L - 14, sy(1), C.mute, 13, 'center');
       const f = (x) => 1 - Math.exp(-x / 1.6);

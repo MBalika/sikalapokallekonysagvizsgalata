@@ -155,7 +155,7 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 :root[data-theme="dark"] .sim .hint { color: rgba(255, 255, 255, .55); }
 .sim .side { padding: 18px 20px; border-left: 1px solid var(--line); }
 .sim .side .ctrl { grid-template-columns: 1fr; margin-top: 4px; gap: 8px; }
-@media (max-width: 900px) { .sim { grid-template-columns: 1fr; } .sim .view { min-height: 300px; aspect-ratio: 16 / 10; } .sim .side { border-left: 0; border-top: 1px solid var(--line); } }
+@media (max-width: 900px) { .sim { grid-template-columns: minmax(0, 1fr); } .sim .view { min-height: 300px; height: 62vw; max-height: 540px; } .sim .side { border-left: 0; border-top: 1px solid var(--line); } }
 .lam { margin-top: 14px; }
 .lam .t { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; color: var(--ink2); }
 .lam .t b { font: 800 30px/1 var(--fd); color: var(--ink); font-variant-numeric: tabular-nums; }
@@ -262,3 +262,28 @@ footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
 .box li { margin: 3px 0; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 @media (max-width: 820px) { .tfbar { top: 120px; } }
+/* támogatói logósáv */
+.funding-bar { background: #fff; text-align: center; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.funding-bar img { max-width: 520px; width: 100%; height: auto; display: inline-block; vertical-align: middle; }
+/* sortörés-védelem: képlet nem törhet meg */
+.nw, .eq .f, .formula { white-space: nowrap; }
+.eq .f { overflow-x: auto; overflow-y: hidden; scrollbar-width: thin; }
+
+/* formázás: blokkszöveg sorkizárva, elválasztással; képlet és jelölés soha nem válik el */
+main p, main li, main dd, main figcaption, main .note, main .eq .w > div, main .case .d, main .verdict, main .expl, main .tfx, main .fb, main .ans, footer p {
+  text-align: justify; text-justify: inter-word; hyphens: manual; -webkit-hyphens: manual; text-wrap: pretty;
+}
+main .qres p, main .hint, main .hud span, main .lam .sub, main .vcard p, main .chead p, main .opt, main .opt * { text-align: left; }
+main .qres p { text-align: center; }
+.nw, .eq .f, .formula, sub, sup, .hud, output, .tbl td, .tbl th { hyphens: none; -webkit-hyphens: none; }
+.sim .hud, .sim .hint { z-index: 2; }
+.sim .hud { right: 12px; }
+.sim.tall .view { min-height: 580px; }
+@media (max-width: 900px) { .sim.tall .view { min-height: 480px; height: 118vw; max-height: 640px; } }
+.sim.tall .hint { right: auto; left: 12px; }
+.sim .lbls { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 2; }
+.sim .lbl3 { position: absolute; left: 0; top: 0; font: 700 12.5px/1.15 var(--fd); color: #fff; background: rgba(20, 14, 29, .8); padding: 3px 7px; border-radius: 6px; white-space: nowrap; font-variant-numeric: tabular-nums; will-change: transform; }
+.sim .lbl3.w { background: #1f6fb2; } .sim .lbl3.g { background: #1a7a48; } .sim .lbl3.r { background: #a8740a; } .sim .lbl3.s { background: #6c43cc; } .sim .lbl3.x { background: #c22f2f; } .sim .lbl3.p { background: #b02a2a; } .sim .lbl3.k6 { background: #158a52; padding: 2px 6px; transform-origin: center; } .sim .lbl3.k3 { background: #b9770b; padding: 2px 6px; }
+.sim .pip { position: absolute; right: 12px; bottom: 12px; padding: 0; border: 2px solid rgba(255, 255, 255, .9); border-radius: 10px; background: transparent; box-shadow: 0 6px 22px rgba(0, 0, 0, .35); cursor: pointer; z-index: 3; }
+.sim .pip span { position: absolute; left: 6px; top: 6px; font: 700 11px/1.2 var(--fd); background: rgba(20, 14, 29, .78); color: #fff; padding: 3px 7px; border-radius: 5px; }
+.sim .pip:focus-visible { outline: 3px solid var(--k2, #6c43cc); outline-offset: 2px; }

@@ -1,0 +1,66 @@
+<!-- ===================== MINTAPÉLDÁK ===================== -->
+<section class="chap k0" id="mintapeldak">
+  <div class="wrap">
+    <div class="chead"><div class="code">MP</div><h2>Mintapéldák</h2><p>Kilenc lépésről lépésre levezetett feladat – mindegyik egy kattintással megnyitható a kalkulátorban.</p></div>
+    <p class="lead">Az első négy példa az elcsúszást járja körül (monolit és előregyártott alaptest, drénezetlen eset, földellenállás), az ötödik és a hatodik a felborulást és a külpontosság korlátozását, a hetedik és a nyolcadik a felúszást, a kilencedik pedig egy rézsű koronáján álló ház általános állékonyságát. A lépések egyenként lenyithatók: érdemes előbb magadnak kiszámolni, és csak utána megnézni a megoldást.</p>
+    <div class="mp-idx" id="mpIdx" role="tablist" aria-label="Mintapélda választása"></div>
+    <div id="mpView" aria-live="polite"></div>
+    <div class="mp-nav"><button type="button" id="mpPrev">← Előző példa</button><button type="button" id="mpNext">Következő példa →</button></div>
+  </div>
+</section>
+
+<!-- ===================== KALKULÁTOR ===================== -->
+<section class="chap k0" id="kalkulator">
+  <div class="wrap">
+    <div class="chead"><div class="code">Λ</div><h2>Kalkulátor</h2><p>Elcsúszás, felborulás, felúszás és általános állékonyság – metszettel, 3D modellel és részletes levezetéssel.</p></div>
+    <p class="lead">Válaszd ki a vizsgálatot, add meg a geometriát, a terheket és a talajjellemzőket. Az ábra, a kihasználtság és a teljes levezetés minden változtatásra azonnal frissül; a fülek jelvénye mutatja, hol tart a négy igazolás.</p>
+    <div class="cx k1" id="cx" data-tab="sliding" data-view="2d">
+      <div class="cx-tabs" role="tablist" aria-label="Igazolás választása">
+        <button type="button" role="tab" class="cx-tab k1 on" data-tab="sliding" aria-selected="true">
+          <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 26h28"/><rect x="11" y="15" width="12" height="9" rx="1.5"/><path d="M15 15V7h4v8"/><path d="M2 19h7m-3-3 3 3-3 3"/><path d="M27 28h-9m3-3-3 3 3 3" opacity=".55"/></svg>
+          <span class="cx-tn"><b>Elcsúszás</b><small>GEO · DA‑2*</small></span><span class="cx-tl">–</span>
+        </button>
+        <button type="button" role="tab" class="cx-tab k2" data-tab="overturn" aria-selected="false" tabindex="-1">
+          <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 28h28"/><g transform="rotate(9 23 27)"><rect x="9" y="22" width="15" height="5" rx="1"/><path d="M15 22V6h3v16"/></g><path d="M5 9a11 11 0 0 1 8-5" /><path d="M11 2.5l2.2 1.6-1.4 2.4"/><circle cx="23" cy="28" r="1.6" fill="currentColor"/></svg>
+          <span class="cx-tn"><b>Felborulás</b><small>EQU + külpontosság</small></span><span class="cx-tl">–</span>
+        </button>
+        <button type="button" role="tab" class="cx-tab k3" data-tab="uplift" aria-selected="false" tabindex="-1">
+          <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 6 2 3-2 4-2" opacity=".6"/><rect x="8" y="12" width="18" height="12" rx="1.5"/><path d="M11 31v-4m6 4v-4m6 4v-4"/><path d="M9.5 28.5 11 27l1.5 1.5m3-1.5L17 27l1.5 1.5m3-1.5L23 27l1.5 1.5"/></svg>
+          <span class="cx-tn"><b>Felúszás</b><small>UPL</small></span><span class="cx-tl">–</span>
+        </button>
+        <button type="button" role="tab" class="cx-tab k4" data-tab="slope" aria-selected="false" tabindex="-1">
+          <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h9l14 15h7"/><path d="M8 12a15 15 0 0 0 19 15" stroke-dasharray="2.6 3"/><rect x="3" y="7" width="5" height="5" rx=".8"/><circle cx="24" cy="4" r="1.6" fill="currentColor"/></svg>
+          <span class="cx-tn"><b>Általános állékonyság</b><small>GEO · DA‑3</small></span><span class="cx-tl">–</span>
+        </button>
+      </div>
+      <div class="cx-body">
+        <aside class="cx-side" aria-label="Bemenő adatok">
+          <div class="cx-pre"><select id="cx-preset" aria-label="Mintapélda betöltése"><option value="">Mintapélda betöltése…</option></select><button type="button" id="cx-reset" title="Az alapértékek visszaállítása">Alapértékek</button></div>
+          <div id="cx-form"></div>
+        </aside>
+        <div class="cx-main">
+          <div class="cx-view">
+            <div class="cx-vt">
+              <div class="seg cx-seg" id="cx-vmode" data-k="vmode" role="group" aria-label="Nézet"><button type="button" class="on" data-v="2d" aria-pressed="true">2D metszet</button><button type="button" data-v="3d" aria-pressed="false">3D modell</button></div>
+              <span class="cx-sp"></span>
+              <div class="cx-cam" id="cx-cam" hidden role="group" aria-label="Kameranézet"><button type="button" data-cam="iso">Axonometria</button><button type="button" data-cam="front">Metszet</button><button type="button" data-cam="top">Felülnézet</button></div>
+            </div>
+            <div class="cx-vp" id="cx-vp">
+              <div class="cx-2d" id="cx-2d"></div>
+              <div class="cx-3d" id="cx-3d" hidden><div class="cx-3dmsg">A 3D nézet betöltése…</div></div>
+              <span class="cx-busy">számítás…</span>
+            </div>
+            <div class="cx-leg" id="cx-leg"></div>
+          </div>
+          <div class="cx-sum" id="cx-sum"></div>
+          <div class="cx-res" id="cx-res"></div>
+          <div class="readout cx-ro" id="cx-ro"></div>
+          <div class="cx-msgs" id="cx-msgs"></div>
+          <details class="cx-det" id="cx-det"><summary>Részletes számítás <small>képletek és behelyettesítés, lépésről lépésre</small></summary><ol class="cx-steps" id="cx-steps"></ol></details>
+          <details class="cx-det cx-conv"><summary>Számítási konvenciók és parciális tényezők</summary><div id="cx-conv"></div></details>
+        </div>
+      </div>
+    </div>
+    <p class="cx-foot">Oktatási célú, szemléltető számítás az MSZ&nbsp;EN&nbsp;1997‑1 és a magyar nemzeti melléklet szerint. Tervezéshez a hatályos szabványokat és igazolt programokat kell használni.</p>
+  </div>
+</section>

@@ -1,7 +1,7 @@
 /* ===== Kvízek, igaz/hamis állítások, osztályozó ===== */
 window.DATA = {
   q1: [
-    { q: 'Milyen határállapot az elcsúszás az EC7 szerint?', o: ['EQU – helyzeti állékonyság', 'GEO – a talaj tönkremenetele', 'UPL – felúszás', 'STR – szerkezeti tönkremenetel'], a: 1, e: 'Az elcsúszásnak a talaj (és az alap–talaj érintkezés) nyírószilárdsága áll ellen, ezért GEO határállapot. A jegyzet egyik címe EQU-t ír, de a szöveg és az előadás GEO-ként tárgyalja.' },
+    { q: 'Milyen határállapot az elcsúszás az EC7 szerint?', o: ['EQU – helyzeti állékonyság', 'GEO – a talaj tönkremenetele', 'UPL – felúszás', 'STR – szerkezeti tönkremenetel'], a: 1, e: 'Az elcsúszásnak a talaj (és az alap–talaj érintkezés) nyírószilárdsága áll ellen, ezért GEO határállapot.' },
     { q: 'Mekkora a δ<sub>k</sub> súrlódási szög helyben betonozott alaptestnél?', o: ['⅔·φ′<sub>cv;k</sub>', 'φ′<sub>cv;k</sub>', 'a csúcsállapoti φ′<sub>k</sub>', '0 – csak a kohézió számít'], a: 1, e: 'Helyben betonozott alaptestnél δ = φ′<sub>cv;k</sub>, sima (előregyártott) alaptestnél ennek kétharmada. A kritikus állapotbeli szöget azért használjuk, mert elcsúszáskor nagy elmozdulás és a csúcs utáni viselkedés a jellemző.' },
     { q: 'Mekkora a γ<sub>R;h</sub> parciális tényező a DA-2* tervezési módszerben?', o: ['1,0', '1,1', '1,4', '1,35'], a: 1, e: 'Elcsúszásra γ<sub>R;h</sub> = 1,1 (a teherbírásé γ<sub>R;v</sub> = 1,4).' },
     { q: 'Drénezetlen esetben mi a nyírási ellenállás felső korlátja?', o: ['0,4 · V<sub>d</sub>', '0,6 · V<sub>d</sub>', 'A<sub>c</sub> · c<sub>u;k</sub>, korlát nélkül', 'nincs korlát'], a: 0, e: 'Az alap és a talaj közé víz vagy levegő juthat, ezért R<sub>d</sub> ≤ 0,4·V<sub>d</sub>. Csak akkor hagyható el, ha a szívás a hézag kialakulását ott is megakadályozza, ahol nincs pozitív talpfeszültség – ez ritka.' },
@@ -18,11 +18,11 @@ window.DATA = {
   ],
   q3: [
     { q: 'Melyek az UPL állandó hatásainak tényezői?', o: ['γ<sub>G;dst</sub> = 1,1; γ<sub>G;stb</sub> = 0,9', 'γ<sub>G;dst</sub> = 1,00; γ<sub>G;stb</sub> = 0,90', 'γ<sub>G</sub> = 1,35; γ<sub>G</sub> = 1,0', 'mindkettő 1,0'], a: 1, e: 'UPL-ben a felhajtóerő tényezője 1,00, az önsúlyé 0,90; az esetleges destabilizáló hatásé 1,50, a kedvező esetlegesé 0.' },
-    { q: 'Hogyan számítjuk a felhajtóerő tervezési értékét a jegyzet jelölésével?', o: ['V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub>', 'a szerkezet súlyával', 'γ<sub>w</sub> · H', 'a horgonyerőből'], a: 0, e: 'A<sub>k</sub> a talajvízszint alatti bemerülő térfogat, γ<sub>w</sub> = 10 kN/m³; a felhajtóerő lényegében a szerkezetre ható víznyomás eredője.' },
+    { q: 'Hogyan számítjuk a felhajtóerő tervezési értékét?', o: ['V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub>', 'a szerkezet súlyával', 'γ<sub>w</sub> · H', 'a horgonyerőből'], a: 0, e: 'A<sub>k</sub> a talajvízszint alatti bemerülő térfogat, γ<sub>w</sub> = 10 kN/m³; a felhajtóerő lényegében a szerkezetre ható víznyomás eredője.' },
     { q: 'Mekkora a felúszással szembeni globális biztonság súrlódás és horgony nélkül?', o: ['1,5', '1,35', '1,11', '1,0'], a: 2, e: 'γ<sub>G;dst</sub>/γ<sub>G;stb</sub> = 1,0/0,9 = 1,11 – kevés, ezért a vízszintet óvatosan kell felvenni.' },
     { q: 'Hogyan vesszük figyelembe a mélygarázsban parkoló autókat?', o: ['kedvező esetleges teherként: 0-val', 'stabilizáló állandó teherként', '0,9-szeres szorzóval', '1,5-szeres szorzóval'], a: 0, e: 'A kedvező esetleges teher tényezője UPL-ben 0 – az üres garázsra kell igazolni.' },
     { q: 'A 30×15 m-es dobozt 1 m-rel magasabb talajvíz éri. Mennyivel nő a felhajtóerő?', o: ['kb. 450 kN', 'kb. 4500 kN', 'kb. 45 000 kN', 'nem változik'], a: 1, e: '450 m² · 1 m · 10 kN/m³ = 4500 kN – a példában ez +20%.' },
-    { q: 'Melyik NEM felúszás elleni megoldás?', o: ['a talplemez túlnyújtása', 'lehorgonyzás', 'időszakos elárasztás', 'a talp alatti talaj tömörítése'], a: 3, e: 'A tömörítés a süllyedésen segít, a felhajtóerőn nem. A jegyzet négy megoldása: túlnyújtás, lehorgonyzás, leszívás/drénezés, időszakos elárasztás.' },
+    { q: 'Melyik NEM felúszás elleni megoldás?', o: ['a talplemez túlnyújtása', 'lehorgonyzás', 'időszakos elárasztás', 'a talp alatti talaj tömörítése'], a: 3, e: 'A tömörítés a süllyedésen segít, a felhajtóerőn nem. A négy megoldás: túlnyújtás, lehorgonyzás, leszívás/drénezés, időszakos elárasztás.' },
   ],
   q4: [
     { q: 'Mikor kell síkalapnál általános állékonyságot vizsgálni?', o: ['rézsű, munkagödör, támfal, part vagy üreg közelében', 'csak cölöpalapnál', 'csak sziklán', 'soha, ha a teherbírás megfelel'], a: 0, e: 'Az EN 1997-1 6.5.1 szerint: rézsűben vagy közelében, kiemelés vagy támfal közelében, folyó-, csatorna-, tó-, tározó- vagy tengerpart közelében, illetve bányaművelés vagy föld alatti szerkezetek közelében.' },
@@ -33,6 +33,14 @@ window.DATA = {
     { q: 'A ház alaptestének teherbírási vizsgálata megfelel. Biztos, hogy az általános állékonyság is?', o: ['igen', 'nem – a rézsű ettől még megcsúszhat', 'csak agyagban nem', 'csak homokban nem'], a: 1, e: 'A teherbírás a talp alatti helyi törést vizsgálja; az általános állékonyság a nagyobb földtömeg csúszását. A kettő külön igazolás.' },
   ],
   q5: [
+    { q: 'Melyik tervezési módszert írja elő a hazai nemzeti melléklet síkalap teherbírására és elcsúszására?', o: ['DA-1', 'DA-2*', 'DA-3', 'megengedett feszültségek'], a: 1, e: 'DA-2*: A1 + M1 + R2. Általános állékonyságra DA-3.' },
+    { q: 'Mit jelent a csillag a DA-2* jelölésben?', o: ['a parciális tényezőket a számítás végén, a hatások következményére alkalmazzuk', 'kétszeres biztonsági tényezőt', 'csak drénezetlen állapotra érvényes', 'a talajjellemzőket is csökkentjük'], a: 0, e: 'A számítás karakterisztikus értékekkel fut (így a külpontosság is), a tényezők a végén jönnek.' },
+    { q: 'Mekkora az R2 csoportban a síkalap elcsúszási ellenállásának tényezője?', o: ['1,0', '1,1', '1,4', '1,5'], a: 1, e: 'γ<sub>R;h</sub> = 1,1; a teherbírásé γ<sub>R;v</sub> = 1,4.' },
+    { q: 'Melyik tényezőcsoport csökkenti a talaj szilárdsági jellemzőit?', o: ['A2', 'M2', 'R2', 'R3'], a: 1, e: 'M2: tg φ′ és c′ osztása (EN-ajánlás 1,25, c<sub>u</sub>-ra 1,4).' },
+    { q: 'Melyik határállapot dolgozik a tervezési módszertől függetlenül, saját tényezőkészlettel?', o: ['GEO – teherbírás', 'STR', 'UPL', 'GEO – elcsúszás'], a: 2, e: 'Az EQU, az UPL és a HYD saját tényezőket kap.' },
+  ],
+
+  q6: [
     { q: 'Mi lép az új EC7-ben a tervezési módszerek (DA1–DA3) helyére?', o: ['igazolási esetek (VC1–VC4) és MFA / RFA', 'egyetlen globális biztonsági tényező', 'megengedett feszültségek', 'kizárólag numerikus modellezés'], a: 0, e: 'A határállapotok maradnak, a tényezők hozzárendelése változik: igazolási esetek és anyag- vagy ellenállás-tényezős megközelítés.' },
     { q: 'Melyik igazolási eset szól a statikus egyensúlyról és a felhajtóerőről?', o: ['VC1', 'VC2', 'VC3', 'VC4'], a: 1, e: 'VC2: statikus egyensúly, felhajtóerő (a régi EQU, UPL).' },
     { q: 'Mit jelent az MFA?', o: ['az ellenállást osztjuk γ<sub>R</sub>-rel', 'a talaj szilárdsági paramétereit csökkentjük tényezővel', 'semmilyen tényezőt nem használunk', 'próbaterhelést végzünk'], a: 1, e: 'Material Factor Approach: tg φ′ és c′ tényezővel csökkentve. Az RFA az ellenállást csökkenti (≈ 1,4 teherbírásra, 1,1 elcsúszásra).' },
@@ -46,13 +54,13 @@ window.DATA = {
     { s: 'Családi ház két méterre egy löszfal peremétől', a: 3, e: 'A csúszólap a ház alatt is átmehet: általános állékonyság.' },
     { s: 'Gyalogos aluljáró a Duna közelében, árvíz idején', a: 2, e: 'A tartós árvizet a talajvíz is követi – UPL.' },
     { s: 'Hídfő alaptest a háttöltés földnyomásával, telített agyagon, rövid távon', a: 0, e: 'Drénezetlen elcsúszás: R<sub>d</sub> = A<sub>c</sub>·c<sub>u;k</sub>/1,1 ≤ 0,4·V<sub>d</sub>.' },
-    { s: 'Szélerőmű kör alaprajzú síkalapja', a: 1, e: 'Kör alaprajznál a határ e ≤ 0,6·r (az új EC7-ben 0,59·r).' },
+    { s: 'Szélerőmű kör alaprajzú síkalapja', a: 1, e: 'Kör alaprajznál e > 0,6·r esetén külön óvintézkedés kell.' },
     { s: 'Csarnok alaptestei egy tervezett mély munkagödör szélén', a: 3, e: 'A kiemelés közelében a földtömeg az alapokkal együtt csúszhat.' },
   ],
   tf: [
     { s: 'A síkalap állékonyságát négy különálló határállapotra kell igazolni.', t: true, e: 'Elcsúszás, felborulás, felúszás és általános állékonyság – mindegyiket külön.' },
     { s: 'Az elcsúszás EQU határállapot.', t: false, e: 'GEO: a talaj nyírószilárdsága áll ellen.' },
-    { s: 'Elcsúszásnál a H<sub>d</sub>-be az alapra átadódó aktív földnyomást is bele kell számítani.', t: true, e: 'A jegyzet ezt kifejezetten előírja.' },
+    { s: 'Elcsúszásnál a H<sub>d</sub>-be az alapra átadódó aktív földnyomást is bele kell számítani.', t: true, e: 'H<sub>d</sub> az alapra átadódó aktív földnyomást is tartalmazza.' },
     { s: 'Előregyártott, sima alaptestnél δ = φ′<sub>cv;k</sub>.', t: false, e: 'Sima, előregyártott alaptestnél δ = ⅔·φ′<sub>cv;k</sub>.' },
     { s: 'Drénezett elcsúszásnál a hatékony kohéziót általában el kell hanyagolni.', t: true, e: 'A tapadás a víztartalomtól és a konzisztenciától erősen függ.' },
     { s: 'Drénezetlen esetben R<sub>d</sub> legfeljebb 0,4·V<sub>d</sub> lehet.', t: true, e: 'Hézag nyílhat, víz vagy levegő juthat az alap alá.' },
@@ -69,7 +77,7 @@ window.DATA = {
     { s: 'DA-2* szerint a külpontosságot a tervezési hatásokból számítjuk.', t: false, e: 'A karakterisztikus hatásokból; a tényezők nem módosítják.' },
     { s: 'A korábbi hazai gyakorlat e ≤ B/6-ot követelt meg.', t: true, e: 'Az eredőnek a belső magon belül kellett maradnia.' },
     { s: 'Tartós felborító hatásnál (pl. földnyomás) a talp elemelkedése kedvezőtlenebb, mint rövid idejű szélnél.', t: true, e: 'Tartós külpontos tehernél az alap fokozatosan megbillenhet.' },
-    { s: 'Kör alaprajzú alapnál a belső mag sugara r/4.', t: true, e: 'A határ e ≤ 0,6·r (az új EC7-ben 0,59·r).' },
+    { s: 'Kör alaprajzú alapnál a belső mag sugara r/4.', t: true, e: 'Az EC7 szerint kör alaprajznál e > 0,6·r esetén kell külön óvintézkedés.' },
     { s: 'UPL-ben a felhajtóerő tényezője 1,1.', t: false, e: '1,00 – az 1,1 az EQU értéke.' },
     { s: 'A felúszás vizsgálatakor a parkoló autókat stabilizáló teherként számíthatjuk.', t: false, e: 'Kedvező esetleges teher: γ<sub>Q;stb</sub> = 0.' },
     { s: 'A felúszással szembeni globális biztonság R<sub>d</sub> nélkül csak 1,11.', t: true, e: '1,0 / 0,9 = 1,11.' },
@@ -86,9 +94,9 @@ window.DATA = {
     { s: 'A súrlódás parciális tényezője magát a φ′ szöget osztja.', t: false, e: 'A tg φ′ értékét osztja.' },
     { s: 'A rézsűk állékonyságában a vízviszonyok rendszerint mértékadók.', t: true, e: 'A pórusvíznyomás csökkenti a súrlódást a csúszólapon.' },
     { s: 'A teherbírási vizsgálat megfelelése garantálja az általános állékonyságot.', t: false, e: 'A teherbírás megfelelhet, a rézsű nem.' },
-    { s: 'Az új EC7-ben a felborulás és az átfordulás külön vizsgálat.', t: true, e: 'Felborulás: statikus egyensúly; átfordulás: forgásos teherbírási törés.' },
-    { s: 'Az új EC7-ben a VC3 a rézsűk és az általános állékonyság igazolási esete.', t: true, e: 'Anyagtényezős megközelítéssel (MFA).' },
-    { s: 'Az új EC7 tényezőit az EN szabvány véglegesen, országtól függetlenül rögzíti.', t: false, e: 'A tényezők nemzetileg meghatározott paraméterek: a nemzeti melléklet adja őket.' },
-    { s: 'Az új Eurocode-ok nemzeti bevezetésének határideje 2027. szeptember 30.', t: true, e: 'A régi szabványok visszavonása: 2028. március 30.' },
+    { s: 'A hazai nemzeti melléklet szerint síkalapnál a DA-2* tervezési módszert alkalmazzuk.', t: true, e: 'Teherbírásra és elcsúszásra DA-2* (A1 + M1 + R2); általános állékonyságra DA-3.' },
+    { s: 'DA-2*-ban a külpontosságot a tervezési (tényezővel növelt) terhekből számítjuk.', t: false, e: 'A karakterisztikus hatásokból; a parciális tényezőket a végén, a hatások következményére alkalmazzuk.' },
+    { s: 'Az EQU, UPL és HYD határállapot saját parciális tényezőkészlettel dolgozik.', t: true, e: 'A tervezési módszertől függetlenül (MSZ EN 1997-1, A melléklet).' },
+    { s: 'A hidraulikus talajtörés (HYD) kedvezőtlen állandó hatásának tényezője 1,1.', t: false, e: 'HYD: γ<sub>G;dst</sub> = 1,35, γ<sub>G;stb</sub> = 0,90, γ<sub>Q;dst</sub> = 1,50.' },
   ],
 };

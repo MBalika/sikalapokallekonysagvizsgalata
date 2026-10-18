@@ -12,7 +12,7 @@
     if (drained) { Rd = Vk * tg(delta) / 1.1; Ep = 0.5 * g * D * D * Kp; }
     else { Rcu = B * cu / 1.1; R04 = 0.4 * Vk; Rd = Math.min(Rcu, R04); Ep = 0.5 * g * D * D + 2 * cu * D; }
     const Rpd = rp * Ep / 1.4;
-    return { Vk, Ka, Hd, delta, Rd, Rcu, R04, Rpd, lam: Hd / (Rd + Rpd) };
+    return { Vk, Ka, Hd, delta, Rd, Rcu, R04, Rpd, EpFull: Ep, lam: Hd / (Rd + Rpd) };
   }
   // --- Felborulás: reklámtábla (tábla 6×3 m, kar 10,7 m) ---
   function overturn({ w = 0.8, B = 3.0, soil = true }) {
@@ -26,13 +26,17 @@
     return { Fk, Fd, Mk, Mdst, Gk, a, Mstb, e, smax, sig, lam: Mdst / Mstb };
   }
   // --- Felúszás: 30×15 m-es, 6 m mély mélygarázs-doboz ---
-  function uplift({ gw = -1, t = 0.6, o = 0, n = 0, f = 0 }) {
+  function uplift({ gw = -1, t = 0.6, o = 0, n = 0, f = 0, fr = 0 }) {
     const A = (30 + 2 * o) * (15 + 2 * o), hw = Math.max(0, gw + 6); const V = 10 * A * hw;
     const Gk = 3938 + 2799 + 884 * (5.65 - t) + 25 * A * t;
     const top = Math.min(gw, 0), yS = -6 + t; const hAbove = Math.max(0, 0 - Math.max(top, yS)), hBelow = Math.max(0, top - yS);
     const Grim = (A - 450) * (19 * hAbove + 20 * hBelow); const Wf = 10 * 414.6 * f; const Pd = n * 429;
-    const R = 0.9 * (Gk + Grim + Wf) + Pd;
-    return { A, V, Gk, Grim, Wf, Pd, R, lam: V / Math.max(1, R) };
+    // oldalfal-súrlódás a földnyomásból: τ = K0·σ′v·tg δ, K0 = 1 − sin 30° = 0,5, δ = ⅔·φ′ = 20°, γ = 19 / γ′ = 10 kN/m³; R_d = T_k / γ_s;t (1,4)
+    const u = 2 * ((30 + 2 * o) + (15 + 2 * o)), zw = Math.min(6, Math.max(0, -gw));
+    const Isv = 19 * zw * zw / 2 + 19 * zw * (6 - zw) + 10 * (6 - zw) * (6 - zw) / 2;
+    const K0 = 0.5, tgd = Math.tan(20 * Math.PI / 180), Tk = fr ? K0 * tgd * Isv * u : 0, Td = Tk / 1.4;
+    const R = 0.9 * (Gk + Grim + Wf) + Pd + Td;
+    return { A, V, Gk, Grim, Wf, Pd, Tk, Td, u, zw, K0, tgd, R, lam: V / Math.max(1, R) };
   }
   // --- Általános állékonyság: egyszerűsített Bishop, körhengeres csúszólap ---
   function bishop(xc, yc, r, o) {
