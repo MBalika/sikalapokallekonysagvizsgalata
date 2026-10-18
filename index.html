@@ -2971,9 +2971,15 @@ class Sim {
     this.truck = new THREE.Group(); { const y = new THREE.MeshStandardMaterial({ color: 0xe8a51c }), d = new THREE.MeshStandardMaterial({ color: 0x23262b }); this.truck.add(box(3.6, 1.0, 1.6, y, 0, 1.1, 0), box(1.3, 1.1, 1.6, y, 2.3, 1.2, 0)); for (const x of [-1.2, 1.2, 2.3]) for (const z of [-0.8, 0.8]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.4, 0.4, 0.3, 14).rotateX(Math.PI / 2), d); w.position.set(x, 0.4, z); this.truck.add(w); } } S.add(this.truck);
     const ids = ['cs_h', 'cs_B', 'cs_phi', 'cs_q', 'cs_cu'];
     this.state = { cs_typ: 'mono', cs_rp: '0', cs_dr: 'd' };
+    this.rearG = new THREE.Group(); this.frontG = new THREE.Group(); S.add(this.rearG, this.frontG); this.gapM = null; this._gapU = -1;
+    this.mLoose = mat(this.T.sand, 0.6, 0xd9c49a); this.mLooseC = mat(this.T.clay, 0.6, 0xa8988a);
     this.bindAll(ids, () => this.calc_csuszas()); this.segAll(['cs_typ', 'cs_rp', 'cs_dr'], () => this.calc_csuszas());
     this.calc_csuszas();
-    this.tick = (t) => { const u = this.slide; const tgt = u; this.uNow = (this.uNow ?? 0) + (tgt - (this.uNow ?? 0)) * 0.08; this.wall.position.x = this.uNow + Math.sin(t * 40) * (u > 0.01 ? 0.004 : 0); };
+    this.tick = (t) => { const u = this.slide; this.uNow = (this.uNow ?? 0) + (u - (this.uNow ?? 0)) * 0.08; const un = this.uNow, j = Math.sin(t * 40) * (u > 0.01 ? 0.004 : 0), x = un + j, G = this.geo;
+      // a fal a talpán lévő földdel és az aktív földékkel együtt mozdul; elöl a passzív ék a csúszólapon felfelé tolódik
+      this.wall.position.x = x; this.rearG.position.x = x; this.frontG.position.set(x, G ? un * G.D / G.Lp : 0, 0);
+      if (G && Math.abs(un - this._gapU) > 0.004) { this._gapU = un; if (this.gapM) { this.scene.remove(this.gapM); this.gapM.geometry.dispose(); this.gapM = null; }
+        if (un > 0.01) { const P1 = [G.x0, G.yt], P2 = [G.xa, G.ftop]; this.gapM = new THREE.Mesh(ext([[G.x0, G.yb], [G.x0 + un, G.yb], [P1[0] + un, P1[1]], [P2[0] + un, P2[1]], P2, P1]), sec(this.state.cs_dr === 'd' ? this.mLoose : this.mLooseC)); this.gapM.receiveShadow = true; this.scene.add(this.gapM); } } };
   }
   calc_csuszas() {
     const v = (id) => +this.ctl(id).value, s = this.state;
@@ -2982,19 +2988,26 @@ class Sim {
     this.root.querySelector('[data-out="cs_cu"]').closest('.rg').style.display = drained ? 'none' : '';
     // geometria: talp alja −0,9, talp 0,5, orr 0,7, szár 0,35
     const D = 0.9, tB = 0.5, toe = 0.7, st = 0.35, x1 = 1.0, x0 = x1 - B, xs1 = x1 - toe, xs0 = xs1 - st, ftop = h - D;
-    const key = [h, B].join('|');
+    const phE = (drained ? phi : 0) * Math.PI / 180, key = [h, B, phE].join('|');
     if (key !== this._key) { this._key = key;
       if (this.soilG) { this.scene.remove(this.soilG); this.soilG.geometry.dispose(); } if (this.fillG) { this.scene.remove(this.fillG); this.fillG.geometry.dispose(); }
-      const yb = -D, yt = -D + tB;
-      const pts = [[-12, -6], [12, -6], [12, 0], [xs1, 0], [xs1, yt], [x1, yt], [x1, yb], [x0, yb], [x0, yt], [xs0, yt], [xs0, 0], [-12, 0]];
-      this.soilG = new THREE.Mesh(ext(pts), sec(drained ? this.mSoil : this.mClay)); this.soilG.receiveShadow = true; this.scene.add(this.soilG);
-      this.fillG = new THREE.Mesh(ext([[-12, 0], [xs0, 0], [xs0, ftop], [-12, ftop]]), sec(this.mFill)); this.fillG.receiveShadow = true; this.fillG.castShadow = true; this.scene.add(this.fillG);
+      for (const g of [this.rearG, this.frontG]) { g.traverse(o => { if (o.geometry) o.geometry.dispose(); }); g.clear(); }
+      const yb = -D, yt = -D + tB, tA = Math.tan(Math.PI / 4 + phE / 2), Lp = D / Math.tan(Math.PI / 4 - phE / 2);
+      const xA0 = x0 - (0 - yt) / tA, xa = x0 - (ftop - yt) / tA;   // aktív csúszólap: a sarok hátsó élétől 45° + φ/2 alatt
+      const gm = sec(drained ? this.mSoil : this.mClay), add = (grp, pts, m, cast) => { const o = new THREE.Mesh(ext(pts), m); o.receiveShadow = true; o.castShadow = !!cast; grp.add(o); return o; };
+      // álló talaj: a passzív és az aktív csúszólapig
+      this.soilG = new THREE.Mesh(ext([[-12, -6], [12, -6], [12, 0], [x1 + Lp, 0], [x1, yb], [x0, yb], [x0, yt], [xA0, 0], [-12, 0]]), gm); this.soilG.receiveShadow = true; this.scene.add(this.soilG);
+      this.fillG = new THREE.Mesh(ext([[-12, 0], [xA0, 0], [xa, ftop], [-12, ftop]]), sec(this.mFill)); this.fillG.receiveShadow = true; this.fillG.castShadow = true; this.scene.add(this.fillG);
+      // a fallal együtt mozgó rész: a talp feletti föld és az aktív földék
+      this.rearSoil = add(this.rearG, [[x0, yt], [xs0, yt], [xs0, 0], [xA0, 0]], gm); add(this.rearG, [[xA0, 0], [xs0, 0], [xs0, ftop], [xa, ftop]], sec(this.mFill), true);
+      // elöl: a passzív ék (a talp orra fölötti földdel együtt)
+      this.frontSoil = add(this.frontG, [[xs1, 0], [xs1, yt], [x1, yt], [x1, yb], [x1 + Lp, 0]], gm);
       this.wall.clear();
       const prof = [[x0, yb], [x1, yb], [x1, yt], [xs1, yt], [xs1 - 0.03, ftop + 0.1], [xs0, ftop + 0.1], [xs0, yt], [x0, yt]];
       const w = new THREE.Mesh(ext(prof, 0.02, -6), this.mConc); w.castShadow = true; w.receiveShadow = true; this.wall.add(w);
-      this.geo = { x0, x1, xs0, xs1, yb, yt, ftop, D };
+      this.geo = { x0, x1, xs0, xs1, yb, yt, ftop, D, xa, xA0, Lp }; this._gapU = -1;
     }
-    this.soilG.material = sec(drained ? this.mSoil : this.mClay);
+    { const gm = sec(drained ? this.mSoil : this.mClay); this.soilG.material = gm; this.rearSoil.material = gm; this.frontSoil.material = gm; this._gapU = -1; }
     const G = this.geo;
     // erőnyilak (méretarány: 1 m / 40 kN)
     const k = 1 / 40;
