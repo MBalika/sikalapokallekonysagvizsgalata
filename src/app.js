@@ -133,12 +133,23 @@ window.VIDEOS = VIDEOS;
 (function videos() {
   const modal = $('#vmodal'); if (!modal) return; const frame = $('.frame', modal), title = $('.mh span', modal);
   let last = null;
-  const open = (k, from) => { const v = VIDEOS[k]; if (!v) return; last = from; window.dispatchEvent(new Event('sims:pause')); title.textContent = v.t; frame.innerHTML = ''; frame.appendChild(H('iframe', { src: `video/${k}.html#autoplay`, title: v.t, allow: 'autoplay; fullscreen' })); modal.classList.add('on'); document.body.style.overflow = 'hidden'; $('#vclose').focus(); };
-  const close = () => { modal.classList.remove('on'); frame.innerHTML = ''; document.body.style.overflow = ''; if (last) last.focus(); setTimeout(() => window.dispatchEvent(new Event('sims:resume')), 60); };
+  const open = (k, from) => { const v = VIDEOS[k]; if (!v) return; last = from; window.dispatchEvent(new Event('sims:pause')); title.textContent = v.t; frame.innerHTML = ''; frame.appendChild(H('iframe', { src: `video/${k}.html#autoplay`, title: v.t, allow: 'autoplay; fullscreen', allowfullscreen: 'true', webkitallowfullscreen: 'true' })); modal.classList.add('on'); document.body.style.overflow = 'hidden'; $('#vclose').focus(); };
+  const close = () => { modal.classList.remove('on', 'max'); $('#vfs').textContent = 'Teljes képernyő'; frame.innerHTML = ''; document.body.style.overflow = ''; if (last) last.focus(); setTimeout(() => window.dispatchEvent(new Event('sims:resume')), 60); };
   $('#vclose').addEventListener('click', close); modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
   addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('on')) close(); });
   addEventListener('message', (e) => { if (e.data === 'vclose') close(); });
-  $('#vfs').addEventListener('click', () => { const f = $('iframe', frame); if (f && f.requestFullscreen) f.requestFullscreen().catch(() => { }); });
+  // teljes képernyő: szabványos API (Safari-előtaggal); ha nincs (iPhone), a modális ablak tölti ki a képernyőt
+  const maxOn = (on) => { modal.classList.toggle('max', on); $('#vfs').textContent = on ? 'Kisebb nézet' : 'Teljes képernyő'; };
+  const toggleFS = () => {
+    const fe = document.fullscreenElement || document.webkitFullscreenElement;
+    if (fe) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
+    if (modal.classList.contains('max')) { maxOn(false); return; }
+    const f = $('iframe', frame), req = f && (f.requestFullscreen || f.webkitRequestFullscreen);
+    if (!req) { maxOn(true); return; }
+    try { const pr = req.call(f); if (pr && pr.catch) pr.catch(() => maxOn(true)); } catch (e) { maxOn(true); }
+  };
+  $('#vfs').addEventListener('click', toggleFS);
+  addEventListener('message', (e) => { if (e.data === 'vfs' && modal.classList.contains('on')) toggleFS(); });
   $$('.vcard[data-video]').forEach(c => { const v = VIDEOS[c.dataset.video]; c.classList.add(v.k); c.innerHTML = `<div class="vthumb"><img src="img/thumb-${c.dataset.video}.jpg" alt="" loading="lazy"><div class="pl"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></div><span class="d">${v.d}</span></div><div class="vi"><b>${v.t}</b><span>${v.s}</span></div>`; });
   $$('.vlink[data-video]').forEach(b => { const v = VIDEOS[b.dataset.video]; b.innerHTML = `<i aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></i>Videó: ${v.t} (${v.d})`; });
   $$('[data-video]').forEach(b => b.addEventListener('click', () => open(b.dataset.video, b)));
