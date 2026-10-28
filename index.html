@@ -46,8 +46,8 @@ h1, h2, h3, h4 { font-family: var(--fd); line-height: 1.08; margin: 0; letter-sp
 h2 { font-size: clamp(30px, 4.4vw, 54px); font-weight: 800; font-stretch: 112%; }
 h3 { font-size: clamp(21px, 2.3vw, 27px); font-weight: 750; margin: 46px 0 12px; }
 h4 { font-size: 18px; font-weight: 700; margin: 0 0 6px; }
-p { margin: 0 0 14px; max-width: 72ch; }
-.lead { font-size: 1.12em; color: var(--ink2); max-width: 64ch; }
+p { margin: 0 0 14px; }
+.lead { font-size: 1.12em; color: var(--ink2); }
 .muted { color: var(--mute); }
 .small { font-size: .88em; }
 sub { font-size: .7em; line-height: 0; }
@@ -103,7 +103,14 @@ sub { font-size: .7em; line-height: 0; }
 @media (max-width: 560px) { .chead { grid-template-columns: 1fr; } .code { grid-row: auto; justify-self: start; min-width: 0; font-size: 16px; padding: 7px 12px; } }
 .k1 { --k: var(--c1); } .k2 { --k: var(--c2); } .k3 { --k: var(--c3); } .k4 { --k: var(--c4); } .k5 { --k: var(--c5); } .k0 { --k: var(--plum2); }
 .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 34px; align-items: start; }
-@media (max-width: 900px) { .cols { grid-template-columns: 1fr; gap: 10px; } }
+/* kiegyensúlyozott oszlopok (formázás skill 5.): szöveg | táblázat, képletek | szöveg, két szövegrész egy folyamban */
+.cols.tw { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); }
+.cols.lw { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); }
+.cols.lw2 { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); }
+.cols.flow { display: block; columns: 2; column-gap: 34px; }
+.cols.flow > div { display: contents; }
+.cols.flow p { break-inside: avoid-column; }
+@media (max-width: 900px) { .cols, .cols.tw, .cols.lw, .cols.lw2 { grid-template-columns: 1fr; gap: 10px; } .cols.flow { columns: 1; } }
 /* képlet-szalag */
 .eq { margin: 16px 0 18px; padding: 16px 20px; border-left: 5px solid var(--k); background: var(--card); border-radius: 0 var(--r2) var(--r2) 0; box-shadow: var(--sh); }
 .eq .f { font: 700 clamp(22px, 2.6vw, 32px)/1.25 var(--fd); font-variant-numeric: tabular-nums; }
@@ -226,8 +233,10 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 .qres { text-align: center; padding: 16px 0; }
 .qres b { font: 800 46px/1 var(--fd); display: block; margin: 6px 0; }
 /* igaz/hamis */
-.tfgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; margin-top: 16px; }
-.tf { background: var(--card); border: 1.5px solid var(--line); border-radius: var(--r2); padding: 14px 16px; display: grid; gap: 10px; }
+.tfgrid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 16px; }
+@media (min-width: 700px) { .tfgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .tfgrid { grid-template-columns: repeat(4, 1fr); } }
+.tf { background: var(--card); border: 1.5px solid var(--line); border-radius: var(--r2); padding: 14px 16px; display: grid; gap: 10px; grid-template-rows: 1fr auto auto; }
 .tf .st { font-size: .97em; }
 .tf .st .no { font: 800 13px/1 var(--fd); color: var(--mute); margin-right: 8px; }
 .tf .bt { display: flex; gap: 8px; }
@@ -301,6 +310,11 @@ main .qres p { text-align: center; }
 .sim .pip { position: absolute; right: 12px; bottom: 12px; padding: 0; border: 2px solid rgba(255, 255, 255, .9); border-radius: 10px; background: transparent; box-shadow: 0 6px 22px rgba(0, 0, 0, .35); cursor: pointer; z-index: 3; }
 .sim .pip span { position: absolute; left: 6px; top: 6px; font: 700 11px/1.2 var(--fd); background: rgba(20, 14, 29, .78); color: #fff; padding: 3px 7px; border-radius: 5px; }
 .sim .pip:focus-visible { outline: 3px solid var(--k2, #6c43cc); outline-offset: 2px; }
+
+/* formázás skill – sorkizárási tartalék: lyukas sorkizárt blokk balra zárva */
+main .rag, footer .rag { text-align: left !important; }
+/* teli sorok: 5 kezelő egy sorban; a kalkulátor 6 kijelzője 3 + 3 */
+@media (min-width: 1000px) { #sim-altalanos-2d .ctrl { grid-template-columns: repeat(5, minmax(0, 1fr)); } .cx-ro.readout { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 /* ===== Kalkulátor és mintapéldák ===== */
 #kalkulator, #mintapeldak { --cvbg: #fcfbff; --grid: color-mix(in srgb, var(--plum2) 9%, transparent); --grid2: color-mix(in srgb, var(--plum2) 4.5%, transparent); }
@@ -504,6 +518,7 @@ main .qres p { text-align: center; }
 
 /* ---------- mintapéldák ---------- */
 .mp-idx { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin: 20px 0 22px; }
+@media (min-width: 760px) { .mp-idx { grid-template-columns: repeat(3, 1fr); } }
 .mp-tile { --k: var(--plum2); position: relative; text-align: left; border: 1px solid var(--line); background: var(--card); border-radius: var(--r2); padding: 11px 12px 11px 14px; cursor: pointer; color: var(--ink); display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; align-items: center; transition: border-color .2s, transform .2s, box-shadow .2s; font: inherit; }
 .mp-tile::before { content: ''; position: absolute; left: 0; top: 10px; bottom: 10px; width: 4px; border-radius: 0 4px 4px 0; background: var(--k); }
 .mp-tile:hover { border-color: var(--k); transform: translateY(-1px); }
@@ -619,7 +634,7 @@ main .qres p { text-align: center; }
 <section class="chap k0" id="attekintes">
   <div class="wrap">
     <div class="chead"><div class="code"><span>E<sub>d</sub> ≤ R<sub>d</sub></span></div><h2>Négy igazolás, egy gondolat</h2><p>Hatás tervezési értéke ≤ ellenállás tervezési értéke – négy különböző tönkremenetelre.</p></div>
-    <div class="cols">
+    <div class="cols tw">
       <div>
         <p>Az alaptestek méreteinek meghatározásával párhuzamosan – vagy azt követően – azt is igazolni kell, hogy a létesítmény az EC7 szerint kellő állékonysági biztonsággal rendelkezik <b>elcsúszással, felborulással és felúszással</b> szemben. Bizonyos helyzetekben – rézsű, munkagödör, part vagy üreg közelében – az <b>általános állékonyságot</b> is ellenőrizni kell.</p>
         <p>A közös menet mindegyiknél ugyanaz: felírjuk a hatások tervezési értékét (E<sub>d</sub>) és az ellenállás tervezési értékét (R<sub>d</sub>), majd igazoljuk, hogy E<sub>d</sub> ≤ R<sub>d</sub>. A felborulásnál nyomatékokat vetünk össze: M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>. Ahol a talaj szilárdsága számít, ott <b>drénezett és drénezetlen</b> állapotra is.</p>
@@ -682,7 +697,7 @@ main .qres p { text-align: center; }
       </div>
     </div>
     <h3>2. eset: drénezetlen állapot – rövid távon</h3>
-    <div class="cols">
+    <div class="cols lw">
       <div>
         <div class="eq" style="margin-top:0"><div class="f">R<sub>d</sub> = A<sub>c</sub> · c<sub>u;k</sub> / γ<sub>R;h</sub></div><div class="w"><div>A<sub>c</sub> – a nyomott alapfelület (külpontos tehernél A′ = B′ · L′)</div><div>c<sub>u;k</sub> – a drénezetlen nyírószilárdság karakterisztikus értéke az alapsíkon</div></div></div>
         <div class="eq mini"><div class="f">R<sub>d</sub> ≤ 0,4 · V<sub>d</sub></div><div class="w">Nem szabad nagyobb nyírási ellenállásra számítani, mint az alapot terhelő függőleges erő tervezési értékének 40 százaléka.</div></div>
@@ -693,7 +708,7 @@ main .qres p { text-align: center; }
       </div>
     </div>
     <h3>Földellenállás – R<sub>p;d</sub></h3>
-    <div class="cols">
+    <div class="cols flow">
       <div>
         <p style="margin-top:0">A teljes passzív földellenállás csak jelentős elmozdulás hatására mobilizálódik, ezért jellemzően annak csak egy bizonyos hányada, <b>fele–kétharmada</b> vehető figyelembe, a γ<sub>R;e</sub> = 1,4 parciális tényezővel.</p>
       </div>
@@ -748,7 +763,7 @@ main .qres p { text-align: center; }
   <div class="wrap">
     <div class="chead"><div class="code">EQU</div><h2>Felborulás és külpontosság</h2><p>Nagy külpontosságú tehernél a felborító nyomaték nem érheti el a stabilizálót.</p></div>
     <button class="vlink" data-video="v2" type="button"></button>
-    <div class="cols">
+    <div class="cols lw2">
       <div>
         <p>Ha az alapsíkon a teher nagy külpontossággal adódik át, felmerül az alap és az alátámasztott szerkezet felborulásának veszélye. Ezt a helyzeti állékonyság elvesztéseként (EQU) értelmezzük, és a felborító, illetve az ezt akadályozó nyomatékok összevetésével ellenőrizzük:</p>
         <div class="eq"><div class="f">M<sub>dst;d</sub> ≤ M<sub>stb;d</sub></div><div class="w"><div>Mindkét nyomatékot a hatások tervezési értékéből számítjuk.</div><div>Állandó: γ<sub>G;dst</sub> = 1,1; γ<sub>G;stb</sub> = 0,9</div><div>Esetleges felborító: γ<sub>Q;dst</sub> = 1,5</div><div>Kedvező esetleges: 0</div></div></div>
@@ -1137,12 +1152,12 @@ function richCtx(ctx) {
 function hiCanvas(cv, w, h) { const dpr = Math.min(2, devicePixelRatio || 1); cv.width = w * dpr; cv.height = h * dpr; const g = richCtx(cv.getContext('2d')); g.setTransform(dpr, 0, 0, dpr, 0, 0); return g; }
 // sortörés-őr: képlet, szám + mértékegység, jelölés soha ne törjön meg (NBSP / U+202F / U+2011)
 const NB = '\u00A0', NN = '\u202F', UNITS = 'kN/m³|kN/m²|kN/m|kNm|kPa|MPa|MNm|MN|mBf|m²|m³|mm|cm|km|kN|m|°|%|db';
-const G_OPS = /\s([=≤≥<>≈×±→+−\/])\s/g, G_DOT = /\s·\s(?![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{3})/g, G_RAT = /(\d)\s:\s(\d)/g, G_UNIT = new RegExp('(\\d)\\s(' + UNITS + ')(?![A-Za-z0-9áéíóöőúüűÁÉÍÓÖŐÚÜŰ])', 'g'), G_FN = /(^|[\s(])(tg|ctg|sin|cos|tan|kb\.|pl\.|ill\.|ún\.|max\.|min\.)\s/g, G_ART = /(^|\s)(a|az|s|e|egy|és|A|Az|Egy)\s/g, G_NUM = /(^|[\s(])(két|kettő|három|négy|öt|hat|hét|nyolc|kilenc|tíz|tizenkét|húsz|harminc|száz|ezer|első|második|harmadik|negyedik|ötödik|mindkét|néhány|Két|Három|Négy|Öt|Hat|Hét|Nyolc|Kilenc|Tíz|Első|Második|Harmadik|Negyedik|Ötödik|Mindkét|Néhány)\s/g, G_DIGW = /(\d)\s(?=[a-záéíóöőúüű]{2,})/g, G_THOU = /(\d)\s(\d{3})(?!\d)/g, G_ID = /\b(DA|EN|MSZ EN|STR|GEO)-(\d)/g;
+const G_OPS = /\s([=≤≥<>≈×±→+−\/])\s/g, G_DOT = /\s·\s(?![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{3})/g, G_RAT = /(\d)\s:\s(\d)/g, G_UNIT = new RegExp('(\\d)\\s(' + UNITS + ')(?![A-Za-z0-9áéíóöőúüűÁÉÍÓÖŐÚÜŰ])', 'g'), G_FN = /(^|[\s(])(tg|ctg|sin|cos|tan|kb\.|pl\.|ill\.|ún\.|max\.|min\.)\s/g, G_ART = /(^|[\s(„\u2060])(a|az|s|e|egy|és|A|Az|Egy) (?=\S)/g, G_NUM = /(^|[\s(])(két|kettő|három|négy|öt|hat|hét|nyolc|kilenc|tíz|tizenkét|húsz|harminc|száz|ezer|első|második|harmadik|negyedik|ötödik|mindkét|néhány|Két|Három|Négy|Öt|Hat|Hét|Nyolc|Kilenc|Tíz|Első|Második|Harmadik|Negyedik|Ötödik|Mindkét|Néhány)\s/g, G_DIGW = /(\d)\s(?=[a-záéíóöőúüű]{2,})/g, G_THOU = /(\d)\s(\d{3})(?!\d)/g, G_ID = /\b(DA|EN|MSZ EN|STR|GEO)-(\d)/g;
 function guardText(root = document.body) {
   if (!root) return; const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: (n) => n.parentElement && !n.parentElement.closest('script,style,textarea,code,pre,option') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT });
   let n; const todo = []; while ((n = w.nextNode())) todo.push(n);
   for (const nd of todo) { const t0 = nd.nodeValue; if (!/[\s-]/.test(t0)) continue;
-    let t = t0.replace(G_OPS, NB + '$1' + NB).replace(G_OPS, NB + '$1' + NB).replace(G_DOT, NB + '·' + NB).replace(G_RAT, '$1' + NB + ':' + NB + '$2').replace(/-([a-záéíóöőúüű]{1,5})(?=[\s.,;:!?)]|$)/g, '\u2011$1').replace(/\(([^\s()]{1,12}) /g, '(' + '$1' + NB).replace(G_UNIT, '$1' + NB + '$2').replace(G_FN, '$1$2' + NB).replace(G_ART, '$1$2' + NB).replace(G_NUM, '$1$2' + NB).replace(G_DIGW, '$1' + NB).replace(G_THOU, '$1\u202F$2').replace(G_ID, '$1\u2011$2');
+    let t = t0.replace(G_OPS, NB + '$1' + NB).replace(G_OPS, NB + '$1' + NB).replace(G_DOT, NB + '·' + NB).replace(G_RAT, '$1' + NB + ':' + NB + '$2').replace(/-([a-záéíóöőúüű]{1,5})(?=[\s.,;:!?)]|$)/g, '\u2011$1').replace(/\(([^\s()]{1,12}) /g, '(' + '$1' + NB).replace(G_UNIT, '$1' + NB + '$2').replace(G_FN, '$1$2' + NB).replace(G_ART, '$1$2' + NB).replace(G_ART, '$1$2' + NB).replace(G_NUM, '$1$2' + NB).replace(G_DIGW, '$1' + NB).replace(G_THOU, '$1\u202F$2').replace(G_ID, '$1\u2011$2');
     t = t.replace(/([0-9A-Za-zÀ-ž½⅓⅔¼¾])–([0-9A-Za-zÀ-ž½⅓⅔¼¾])/g, '$1\u2060–\u2060$2');
     t = t.replace(/^\s([=≤≥<>≈×±→+−])/, NB + '$1').replace(/([=≤≥<>≈×±→+−])\s$/, '$1' + NB);
     if (t !== t0) nd.nodeValue = t; }
@@ -1153,7 +1168,10 @@ const TERMS = ['kedvező esetleges', 'kedvezőtlen esetleges', 'kedvező álland
 const TERM_RX = new RegExp('(' + TERMS.map(x => x.replace(/ /g, '\\s')).join('|') + ')', 'gi');
 function groupGuard(block) {
   const nodes = []; const w = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null); let n; while ((n = w.nextNode())) { const pe = n.parentElement; if (!pe || pe.closest('script,style,textarea,code,pre') || pe.closest(BLOCKSEL) !== block) continue; nodes.push(n); }
-  if (!nodes.length) return; const full = nodes.map(x => x.nodeValue).join(''); if (full.length < 8) return;
+  if (!nodes.length) return;
+  // csomóponthatáron átnyúló kötés: „… és a <b>szó</b>” – a rövid szó nem maradhat a sor végén
+  for (let i = 0; i < nodes.length - 1; i++) { const a = nodes[i], b = nodes[i + 1]; if (/(^|[\s(„\u2060\u00A0])(a|az|s|e|egy|és|A|Az|Egy|pl\.|kb\.|ill\.|ún\.) $/.test(a.nodeValue) && /^\S/.test(b.nodeValue)) a.nodeValue = a.nodeValue.slice(0, -1) + NB; }
+  const full = nodes.map(x => x.nodeValue).join(''); if (full.length < 8) return;
   const mark = new Uint8Array(full.length);
   const fs = parseFloat(getComputedStyle(block).fontSize) || 16, cpl = (block.clientWidth || 600) / (0.5 * fs);
   const SEG = Math.max(14, Math.min(38, Math.round(cpl * 0.42))), PAR = Math.max(12, Math.min(24, Math.round(cpl * 0.3)));
@@ -1307,6 +1325,31 @@ addEventListener('DOMContentLoaded', () => {
   quiz($('#q1'), D.q1); quiz($('#q2'), D.q2); quiz($('#q3'), D.q3); quiz($('#q4'), D.q4); quiz($('#q5'), D.q5); quiz($('#q6'), D.q6);
   trueFalse($('#tfgrid'), D.tf, $('#tfscore')); sorter($('#sorter'), D.sorter);
 });
+
+/* ---------- Sorkizárási tartalék (formázás skill): ha egy sorkizárt blokkban a szóközök túl szélesek
+   (≥ 1 db > 1,15 em, vagy ≥ 2 db > 0,9 em), a blokk balra zárt lesz (.rag). Csak osztályt vált, szöveget nem. ---------- */
+const RAG = (() => {
+  const SEL = 'main p, main li, main dd, main figcaption, main .note, main .lead, main .small, footer p';
+  function holes(el, fs) {
+    const all = document.createRange(); all.selectNodeContents(el); const rs = Array.from(all.getClientRects()); if (rs.length < 2) return false;
+    const lastTop = Math.max(...rs.map(r => r.top)); let big = 0, mid = 0;
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n;
+    while ((n = w.nextNode())) { const t = n.nodeValue; for (let i = 0; i < t.length; i++) { if (t[i] !== ' ' && t[i] !== '\u00A0') continue; const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + 1); const b = r.getBoundingClientRect(); if (!b.width || b.top >= lastTop - 2) continue; if (b.width > fs * 1.15) big++; else if (b.width > fs * 0.9) mid++; } }
+    return big > 0 || mid >= 2;
+  }
+  function check(el) {
+    const had = el.classList.contains('rag'); if (had) el.classList.remove('rag');
+    const cs = getComputedStyle(el); let need = false;
+    if (cs.textAlign === 'justify' && cs.display !== 'none' && el.offsetParent) need = holes(el, parseFloat(cs.fontSize) || 16);
+    if (need) el.classList.add('rag');
+  }
+  const run = () => { document.querySelectorAll(SEL).forEach(e => { if (e.offsetParent) check(e); }); window.__ragDone = true; };
+  let tm = 0; const later = (ms) => { clearTimeout(tm); tm = setTimeout(run, ms); };
+  addEventListener('resize', () => later(250)); document.addEventListener('click', () => later(150));
+  return { run, later };
+})();
+
+addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RAG.run(), 2600); const H = window.Hyphenopoly; if (H && H.hyphenators && H.hyphenators.hu) H.hyphenators.hu.then(() => { window.__fmtHyphReady = true; RAG.later(200); }).catch(() => {}); });
 
 </script>
 <script>

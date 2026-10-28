@@ -32,12 +32,12 @@ function richCtx(ctx) {
 function hiCanvas(cv, w, h) { const dpr = Math.min(2, devicePixelRatio || 1); cv.width = w * dpr; cv.height = h * dpr; const g = richCtx(cv.getContext('2d')); g.setTransform(dpr, 0, 0, dpr, 0, 0); return g; }
 // sortörés-őr: képlet, szám + mértékegység, jelölés soha ne törjön meg (NBSP / U+202F / U+2011)
 const NB = '\u00A0', NN = '\u202F', UNITS = 'kN/m³|kN/m²|kN/m|kNm|kPa|MPa|MNm|MN|mBf|m²|m³|mm|cm|km|kN|m|°|%|db';
-const G_OPS = /\s([=≤≥<>≈×±→+−\/])\s/g, G_DOT = /\s·\s(?![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{3})/g, G_RAT = /(\d)\s:\s(\d)/g, G_UNIT = new RegExp('(\\d)\\s(' + UNITS + ')(?![A-Za-z0-9áéíóöőúüűÁÉÍÓÖŐÚÜŰ])', 'g'), G_FN = /(^|[\s(])(tg|ctg|sin|cos|tan|kb\.|pl\.|ill\.|ún\.|max\.|min\.)\s/g, G_ART = /(^|\s)(a|az|s|e|egy|és|A|Az|Egy)\s/g, G_NUM = /(^|[\s(])(két|kettő|három|négy|öt|hat|hét|nyolc|kilenc|tíz|tizenkét|húsz|harminc|száz|ezer|első|második|harmadik|negyedik|ötödik|mindkét|néhány|Két|Három|Négy|Öt|Hat|Hét|Nyolc|Kilenc|Tíz|Első|Második|Harmadik|Negyedik|Ötödik|Mindkét|Néhány)\s/g, G_DIGW = /(\d)\s(?=[a-záéíóöőúüű]{2,})/g, G_THOU = /(\d)\s(\d{3})(?!\d)/g, G_ID = /\b(DA|EN|MSZ EN|STR|GEO)-(\d)/g;
+const G_OPS = /\s([=≤≥<>≈×±→+−\/])\s/g, G_DOT = /\s·\s(?![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{3})/g, G_RAT = /(\d)\s:\s(\d)/g, G_UNIT = new RegExp('(\\d)\\s(' + UNITS + ')(?![A-Za-z0-9áéíóöőúüűÁÉÍÓÖŐÚÜŰ])', 'g'), G_FN = /(^|[\s(])(tg|ctg|sin|cos|tan|kb\.|pl\.|ill\.|ún\.|max\.|min\.)\s/g, G_ART = /(^|[\s(„\u2060])(a|az|s|e|egy|és|A|Az|Egy) (?=\S)/g, G_NUM = /(^|[\s(])(két|kettő|három|négy|öt|hat|hét|nyolc|kilenc|tíz|tizenkét|húsz|harminc|száz|ezer|első|második|harmadik|negyedik|ötödik|mindkét|néhány|Két|Három|Négy|Öt|Hat|Hét|Nyolc|Kilenc|Tíz|Első|Második|Harmadik|Negyedik|Ötödik|Mindkét|Néhány)\s/g, G_DIGW = /(\d)\s(?=[a-záéíóöőúüű]{2,})/g, G_THOU = /(\d)\s(\d{3})(?!\d)/g, G_ID = /\b(DA|EN|MSZ EN|STR|GEO)-(\d)/g;
 function guardText(root = document.body) {
   if (!root) return; const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: (n) => n.parentElement && !n.parentElement.closest('script,style,textarea,code,pre,option') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT });
   let n; const todo = []; while ((n = w.nextNode())) todo.push(n);
   for (const nd of todo) { const t0 = nd.nodeValue; if (!/[\s-]/.test(t0)) continue;
-    let t = t0.replace(G_OPS, NB + '$1' + NB).replace(G_OPS, NB + '$1' + NB).replace(G_DOT, NB + '·' + NB).replace(G_RAT, '$1' + NB + ':' + NB + '$2').replace(/-([a-záéíóöőúüű]{1,5})(?=[\s.,;:!?)]|$)/g, '\u2011$1').replace(/\(([^\s()]{1,12}) /g, '(' + '$1' + NB).replace(G_UNIT, '$1' + NB + '$2').replace(G_FN, '$1$2' + NB).replace(G_ART, '$1$2' + NB).replace(G_NUM, '$1$2' + NB).replace(G_DIGW, '$1' + NB).replace(G_THOU, '$1\u202F$2').replace(G_ID, '$1\u2011$2');
+    let t = t0.replace(G_OPS, NB + '$1' + NB).replace(G_OPS, NB + '$1' + NB).replace(G_DOT, NB + '·' + NB).replace(G_RAT, '$1' + NB + ':' + NB + '$2').replace(/-([a-záéíóöőúüű]{1,5})(?=[\s.,;:!?)]|$)/g, '\u2011$1').replace(/\(([^\s()]{1,12}) /g, '(' + '$1' + NB).replace(G_UNIT, '$1' + NB + '$2').replace(G_FN, '$1$2' + NB).replace(G_ART, '$1$2' + NB).replace(G_ART, '$1$2' + NB).replace(G_NUM, '$1$2' + NB).replace(G_DIGW, '$1' + NB).replace(G_THOU, '$1\u202F$2').replace(G_ID, '$1\u2011$2');
     t = t.replace(/([0-9A-Za-zÀ-ž½⅓⅔¼¾])–([0-9A-Za-zÀ-ž½⅓⅔¼¾])/g, '$1\u2060–\u2060$2');
     t = t.replace(/^\s([=≤≥<>≈×±→+−])/, NB + '$1').replace(/([=≤≥<>≈×±→+−])\s$/, '$1' + NB);
     if (t !== t0) nd.nodeValue = t; }
@@ -48,7 +48,10 @@ const TERMS = ['kedvező esetleges', 'kedvezőtlen esetleges', 'kedvező álland
 const TERM_RX = new RegExp('(' + TERMS.map(x => x.replace(/ /g, '\\s')).join('|') + ')', 'gi');
 function groupGuard(block) {
   const nodes = []; const w = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null); let n; while ((n = w.nextNode())) { const pe = n.parentElement; if (!pe || pe.closest('script,style,textarea,code,pre') || pe.closest(BLOCKSEL) !== block) continue; nodes.push(n); }
-  if (!nodes.length) return; const full = nodes.map(x => x.nodeValue).join(''); if (full.length < 8) return;
+  if (!nodes.length) return;
+  // csomóponthatáron átnyúló kötés: „… és a <b>szó</b>” – a rövid szó nem maradhat a sor végén
+  for (let i = 0; i < nodes.length - 1; i++) { const a = nodes[i], b = nodes[i + 1]; if (/(^|[\s(„\u2060\u00A0])(a|az|s|e|egy|és|A|Az|Egy|pl\.|kb\.|ill\.|ún\.) $/.test(a.nodeValue) && /^\S/.test(b.nodeValue)) a.nodeValue = a.nodeValue.slice(0, -1) + NB; }
+  const full = nodes.map(x => x.nodeValue).join(''); if (full.length < 8) return;
   const mark = new Uint8Array(full.length);
   const fs = parseFloat(getComputedStyle(block).fontSize) || 16, cpl = (block.clientWidth || 600) / (0.5 * fs);
   const SEG = Math.max(14, Math.min(38, Math.round(cpl * 0.42))), PAR = Math.max(12, Math.min(24, Math.round(cpl * 0.3)));
@@ -202,3 +205,28 @@ addEventListener('DOMContentLoaded', () => {
   quiz($('#q1'), D.q1); quiz($('#q2'), D.q2); quiz($('#q3'), D.q3); quiz($('#q4'), D.q4); quiz($('#q5'), D.q5); quiz($('#q6'), D.q6);
   trueFalse($('#tfgrid'), D.tf, $('#tfscore')); sorter($('#sorter'), D.sorter);
 });
+
+/* ---------- Sorkizárási tartalék (formázás skill): ha egy sorkizárt blokkban a szóközök túl szélesek
+   (≥ 1 db > 1,15 em, vagy ≥ 2 db > 0,9 em), a blokk balra zárt lesz (.rag). Csak osztályt vált, szöveget nem. ---------- */
+const RAG = (() => {
+  const SEL = 'main p, main li, main dd, main figcaption, main .note, main .lead, main .small, footer p';
+  function holes(el, fs) {
+    const all = document.createRange(); all.selectNodeContents(el); const rs = Array.from(all.getClientRects()); if (rs.length < 2) return false;
+    const lastTop = Math.max(...rs.map(r => r.top)); let big = 0, mid = 0;
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n;
+    while ((n = w.nextNode())) { const t = n.nodeValue; for (let i = 0; i < t.length; i++) { if (t[i] !== ' ' && t[i] !== '\u00A0') continue; const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + 1); const b = r.getBoundingClientRect(); if (!b.width || b.top >= lastTop - 2) continue; if (b.width > fs * 1.15) big++; else if (b.width > fs * 0.9) mid++; } }
+    return big > 0 || mid >= 2;
+  }
+  function check(el) {
+    const had = el.classList.contains('rag'); if (had) el.classList.remove('rag');
+    const cs = getComputedStyle(el); let need = false;
+    if (cs.textAlign === 'justify' && cs.display !== 'none' && el.offsetParent) need = holes(el, parseFloat(cs.fontSize) || 16);
+    if (need) el.classList.add('rag');
+  }
+  const run = () => { document.querySelectorAll(SEL).forEach(e => { if (e.offsetParent) check(e); }); window.__ragDone = true; };
+  let tm = 0; const later = (ms) => { clearTimeout(tm); tm = setTimeout(run, ms); };
+  addEventListener('resize', () => later(250)); document.addEventListener('click', () => later(150));
+  return { run, later };
+})();
+
+addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RAG.run(), 2600); const H = window.Hyphenopoly; if (H && H.hyphenators && H.hyphenators.hu) H.hyphenators.hu.then(() => { window.__fmtHyphReady = true; RAG.later(200); }).catch(() => {}); });

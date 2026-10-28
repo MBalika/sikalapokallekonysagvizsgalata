@@ -29,8 +29,8 @@ h1, h2, h3, h4 { font-family: var(--fd); line-height: 1.08; margin: 0; letter-sp
 h2 { font-size: clamp(30px, 4.4vw, 54px); font-weight: 800; font-stretch: 112%; }
 h3 { font-size: clamp(21px, 2.3vw, 27px); font-weight: 750; margin: 46px 0 12px; }
 h4 { font-size: 18px; font-weight: 700; margin: 0 0 6px; }
-p { margin: 0 0 14px; max-width: 72ch; }
-.lead { font-size: 1.12em; color: var(--ink2); max-width: 64ch; }
+p { margin: 0 0 14px; }
+.lead { font-size: 1.12em; color: var(--ink2); }
 .muted { color: var(--mute); }
 .small { font-size: .88em; }
 sub { font-size: .7em; line-height: 0; }
@@ -86,7 +86,14 @@ sub { font-size: .7em; line-height: 0; }
 @media (max-width: 560px) { .chead { grid-template-columns: 1fr; } .code { grid-row: auto; justify-self: start; min-width: 0; font-size: 16px; padding: 7px 12px; } }
 .k1 { --k: var(--c1); } .k2 { --k: var(--c2); } .k3 { --k: var(--c3); } .k4 { --k: var(--c4); } .k5 { --k: var(--c5); } .k0 { --k: var(--plum2); }
 .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 34px; align-items: start; }
-@media (max-width: 900px) { .cols { grid-template-columns: 1fr; gap: 10px; } }
+/* kiegyensúlyozott oszlopok (formázás skill 5.): szöveg | táblázat, képletek | szöveg, két szövegrész egy folyamban */
+.cols.tw { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); }
+.cols.lw { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); }
+.cols.lw2 { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); }
+.cols.flow { display: block; columns: 2; column-gap: 34px; }
+.cols.flow > div { display: contents; }
+.cols.flow p { break-inside: avoid-column; }
+@media (max-width: 900px) { .cols, .cols.tw, .cols.lw, .cols.lw2 { grid-template-columns: 1fr; gap: 10px; } .cols.flow { columns: 1; } }
 /* képlet-szalag */
 .eq { margin: 16px 0 18px; padding: 16px 20px; border-left: 5px solid var(--k); background: var(--card); border-radius: 0 var(--r2) var(--r2) 0; box-shadow: var(--sh); }
 .eq .f { font: 700 clamp(22px, 2.6vw, 32px)/1.25 var(--fd); font-variant-numeric: tabular-nums; }
@@ -209,8 +216,10 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 .qres { text-align: center; padding: 16px 0; }
 .qres b { font: 800 46px/1 var(--fd); display: block; margin: 6px 0; }
 /* igaz/hamis */
-.tfgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; margin-top: 16px; }
-.tf { background: var(--card); border: 1.5px solid var(--line); border-radius: var(--r2); padding: 14px 16px; display: grid; gap: 10px; }
+.tfgrid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 16px; }
+@media (min-width: 700px) { .tfgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .tfgrid { grid-template-columns: repeat(4, 1fr); } }
+.tf { background: var(--card); border: 1.5px solid var(--line); border-radius: var(--r2); padding: 14px 16px; display: grid; gap: 10px; grid-template-rows: 1fr auto auto; }
 .tf .st { font-size: .97em; }
 .tf .st .no { font: 800 13px/1 var(--fd); color: var(--mute); margin-right: 8px; }
 .tf .bt { display: flex; gap: 8px; }
@@ -284,3 +293,8 @@ main .qres p { text-align: center; }
 .sim .pip { position: absolute; right: 12px; bottom: 12px; padding: 0; border: 2px solid rgba(255, 255, 255, .9); border-radius: 10px; background: transparent; box-shadow: 0 6px 22px rgba(0, 0, 0, .35); cursor: pointer; z-index: 3; }
 .sim .pip span { position: absolute; left: 6px; top: 6px; font: 700 11px/1.2 var(--fd); background: rgba(20, 14, 29, .78); color: #fff; padding: 3px 7px; border-radius: 5px; }
 .sim .pip:focus-visible { outline: 3px solid var(--k2, #6c43cc); outline-offset: 2px; }
+
+/* formázás skill – sorkizárási tartalék: lyukas sorkizárt blokk balra zárva */
+main .rag, footer .rag { text-align: left !important; }
+/* teli sorok: 5 kezelő egy sorban; a kalkulátor 6 kijelzője 3 + 3 */
+@media (min-width: 1000px) { #sim-altalanos-2d .ctrl { grid-template-columns: repeat(5, minmax(0, 1fr)); } .cx-ro.readout { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
