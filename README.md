@@ -18,3 +18,8 @@ Interaktív tananyag a BME Építőmérnöki Kar *Alapozás* tárgyához – a *
 - `img/`, `video/` – bélyegképek, videólejátszók
 
 A `main` ágra történő push után a Vercel automatikusan frissíti az oldalt.
+
+
+## Videók zenéje
+
+A videók zenéje (2026-11) valódi hangszerek felvett mintáiból készült – zongora, vonósok, akusztikus és elektromos gitár, basszusgitár, fúvósok, akusztikus dob –, ütemre igazítva a képhez; a gép- és effekthangok a korábbi hangkönyvtárból vannak. Hangminták: Salamander Grand Piano (Alexander Holm, CC BY 3.0); tonejs-instruments (nbrosowsky; VSCO2, Karoryfer, Iowa, Freesound – CC BY 3.0); Tone.js dobminták.
