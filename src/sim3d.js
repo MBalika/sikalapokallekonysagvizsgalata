@@ -227,6 +227,10 @@ class Sim {
     this.sg = new THREE.Group(); S.add(this.sg);
     this.aW = arrow(0x2a86d4); this.aG = arrow(0x1f8f54); this.aR = arrow(0xd99a00); S.add(this.aW, this.aG, this.aR);
     this.aW.scale.setScalar(1.6); this.aR.scale.setScalar(1.25);
+    // az eredő valódi térbeli tárgy: forgatáskor együtt mozog az ábrával, az oszlop és az alaptest takarja,
+    // a takart része (az alaptesten át a talpsíkig) halvány „röntgen” másolatként látszik
+    { const m = this.aR.userData.sh.material; m.depthTest = true; m.transparent = false; m.needsUpdate = true; this.aR.traverse((o) => { o.renderOrder = 0; }); }
+    this.aRg = arrow(0xd99a00); this.aRg.userData.sh.material.opacity = 0.32; this.aRg.traverse((o) => { o.renderOrder = 12; }); this.aRg.scale.setScalar(1.25); S.add(this.aRg);
     const ovl = (color, opacity = 1) => new THREE.MeshBasicMaterial({ color, depthTest: false, transparent: true, opacity });
     this.dot = new THREE.Mesh(new THREE.SphereGeometry(0.11, 18, 12), ovl(0xd99a00)); this.dot.renderOrder = 12; S.add(this.dot);
     this.pivAx = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, 1, 10).rotateX(Math.PI / 2), ovl(0xd23c3c, 0.95)); this.pivAx.renderOrder = 11; S.add(this.pivAx);
@@ -324,11 +328,12 @@ class Sim {
     const eP = Math.min(r.e, B / 2), d = new THREE.Vector3(r.Fk, -r.Gk, 0).normalize();
     this.dot.position.set(eP, yb, 0); this.dot.material.color.set(r.e <= B / 6 ? 0x1fbf73 : r.e <= B / 3 ? 0xd99a00 : 0xd23c3c);
     setArrow(this.aR, new THREE.Vector3(eP, yb, 0).addScaledVector(d, -3.6), d, 3.6 / 1.25);
+    setArrow(this.aRg, new THREE.Vector3(eP, yb, 0).addScaledVector(d, -3.6), d, 3.6 / 1.25);
     this.setLbl('r', `R<sub>k</sub> eredő`, eP - d.x * 3.9, yb - d.y * 3.9 + 0.2, 0);
     this.setLbl('e', `e = ${fmt(r.e, 2)} m`, eP / 2, yb - 0.5, B / 2 + 0.6);
     this.pivAx.scale.set(1, 1, B + 1.0); this.pivAx.position.set(pX, yb, 0);
     this.setLbl('piv', soil ? 'forgástengely (B/10)' : 'forgástengely (sarok)', pX + 0.3, yb - 0.25, -B / 2 - 0.9);
-    this.sg.visible = ok; this.aR.visible = ok; this.dot.visible = ok;
+    this.sg.visible = ok; this.aR.visible = ok; this.aRg.visible = ok; this.dot.visible = ok;
     for (const k of ['smax', 'smin', 'up', 'k6', 'k3', 'e', 'r']) if (!ok) this.L[k].on = false;
     this.tiltT = r.lam > 1 ? Math.min(0.9, 0.35 + (r.lam - 1) * 2.5) : (r.e > B / 6 ? 0.012 * clamp((r.e - B / 6) / (B / 6), 0, 2) : 0);
     this.setHud([`e = ${fmt(r.e, 2)} m`, `B/6 = ${fmt(B / 6, 2)} · B/3 = ${fmt(B / 3, 2)} m`, `σ<sub>max</sub> = ${inside ? fmt(r.smax, 0) + ' kPa' : '∞'}`, inside && ok ? `lépték: 1 m ≙ ${fmt(1 / this.kS, 0)} kPa` : 'a tábla felborul']);
