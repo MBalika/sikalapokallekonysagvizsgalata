@@ -1,0 +1,150 @@
+e3c83ef	In the undrained case R<sub>d</sub> may be at most 0.4·V<sub>d</sub>.
+29e018d	A gap may open, and water or air may get under the footing.
+574a72f	The full passive earth resistance develops at small displacements already.
+f60e92e	It needs significant compression – this is why only one half to two thirds may be counted.
+d1cfbb3	A later utility trench may remove the passive resistance in front of the footing.
+7e7c7ed	This is why it is only counted on if it will surely remain.
+f9dd967	Sliding must be checked for both the short-term and the long-term state.
+6e29dad	For both the undrained (c<sub>u</sub>) and the drained (φ′) state.
+374e29d	A shear key always improves the safety against sliding.
+f331df3	With a shallow key, if the active pressure on it is also counted, the safety may even get worse – it helps most in strong soil and with a smooth base.
+4d9555c	The overturning verification is M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>.
+6b90edd	Both are calculated from the design values of the actions.
+5fcc6ec	In EQU the factor on a stabilising permanent load is 0.9.
+389e397	On sound rock the moments are taken about a point B/10 from the toe.
+c61176c	On rock about the toe; B/10 applies to a footing on soil.
+676f244	If e ≤ B/6 the whole base is in compression.
+9d75fdb	The resultant passes through the base within the kern.
+4caaca0	At e = B/3 half of the base lifts off.
+bcf3895	According to EC7, even if e > B/3 we may build without precautions if the bearing resistance is adequate.
+11422fd	If e > B/3 (circle: 0.6·r) special precautions are needed.
+17cf201	According to DA-2*, the eccentricity is calculated from the design actions.
+1c9c90f	From the characteristic actions; the factors do not change it.
+3108662	Earlier Hungarian practice required e ≤ B/6.
+83896c0	The resultant had to stay within the kern.
+9550a8d	Under a permanent overturning action (e.g. earth pressure) lift-off of the base is less favourable than under short-term wind.
+cf77ea6	Under a permanent eccentric load the footing may gradually tilt.
+1f4207d	For a circular footing the radius of the kern is r/4.
+1d437a3	According to EC7, a circular footing needs special precautions if e > 0.6·r.
+cb7754a	In UPL the factor on the uplift force is 1.1.
+d5c3fc1	1.00 – 1.1 is the EQU value.
+8f9f06b	When checking uplift, the parked cars may be counted as a stabilising load.
+18007f4	Favourable variable load: γ<sub>Q;stb</sub> = 0.
+546ada8	Without R<sub>d</sub>, the overall safety against uplift is only 1.11.
+51130ad	In the uplift check, the groundwater level may be treated as a geometrical datum, with a safety margin.
+7505f4c	The design value is the characteristic level + a margin (the standard also allows factoring the water pressure).
+9503354	When the base slab is extended, no uplift force acts on the projecting part.
+31e3b7e	The uplift force acts on the whole slab – but the soil resting on the toe adds load.
+e496319	Lowering the groundwater is only acceptable with a reliable, monitored system.
+185f63f	The pump may stop, the filter may clog – then the full uplift force returns.
+e10ca30	As regards uplift, the state during construction is often less favourable than the final state.
+b393054	There is no slab or cover yet; this is why the Kossuth Square excavation was flooded in 2013.
+5aeddca	A 30×15 m box, 6 m deep, under 5 m of water pressure gets an uplift force of about 22 500 kN.
+ec771c5	Overall stability only has to be checked for pile foundations.
+3381fb0	For shallow foundations too: near a slope, a pit, a bank or a cavity.
+5eb2e93	Loss of stability is often triggered by the combined load of several footings.
+5a49ecd	It is rarely caused by a single footing.
+353f37e	Overall stability is verified by a slip surface analysis.
+defcbd9	A slope stability calculation, searching for the critical slip surface.
+4f356d3	Even in layered soil the circular slip surface always governs.
+b73c1b5	Along a weak layer, a non-circular slip surface may govern.
+7be61ed	In DA-3 the factor on a variable load is 1.3.
+b9cf73c	The partial factor for friction divides the angle φ′ itself.
+3b7e3a4	It divides the value of tan φ′.
+a4b62ff	The water conditions usually govern the stability of slopes.
+c08168c	Pore water pressure reduces the friction on the slip surface.
+24196d4	If the bearing resistance check is satisfied, overall stability is guaranteed.
+cb673f7	The bearing resistance may be adequate while the slope is not.
+c46d2a1	According to the Hungarian National Annex, design approach DA-2* is used for shallow foundations.
+47e6e0f	DA-2* (A1 + M1 + R2) for bearing resistance and sliding; DA-3 for overall stability.
+13826a2	In DA-2* the eccentricity is calculated from the design (factored) loads.
+f6b7196	From the characteristic actions; the partial factors are applied at the end, to the effects of actions.
+395e22a	The EQU, UPL and HYD limit states work with their own set of partial factors.
+3a46a23	Independently of the design approach (EN 1997-1, Annex A).
+7ecafe5	For hydraulic heave (HYD) the factor on an unfavourable permanent action is 1.1.
+5b4dd41	The footing dimensions (B, L) must be positive.
+c41f2f8	The foundation depth (D) must not be negative.
+70109d7	The footing height (h) must be positive.
+ecde3d3	The components of the horizontal forces must be entered as positive (pointing in the direction of sliding).
+04d4b54	The point of application of the horizontal force is below the base – check the value of h<sub>H</sub>.
+4991291	Unusual φ′<sub>cv;k</sub> = ${u_(p.phicv, 0, '°')} – typically between 20 and 36°.
+306d02d	Unusual c<sub>u;k</sub> = ${u_(p.cu, 0, 'kPa')} – check the value.
+1b67a1f	V′<sub>k</sub> ≤ 0: there is no compressive force on the base, so there is no frictional resistance either – check uplift, or increase the surcharge.
+62d5253	The vertical load is not positive.
+45e5e3b	The top of the footing is above ground level.
+539719c	The groundwater is above the base: the resultant of the water pressure acting on the base has been deducted from V′<sub>k</sub> (U<sub>k</sub> = ${u_(Uk, 1, un)}).
+a036027	The groundwater level is above ground level.
+c0cd69e	A variable vertical load may only be included in V′<sub>k</sub> if it surely acts together with the horizontal force.
+ed8b551	Passive resistance may only be taken into account if the soil in front of the face will remain permanently (erosion, a utility trench or separation due to shrinkage can be ruled out).
+482b246	Unusual φ′<sub>k</sub> = ${u_(p.phiP, 0, '°')} in front of the face.
+ee8af37	Large eccentricity: e = ${u_(e, 2, 'm')} > B/3 – special precautions are needed (see the Overturning tab).
+7527ffa	The base area in compression is zero (e ≥ B/2) – the undrained resistance cannot be calculated.
+e10e9a2	In the undrained state the 0.4·V<sub>d</sub> limit governs (${u_(cap, 1, un)} < ${u_(Rd0, 1, un)}).
+a2b83e0	There is no horizontal force – sliding does not govern.
+244ed9a	In the undrained state, for the limit V<sub>d</sub> = 1.0·(G<sub>k</sub> + self-weight): here the vertical load is favourable, and the variable part is 0 in the favourable case.
+2858d62	Drained state
+357a5d9	long term, φ′<sub>cv;k</sub>
+50a7392	Undrained state
+cd4214f	short term, c<sub>u;k</sub>
+438a0a5	<p class="cx-c">Weight of the backfill above the base${isFinite(zw) && zw < D - hf ? ' (a talajvíz alatt γ<sub>sat</sub>-tal)' : ''}.</p>
+1dd1b22	 (below the groundwater with γ<sub>sat</sub>)
+2dd1960	<p class="cx-c">The variable vertical load (Q<sub>k</sub> = ${u_(p.Qk, 1, un)}) ${p.qWith ? 'biztosan együtt működik a vízszintes erővel, ezért figyelembe vettük.' : 'nem működik biztosan együtt a vízszintes erővel, ezért V′<sub>k</sub>-ban nem szerepel.'}</p>
+e6c5d42	surely acts together with the horizontal force, so it has been taken into account.
+6575dc4	does not surely act together with the horizontal force, so it is not included in V′<sub>k</sub>.
+33df881	Characteristic value of the vertical force
+7211eba	Design value of the horizontal force (A1: γ<sub>G</sub> = 1.35; γ<sub>Q</sub> = 1.5)
+77377ca	Eccentricity from characteristic actions (${DA2})
+29ed525	Design data entered
+62d3a15	Drained shear resistance on the base (γ<sub>R;h</sub> = 1.1)
+5df8db5	<p class="cx-c">${p.cast === 'precast' ? 'Sima, előregyártott alaptest: ' + nw('δ<sub>k</sub> = ⅔ · φ′<sub>cv;k</sub>') : 'Helyben betonozott alaptest: ' + nw('δ<sub>k</sub> = φ′<sub>cv;k</sub>')}. The effective cohesion c′ is ignored.</p>
+c842e79	Smooth precast footing: 
+efa33b3	Undrained shear resistance and the 0.4·V<sub>d</sub> limit
+cdf1a9e	<p class="cx-c">The limit governs: a gap may open between the footing and the soil, so no resistance greater than 40% of the vertical force may be counted on.</p>
+8cda2c8	<p class="cx-c">Height of action: 
+55fd805	from ground level to the base
+63b4025	); mobilised share ν = 
+0353e83	 (drained)
+ceb623d	 (undrained)
+0256a26	Passive resistance on the face
+6231522	Verification
+016823e	drained
+b94bbe0	undrained
+71a8292	The footing dimensions must be positive.
+ec1632c	The vertical load (V<sub>k</sub>) must be positive – overturning and eccentricity only make sense for a base in compression.
+ee7b70c	W (self-weight)
+6f62a32	There is no overturning action – the load is concentric.
+47dcfcd	Footing on soil: as a first approximation the pivot point is at a distance B/10 from the edge of the base.
+da5f7c4	e = ${u_(e, 3, 'm')} > 0.6·r = ${u_(0.6 * Rr, 3, 'm')}: according to the standard, special precautions are needed.
+03d59cf	The eccentricity exceeds the B/3 limit${two ? ' (kétirányú esetben az (e<sub>B</sub>/B)² + (e<sub>L</sub>/L)² ≤ 1/9 feltételt)' : ''}: special precautions are needed.
+8daec12	 (in the two-way case, the condition (e<sub>B</sub>/B)² + (e<sub>L</sub>/L)² ≤ 1/9)
+b1ef91b	The resultant is outside the kern: part of the base lifts off (earlier Hungarian practice did not allow this).
+ac273b4	The resultant falls outside the base (e ≥ B/2) – the footing cannot be balanced by contact pressure.
+f129444	On soil, a large eccentricity also shows up in the bearing resistance: the bearing resistance must be checked separately with the effective dimension B′ = B − 2e.
+012414c	In the EQU check the variable vertical load is favourable (γ<sub>Q;stb</sub> = 0), but – depending on the setting – it is included in the calculation of the eccentricity.
+13dcd9a	Negative lever arm – check the heights.
+80e41f7	pivot point at the toe
+c76db12	pivot point B/10 from the toe
+4f30ec4	within the kern
+8aeddcc	partial lift-off
+332db56	precautions needed
+9e77852	Vertical load (characteristic)
+1cbacee	in the direction of the resultant eccentricity
+8366475	in direction B
+8f6a2cd	in direction L
+a31a49d	<p class="cx-c">Pivot point ${dir}: ${nw(u_(d.dp, 3, 'm'))} from the centre of the base (${p.ground === 'rock' ? 'szilárd kőzet – a talp széle' : 'talaj – a széltől ' + (circ ? 'D/10' : 'B/10') + ' távolságra'}).</p>
+76f08b1	sound rock – the edge of the base
+379f066	soil – at 
+c2d2b81	 from the edge
+219fe79	<div class="tblw cx-tw"><table class="tbl cx-tbl"><thead><tr><th>Action</th><th>Characteristic moment</th><th>Nature</th><th>γ</th><th>Design</th></tr></thead><tbody>
+62b7ccf	destabilising
+eb0e4af	stabilising
+4237ec4	EQU check ${dir}${dirs.length > 1 ? (d === gov ? ' (mértékadó)' : '') : ''}
+b4288aa	 (governing)
+edffd39	<p class="cx-c">Kern: ${nw('e ≤ r/4 = ' + u_(Rr / 4, 3, 'm'))}; limit: ${nw('e ≤ 0,6 · r = ' + u_(0.6 * Rr, 3, 'm'))}.</p>
+0b6aa42	<p class="cx-c">Kern (rhombus): 
+8cbbfbf	. Two-way generalisation of the B/3 limit: 
+fa0aab5	 (the gap reaches at most the centre).</p>
+2dc4156	: the resultant is within the kern, the whole base is in compression.
+7c9540c	: allowed, but part of the base lifts off.
+0a0c722	: special precautions are needed.
+d6fb013	<p class="cx-c">The area in compression and the plane of stress by iteration (base taking no tension, linear distribution):</p>

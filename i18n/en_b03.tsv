@@ -1,0 +1,169 @@
+193ca51	<b>For information.</b> On this page every explanation, worked example, simulator and calculator follows the current EN 1997-1 and its Hungarian National Annex. This chapter only shows what will change with the second-generation standard.
+e0c0514	Now – verification by DA-2* and DA-3
+c02be9e	EQU: separate factors for stabilising and destabilising actions (γ<sub>G;stb</sub> = 0.9; γ<sub>G;dst</sub> = 1.1)
+6013385	sliding, bearing resistance: DA-2* (A1 + M1 + R2)
+63ad1bc	soil parameters at characteristic values, the resistance reduced by γ<sub>R</sub>
+b6f29ca	overall stability: DA-3
+ce6bc39	New – verification cases + MFA / RFA
+50cbf75	equilibrium and uplift: VC2
+58b839a	shallow foundations, slopes, retaining walls: VC3 (MFA – with a factor on tan φ′ and c′)
+c1660bf	RFA: the resistance with γ<sub>R</sub> (bearing ≈ 1.4, sliding 1.1); within RFA, VC1 or VC4 (≈ DA-2*)
+68073c2	the values come from the National Annex – not yet published
+80b4032	Verification case
+5a10991	What for?
+be3f302	Old equivalent
+041b5fc	Factors on actions (persistent situation)
+7ab61fa	=
+db260eb	structural resistance, foundations in general
+acf7a1b	=
+c960eb4	=
+44b2389	static equilibrium, uplift
+f63b6a3	=
+27a0653	G: 1.0 favourable
+d75644c	=
+d3632a4	both the action and the resistance come from the ground: slopes, overall stability
+02cfc7e	GEO, ≈ DA-3
+e56346d	G: 1.0; Q: 1.3 + M2 material factors
+260ee9b	=
+6dd2e06	the factor on the effect of actions (e.g. retaining walls)
+a5fec06	=
+366d871	For shallow foundations
+a314e70	The bearing resistance formula has moved into the main text, probably with a ground inclination factor.
+21ca7e2	<b>Overturning</b> (static equilibrium, without ground failure) and <b>toppling</b> (rotational bearing failure) are checked separately.
+8ccbfb7	The eccentricity limit is e ≤ B/3, <b>0.59·r</b> for a circular footing; in the serviceability state no gap should open at the edge of the footing.
+8dbc74a	The 0.4 limit for undrained sliding remains; the factors for sliding and bearing resistance do not change numerically (1.1 and 1.4).
+8f7a288	New concepts
+7133908	<b>Ground Model</b> → <b>Geotechnical Design Model</b>: a mandatory line of reasoning.
+89edba3	The <b>Geotechnical Category</b> results from the consequence class (CC) combined with the complexity of the ground conditions (GCC).
+3da8b14	Overall stability moves into <b>Clause 4 of EN 1997-3</b> (slopes, cuttings, embankments); the zone of influence is a new concept.
+a1163fa	<b>Representative</b> values instead of characteristic ones.
+e99aa1c	<b>2024</b><span>EN 1997-1 and -2 published</span>
+0d33246	<b>2025</b><span>EN 1997-3 published</span>
+cec5c9e	<b>30 Mar 2026</b><span>texts with the national standards bodies</span>
+42cf5d6	<b>30 Sep 2027</b><span>deadline for national implementation</span>
+9903af1	<b>30 Mar 2028</b><span>withdrawal of the first generation</span>
+ee821dc	The final texts and the Hungarian National Annex are worth checking once they are published.
+90f0f76	Quiz – the new Eurocode
+5a07bd1	Animated videos
+5b56d8e	Five short 3D animations on the four limit states and the summary.
+ba20c08	True or false?
+ae17fbe	Forty statements from all four limit states – with an instant explanation.
+015daff	Start again
+80bddb5	<b>Stability of shallow foundations</b> – interactive module for the Foundation Engineering course at the BME Faculty of Civil Engineering, according to EN 1997-1 (Eurocode 7) and its Hungarian National Annex.
+f87cb09	The simulators and examples are illustrative models; for design, the standards in force, the National Annex and verified software must be used.
+3299b03	<a href="https://sikalapok-sullyedesszamitasa.vercel.app/" target="_blank" rel="noopener">Settlement of shallow foundations (HU)</a>⏎      <a href="https://vedekezesakarossullyedesekellen.vercel.app/" target="_blank" rel="noopener">Protection against harmful settlement (HU)</a>⏎      <a href="https://kedvezotlen-altalaj.vercel.app/" target="_blank" rel="noopener">Foundations on difficult ground (HU)</a>
+5a43d6c	Back to top
+b571c6c	Video
+879eb3e	Full screen
+090df7b	Close
+3704f1f	WE
+8452c38	Worked examples
+9d43cfc	Nine problems solved step by step – each one opens in the calculator with a single click.
+aa1d6f5	The first four examples deal with sliding (footings cast in situ and precast, the undrained case, passive resistance), the fifth and sixth with overturning and limiting the eccentricity, the seventh and eighth with uplift, and the ninth with the overall stability of a house on the crest of a slope. The steps can be opened one by one: it is worth working them out yourself first and only then looking at the solution.
+a12c97c	Choose a worked example
+cd14222	← Previous example
+2ac77a4	Next example →
+b48061c	Calculator
+260f142	Sliding, overturning, uplift and overall stability – with a section, a 3D model and a detailed derivation.
+55a1ebd	Choose the check, then enter the geometry, the loads and the soil parameters. The figure, the utilisation and the full derivation update instantly with every change; the badges on the tabs show where the four verifications stand.
+12633b4	Choose a verification
+a3e05df	<b>Sliding</b><small>GEO · DA‑2*</small>
+864935d	<b>Overturning</b><small>EQU + eccentricity</small>
+474bb87	<b>Uplift</b><small>UPL</small>
+37ff6f2	<b>Overall stability</b><small>GEO · DA‑3</small>
+c65f0cd	Input data
+ced6da8	Load a worked example
+cb26348	Load a worked example…
+5003b1d	Restore the default values
+314e559	Defaults
+9309920	View
+1732a20	2D section
+b4f75a6	3D model
+ff66e19	Camera view
+62bb79e	Axonometric
+ecb7b7b	Section
+fb46ca9	Plan
+46faffe	Loading the 3D view…
+945f00e	calculating…
+7977162	Detailed calculation <small>formulas and substitution, step by step</small>
+7a94c2c	Calculation conventions and partial factors
+f7c48ac	Illustrative calculation for teaching, according to EN&nbsp;1997‑1 and the Hungarian National Annex. For design, the standards in force and verified software must be used.
+4758111	=
+14c4de7	favourable variable
+e5ce1a4	unfavourable variable
+8327f5f	favourable permanent
+acc4028	unfavourable permanent
+13c304c	variable action
+88dc92e	permanent load
+2e722ba	variable destabilising
+3d40e94	critical state
+baaff0e	undrained shear strength
+f1c87f5	the kern
+0086c49	within the kern
+6bb5a7f	effective width
+d909ada	effective base area
+89993b5	passive earth resistance
+409ff48	active earth pressure
+3c95f6c	design value
+cf0b0dc	design values
+104f197	characteristic value
+9a34cb1	characteristic values
+42bda25	partial factor
+cebb3a4	overall stability
+b3e8aa8	design approach
+338e55c	National Annex
+90a5413	overall safety
+dd8bcf1	contact pressure
+d638893	Light theme
+42c9a43	drained and undrained case, δ, 0.4·V<sub>d</sub>, passive resistance
+c739bf6	EQU factors, pivot point, B/6 and B/3, edge pressure
+6d87f46	UPL, groundwater level, extended slab, anchors, dewatering, flooding
+d9c259e	slip surface, slices, DA-3, water, Hungarian cases
+b7cdbb9	Summary and quiz
+12ad810	four limit states on one site, design approaches, quiz
+9e8ad9a	Smaller view
+2395828	<i aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></i>Video: ${v.t} (${v.d})
+74ddbe6	<span class="muted">Result</span><b>${ok} / ${items.length}</b><p class="muted">${ok === items.length ? 'Hibátlan.' : ok >= items.length * .6 ? 'Jó eredmény – a hibás válaszok magyarázatát érdemes újraolvasni.' : 'Olvasd át újra a fejezetet, és próbáld meg még egyszer.'}</p><div class="qnav" style="justify-content:center"><button data-a="restart">Start again</button></div>
+cfd6aa1	All correct.
+c0fe79e	Good result – it is worth rereading the explanations of the wrong answers.
+c57f927	Read the chapter again and have another go.
+94bebe3	<div class="qn">Question ${i + 1} of ${items.length}</div><div class="qt">${it.q}</div>
+b107245	<button class="sec" data-a="prev" ${i === 0 ? 'disabled' : ''}>Previous</button><button data-a="next" ${res[i] === null ? 'disabled' : ''}>${i === items.length - 1 ? 'Eredmény' : 'Következő'}</button>
+269731d	Result
+d86947d	Next
+2337134	</b> correct out of <b>
+f3f5a81	</b> answered (of 
+5875593	excellent, you are ready for the exam!
+dd158bb	good result.
+4a2e139	review the statements you got wrong.
+c7a1b0a	shear under the base
+3c5dc9d	earth pressure
+88de33f	pivot point
+3f75bcb	groundwater
+816aa1b	uplift force
+6e15ca4	slip surface
+caa871c	GEO – shear under the base is not enough
+f769575	EQU – the overturning moment wins
+8539a81	UPL – the uplift force overcomes the self-weight
+d085464	GEO – the soil mass moves together with the footing
+57e3082	Cast in situ – rough surface, the grains interlock
+66f1b04	Precast – smooth surface, the grains slide
+27845d2	displacement / embedment depth (%)
+f6d6bab	the soil in front of the face is gone: Rp = 0
+e7a62dd	mobilised: ${fmt(v * 100, 0)} %
+8419414	plan: the kern (B/6) and the B/3 limit
+7362f64	${isFinite(smax) ? fmt(smax / (V / A), 2) : '∞'}<small>× mean</small>
+8d5dedb	B/6 < e ≤ B/3: part of the base lifts off
+e9803e5	e > B/3: special precautions needed
+a7d41b6	MÁSZ (design flood level)
+574a6db	June 2013 – record
+d914684	April 2006
+52d05aa	groundwater at the bank after 1965
+30bd8d6	underground car park
+ba4e33c	the groundwater along the bank follows the flood wave
+5678ccc	What kind of limit state is sliding according to EC7?
+61cea73	EQU – loss of static equilibrium
+53d3a32	GEO – failure of the ground
+b92554b	UPL – uplift
+8dfed09	STR – structural failure
+4322a7c	Sliding is resisted by the shear strength of the ground (and of the footing–soil interface), so it is a GEO limit state.

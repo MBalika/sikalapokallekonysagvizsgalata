@@ -1,0 +1,120 @@
+58006a1	Skip to content
+12cfc03	Stability of shallow foundations – top of the page
+9405177	Stability of shallow foundations<small>BME Foundation Engineering – interactive module</small>
+536b3f8	Videos
+05ec02b	Worked examples and calculators
+b2e0db5	Dark theme
+69697c9	The four checks
+330853d	<a class="lc k1" href="#elcsuszas">Sliding</a>⏎    <a class="lc k2" href="#felborulas">Overturning</a>⏎    <a class="lc k3" href="#feluszas">Uplift</a>⏎    <a class="lc k4" href="#altalanos"><span>Overall<span class="lx">&nbsp;stability</span></span></a>
+e6a67ad	Stability of <span class="l2">shallow foundations</span>
+d533d42	A footing can lose its stability in four ways: it slides on its base, overturns, floats up, or slips together with the surrounding soil. Each of the four has to be verified separately. On this page you can work through them with simulators, animations and quizzes, and see what decides each case.
+81b7f4b	<a class="btn" href="#elcsuszas">Start with sliding</a><a class="btn ghost" href="#videok">The five animated videos</a>
+4427c61	In the top bar (verification panel) you can always see where the four simulators stand: the bar shows the utilisation, the mark is at 1.0.
+6f648a0	Animation: the four failure modes – sliding, overturning, uplift, loss of overall stability
+f5ddff5	Choose a failure mode
+3e93ac4	Sliding
+91e4be4	Overturning
+3280f72	Uplift
+8a1d115	Overall
+c951bdc	Four checks, one idea
+b8ff5ab	Design value of the action ≤ design value of the resistance – for four different failure modes.
+933d7de	Together with sizing the footings – or after it – it must also be verified that the structure has adequate safety according to EC7 against <b>sliding, overturning and uplift</b>. In certain situations – near a slope, an excavation, a bank or a cavity – <b>overall stability</b> must be checked as well.
+ebf1017	The procedure is the same for each: we write down the design value of the actions (E<sub>d</sub>) and the design value of the resistance (R<sub>d</sub>), then verify that E<sub>d</sub> ≤ R<sub>d</sub>. For overturning we compare moments: M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>. Where the soil strength matters, both the <b>drained and the undrained</b> states are checked.
+2b0df99	The ratio of the two is the <b>utilisation</b>: Λ = E<sub>d</sub> / R<sub>d</sub>. If Λ ≤ 1.0, the footing satisfies that limit state. The verification panel shows the same.
+b9220e2	Limit state
+5100f90	Type
+17cde32	What resists?
+2d3410c	Factors (EN 1997-1)
+e6fb404	<span class="dot"></span>Sliding
+0d908f1	=
+06620b6	shear under the base, passive resistance
+d90aaaa	<span class="dot"></span>Overturning
+e6555a7	=
+81de69b	stabilising moment
+4da332f	γ<sub>G;dst</sub> = 1.1; γ<sub>G;stb</sub> = 0.9; γ<sub>Q;dst</sub> = 1.5
+9b62cbe	<span class="dot"></span>Uplift
+35cb1c9	=
+8c64775	self-weight, surcharge, friction, anchors
+aaa7894	γ<sub>G;dst</sub> = 1.00; γ<sub>G;stb</sub> = 0.90; γ<sub>Q;dst</sub> = 1.50
+4ad660a	<span class="dot"></span>Overall stability
+14aa61f	=
+3f37077	shear strength on the slip surface
+4229203	γ<sub>G</sub> = 1.0; γ<sub>Q</sub> = 1.3; strength reduced
+2f5a704	Which one is critical?
+0a8d902	Eight situations – which limit state is the main threat? Click the answer.
+e9602b6	=
+68f2c97	Sliding on the base
+761080f	If the load is not perpendicular to the base, its horizontal component is resisted by shear under the base and by passive earth resistance.
+efe2967	Inclined loads act, for example, on the footings of retaining walls and bridge abutments (earth pressure), at the column bases of frames (horizontal reaction) or on structures exposed to wind. In such cases the risk of “sliding failure” must also be checked:
+cb10bb7	H<sub>d</sub> – design value of the horizontal force acting on the base, including the active earth pressure transferred to the footing
+77815c2	R<sub>d</sub> – design value of the shear resistance on the base that prevents sliding
+ac8cee5	R<sub>p;d</sub> – design value of the passive earth resistance on the side of the footing opposite to H<sub>d</sub>
+03c90e0	R<sub>d</sub> and R<sub>p;d</sub> must be chosen consistently with the movements expected in the limit state considered: for large displacements the post-peak behaviour of the shear strength is typical.
+a40395d	In design approach <b>DA-2*</b> according to the Hungarian National Annex of EN 1997-1, actions are taken with the A1 factors (γ<sub>G</sub> = 1.35, γ<sub>Q</sub> = 1.5), and the sliding resistance is reduced by the partial factor γ<sub>R;h</sub> = 1.1.
+e106d3c	The resistance has to be determined for two states: the <b>drained</b> state in the long term (effective stresses, friction) and, in cohesive soil, the <b>undrained</b> state in the short term (c<sub>u</sub>). The less favourable of the two governs.
+09b1b91	Case 1: drained state – long term
+e908326	R<sub>d</sub> = V′<sub>k</sub> · tan δ<sub>k</sub> / γ<sub>R;h</sub>
+93213e9	V′<sub>k</sub> – characteristic value of the vertical force; a variable action only if it surely acts together with H<sub>d</sub>
+3472e91	δ<sub>k</sub> – interface friction angle between footing and soil, from the critical state φ′<sub>cv;k</sub>
+3cc6829	For a footing cast in situ the base is rough and the grains interlock: δ<sub>k</sub> = φ′<sub>cv;k</sub>. For a smooth precast footing only δ<sub>k</sub> = ⅔·φ′<sub>cv;k</sub> may be assumed.
+d12df38	The effective cohesion (c′) should generally be ignored: the adhesion that develops between cohesive soil and the footing depends strongly on the water content and consistency.
+5643587	Cast in situ or precast?
+57df257	For a footing cast in situ δ = φ′<sub>cv;k</sub>, for a precast one only <span class="nw">⅔·φ′<sub>cv;k</sub></span>.<br>Example: cantilever wall, V′<sub>k</sub> = 162 kN/m, H<sub>d</sub> = 65 kN/m.
+2a5617c	Contact between footing and soil, magnified
+23fcdee	Footing<span></span>
+b90e1ab	Cast in situ
+56bdf73	Precast
+4c76cba	=
+7f3bb4e	<span>tan δ<sub>k</sub></span><b id="mi_tg"></b>
+7bc04f4	Case 2: undrained state – short term
+5168c7e	A<sub>c</sub> – base area in compression (for an eccentric load A′ = B′ · L′)
+3c35fcd	c<sub>u;k</sub> – characteristic value of the undrained shear strength at the base
+e1259a4	No greater shear resistance may be assumed than 40 per cent of the design value of the vertical force on the footing.
+5e0de39	A gap may form between footing and soil, and water or air may reach the base. Therefore the 0.4·V<sub>d</sub> limit must also be checked. It may only be omitted if suction prevents a gap from forming even where there is no positive contact pressure – this is rarely the case.
+9824458	Example: A<sub>c</sub> = 2.0 m²/m, c<sub>u;k</sub> = 60 kPa → A<sub>c</sub>·c<sub>u;k</sub>/1.1 = 109 kN/m; V<sub>d</sub> = 180 kN/m → 0.4·V<sub>d</sub> = 72 kN/m, so R<sub>d</sub> = 72 kN/m – the limit governs.
+1afe620	Passive resistance – R<sub>p;d</sub>
+1017b13	The full passive earth resistance is mobilised only after a significant displacement, so typically only a part of it, <b>one half to two thirds</b>, may be taken into account, with the partial factor γ<sub>R;e</sub> = 1.4.
+d165c1e	It must also be borne in mind that erosion or some human intervention (e.g. a later utility trench) may remove the soil in front of the footing face, and in clay the soil may separate from the face because of seasonal changes in water content. If this cannot be ruled out, we conservatively take R<sub>p;d</sub> = 0.
+f2ac6e7	Some design software offers to take only ½–⅓ of the full passive earth resistance into account.
+45e0b84	Mobilised passive resistance
+83719e4	How much of the passive resistance develops at what displacement? (illustrative curve)
+d83de48	Mobilised passive resistance as a function of displacement
+07d07e4	Displacement relative to the embedment depth
+108e18a	Soil in front of the face<span></span>
+baed0d8	In place
+4cc2e85	A utility trench was dug in front
+0c709c4	3D simulator: cantilever wall
+cef2772	Set the height of the wall, the base width, the soil and the variable load on the backfill. The arrow lengths are to scale: red H<sub>d</sub>, green R<sub>d</sub>; if switched on, blue is the passive earth resistance (R<sub>p;d</sub>) with the mobilised pressure diagram and the passive wedge. If the utilisation goes above 1, the wall slides.
+a0342aa	drag to rotate, scroll to zoom
+91a69e4	Retained height (from the base)
+cb4878f	Base width B
+e3e997f	Variable load on the backfill q
+78a1f04	State<span></span>
+5fc49b3	Drained (sand)
+2737387	Undrained (clay)
+c5e3dc4	Cast in situ
+5f62315	Share of passive resistance<span></span>
+5c84038	<span>Utilisation Λ</span><b>–</b>
+fceca7f	Model: 1 m of wall; γ = 19 kN/m³, K<sub>a</sub> = tan²(45° − φ/2); H<sub>d</sub> = 1.35·E<sub>a</sub> + 1.5·E<sub>a,q</sub>; R<sub>p;d</sub> = share · E<sub>p</sub>/1.4 (γ<sub>R;e</sub> = 1.4); undrained V<sub>d</sub> = V<sub>k</sub>. The vertical effect of q on the heel is not counted.
+b2ab7d6	If it fails
+389a214	Structural options
+a17d306	A <b>shear key</b> under the base: it forces the slip surface lower, into the soil, with passive resistance developing in front of it.
+3a150c4	<b>More self-weight</b>, a wider base – more soil on the heel: a larger V′<sub>k</sub>.
+5e257a1	A <b>deeper foundation level</b> – larger, more reliable passive resistance.
+bb79c35	A rough base cast in situ instead of a precast one.
+61c077e	Careful with shear keys
+8f25813	Experience shows that the benefit of a shear key is mixed: in strong soil and with a smooth precast base it helps a lot; with a shallow key, however, once the active pressure on it is also counted, the safety may even get worse (in one worked example from 1.39 to 1.24). Count on the passive resistance down to the bottom of the key only if it will surely remain.
+e73fcdc	Austin Dam, Pennsylvania, USA
+064870f	In January 1910, after rapid filling, the 15 m high gravity dam slid on its foundation: about 46 cm at the toe and about 79 cm at the crest. The slip surface formed along clay-filled bedding joints, and the uplift of water getting under the dam reduced the safety further. On 30 September 1911 the dam failed – 78 people died.
+19e5deb	Quiz – sliding
+e6802a5	Overturning and eccentricity
+e4daced	With a highly eccentric load, the destabilising moment must not reach the stabilising one.
+e7d6aaa	If the load is transferred to the base with a large eccentricity, there is a risk of the footing and the supported structure overturning. This is treated as loss of static equilibrium (EQU) and checked by comparing the destabilising moments with those resisting them:
+7edc131	=
+a8e7e7f	Both moments are calculated from the design values of the actions.
+23ba59e	Permanent: γ<sub>G;dst</sub> = 1.1; γ<sub>G;stb</sub> = 0.9
+cf92232	Variable destabilising: γ<sub>Q;dst</sub> = 1.5
+4ac362e	Variable favourable: 0
+9b553e0	About which point do we take moments?
+ab49477	For a footing on <b>sound rock</b>, about the toe (toe line) of the footing. For a footing on <b>soil</b> – since the soil under the toe is pressed in – as a first approximation about a point <b>B/10</b> inside the toe. You can try both in the 3D simulator.
+0ccaf81	Limiting the eccentricity

@@ -207,7 +207,7 @@
       // ház
       const hx0 = -st.s - 2.4 - 0.3, hx1 = -st.s + 0.3; const a = P(hx0, 0), b = P(hx1, 0); g.fillStyle = C.card; g.strokeStyle = C.ink; g.lineWidth = 2; g.fillRect(a[0], a[1] - 50, b[0] - a[0], 50); g.strokeRect(a[0], a[1] - 50, b[0] - a[0], 50); g.fillStyle = C.c1; g.beginPath(); g.moveTo(a[0] - 6, a[1] - 50); g.lineTo((a[0] + b[0]) / 2, a[1] - 74); g.lineTo(b[0] + 6, a[1] - 50); g.closePath(); g.fill();
       res.loads.forEach(L => { const p = P(L.x, 0); arrow(g, p[0], p[1] - 12, p[0], p[1] + 16, C.ink, 3, 9); });
-      label(g, `rézsű 1:${String(st.n).replace('.', ',')}, H = 8 m`, P(LX / 2, -H / 2)[0] + 30, P(LX / 2, -H / 2)[1] - 10, C.ink2, 13);
+      label(g, `rézsű 1:${String(st.n).replace('.', U.DEC)}, H = 8 m`, P(LX / 2, -H / 2)[0] + 30, P(LX / 2, -H / 2)[1] - 10, C.ink2, 13);
     }
     function out() { const v = res.lam; $('#sl_F').textContent = fmt(res.F, 2); const L = $('#sl_L'); L.textContent = fmt(v, 2); L.parentElement.className = 'ro ' + (v <= 1 ? 'ok' : 'bad'); $('#sl_x').innerHTML = res.circ ? `${fmt(-res.circ.x0, 1)}<small>m</small>` : '–'; }
     bindRange('sl_s', (v) => { st.s = v; sched(); }, (v) => fmt(v, 1) + ' m'); bindRange('sl_ru', (v) => { st.ru = v; sched(); }, (v) => fmt(v, 2));

@@ -1,0 +1,170 @@
+09f1c36	The standard requires special precautions if the eccentricity of the load exceeds <b>1/3</b> of the width of a rectangular footing or <b>0.6</b> times the radius of a circular one. The contact pressure then concentrates on one side of the footing, the edge pressure increases considerably, and the effective base area that can be counted on for bearing resistance decreases – half of the base no longer “works”.
+45f5806	In design approach DA-2* the eccentricity must be determined from the <b>characteristic</b> values of the actions; the partial factors do not change it.
+989b22a	Earlier Hungarian practice, before EC7, was stricter: the whole base had to “work”, and the eccentricity was limited to <b>B/6</b> – the resultant had to pass through the base within the kern.
+58adcd9	Eccentricity and contact pressure
+3982eda	Drag the slider: how do the pressure distribution, the length in compression and the effective width change?
+ed7e82b	Contact pressure distribution and the kern as a function of eccentricity
+ae654a6	Eccentricity
+f732a5f	<span>Length in compression</span><b id="ec_c"></b>
+62d65a8	<span>Edge pressure</span><b id="ec_s"></b>
+36ac94b	<span>Effective width B′ = B − 2e</span><b id="ec_b"></b>
+c09beee	3D simulator: billboard
+43a2c2a	A 6×3 m board on an 8 m high post, on a square footing. Set the wind pressure and the size of the base, and switch between soil and rock. The transparent soil block shows the contact pressure as a solid: the green lines are the kern (±B/6), the orange one is the B/3 limit, the yellow dot is where the resultant pierces the base. Click the small window at the bottom right to change the view.
+9d8c78f	Wind pressure on the board w
+e42bad5	Footing B × B
+c7cbb80	Ground<span></span>
+bb06735	Soil (B/10)
+cbba05b	Rock (toe)
+5eef2da	=
+c34741d	Model: F<sub>w;k</sub> = w<sub>k</sub> · 18 m², lever arm 10.7 m from the base; G<sub>k</sub> = 25 kN + footing (1.0 m, 25 kN/m³) + 0.2 m soil cover. Wind load on the post is ignored.
+bf3d658	At e = B/3
+679b62b	the length in compression is B/2, and the edge pressure is four times the mean contact pressure.
+c4da6a3	Circular footing
+046bcb5	The radius of the kern is r/4. According to EC7, special precautions are needed if e &gt; 0.6·r.
+3fd0c70	Wind turbine footing
+4d1ba00	In the structural design of a Vestas V126 (R = 13.8 m, M = 149 MNm) e = 6.7 m &lt; 0.59·R = 8.1 m – this is the limit of the German wind turbine guideline (gap at most up to the centre).<br>
+d4516fb	Short-term or permanent?
+e3ea22e	It matters whether the overturning action is short-term (e.g. wind load) or permanent (e.g. earth pressure). In a gust the base lifts off temporarily and then settles back; under a permanent eccentric load the footing may gradually tilt. The German guideline for wind turbines therefore allows no gap under quasi-permanent loading, and under extreme loading a gap at most up to the centre.
+f758c8d	a larger base – the lever arm and the self-weight grow, e/B decreases;
+e458998	a deeper footing – more soil cover, more self-weight;
+074d9d7	shifting the base under the resultant (eccentric footing).
+ada1977	<b>On soil the GEO check also matters.</b> In EC7 terms, overturning as a rigid body (EQU) is rare in geotechnics and governs mainly for footings on rock; on soil a large eccentricity also shows up in the bearing resistance check (with the effective width B′ = B − 2e).
+fc25ec9	Quiz – overturning
+c6dfc23	With a high groundwater table, a light structure of large volume may be acted on by an uplift force greater than the sum of the permanent loads.
+03e1c28	In design practice it happens countless times that a light but “voluminous” structure – an underground tank, a pedestrian underpass, an underground car park – is acted on by a greater uplift force at high groundwater than the sum of the permanent loads. The Eurocode defines a separate ultimate limit state for this: <b>UPL</b> (uplift).
+4467800	=
+89623b8	V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub> – the uplift force (A<sub>k</sub>: the volume submerged below the groundwater, γ<sub>w</sub> = 10 kN/m³)
+f07c6b3	G<sub>stb;d</sub> = G<sub>sz;d</sub> + G<sub>t;d</sub> – the weight of the structure and of the soil loading it, with γ<sub>G;stb</sub>
+1841877	R<sub>d</sub> = T<sub>d</sub> + P<sub>d</sub> – friction between the structure and the soil, and the anchor force
+e7c0af0	The utilisation: Λ = V<sub>dst;d</sub> / (G<sub>stb;d</sub> + R<sub>d</sub>).
+9170223	UPL – partial factors on actions
+3b286e7	=
+69e8ce1	1.00 – permanent, destabilising (uplift force)
+93f0f92	=
+a98b328	0.90 – permanent, stabilising (self-weight)
+f31a8a0	=
+87d06d8	1.50 – variable, destabilising
+9d72d16	=
+2f61e23	0 – variable, stabilising
+2a9cf0e	The overall safety against uplift is usually only γ<sub>G;dst</sub> / γ<sub>G;stb</sub> = 1.0 / 0.9 = <b>1.11</b>. This is why it is particularly important to choose the water levels cautiously, or to introduce precautions that reduce the risk.
+601a5a5	For the resistance of friction and anchors EN 1997-1 recommends γ<sub>s;t</sub> = γ<sub>a</sub> = 1.4 (since the AC:2010 corrigendum they may be treated as stabilising permanent actions only if the National Annex allows it). The values of the Hungarian NA are worth checking in the standard.
+25795b2	The groundwater level is the most sensitive input
+8e4af2d	When buildings and structures are checked against uplift, the groundwater level is treated as a geometrical datum: its design value is either set directly or derived by adding a safety margin to the characteristic value. In the 30×15 m example car park, <b>water 1 m higher means +4500 kN, i.e. +20%</b> uplift force.
+70b1a15	On a site near the Danube a long-lasting flood is followed by the groundwater along the bank as well: in South Buda after the 1965 flood the groundwater along the bank rose by more than 3 m and came close to the maximum level of the river. The design flood level of Budapest (MÁSZ) at Vigadó tér is 104.24 mBf – derived from the discharge of the ice-free flood with a 1% probability.
+85edc78	Flood behind the bank
+bb62f6b	Danube levels in Budapest in mBf (Vigadó tér gauge: 0 cm = 94.97 mBf). Illustrative section, not to scale horizontally.
+7cfbeb5	Section: Danube flood levels, the groundwater along the bank and an underground car park
+23cd65e	3D simulator: underground car park
+774d0b1	A 30×15 m car park box, 6 m deep, with 0.4 m walls and two floor slabs. At first the 0.6 m base slab is not enough (Λ = 1.39). Try to make it pass with the four countermeasures!
+705c636	Design groundwater level
+b795c5b	Base slab thickness t
+798b63a	a) Extending the base slab
+e1f3a72	b) Micropiles (429 kN each)
+c5e6c38	d) Flooding the lowest level
+402547a	e) Wall friction from earth pressure<span></span>
+4cef9a2	none
+8a59735	K<sub>0</sub> · tan δ
+0a53296	c) You can model dewatering with the groundwater level slider. Illustrative example: walls 0.4 m, slabs 0.35 and 0.30 m; the soil on the toe is 19 kN/m³ above the water and 20 kN/m³ below it. Wall friction: σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>, K<sub>0</sub> = 1 − sin 30° = 0.5, δ = ⅔ · φ′ = 20°, R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub> (1.4).
+bcffac8	Four countermeasures
+f7c491f	Extending the base slab
+dde9e47	Beyond the walls, if there is room: the soil resting on the toe adds load as well. In the example, with a 1 m extension a 0.67 m slab is enough instead of 1.28 m – but the uplift force acts on the projecting toe too.
+fd65085	Anchoring
+d32e994	With piles, diaphragm wall panels or ground anchors. With a 0.6 m slab about 6300 kN is missing: overall at least 15 GEWI micropiles with a characteristic resistance of 600 kN each – because of the bending of the slab, a denser grid in practice.
+e3ba542	Lowering the groundwater
+b514e4d	Around the structure, during rare high water (e.g. the flood wave of a nearby river), or reducing the water pressure under the structure by drainage. Only with a monitored system: the pump may stop, the filter may clog.
+fcd60e6	Temporary flooding
+ac935fd	Part of the structure – e.g. the lowest level of an underground car park – is filled with water. In the example 2 m of water is about 8300 kN of ballast: with the 0.6 m slab Λ = 0.95.
+bd830c6	Cases
+817f0e1	Kossuth Square, Budapest – flooding the excavation
+e1c1443	During a Danube flood, the excavation of the four-level underground car park still under construction would not have withstood the increased groundwater pressure, so about 60 000 m³ of water was let into it, to a depth of 8 m; after the flood had passed it was pumped out. The state during construction is often less favourable than the final one.
+b7948e6	Oldsmar, Florida – a pool popping up
+5ad401f	After about 16 days of rain, the rim of a pool rose out of the ground first by 48 cm, then by 99 cm. Australian official guidance warns specifically that an empty pool, especially a fibreglass one, may “pop out” of the ground after a flood.
+8a6e1e1	=
+56467d0	Underground car park, southern China
+61f8fef	The base slab of the parking basement under a tower block rose by 0.194 m after heavy rain, poor drainage and loose backfill; about 47 columns cracked. Repair: pressure relief holes through the slab, pumping, additional load.
+99a5af4	Scaramanga dry dock, Greece
+178296e	The 1.2 m thick floor slab, held down by prestressed anchors, rose like a dome and cracked after the anchor strands broke by stress corrosion – the groundwater flooded the dock. It was then rebuilt with a pressure-relieved floor.
+c02a023	Quiz – uplift
+0413df7	Overall stability
+372d9ce	The footing and the surrounding soil mass are checked together – the bearing resistance may be adequate while the slope is not.
+c42cc28	For shallow foundations, overall stability has to be checked mainly when the footing is placed at one of the following locations:
+110693d	on or near a natural or man-made slope;
+e939783	near an excavation or a retaining wall;
+0979a6a	near a river bank, canal, lake, reservoir or the sea shore;
+3bdda94	on undermined ground or near underground structures.
+f07c886	If there is a chance of loss of stability, it must be shown by an analytical or numerical method that the probability of failure of the soil mass containing the loaded footing is acceptably small. Loss of stability is usually not caused by a single footing: <b>the combined load of several footings</b> triggers the movement of a sloping or undermined soil mass.
+98368f6	Slip surface analysis
+c1292bb	It is verified by a slope stability calculation: a circular slip surface (in layered soil, other shapes if needed), the method of slices, a search for the most unfavourable slip surface. The load of the footing enters as an action on the slices it stands above. Both the drained (c′, φ′) and the undrained (c<sub>u</sub>) states are checked; the water conditions usually govern.
+f458ba6	DA-3: γ<sub>G</sub> = 1.0 · γ<sub>Q</sub> = 1.3
+81f0fa4	tan φ′<sub>d</sub> = tan φ′<sub>k</sub> / γ<sub>φ</sub>, c′<sub>d</sub> = c′<sub>k</sub> / γ<sub>c</sub>
+a8f6138	γ<sub>φ</sub> = γ<sub>c</sub> = 1.35; the M2 value recommended by EN 1997-1 is 1.25 (for c<sub>u</sub>, γ<sub>cu</sub> = 1.4).
+1cd9bdb	Slip surface search under a house
+30099f8	An 8 m high loess slope with a house on the crest on two strip footings (72 + 18 kN/m). Simplified Bishop method, with strength reduced according to DA-3.
+4006441	Slope with a slip surface search
+941b28a	Distance of the house from the crest
+de52f3e	Pore pressure ratio r
+979a097	(wetting)
+7ee33cc	Slope inclination<span></span>
+cfac13d	1.25 (EN)
+a3fb490	Centres of trial circles<span></span>
+c8a36b4	Shown
+91fe41b	Hidden
+6fba386	<span>Safety on the critical circle F<sub>d</sub></span><b id="sl_F"></b>
+d7cf9d9	<span>Utilisation Λ = 1/F<sub>d</sub></span><b id="sl_L"></b>
+157ca6f	<span>Slip surface behind the crest</span><b id="sl_x"></b>
+21d45e2	Soil: c′<sub>k</sub> = 14 kPa, φ′<sub>k</sub> = 28°, γ = 19 kN/m³. The colour of the dots shows the safety of the trial circle (red: F &lt; 1). Illustrative calculation – use verified software for design.
+780f356	3D simulator: house on the crest of a slope
+04d8d1a	Distance from the crest
+79e7f9c	Wetting r
+2569ad2	The red dashed line is the critical slip surface; if Λ &gt; 1, the sliding mass moves together with the house.
+8b0a6fb	Solutions
+09835e3	moving the footing further away from the crest;
+9586efb	founding deeper – below the slip surface;
+10fb538	flattening or supporting the slope;
+00dfb6a	dewatering, sorting out the surface drainage.
+92b0998	How far is “far”?
+3a2067f	According to Meyerhof’s tests, a slope reduces the bearing resistance up to a distance of about 2–6·B. The US building code requires H/3 (at most 12.2 m) on the crest of a descending slope and H/2 (at most 4.6 m) at the toe of an ascending slope – for stable slopes only. These are indicative values; the verification is the slip surface calculation.
+b91cf68	Kulcs – loess bank
+49c8cf0	53 properties were put at risk and at least 14 buildings had to be demolished; experts had warned in advance, but there was no money to strengthen the bank.
+10c7463	Dunaszekcső, Hold-hegy
+d96b349	In February 2008 the 70 m high loess bluff slid and sank by about 10 m, and a shoal formed in the bed of the Danube. Research shows that the movement is driven mainly by changes in the groundwater level – its effect is about ten times that of the Danube water level.
+8f880f5	Balatonkenese – high bluff
+9726cb9	After a wet period, about 100 000 m³ of loess swept a train into Lake Balaton; the driver stopped in time, and there were no casualties.
+88d2a89	Po Shan Road, Hong Kong
+691d176	Rain of more than 200 mm a day on three consecutive days, and a 13 m deep unsupported cut at the toe of the slope: about 80 000 t of soil slid down in 7–10 seconds, and a 12–13 storey block of flats was torn off its foundation and collapsed. 67 people died.
+a88bc6e	Lotus Riverside, Shanghai
+5afef1f	A 13-storey building on piles toppled over almost intact: an underground car park pit was dug on one side, and the excavated soil was heaped about 10 m high on the other side, on the creek bank. It was a piled building, and a later analysis disputes the official cause – but it shows the danger of “fill next to the building” well.
+b34b0c3	<b>Contrast: Transcona, 1913.</b> The Winnipeg grain elevator tilted to about 27° within 24 hours – but this was a bearing failure of the soil under the raft (bearing resistance, GEO), not a loss of overall stability and not overturning as a rigid body.
+eb9b60f	Quiz – overall stability
+593c323	=
+e0a9b89	Design approaches and factors
+ba032ae	EN 1997-1 and its Hungarian National Annex: which set of factors applies to which verification.
+1060833	Eurocode 7 gives separate groups of partial factors for actions (A), soil parameters (M) and resistances (R), and combines them into three <b>design approaches</b> (DA-1, DA-2, DA-3). The design approach is chosen by the National Annex.
+f286d1a	In Hungarian practice <b>DA-2*</b> is used for the bearing resistance and sliding of shallow foundations, and <b>DA-3</b> for slopes and overall stability.
+e2ed8a0	Approach
+4976364	Combination
+cec28fb	Use in Hungary
+92a922f	=
+211de80	not adopted by the Hungarian NA
+f4c5f39	=
+5f4b583	bearing resistance and sliding of shallow foundations
+142f418	=
+272c32d	slopes, overall stability
+be30f87	What does the asterisk in DA-2* mean?
+a364b7b	The calculation runs with characteristic values throughout, and the partial factors are applied at the end, to the <b>effects of actions</b> and to the resistance. This is why the eccentricity and the effective base area (B′ = B − 2e) are also calculated from the characteristic actions.
+0f95aa8	The groups of factors
+b6fb6ef	M1: all soil parameters unfactored (1.0)
+f0208b8	M2: tan φ′ and c′ divided, for c<sub>u</sub> γ<sub>cu</sub> = 1.4
+be0a87e	R2 (shallow foundation): γ<sub>R;v</sub> = 1.4 bearing, γ<sub>R;h</sub> = 1.1 sliding
+bfa4898	R3: slopes, overall stability: 1.0
+f5657bb	Equilibrium limit states – with their own factors
+534a0a7	Loss of static equilibrium (EQU), uplift (UPL) and hydraulic heave (HYD) are not tied to the design approaches: Annex A of EN 1997-1 gives a separate set of factors for each of the three.
+631f2cb	Resistance
+536c22d	<span class="dot"></span>EQU – overturning
+214e3d6	<span class="dot"></span>UPL – uplift
+247ee08	friction γ<sub>s;t</sub> = 1.4; anchor γ<sub>a</sub> = 1.4
+60083b4	HYD – hydraulic heave
+8d7ba37	The factor for a favourable variable action is 0 in all three cases: a load that is only sometimes present is not counted on the stabilising side.
+98ecc51	Quiz – design approaches
+a173436	What changes in the new Eurocode 7?
+1684bc0	The limit states remain – the assignment of factors changes.

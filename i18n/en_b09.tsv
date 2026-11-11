@@ -1,0 +1,95 @@
+ede7beb	variable load
+eb36d11	length in compression
+ce1a55e	lifts off
+0f85252	e ≤ B/6: the whole base in compression
+7427747	Danube
+884ae23	every variable load
+7093874	about the toe
+571071f	the base passes automatically
+89af399	1.5 times
+2839937	the structure overturns
+4435398	yes
+57984eb	yes, except in clay
+9988fca	yes, except in sand
+8c5afc3	What does MFA mean?
+b045b89	30 September 2027
+7fc00b7	31 December 2030
+b7ed837	The compressed length is 3·(B/2 − e) = B/2.
+6f5612d	Footing cast in situ: 
+39b6cf8	the face of the footing
+2a1661d	 → satisfied.
+404bf2e	 → not satisfied.
+83779fd	 · characteristic
+112f6a4	base slab
+e9b38b1	walls
+11a9309	 (given)
+cf06325	Satisfied
+a58e235	Not satisfied
+a50eddb	${u_(zc, 2, 'm')} ${zc >= 0 ? 'alatt' : 'felett'} ground level
+8df83e4	below
+8beb305	above
+36ef297	How much would be needed? (Λ = 1)
+35d52c8	Unusual φ′<sub>k</sub> = ${u_(p.phi, 1, '°')}.
+87dfff0	slices
+b55e2b1	plan
+ebb32e4	Footing
+6dbab2f	Construction
+9b393b1	footing length
+08f7e75	Loads
+6f1e39c	Characteristic loads
+fb1ec62	Ground
+0523256	None
+6a53477	Face of the footing only
+e6aad09	Plan shape
+4bfaf81	lever arm
+55125f8	Soil
+1261d3b	with r<sub>u</sub>
+e2f6869	σ<sub>max</sub> (char.)
+bd58362	t<sub>b</sub> for Λ = 1
+5175dec	 below ground
+8176bc6	 above ground
+01a7993	<em>not even 3 m above ground</em>
+d0fdf8a	load of the footings
+dd76467	construction
+6764f4d	cast in situ
+95f2ea9	EN 1997‑1
+4fff194	a) Footing cast in situ
+0004208	a) ${nw(Hd + ' = 105 kN/m ≤ ' + Rd + ' = 159,1 kN/m')} – satisfied (Λ = 0.66).
+96df1e0	b) ${nw(Hd + ' = 105 kN/m > ' + Rd + ' = 99,4 kN/m')} – not satisfied (Λ = 1.06). The same footing cast in situ was satisfactory!
+76f791b	b) ${nw(Hd + ' = 140 kN/m < ' + Rd + ' + ' + Rpd + ' = 152,9 kN/m')} – satisfied (Λ = 0.92).
+20b012a	H<sub>k</sub> (variable)
+905cb73	lever arm = 0.96 m
+aea11b0	${nw('B = 2,4 m')}: ${nw('M<sub>dst;d</sub> = 360,0 kNm > M<sub>stb;d</sub> = 345,6 kNm')} – not satisfied.
+24582b5	${nw('B = 2,6 m')}: ${nw('M<sub>dst;d</sub> = 360,0 kNm < M<sub>stb;d</sub> = 374,4 kNm')} – satisfied.
+00537a0	characteristic
+47a3a74	 (75% of the base)
+1779a8a	UPL · anchors
+da9b20f	R<sub>k</sub> (one element)
+c870354	: not satisfied.
+7f54348	satisfied
+2018a83	not satisfied
+5476415	"><div class="mp-task"><p class="mp-sec">Problem</p>
+ffa5dd0	3D error
+5c4a4b7	footing – click
+8b6eb36	whole base in compression
+9ef2086	length in compression ${fmt(3 * (B / 2 - r.e), 2)} m
+6ae96fd	approx. 450 kN
+6b6d8ec	approx. 4500 kN
+f0d122a	approx. 45 000 kN
+798a651!	<div class="st"><span class="no">${k + 1}.</span>${it.s}</div><div class="bt"><button data-v="1">True</button><button data-v="0">False</button></div><div class="fb">${it.e}</div>
+df01d6d!	toe;k
+fc9bacc!	${nReq}${NB}no.
+c66385f!	Load of the footings (γ<sub>G</sub> = 1.0; γ<sub>Q</sub> = 1.3)
+ecc59ef!	δ_{k} = ${u_(v.delta, 1, '°')} (${p.cast === 'precast' ? 'előregyártott: ⅔·φ′_{cv;k}' : 'helyben betonozott: φ′_{cv;k}'})
+b57ccc7!	cast in situ: φ′_{cv;k}
+0352a8a!	no.
+8761a8e	n = 30 no.
+cbe3d6c!	WE1
+d3a53fd!	WE2
+79786dc!	WE3
+e227d52!	WE4
+28d76c3!	WE5
+a3f86a4!	WE6
+d694689!	WE7
+807bff7!	WE8
+2a9038c!	WE9

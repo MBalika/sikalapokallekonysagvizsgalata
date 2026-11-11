@@ -45,7 +45,13 @@ sub { font-size: .7em; line-height: 0; }
 .top .sp { flex: 1; }
 .tbtn { border: 1px solid var(--line2); background: var(--card); border-radius: 999px; padding: 7px 14px; font-size: 14px; cursor: pointer; white-space: nowrap; color: var(--ink); text-decoration: none; }
 .tbtn:hover { border-color: var(--plum2); }
+.tbtn.lang { display: inline-flex; align-items: center; gap: 2px; padding: 3px; font-family: var(--fd); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; }
+.tbtn.lang b, .tbtn.lang span { display: inline-grid; place-items: center; min-width: 30px; padding: 3px 8px; border-radius: 999px; }
+.tbtn.lang b { background: var(--plum); color: var(--paper); }
+.tbtn.lang span { color: var(--ink2); }
+.tbtn.lang:hover span { background: var(--plumT); color: var(--ink); }
 @media (max-width: 760px) { .brand small, .top .hide-s { display: none; } }
+@media (max-width: 560px) { .tbtn.lang { padding: 2px; } .tbtn.lang b { display: none; } .tbtn.lang span { min-width: 0; padding: 4px 8px; color: var(--ink); } }
 @media (max-width: 560px) { .top .wrap { gap: 8px; } .brand { white-space: normal; font-size: 14px; line-height: 1.12; min-width: 0; } .brand svg { width: 30px; height: 30px; } .tbtn { padding: 6px 11px; font-size: 13px; } }
 /* ---- igazolólap (ragadós sáv) ---- */
 .ledger { position: sticky; top: 58px; z-index: 45; background: color-mix(in srgb, var(--paper2) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }

@@ -1,0 +1,135 @@
+37a912a	length
+34a7957	diameter (r = D<sub>k</sub>/2)
+50de4f1	foundation depth
+37548c7	Soil (pivot at B/10)
+c1af0ff	Sound rock (toe)
+eff8e3a	Self-weight: footing (25 kN/m³) + soil on it
+8030b0a	unit weight of the soil on the footing
+ce711ec	Vertical loads (characteristic)
+b517a69	permanent (structure, column)
+708cbfc	eccentricity of G in direction B
+54c6584	variable vertical
+1cddba1	include Q<sub>k</sub> in the eccentricity calculation
+832b041	Horizontal loads – direction B
+d938845	variable (e.g. wind)
+ddd5ea4	lever arm above the base
+6b3936e	permanent (e.g. earth pressure)
+e967674	Two-way eccentricity – direction L
+a1770e7	take actions in direction L into account
+588732d	eccentricity of G in direction L
+0a8fc7a	variable, direction L
+e144eae	permanent, direction L
+e6194d8	Structure
+9cf852d	width (direction of the section)
+2d97c95	outer height
+462ddc7	depth of the underside of the base slab
+788c8fe	extension of the base slab beyond the walls
+91edd4c	Self-weight
+f84cc53	From thicknesses (25 kN/m³)
+13d0ac0	G<sub>k</sub> directly
+b570f47	number of intermediate floor slabs
+0d5c009	thickness of intermediate floor slab
+e544877	weight of the structure
+146dde1	G<sub>other;k</sub>
+fc8e5f5	other permanent (finishes, machinery)
+e5464a8	Water and surcharge
+6a42079	design groundwater level below ground level (negative: above it)
+5ad9059	soil cover on the roof slab
+6e91b72	unit weight of the soil (above the water)
+dac7209	saturated unit weight (below the water)
+2f7e6b4	depth of ballast water (flooding) on the lowest level
+2ed67bc	variable upward load
+343b78c	Wall friction
+9d0ecd8	Friction on the walls (γ<sub>s;t</sub> = 1.4)
+764d8ad	angle of shearing resistance of the backfill
+724c166	K and δ
+c03abf0	Manual input
+0c42042	earth pressure coefficient on the wall
+ce30616	wall–soil friction angle
+0fb25ca	number of anchors / tension piles
+ae06a28	characteristic tensile resistance of one element (γ<sub>a</sub> = 1.4)
+a770c7f	Slope
+317e8b8	slope height
+cf54a47	inclination (horizontal projection / height)
+f7d031e	depth of the rigid layer below the toe
+483a08e	Analysis
+3549fe4	Drained (c′, φ′)
+3600d88	Undrained (c<sub>u</sub>)
+fe8a7a2	unit weight
+e09cb72	effective cohesion
+0422a19	angle of shearing resistance
+7f1ff43	Second (lower) layer
+0a3f534	depth of the layer boundary below the crest
+ad31051	Water and partial factors
+525d2f3	Pore water pressure
+9f612d1	Groundwater level
+f906dc5	pore pressure ratio (u = r<sub>u</sub>·γ·h)
+c362cdb	depth of the groundwater level behind the crest
+745846e	d<sub>w;toe</sub>
+8014cb7	depth of the groundwater level in front of the toe
+be8a8f4	1 recommended value
+1687ce7	In the undrained analysis ${nw('γ<sub>cu</sub> = 1,4')}; actions: ${nw('γ<sub>G</sub> = 1,0')}, ${nw('γ<sub>Q</sub> = 1,3')}.
+8a6782e	Strip footing 1 (nearer the crest)
+59acf72	Strip footing 1
+1066f24	width
+2724adc	distance from the crest (to the nearer edge)
+d1fbbb9	Strip footing 2
+5d25770	Search
+3a88372	Finer search grid (more accurate, slower)
+6fffdad	EQU + eccentricity
+57f2ba6	<p><b>GEO limit state, ${DA2}</b> (${EN} and the National Annex). Actions: A1 – ${nw('γ<sub>G</sub> = 1,35')} unfavourable, ${nw('1,0')} favourable; ${nw('γ<sub>Q</sub> = 1,5')} unfavourable, ${nw('0')} favourable. Resistance: ${nw('γ<sub>R;h</sub> = 1,1')}, passive resistance ${nw('γ<sub>R;e</sub> = 1,4')}.</p><ul><li>Drained: ${nw('R<sub>d</sub> = V′<sub>k</sub> · tg' + NB + 'δ<sub>k</sub> / γ<sub>R;h</sub>')}, ${nw('δ<sub>k</sub> = φ′<sub>cv;k</sub>')} for a footing cast in situ, ${nw('⅔ · φ′<sub>cv;k</sub>')} for a smooth precast footing; the cohesion c′ is ignored.</li><li>Undrained: ${nw('R<sub>d</sub> = A<sub>c</sub> · c<sub>u;k</sub> / γ<sub>R;h</sub>')}, but ${nw('R<sub>d</sub> ≤ 0,4 · V<sub>d</sub>')}; ${nw('A<sub>c</sub> = B′ · L′')}, ${nw('B′ = B − 2e')}.</li><li>The eccentricity and the area in compression from the characteristic values of the actions (${DA2}).</li><li>Passive resistance: Rankine ${nw('K<sub>p</sub> = tg²(45° + φ′/2)')} (undrained ${nw('σ<sub>v</sub> + 2c<sub>u</sub>')}), one half or two thirds of the full value.</li><li>The horizontal force acts in direction B; the uplift of the groundwater reduces V′<sub>k</sub>.</li></ul>
+70cedd5	<p><b>EQU limit state.</b> ${nw('γ<sub>G;dst</sub> = 1,1')}; ${nw('γ<sub>G;stb</sub> = 0,9')}; ${nw('γ<sub>Q;dst</sub> = 1,5')}; ${nw('γ<sub>Q;stb</sub> = 0')}.</p><ul><li>Pivot point: on sound rock the edge (toe line) of the base, on soil as a first approximation at a distance B/10 from the edge (D/10 for a circular footing).</li><li>Limiting the eccentricity from the characteristic actions (${DA2}): ${nw('e ≤ B/6')} – the whole base in compression; ${nw('B/6 < e ≤ B/3')} – allowed, with partial lift-off; ${nw('e > B/3')} (circle: ${nw('e > 0,6 · r')}) – special precautions.</li><li>Two-way eccentricity: kern ${nw('|e<sub>B</sub>|/B + |e<sub>L</sub>|/L ≤ 1/6')}; generalisation of the B/3 limit ${nw('(e<sub>B</sub>/B)² + (e<sub>L</sub>/L)² ≤ 1/9')}.</li><li>Contact pressure: linear distribution, contact taking no tension (characteristic values).</li></ul>
+1ed5a16	<p><b>UPL limit state.</b> ${nw('γ<sub>G;dst</sub> = 1,00')}; ${nw('γ<sub>G;stb</sub> = 0,90')}; ${nw('γ<sub>Q;dst</sub> = 1,50')}; ${nw('γ<sub>Q;stb</sub> = 0')}; wall friction ${nw('γ<sub>s;t</sub> = 1,4')}; anchors ${nw('γ<sub>a</sub> = 1,4')}.</p><ul><li>${nw('V<sub>dst;d</sub> = γ<sub>G;dst</sub> · γ<sub>w</sub> · h<sub>w</sub> · A<sub>k</sub>')}, ${nw('γ<sub>w</sub> = 10 kN/m³')}; A<sub>k</sub> is the full plan area of the extended base slab.</li><li>Concrete 25 kN/m³; the weight of the soil is γ above the water, γ<sub>sat</sub> below it.</li><li>Friction: ${nw('τ = K · σ′<sub>v</sub> · tg' + NB + 'δ')} from ground level to the base, on the outer perimeter; by default ${nw('K = K<sub>0</sub> = 1 − sin' + NB + 'φ′')}, ${nw('δ = ⅔ · φ′')}; design value ${nw('T<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub>')}.</li><li>${nw('Λ = V<sub>dst;d</sub> / (G<sub>stb;d</sub> + T<sub>d</sub> + P<sub>d</sub>)')}.</li></ul>
+8d9ca69	<p><b>GEO limit state, ${DA3}.</b> Actions: ${nw('γ<sub>G</sub> = 1,0')}, ${nw('γ<sub>Q</sub> = 1,3')} (on the loads of the footings; 1.0 on the self-weight of the soil). Materials (M2): ${nw('tg' + NB + 'φ′<sub>d</sub> = tg' + NB + 'φ′<sub>k</sub> / γ<sub>φ′</sub>')}, ${nw('c′<sub>d</sub> = c′<sub>k</sub> / γ<sub>c′</sub>')}, ${nw('γ<sub>φ′</sub> = γ<sub>c′</sub> = 1,35')} (the value of 1.25 recommended by EN${NB}1997${NBH}1 can be selected); undrained ${nw('c<sub>u;d</sub> = c<sub>u;k</sub> / 1,4')}.</p><ul><li>Simplified Bishop method with circular slip surfaces and 30 slices; search on a grid of centres and several radii, then refinement.</li><li>Verification: ${nw('F<sub>d</sub> ≥ 1,0')}, utilisation ${nw('Λ = 1/F<sub>d</sub>')}.</li><li>The load of the strip footings is uniformly distributed over the base width; the slip surface must not cut through the footing.</li><li>Pore water pressure: ${nw('u = r<sub>u</sub> · γ · h')}, or hydrostatic below the groundwater level (with the vertical distance).</li></ul>
+1163ebc	${f.lab} = ${F(x, f.dec)}${typeof f.u === 'string' && f.u !== '–' ? NB + f.u : ''} is outside the usual range (${F(f.min, f.dec)}…${F(f.max, f.dec)}).
+c6f62ae	<div class="cx-card ${cls}"><div class="cx-ct"><div><span class="cx-tag">${c.tag}</span><h4>${c.title}</h4><small>${c.sub || ''}</small></div><span class="cx-vd ${ok ? 'ok' : 'bad'}">${ok ? 'Megfelel' : 'Nem felel meg'}</span></div><div class="cx-iq nw">${iq}</div><div class="lam ${ok ? (c.lam > 0.9 ? 'warn' : '') : 'fail'}"><div class="t"><span>Utilisation Λ</span><b>${c.lam > 9.99 ? '> 9,99' : F(c.lam, 2)}</b></div><div class="bar"><i style="width:${w.toFixed(1)}%"></i></div><div class="scale"><span>0</span><span>1.0</span><span>1.5</span></div></div></div>
+08e3528	R<sub>d</sub> drained
+1fc1a35	R<sub>d</sub> undrained
+dcb239d	anchors needed
+9a87870	critical water level
+fb9ac4f	circle: r
+0b7350d	entry behind the crest
+5f4fdd7	F<sub>d</sub> without the footings
+6213982	<b>Invalid or incomplete data</b><span>The calculation cannot be carried out – see below.</span>
+78f5df2	governing: 
+5e8c295	action (H<sub>d</sub>)
+f729c7f	vertical force
+4325c43	resistance (R<sub>d</sub>, R<sub>p;d</sub>)
+b15a1e2	horizontal action
+30ed0ab	vertical load
+ccc7efd	B/3 (0.6·r) limit
+64bc6fa	water, uplift force
+144ce8f	stabilising weight
+cddabea	friction, anchors
+7470984	critical slip surface
+427a0d8	centres of trial circles (colour: F)
+3d77447	pore water
+77f894d	section to scale
+6139bf1	<option value="">Load a worked example…</option>
+0b4f29f	GEO · drained
+2198783	Sliding in the drained state – strip footing cast in situ
+6664706	Drained sliding
+153f5da	<p>Check the safety against sliding of the strip footing cast in situ shown in the figure in the drained (long-term) state! The loads per metre: ${nw(Vk + ' = 280 kN/m')} – the characteristic value of the vertical force that surely acts together with ${Hd}; ${nw(Hd + ' = 90 kN/m')} – the design value of the horizontal force, including the active earth pressure. The critical state friction angle of the ground is ${nw(phicv + ' = 32°')}. Passive resistance is not taken into account.</p>
+558bc5e	Strip footing cast in situ: friction develops within the soil, δ<sub>k</sub> = φ′<sub>cv;k</sub>.
+a5d4367	The friction angle on the base
+db85359	<p>For a footing cast in situ the base is rough and shearing takes place within the soil, so the full critical state friction angle may be taken into account:</p>${fl(dk, phicv, '32°')}${fl('tg' + NB + dk, 'tg' + NB + '32°', '0,6249')}
+6cb5c39	Design value of the shear resistance
+1219fa9	<p>According to 
+9467755	 the effective cohesion c′ is ignored: the adhesion between soil and concrete depends strongly on the water content and is not reliable.</p>
+e4c846e	${nw(Hd + ' = 90 kN/m < ' + Rd + ' = 159,1 kN/m')} – the footing is safe against sliding, the utilisation is 57%.
+71041c0	Open in the calculator
+644d850	Cast in situ or precast? – drained sliding
+268232c	Cast in situ or precast
+d055933	<p>The footing of the previous example now carries a greater horizontal force: ${nw(Hd + ' = 105 kN/m')} (${nw(Vk + ' = 280 kN/m')}, ${nw(phicv + ' = 32°')}). Check the safety against sliding for <b>a)</b> a footing cast in situ and <b>b)</b> a precast footing with a smooth surface!</p>
+90d3ecc	Variant b): for a smooth precast base the friction angle is only ⅔·φ′<sub>cv;k</sub>.
+a79a6bf	b) Smooth precast footing
+ff026ec	<p>The friction between a smooth concrete surface and the soil is lower:</p>
+8171e24	<b>Lesson.</b> Through the friction angle ${dk}, the way the footing is made has a significant effect on the sliding resistance: here the resistance dropped from 159.1 kN/m to 99.4 kN/m. If the precast variant fails, a footing cast in situ, a shear key, more surcharge or a wider base may help.
+bd6b285	open a)
+04c4de0	open b)
+92ec2f1	GEO · undrained
+0b01d92	Sliding in the undrained state – the 0.4·V<sub>d</sub> limit
+452fd89	Undrained, 0.4·V<sub>d</sub>
+28efe85	<p>Check the safety against sliding of the ${nw('2,0 × 3,0 m')} pad footing in the undrained (short-term) state! The whole base is in compression: ${nw('A<sub>c</sub> = 6,0 m²')}. The undrained shear strength at the base is ${nw('c<sub>u;k</sub> = 60 kPa')}. The design values of the loads: ${nw('V<sub>d</sub> = 700 kN')}, ${nw(Hd + ' = 250 kN')}.</p>
+7769aba	In the undrained state the shear on the area in compression resists; in plan the area in compression is A<sub>c</sub>.
+1e12ff5	Shear resistance on the area in compression

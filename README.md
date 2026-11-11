@@ -19,6 +19,13 @@ Interaktív tananyag a BME Építőmérnöki Kar *Alapozás* tárgyához – a *
 
 A `main` ágra történő push után a Vercel automatikusan frissíti az oldalt.
 
+## Angol változat (`/en`)
+
+- **Élő oldal:** https://sikalapokallekonysagvizsgalata.vercel.app/en – brit angol, EC7-terminológia; a fejléc HU | EN váltója a választást megjegyzi (`localStorage 'alap-lang'`), és a másik nyelvű oldalon ugyanannál a fejezetnél folytat.
+- A magyar `src/` a forrás: a `python3 build.py` az `index.html` mellett az `en.html`-t is elkészíti. Az `i18n/apply.mjs` a fordítási egységeket (HTML-szövegek, attribútumok, JS-karakterláncok) az `i18n/en_*.tsv` párjai szerint cseréli; hiányzó fordításnál a build leáll, a hiányzók az `i18n/missing.tsv`-be kerülnek (előfeltétel egyszer: `cd i18n && npm install`).
+- Az angol oldalon tizedespont (a JS-literálokban az `i18n/numfix_js.mjs`), tg → tan, angol sortörés-őr és en-gb elválasztás (`vendor/hyphenopoly/patterns/en-gb.wasm`); az alsó indexek közül G<sub>sz</sub> → G<sub>str</sub>, G<sub>t</sub> → G<sub>soil</sub>.
+- Az öt videó angol változata: `video/en/v1–v5.html` (a videóforrásból, en-GB).
+
 
 ## Videók zenéje
 

@@ -1,0 +1,140 @@
+18801e9	area in compression
+df6e40b	mean
+baf5521	A′ (effective area)
+3a3fcce	Contact pressure (characteristic)
+bfa5703	The dimensions of the structure (L, B, H) must be positive.
+2fa646c	The embedment depth (D) must be positive.
+1d5aaa0	The extension of the base slab must not be negative.
+b9cca2b	The slab and wall thicknesses must be positive.
+95bc927	The structural thicknesses do not fit within the given outer dimensions.
+cd6c1ce	The groundwater level is below the underside of the base slab – there is no uplift force.
+fe1a13c	The design water level is above ground level (flood) – the weight of the water standing on the structure has been taken as a stabilising action.
+1311458	The water stands above the roof slab (cover).
+ea43bf5	The structure projects above the ground.
+3d02e03	The cover above the roof slab does not reach ground level.
+1669a9f	The roof slab is below ground level, but no cover has been entered.
+c077c01	Unusual earth pressure coefficient: K = ${F(Ke, 2)}.
+cdb8b59	Unusual wall–soil friction angle: δ = ${u_(de, 1, '°')}.
+7197388	Unusual φ′<sub>k</sub> = ${u_(p.phiS, 1, '°')} in the backfill.
+a324779	Wall friction may only be taken into account if the backfill and the wall–soil contact are permanently ensured.
+53a3bc4	The pull-out and structural resistance of the anchors (tension piles) and the bending of the base slab must be verified separately.
+39e59f2	The saturated unit weight is less than the moist one – check it.
+a8ba63f	The overall safety against uplift is only 1.0/0.9 = 1.11 – the design groundwater level must be chosen cautiously.
+af451f4	uplift force ↔ self-weight, surcharge, friction, anchors
+4d4e8d8	Uplift force (γ<sub>G;dst</sub> = 1.00)
+31d9f33	roof slab
+c7887cc	intermediate floor slab
+8cc2cf0	 (cover)
+d0dfa34	water on the roof slab
+e89ef2b	<p class="cx-c">The soil resting on the extended toe (γ above the water, γ<sub>sat</sub> below it).</p>
+a8d9879	ballast water
+2023ff3	other permanent
+e6c920d	Stabilising permanent actions (γ<sub>G;stb</sub> = 0.90)
+52ce4ea	Wall friction (γ<sub>s;t</sub> = 1.4)
+3878e41	<p class="cx-c">${nw('τ(z) = K · σ′<sub>v</sub>(z) · tg' + NB + 'δ')}, on the outer perimeter of ${nw(u_(Pout, 1, 'm'))}, from ground level to the base (${nw(u_(D, 2, 'm'))}).</p>
+21b7146	Anchoring (γ<sub>a</sub> = 1.4)
+f5b9290	missing resistance: 
+9708688	reserve: 
+681fc63	Base slab thickness for Λ = 1
+9f64941	t<sub>b</sub> + ΔG / (0.9 · 25 · A<sub>inner</sub>)
+812b6da	<p class="cx-c">Thickening the slab inwards (the outer dimensions are unchanged, the uplift force does not increase).</p>
+dff456a	required number of anchors
+e534ba3	Ballast water for Λ = 1
+2cdba27	critical groundwater level (Λ = 1)
+15f466a	The height and inclination of the slope must be positive.
+be82290	The shear strength parameters must not be negative (and at least one of them must be positive).
+d733c60	The unit weight must be positive.
+3d7cb2c	No valid slip surface found – check the geometry (e.g. a foundation depth that is too large or a rigid layer that is too shallow).
+a519020	High effective cohesion (c′<sub>k</sub> = ${u_(p.c, 0, 'kPa')}) – it may greatly overestimate the safety of the slope.
+88974fc	In an undrained (total stress) analysis the pore water pressure does not appear separately – the effect of water is contained in the value of c<sub>u</sub>.
+2880172	Unusual pore pressure ratio: r<sub>u</sub> = ${F(p.ru, 2)}.
+e0b5a5f	Slope steeper than 1 : 1 – check whether a circular slip surface is realistic.
+6dd5cec	The critical slip surface does not touch the footings – the slope by itself is weakest on this surface. On the most unfavourable slip surface that includes the footings, F<sub>d</sub> = ${critF ? F(critF.F, 2) : '–'}.
+e5ad5f6	The exit section of the critical slip surface is very steep (m<sub>α</sub> &lt; 0.2) – the simplified Bishop method may be inaccurate here.
+e7b4235	The critical slip surface touches the rigid layer (the bottom of the analysed zone).
+180bbd7	The centre of the critical circle is at the edge of the search grid – the true minimum may lie outside the grid.
+c1739b7	The footing projects beyond the crest (a &lt; 0) – the model does not handle this correctly.
+aae5fbd	Illustrative calculation: for design use verified slope stability software, and check both the drained and the undrained state.
+27a7f3f	undrained, c<sub>u</sub>
+3ca2b1f	drained, c′ – φ′
+b438a80	Slip surface involving the footings
+4a2060b	most unfavourable, below the footings
+8da6d49	Design strength parameters (${DA3}, M2)
+06a3354	Layer 2: φ′<sub>d</sub>
+633fde0	Strip footing ${i + 1}: q<sub>d</sub>
+037f571	 between 
+a681d25	 from the crest, 
+dcc5d23	 deep.</p>
+cdfaff3	Slip surface search
+920a99c	<p class="cx-c">A grid of ${sr.nx} × ${sr.ny} centres; for each centre, circles passing through the toe of the slope and touching ${sr.nx ? (p.fine ? 22 : 14) : 0} different depths, then refinement by pattern search. ${nw(sb('n', 'lamella') + ' = ' + m.ns)}. Computing time: ${nw(F(ms, 0) + NB + 'ms')}.</p>
+2fed8f8	<div class="cx-fl nw">critical circle: O(${F(crit.xc, 2)}; ${F(crit.yc, 2)})${NB}m, r = ${u_(crit.R, 2, 'm')}</div><div class="cx-fl nw">entry: ${u_(-crit.x0, 2, 'm')} behind the crest</div><div class="cx-fl nw">exit: ${Math.abs(crit.x1 - m.LX) < 0.05 ? 'a rézsűlábnál' : crit.x1 > m.LX ? u_(crit.x1 - m.LX, 2, 'm') + ' a rézsűláb előtt' : 'a rézsűn, ' + u_(m.H + m.ground(crit.x1), 2, 'm') + '-rel a láb felett'}</div><p class="cx-c">The origin of the coordinates is the crest; x is positive towards the toe, y upwards.</p>
+2405b81	at the toe of the slope
+c8d82d5	 in front of the toe
+6c5877f	on the slope, 
+4099e2a	 above the toe
+16b7481	Simplified Bishop method
+902e67b	 → overall stability is satisfied.
+d362f5b	 Without the load of the footings: 
+2f0aa1a	<div class="tblw cx-tw cx-scroll"><table class="tbl cx-tbl cx-num"><thead><tr><th>#</th><th>x [m]</th><th>h [m]</th><th>W [kN/m]</th><th>P [kN/m]</th><th>α [°]</th><th>u [kPa]</th><th>m<sub>α</sub></th><th>resisting term</th><th>(W+P)·sin${NB}α</th></tr></thead><tbody>${rows}<tr class="cx-tsum"><td colspan="8">Total (b = ${u_(c.slices[0] ? c.slices[0].b : 0, 3, 'm')})</td><td>${F(c.num, 1)}</td><td>${F(c.den, 1)}</td></tr></tbody></table></div>
+4241955	=
+ff5088a	Correct the input data – the figure cannot be drawn like this.
+b0a970a	precast: ⅔·φ′_{cv;k}
+bc89bdc	strip footing – 1 m length
+0e5aaee	pad footing ${F(B, 2)} × ${F(v.L, 2)}${NB}m
+6c004c8	passive wedge
+5de4caa	V_{d} = ${u_(v.Vd, 1, v.un)} (for the limit)
+aa6fdfa	 drained
+ca8814d	 undrained
+3fc30c8	Sliding: section of the footing with the forces
+85655c2	kern: r/4 · limit: 0.6·r
+d983f3b	kern (B/6) · limit: B/3
+82682d9	Overturning: section, contact pressure and plan with the kern
+95f553e	   ·   extension ${u_(o, 2, 'm')}
+130fef0	section in the B = ${u_(B, 2, 'm')} direction   ·   L = ${u_(v.L, 2, 'm')}
+e24d00d	design groundwater level
+9595f6f	Uplift: section of the structure with the uplift force and the stabilising actions
+ef88d9d	Correct the input data.
+32b8b75	Calculating…
+8452dee	simplified Bishop method   ·   colour of the squares: the lowest F of the circles with that centre
+1202e86	layer 2
+c74cf43	rigid layer
+5781a4f	groundwater level
+335df49	P_{d} = ${u_(ls[0].Pd, 1, 'kN/m')} per footing
+53ac7b4	Overall stability: slope with the critical slip surface
+4a58612	Strip footing (1 m)
+5752044	Pad footing B × L
+6051099	footing width
+ef14c89	depth of the base
+10d2987	height of the footing
+f76198c	Input
+1297821	Design values
+3aab01c	permanent vertical load
+a05ff7d	variable vertical load
+914a5d0	Q<sub>k</sub> surely acts together with the horizontal force
+8d21b42	permanent horizontal (e.g. earth pressure)
+07d9d41	variable horizontal (e.g. wind, braking)
+c0b9df9	lever arm of the horizontal force above the base
+1f96d06	Weight of the footing (25 kN/m³) and of the soil on it
+7b51a4a	vertical force (characteristic, effective)
+20e1af4	horizontal force (design)
+69224a8	vertical force (design, for the 0.4·V<sub>d</sub> limit)
+13a0e51	eccentricity in direction B (characteristic)
+54fd2db	eccentricity in direction L
+d078143	State analysed
+74d62f6	Drained
+10843bd	Undrained
+841c674	Both
+a448b22	critical state friction angle
+b13118c	undrained shear strength at the base
+a3968d1	unit weight of the backfill and of the soil in front of the face
+e8f0d70	Groundwater
+7fde17c	depth of the groundwater level below ground level
+ab8f913	saturated unit weight (below the water)
+8e99cb4	Share taken into account
+df8fdaf	Height of action
+0765243	From ground level
+37e3b15	angle of shearing resistance in front of the face
+71a1703	effective cohesion in front of the face
+8d5a0f8	Rectangle
+c267ace	Circle
+fc88dc4	width (in the direction analysed)

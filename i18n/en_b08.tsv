@@ -1,0 +1,134 @@
+c0794f5	The 0.4·V<sub>d</sub> limit
+5dee7e6	<p>A gap may open between the footing and the soil (erosion, shrinkage, water or air may get under the base), so no shear resistance greater than 40% of the vertical force may be counted on:</p>${fl('0,4 · V<sub>d</sub>', '0,4 · 700', u_(280, 1, 'kN'))}<p>Since ${nw('327,3 kN > 280 kN')}, the limit governs: ${nw(Rd + ' = 280 kN')}.</p>
+bb52ad4	${nw(Hd + ' = 250 kN < ' + Rd + ' = 280 kN')} – satisfied. Without the 0.4·V<sub>d</sub> limit we would wrongly have counted on a resistance of 327 kN.
+7d01774	Sliding with passive resistance
+b63fbab	With passive resistance
+8b97c3a	<p>The strip footing cast in situ carries ${nw(Vk + ' = 250 kN/m')} and ${nw(Hd + ' = 140 kN/m')}; ${nw(phicv + ' = 30°')}. The base is ${nw('D = 1,5 m')} deep, the soil in front of the face has ${nw('γ = 18 kN/m³')}, ${nw('φ′<sub>k</sub> = 30°')}. Check sliding <b>a)</b> without passive resistance, and <b>b)</b> taking into account half of the full passive earth resistance (${nw('γ<sub>R;e</sub> = 1,4')})!</p>
+52f48cf	γ (in front of the face)
+6ff3324	φ′<sub>k</sub> (in front of the face)
+598c803	share taken into account
+d4a1d19	The passive resistance develops on the side (face) opposite to the horizontal force, and acts against it.
+319d65e	a) Shear resistance on the base
+c8a7723	: not enough on its own (
+0647d29	Passive earth pressure coefficient
+8fb50a8	The full passive earth resistance
+3aadbc8	The passive resistance that may be counted on
+5f346c0	<p>The full passive resistance would only develop at large displacements, so only half of it is taken into account:</p>${fl(Rpd, '½ · E<sub>p;k</sub> / γ<sub>R;e</sub>', '0,5 · 60,75 / 1,4', u_(21.70, 1, 'kN/m'))}
+ac12082	b) Verification
+4707dfe	a) Without passive resistance ${nw(Hd + ' = 140 kN/m > ' + Rd + ' = 131,2 kN/m')} – not satisfied (Λ = 1.07).
+87d2e19	<b>Caution:</b> here the result depends on the passive resistance. If the soil in front of the face may be removed (utility trench, erosion), or the clay may separate from the wall because of shrinkage, R<sub>p;d</sub> may not be taken into account – and the footing fails. A verification relying on passive resistance is only acceptable if the soil is sure to remain for the whole design working life of the structure.
+5f5f7ed	EQU · pivot point
+f8ff8d3	Checking overturning (EQU)
+ca238b4	Overturning, B/10
+1b82844	<p>A tall, slender structure (e.g. a billboard) stands on a square footing on soil with side ${nw('B = 2,4 m')}. The combined weight of the structure and the footing is ${nw('G<sub>k</sub> = 400 kN')} (concentric), and the wind load ${nw('H<sub>k</sub> = 60 kN')} (variable action) acts at a height of ${nw('h = 4,0 m')} above the base. Check the safety against overturning in the EQU limit state!</p>
+e0a4c18	On soil the pivot point is not at the toe but at a distance B/10 from it.
+adc9936	Position of the pivot point
+e40729f	<p>For a footing on soil – since the soil under the toe is pressed in – the moments are taken, as a first approximation, about a point at a distance B/10 from the toe. The lever arm of the stabilising weight:</p>${fl('a', 'B/2 − B/10', '1,20 − 0,24', u_(0.96, 2, 'm'))}
+dd40fa4	Stabilising and destabilising moments
+6fc20a8	Remedy: a wider base, B = 2.6 m
+6964148	${fl('a', '1,30 − 0,26', u_(1.04, 2, 'm'))}${fl('M<sub>stb;d</sub>', '0,9 · 400 · 1,04', u_(374.4, 1, 'kNm'))}${fl('Λ', '360,0 / 374,4', '<b>0,96</b>')}<p>In a more accurate calculation, the extra self-weight of the larger footing would increase ${sb('M', 'stb;d')} further.</p>
+661d152	<b>On rock it is different.</b> For a footing on sound rock the moments would be taken about the edge of the base: the lever arm is ${nw('B/2 = 1,2 m')}, ${nw('M<sub>stb;d</sub> = 0,9 · 400 · 1,2 = 432 kNm')}, so the original ${nw('B = 2,4 m')} would also be adequate. On soil the position of the pivot point is uncertain – hence the B/10 approximation.
+89c7221	open B = 2.4 m
+348ac92	on rock
+b6042bd	Limiting the eccentricity, and the contact pressure
+65a3983	Eccentricity, edge pressure
+0586906	<p>The ${nw('B × L = 2,4 × 2,4 m')} footing carries a vertical force ${nw('V<sub>k</sub> = 500 kN')} and a horizontal force acting at a height of ${nw('h = 3,0 m')} above the base. According to ${DA2}, the eccentricity is calculated from the <b>characteristic</b> values of the actions. Determine and assess the eccentricity, and calculate the contact pressures for <b>a)</b> ${nw('H<sub>k</sub> = 50 kN')} and <b>b)</b> ${nw('H<sub>k</sub> = 100 kN')}!</p>
+ac9befc	Case b): the resultant passes through the base outside the kern but within the B/3 limit – part of the base lifts off.
+9dc2226	a) H<sub>k</sub> = 50 kN – within the kern
+7c912f4	${fl('M<sub>k</sub>', '50 · 3,0', u_(150, 0, 'kNm'))}${fl('e', 'M<sub>k</sub> / V<sub>k</sub>', '150 / 500', u_(0.30, 2, 'm'))}<p>${nw('B/6 = 0,40 m')} → ${nw('e < B/6')}: the resultant is within the kern, the whole base is in compression (the earlier, stricter Hungarian requirement is also met).</p>
+f82db22	a) Trapezoidal contact pressure
+35ab213	b) H<sub>k</sub> = 100 kN – outside the kern, within the limit
+53053fe	${fl('M<sub>k</sub>', '100 · 3,0', u_(300, 0, 'kNm'))}${fl('e', '300 / 500', u_(0.60, 2, 'm'))}<p>${nw('B/6 = 0,40 m < e ≤ B/3 = 0,80 m')}: allowed, but part of the base lifts off.</p>
+462331b	b) Triangular contact pressure
+de32279	${fl('c', 'B/2 − e', '1,20 − 0,60', u_(0.60, 2, 'm'))}${fl('nyomott hossz', '3c', u_(1.80, 2, 'm') + ' (a talp 75%-a)')}${fl('σ<sub>max</sub>', '2 · V<sub>k</sub> / (3 · c · L)', '2 · 500 / (3 · 0,60 · 2,4)', u_(231.5, 1, 'kPa'))}<p>The edge pressure has grown to 2.7 times the concentric value (86.8 kPa).</p>
+07f9b8a	a) ${nw('e = 0,30 m ≤ B/6 = 0,40 m')} – within the kern, ${nw('σ<sub>max</sub> = 151,9 kPa')}.
+425a498	b) ${nw('B/6 < e = 0,60 m ≤ B/3')} – allowed, with partial lift-off, ${nw('σ<sub>max</sub> = 231,5 kPa')}.
+b39ad7f	<b>If e > B/3</b> (here above 0.80 m), not even half of the base would work – special precautions are then needed. For a circular footing the limit is ${nw('e ≤ 0,6 · r')}.
+7ffc4ae	<b>The eccentricity limit does not replace the EQU check.</b> If in case b) the horizontal force is variable (e.g. wind), with the EQU factors ${nw('M<sub>dst;d</sub> = 1,5 · 100 · 3,0 = 450 kNm')}, while ${nw('M<sub>stb;d</sub> = 0,9 · 500 · 0,96 = 432 kNm')} – overturning is not satisfied. The calculator carries out the two checks together.
+e3efe0f	UPL · surcharge
+41aceb8	Uplift with surcharge (UPL)
+479d76a	Uplift, soil cover
+cca036a	<p>The design groundwater level is ${nw('h<sub>w</sub> = 4,0 m')} above the underside of the base slab of an underground car park with a plan of ${nw('B × L = 12 × 30 m')}. The self-weight of the structure is ${nw('G<sub>sz;k</sub> = 11' + NN + '000 kN')}, and there is a ${nw('t = 0,8 m')} thick soil cover on the roof slab (${nw('γ = 18 kN/m³')}, above the groundwater). Check the safety against uplift in the UPL limit state! (${nw('γ<sub>w</sub> = 10 kN/m³')})</p>
+ce58428	soil cover t
+24d2602	γ (cover)
+5f956ea	The uplift force is the resultant of the water pressure acting on the underside of the base slab; it is resisted by the weight of the structure and of the soil on the roof slab.
+1743ac6	Uplift force
+b22a5d3	Stabilising actions
+a7676c2	<p>Friction and anchors are not taken into account: 
+ca94476	${nw('V<sub>dst;d</sub> < G<sub>stb;d</sub>')} – satisfied, but the utilisation is 99%!
+d097419	<b>Lesson.</b> The reserve is minimal, while the overall safety is only ${nw('1,0/0,9 = 1,11')} in the first place. The groundwater level is a geometrical datum: if the design water level has to be set only 5 cm higher (${nw('h<sub>w</sub> > 4,046 m')}), the verification is no longer satisfied. This is why the water level must be chosen cautiously, or a countermeasure (surcharge, anchoring, dewatering, flooding) applied.
+6c396ea	Uplift with anchoring (UPL)
+f67fe0b	Uplift, anchors
+0ad1fbc	<p>The car park of the previous example is built without soil cover (the roof slab is also the ground surface). What anchoring force is needed for safety against uplift, and how many anchor elements are needed if the characteristic tensile resistance of one element is ${nw('R<sub>k</sub> = 210 kN')} (${nw('γ<sub>a</sub> = 1,4')})?</p>
+63e09be	Anchoring with tension piles or ground anchors: the figure shows some of the anchors.
+2636ce0	Uplift force and self-weight
+d694486	 (unchanged)
+854f49f	 (no soil surcharge)
+7e24a0a	The required anchoring force
+3358ea4	P<sub>d;req</sub>
+9b70ee5	<p>Friction on the walls is ignored, on the safe side: 
+958ae3a	Design resistance of one element
+65e8017	The number of anchors
+13afa8b	${fl('n', '4500 / 150', '30' + NB + 'db')}<p>The anchor elements (tension piles or ground anchors) are distributed evenly over the base slab.</p>
+6463d35	With 30 anchors ${nw('G<sub>stb;d</sub> + P<sub>d</sub> = 9900 + 4500 = 14' + NN + '400 kN = V<sub>dst;d</sub>')} – satisfied (Λ = 1.00). In practice a reserve is also left, and the bending of the slab leads to a denser anchor layout.
+0a8764e	Overall stability – a house on the crest of a slope
+0f02caf	House on the crest of a slope
+43ee7b3	Bishop method
+28dc8bc	<p>A family house is built on the crest of an ${nw('8 m')} high loess slope with an inclination of ${nw('1 : 1,5')}, on two ${nw('0,6 m')} wide strip footings. The strip footings are ${nw('0,8 m')} deep; the edge of the footing nearer the crest is ${nw('0,5 m')} from the crest, the other one ${nw('2,9 m')} (spacing of the axes ${nw('2,4 m')}). Each footing carries a permanent load ${nw('G<sub>k</sub> = 72 kN/m')} and a variable load ${nw('Q<sub>k</sub> = 18 kN/m')}. The soil: ${nw('γ = 19 kN/m³')}, ${nw('c′<sub>k</sub> = 14 kPa')}, ${nw('φ′<sub>k</sub> = 28°')}; the rigid layer is ${nw('6 m')} below the toe. Check overall stability according to ${DA3}, with the simplified Bishop method, <b>a)</b> in the dry state and <b>b)</b> with long-term wetting (${nw('r<sub>u</sub> = 0,2')})!</p>
+9dc1f56	H; inclination
+80ac4ac	strip footings: B; D
+89cb0b5	distance from the crest
+a92cfec	0.5 m and 2.9 m
+3f9eb7a	loads per footing
+9af3d3b	The critical slip surface (case a), the slices and the centres of the trial circles; their colour shows the lowest F.
+1a0a6da	<div class="tblw cx-tw"><table class="tbl mp-tbl"><thead><tr><th>slices</th><th>x [m]</th><th>ΣW [kN/m]</th><th>ΣP [kN/m]</th><th>α<sub>mean</sub> [°]</th><th>Σ resisting term</th><th>Σ (W+P)·sin${NB}α</th></tr></thead><tbody>${rows.join('')}<tr class="cx-tsum"><td colspan="5">Total (30 slices, b = ${u_(sl[0].b, 3, 'm')})</td><td>${F(c.num, 1)}</td><td>${F(c.den, 1)}</td></tr></tbody></table></div>
+3db088e	exits at the toe of the slope
+ef6404a	exits ${u_(c.x1 - a.m.LX, 2, 'm')} in front of the toe
+31cf9be	exits on the slope
+447732f	Design strength parameters (M2)
+f1b0682	Design load of the footings
+ee2dde0	${fl('P<sub>d</sub>', 'γ<sub>G</sub> · G<sub>k</sub> + γ<sub>Q</sub> · Q<sub>k</sub>', '1,0 · 72 + 1,3 · 18', u_(ld.Pd, 1, 'kN/m'))}<p>Per footing, uniformly distributed over the ${nw('0,6 m')} wide base: ${nw('q<sub>d</sub> = ' + u_(ld.q, 1, 'kPa'))}. The self-weight of the soil is taken with a factor ${nw('γ<sub>G</sub> = 1,0')}.</p>
+2d1fc0b	Searching for the critical slip surface
+47560b5	<p>The centres of the circles were placed on a grid of ${a.sr.nx} × ${a.sr.ny} points; for each centre, circles passing through the toe of the slope and touching ${14} different depths were analysed, then the search was refined around the most unfavourable circles. Circles cutting through the footing were excluded.</p><div class="cx-fl nw">centre: O(${F(c.xc, 2)}; ${F(c.yc, 2)})${NB}m from the crest, radius ${u_(c.R, 2, 'm')}</div><p>The slip surface enters ${nw(u_(-c.x0, 2, 'm'))} behind the crest, behind both strip footings, and ${exitTxt}: the whole house stands on the sliding mass.</p>
+52169d0	Calculation by slices (30 slices, grouped)
+9e21fe6	<p>The iteration (F<sub>d</sub> appears on both sides) converges in a few steps:</p>
+37ecf16	a) Verification – dry state
+89a75d4	: overall stability is satisfied.
+aeaa486	 Without the house, the same slope would have a safety of 
+6b3ab79	: the load of the two strip footings reduces the safety by about 
+7c896da	%.</p>
+69f5d63	b) Long-term wetting, r<sub>u</sub> = 0.2
+04aba76	<p>The pore water pressure 
+878e9b8	 reduces the effective normal force on the base of the slices, and so the frictional resistance too. Repeating the search:</p>
+172912d	b) ${nw('F<sub>d</sub> = ' + F(b.Fd, 3) + (b.Fd >= 1 ? ' ≥ 1,0' : ' < 1,0'))} – ${b.Fd >= 1 ? 'megfelel' : 'nem felel meg'} (${nw('Λ = ' + F(b.lam, 2))}): with long-term wetting the slope under the house is not stable.
+bf4f554	<b>What can be done?</b> Proper surface drainage and stormwater disposal (preventing wetting), moving the house further from the crest, founding deeper below the slip surface, or flattening or supporting the slope. The effect of each can be tried in the calculator.
+9cf25e0	<b>With friction, fewer are enough.</b> If friction along the walls is also taken into account (${nw('K = K<sub>0</sub> = 1 − sin' + NB + 'φ′')}, ${nw('δ = ⅔ · φ′')}, ${nw('φ′<sub>k</sub> = 30°')}, ${nw('γ<sub>s;t</sub> = 1,4')}), then ${nw('T<sub>d</sub> = ' + u_(r.Td, 0, 'kN'))}, and ${nw(r.nReq + NB + 'db')} anchors are enough – this can be tried in the calculator with the Wall friction switch. Friction may only be counted on if the backfill and the wall–soil contact are permanently ensured.
+912cb6f	</div>⏎        <div class="mp-sol"><div class="mp-solh"><p class="mp-sec">Step-by-step solution</p><button type="button" class="mp-all" aria-pressed="false">Expand all steps</button></div>⏎          <div class="mp-steps">
+d2e88d6	Collapse all steps
+98b7b95	Expand all steps
+bcd935e	<p style="padding:20px">The 3D view needs WebGL.</p>
+2487211	STABLE?
+bada7ef	whole board – click
+47758dd	part lifting off
+236d497	R<sub>k</sub> resultant
+7b69420	axis of rotation (B/10)
+cae13a3	axis of rotation (toe)
+414fba8	scale: 1 m ≙ ${fmt(1 / this.kS, 0)} kPa
+b8fb20f	the board overturns
+f56f70e	e > B/3 – precautions needed
+3d782d5	earth pressure σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>
+81771ed	friction τ = σ′<sub>h</sub> · tan δ – acts downwards
+9c360e5	▽ design groundwater level ${fmt(gw, 1)} m
+b901d9f	water pressure from below: u = γ<sub>w</sub> · h<sub>w</sub> = ${fmt(10 * hwB, 0)} kPa → V<sub>dst;d</sub>
+a20aa88	groundwater ${fmt(gw, 1)} m
+cdd8e09	self-weight ${fmt(r.Gk, 0)} kN · soil on toe ${fmt(r.Grim, 0)} kN · anchors ${fmt(r.Pd, 0)} kN · water ${fmt(r.Wf, 0)} kN · friction ${fmt(r.Td, 0)} kN
+f5a89e2	setback ${fmt(s, 1)} m
+9725e4b	critical circle: centre (${fmt(c ? c.xc : 0, 1)}; ${fmt(c ? c.yc : 0, 1)}) m, r = ${fmt(c ? c.r : 0, 1)} m · simplified Bishop
+1334e01	The 3D view needs a WebGL-capable browser.
+f2aab98	1 m analysed
+22184a4	ballast water ${u_(p.hb, 2, 'm')}
+ae835fb	P<sub>d</sub> = ${u_(m.loads[0].Pd, 1, 'kN/m')} per footing
+08ea438	3D construction error
+f7e4d5c	<span>HU</span><b>EN</b>
+a23fb86	Magyar változat
+96e758e	slope 1:${String(st.n).replace('.', U.DEC)}, H = 8 m

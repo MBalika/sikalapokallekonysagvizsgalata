@@ -1,0 +1,160 @@
+12db778	What is the friction angle δ<sub>k</sub> for a footing cast in situ?
+d954aa5	the peak φ′<sub>k</sub>
+543b3b8	0 – only the cohesion counts
+7771df5	For a footing cast in situ δ = φ′<sub>cv;k</sub>, for a smooth (precast) footing two thirds of it. The critical state angle is used because sliding involves large displacements and post-peak behaviour.
+b9a8a93	What is the partial factor γ<sub>R;h</sub> in design approach DA-2*?
+0225ade	For sliding γ<sub>R;h</sub> = 1.1 (for bearing resistance γ<sub>R;v</sub> = 1.4).
+e68b24c	In the undrained case, what is the upper limit of the shear resistance?
+8448e15	A<sub>c</sub> · c<sub>u;k</sub>, without a limit
+a80c04d	there is no limit
+51e54c1	Water or air may get between the footing and the soil, so R<sub>d</sub> ≤ 0.4·V<sub>d</sub>. It may only be omitted if suction prevents a gap from forming even where there is no positive contact pressure – this is rare.
+a44cfb5	Why can usually only one half to two thirds of the passive earth resistance be taken into account?
+e4e6970	because the soil strength is lower than expected
+226f382	because the full passive resistance needs a significant displacement
+7a5f0b4	because EC7 forbids the full value
+2938b5a	because groundwater always reduces it
+3991fea	The passive resistance is only fully mobilised after significant compression; at the allowable displacement only part of it develops. In addition, erosion, later excavation or shrinkage of the clay may remove it altogether.
+cdbaa07	Which variable load may be included in V′<sub>k</sub>?
+ae9a7cf	only one that surely acts together with H<sub>d</sub>
+dc86ed2	only the wind load
+797c018	traffic on the backfill, always
+d117a53	The vertical force increases the resistance, so only a variable load that surely acts at the same time as the horizontal force may be counted.
+14d6356	What is the form of the overturning verification?
+83c61f7	The design value of the destabilising moment must not exceed that of the stabilising moment – both are taken about the same point.
+3a7babb	What are the partial factors for EQU (recommended values)?
+f2a383b	all factors 1.0
+118427d	In EQU the destabilising and the stabilising actions get separate factors; a favourable variable load may not be taken into account.
+e5dc7d5	About which point are the moments taken for a footing on soil, as a first approximation?
+e811ec1	about the centroid of the base
+f3d3d63	about a point at a distance B/10 from the toe
+1e204f5	about a point B/3 from the toe
+26ed103	On sound rock about the toe; on soil – because the soil under the toe is pressed in – as a first approximation about a point B/10 from the toe.
+1b2ec94	What has to be done if e > B/3 (rectangular footing)?
+0edf113	nothing, if the moment check is satisfied
+5f03f4c	special precautions are needed
+68f6755	the B/10 pivot point must be used
+b087e81	If e > B/3 (for a circular footing e > 0.6·r) the standard requires special precautions – half of the base no longer “works” then.
+e1b53f7	According to DA-2*, what is the eccentricity calculated from?
+54852b3	from the design values of the actions
+943d585	from the characteristic values of the actions
+587c4d4	from the ground resistance
+5ae31f3	from the wind load only
+53d6e85	In DA-2* the eccentricity is determined from the characteristic actions; the partial factors do not change it.
+59bb20c	With one-way eccentricity, at e = B/3, how many times the mean contact pressure is the edge pressure?
+589c9bf	infinite
+d76bfa9	At e = B/3 the compressed length is B/2, the peak of the triangular distribution is 2V/(B/2·L) = 4·V/A – four times the mean.
+1f1ec40	What are the factors on the permanent actions in UPL?
+3790157	both 1.0
+febfedc	In UPL the factor on the uplift force is 1.00 and on the self-weight 0.90; on a variable destabilising action 1.50, on a favourable variable one 0.
+663ec3b	How is the design value of the uplift force calculated?
+6a41f66	with the weight of the structure
+40cd35b	from the anchor force
+f13a508	A<sub>k</sub> is the volume submerged below the groundwater level, γ<sub>w</sub> = 10 kN/m³; the uplift force is essentially the resultant of the water pressure acting on the structure.
+5d065f3	What is the overall safety against uplift without friction and anchors?
+4d4f13b	γ<sub>G;dst</sub>/γ<sub>G;stb</sub> = 1.0/0.9 = 1.11 – little, so the water level must be chosen cautiously.
+1f9ef77	How are the cars parked in an underground car park taken into account?
+38f9480	as a favourable variable load: with 0
+531d100	as a stabilising permanent load
+7d81a9e	with a factor of 0.9
+498e0d2	with a factor of 1.5
+2305761	The factor on a favourable variable load in UPL is 0 – the verification must be done for the empty car park.
+b94db40	The 30×15 m box is reached by groundwater 1 m higher. By how much does the uplift force increase?
+3d7f6ef	it does not change
+fb17bff	450 m² · 1 m · 10 kN/m³ = 4500 kN – in the example this is +20%.
+ff32a7f	Which one is NOT a countermeasure against uplift?
+5831bb6	extending the base slab
+960447a	anchoring
+44200e5	temporary flooding
+9323949	compacting the soil under the base
+832eb71	Compaction helps with settlement, not with the uplift force. The four countermeasures: extension, anchoring, dewatering/drainage, temporary flooding.
+8c0cdcb	When does overall stability have to be checked for a shallow foundation?
+458685e	near a slope, an excavation, a retaining wall, a bank or a cavity
+860b0b2	only for pile foundations
+450ce9d	only on rock
+72d21cd	never, if the bearing resistance is adequate
+7346873	According to EN 1997-1 6.5.1: on or near a slope, near an excavation or a retaining wall, near a river, canal, lake, reservoir or the sea shore, and near mine workings or underground structures.
+6e9b31b	What is the typical failure pattern?
+ed1aba2	a small wedge under the base breaks out
+8fc02c6	the soil mass moves together with the footing, the slip surface runs below the footing
+22c6075	the base slides on the foundation level
+9855370	Overall stability checks the footing and the surrounding soil mass together – the bearing resistance may be adequate while the slope is not.
+6b3e27f	What are the factors on actions in DA-3?
+a5a9179	The load of the footing enters as a geotechnical action, with set A2: 1.0 / 1.3; the shear strength is reduced.
+2b9ee99	What does the partial factor for friction divide?
+4515852	the angle φ′ itself
+ef86401	the value of tan φ′
+cec2009	the weight of the slice
+b47e2c2	the radius of the slip surface
+fc1bde5	tan φ′<sub>d</sub> = tan φ′<sub>k</sub> / γ<sub>φ</sub> – for example with φ′<sub>k</sub> = 28° and γ = 1.35, φ′<sub>d</sub> ≈ 21.5°.
+b614664	What usually governs the stability of slopes?
+e38d9d0	the water conditions
+7ebfee2	the temperature
+97b7cf5	the concrete grade of the footing
+92b4e8f	the wind load
+7b2297c	Rainfall, rising groundwater, seepage: the pore water pressure reduces the friction on the slip surface. The loess bank slides in Hungary and the 1972 Hong Kong case were also triggered by water.
+9deafd6	The bearing resistance check of the house footing is satisfied. Is overall stability then also certain?
+4fbc827	no – the slope may still slide
+30b088c	The bearing resistance checks local failure under the base; overall stability checks the sliding of a larger soil mass. They are two separate verifications.
+4b650dd	Which design approach does the Hungarian National Annex prescribe for the bearing resistance and sliding of shallow foundations?
+440ac72	allowable stresses
+a19bbeb	DA-2*: A1 + M1 + R2. For overall stability DA-3.
+5700e14	What does the asterisk in DA-2* mean?
+a7a3f1b	the partial factors are applied at the end of the calculation, to the effects of actions
+c8d1fa5	a factor of safety of two
+150b401	it is valid for the undrained state only
+88b2e52	the soil parameters are reduced as well
+81b9b37	The calculation runs with characteristic values (and so does the eccentricity), the factors come at the end.
+adc13bd	In set R2, what is the factor on the sliding resistance of a shallow foundation?
+42339de	γ<sub>R;h</sub> = 1.1; for bearing resistance γ<sub>R;v</sub> = 1.4.
+c815183	Which set of factors reduces the strength parameters of the soil?
+7edf85b	M2: dividing tan φ′ and c′ (EN recommendation 1.25, for c<sub>u</sub> 1.4).
+ed7c8d1	Which limit state works independently of the design approach, with its own set of factors?
+0203477	GEO – bearing resistance
+f17a525	GEO – sliding
+7ca9139	EQU, UPL and HYD get their own factors.
+a1d0800	What replaces the design approaches (DA1–DA3) in the new EC7?
+234e7ff	verification cases (VC1–VC4) and MFA / RFA
+c39b986	a single global factor of safety
+9d28160	numerical modelling only
+c3d648f	The limit states remain, the assignment of factors changes: verification cases and a material or resistance factor approach.
+f4203fb	Which verification case covers static equilibrium and uplift?
+4cc87d4	VC2: static equilibrium, uplift (the old EQU, UPL).
+c1cf386	the resistance is divided by γ<sub>R</sub>
+e6d0ab9	the strength parameters of the soil are reduced by factors
+9aeeb28	no factors are used at all
+862d9b9	a load test is carried out
+ce0bec2	Material Factor Approach: tan φ′ and c′ reduced by a factor. RFA reduces the resistance (≈ 1.4 for bearing, 1.1 for sliding).
+ccff3f0	Where does overall stability go in the new suite of standards?
+30b03aa	EN 1997-3, Clause 4: slopes, cuttings, embankments
+697eda9	it disappears as a separate check
+e6feade	Clause 4 of EN 1997-3 explicitly covers footings on or near a slope as well.
+5a0e111	When must the conflicting first-generation standards be withdrawn?
+93d959f	30 March 2026
+5f3c105	30 March 2028
+a012146	The deadline for national implementation is 30 September 2027, and for withdrawal of the old standards 30 March 2028.
+7bbfb54	A tall billboard on a small footing, in a storm
+70a2057	Large eccentricity: M<sub>dst;d</sub> ≤ M<sub>stb;d</sub> and e ≤ B/3 are the question.
+d6ea2e5	An empty underground rainwater tank, high groundwater table
+4d027e5	The uplift force may overcome the self-weight (UPL).
+1def2fb	A cantilever wall with a smooth precast base, high earth pressure
+748e07e	δ = ⅔·φ′<sub>cv</sub> – the friction under the base may be too little.
+8452213	A family house two metres from the edge of a loess bluff
+1f0eec1	The slip surface may pass under the house too: overall stability.
+b42849d	A pedestrian underpass near the Danube, during a flood
+f05a2dc	A long-lasting flood is followed by the groundwater – UPL.
+62f2f43	A bridge abutment footing with earth pressure from the backfill, on saturated clay, in the short term
+7815289	Undrained sliding: R<sub>d</sub> = A<sub>c</sub>·c<sub>u;k</sub>/1.1 ≤ 0.4·V<sub>d</sub>.
+e70ecfd	A circular shallow foundation of a wind turbine
+bdba133	For a circular footing, special precautions are needed if e > 0.6·r.
+e232a33	Footings of a hall at the edge of a planned deep excavation
+577fda5	Near the excavation the soil mass may slide together with the footings.
+a982e43	The stability of a shallow foundation must be verified for four separate limit states.
+20d96b7	Sliding, overturning, uplift and overall stability – each one separately.
+74a178c	Sliding is an EQU limit state.
+8397a2d	GEO: it is resisted by the shear strength of the ground.
+0203197	For sliding, H<sub>d</sub> must also include the active earth pressure transferred to the footing.
+3c8a97e	H<sub>d</sub> also includes the active earth pressure transferred to the footing.
+4796b59	For a smooth precast footing δ = φ′<sub>cv;k</sub>.
+c95e69f	For a smooth precast footing δ = ⅔·φ′<sub>cv;k</sub>.
+db4880f	For drained sliding, the effective cohesion should generally be ignored.
+f07a10f	The adhesion depends strongly on the water content and the consistency.

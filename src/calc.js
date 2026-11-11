@@ -13,7 +13,7 @@
   const sb = (b, s) => `${b}<sub>${s}</sub>`;
   const nw = (s) => `<span class="nw">${s}</span>`;
   const u_ = (v, d, unit) => F(v, d) + (unit === '°' ? '' : NB) + unit;          // szám + mértékegység (fok: szóköz nélkül)
-  const DA2 = 'DA' + NBH + '2*', DA3 = 'DA' + NBH + '3', EN = 'MSZ' + NB + 'EN' + NB + '1997' + NBH + '1';
+  const DA2 = 'DA' + NBH + '2*', DA3 = 'DA' + NBH + '3', EN = (U.EN ? '' : 'MSZ' + NB) + 'EN' + NB + '1997' + NBH + '1';
   // képletsor: szimbólum = képlet = behelyettesítés = eredmény (egészében nem törhet)
   const fl = (...parts) => `<div class="cx-fl nw">${parts.filter(Boolean).join(' = ').replace(/ = /g, NB + '=' + NB)}</div>`;
   const mk = () => ({ err: [], warn: [], info: [], checks: [], steps: [], v: {} });
@@ -882,7 +882,7 @@
   const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const ST = {}; TABS.forEach(t => ST[t.id] = { ...DEF[t.id] });
   const RES = {}; let TAB = 'sliding', VIEW = '2d', ROOT = null; const PRESETS = [];
-  const fmtIn = (v, d) => { if (!isFinite(v)) return ''; const x = Math.round(v * 10 ** d) / 10 ** d; return String(x).replace('.', ','); };
+  const fmtIn = (v, d) => { if (!isFinite(v)) return ''; const x = Math.round(v * 10 ** d) / 10 ** d; return String(x).replace('.', U.DEC); };
   const strip = (h) => String(h).replace(/<[^>]+>/g, '');
   function fieldHTML(tab, f) {
     if (f.note) return `<p class="cx-note">${f.note}</p>`;
