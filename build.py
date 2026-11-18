@@ -7,6 +7,11 @@ attribútumok, JS-karakterláncok) az i18n/en_*.tsv párjai szerint cseréli. Hi
 az angol build leáll, a hiányzó egységek az i18n/missing.tsv-be kerülnek.
 """
 import os, pathlib, re, shutil, subprocess, sys
+
+def _bxt(h):  # dobozcímek középre (formázás skill) – boxtitle.inc.html a build.py mellett
+    import pathlib as _p
+    s = (_p.Path(__file__).resolve().parent / 'boxtitle.inc.html').read_text(encoding='utf-8')
+    return h if 'id="bxt-js"' in h else h.replace('</head>', s + '</head>', 1)
 R = pathlib.Path(__file__).parent
 SRC = R / 'src'
 CLASSIC = ['app.js', 'mech.js', 'widgets.js', 'data.js', 'calc.js', 'examples.js']
@@ -64,7 +69,7 @@ def build(src, out, lang):
 </body>
 </html>
 """
-    out.write_text(html)
+    out.write_text(_bxt(html))
     print(out.name, len(html) // 1024, 'KB')
     return html
 
