@@ -306,7 +306,7 @@
       <div>
         <h3 style="margin-top:0">Csúszólapos vizsgálat</h3>
         <p>Az igazolás rézsűállékonysági számítással történik: körhengeres (rétegzett talajban szükség esetén más alakú) csúszólap, lamellás módszer, a legkedvezőtlenebb csúszólap keresése. Az alap terhe hatásként lép be azokra a lamellákra, amelyek felett áll. Drénezett (c′, φ′) és drénezetlen (c<sub>u</sub>) állapotra is vizsgálunk; a vízviszonyok rendszerint mértékadók.</p>
-        <div class="eq"><div class="f">DA-3: γ<sub>G</sub> = 1,0 · γ<sub>Q</sub> = 1,3</div><div class="w"><div>tg φ′<sub>d</sub> = tg φ′<sub>k</sub> / γ<sub>φ</sub>, c′<sub>d</sub> = c′<sub>k</sub> / γ<sub>c</sub></div><div>γ<sub>φ</sub> = γ<sub>c</sub> = 1,35; az EN 1997-1 ajánlott M2 értéke 1,25 (c<sub>u</sub>-ra γ<sub>cu</sub> = 1,4).</div></div></div>
+        <div class="eq"><div class="f">DA-3: γ<sub>G</sub> = 1,0 · γ<sub>Q</sub> = 1,3</div><div class="w"><div>tg φ′<sub>d</sub> = tg φ′<sub>k</sub> / γ<sub>φ</sub>, c′<sub>d</sub> = c′<sub>k</sub> / γ<sub>c</sub></div><div>γ<sub>φ</sub> = γ<sub>c</sub> = 1,35, γ<sub>cu</sub> = 1,5; az EN 1997-1 ajánlott M2 értékei 1,25 és 1,4.</div></div></div>
       </div>
     </div>
     <div class="panel k4" id="sim-altalanos-2d">
@@ -377,7 +377,7 @@
     </div>
     <div class="split">
       <div class="box"><h4>Mit jelent a csillag a DA-2*-ban?</h4><p class="small" style="margin:0">A számítás végig karakterisztikus értékekkel fut, a parciális tényezőket a végén, a <b>hatások következményére</b> és az ellenállásra alkalmazzuk. Ezért a külpontosságot és a hasznos alapfelületet (B′ = B − 2e) is a karakterisztikus hatásokból számítjuk.</p></div>
-      <div class="box"><h4>A tényezőcsoportok</h4><ul><li>A1: γ<sub>G</sub> = 1,35; γ<sub>Q</sub> = 1,5 · A2: γ<sub>G</sub> = 1,0; γ<sub>Q</sub> = 1,3</li><li>M1: minden talajjellemző tényező nélkül (1,0)</li><li>M2: tg φ′ és c′ osztva, c<sub>u</sub>-ra γ<sub>cu</sub> = 1,4</li><li>R2 (síkalap): γ<sub>R;v</sub> = 1,4 teherbírás, γ<sub>R;h</sub> = 1,1 elcsúszás</li><li>R3: rézsű, általános állékonyság: 1,0</li></ul></div>
+      <div class="box"><h4>A tényezőcsoportok</h4><ul><li>A1: γ<sub>G</sub> = 1,35; γ<sub>Q</sub> = 1,5 · A2: γ<sub>G</sub> = 1,0; γ<sub>Q</sub> = 1,3</li><li>M1: minden talajjellemző tényező nélkül (1,0)</li><li>M2: tg φ′ és c′ osztva, c<sub>u</sub>-ra γ<sub>cu</sub> = 1,5</li><li>R2 (síkalap): γ<sub>R;v</sub> = 1,4 teherbírás, γ<sub>R;h</sub> = 1,1 elcsúszás</li><li>R3: rézsű, általános állékonyság: 1,0</li></ul></div>
     </div>
     <h3>Egyensúlyi határállapotok – saját tényezőkkel</h3>
     <p>A helyzeti állékonyság elvesztése (EQU), a felúszás (UPL) és a hidraulikus talajtörés (HYD) nem a tervezési módszerekhez kötődik: az MSZ EN 1997-1 A melléklete mindháromra külön tényezőkészletet ad.</p>
@@ -403,7 +403,7 @@
     </div>
     <div class="tblw"><table class="tbl"><thead><tr><th>Igazolási eset</th><th>Mire?</th><th>Régi megfelelője</th><th>Hatástényezők (tartós helyzet)</th></tr></thead><tbody>
       <tr><td>VC1</td><td>szerkezeti ellenállás, alapozás általában</td><td>STR, DA2</td><td>G: 1,35·k<sub>F</sub>; Q: 1,5·k<sub>F</sub></td></tr>
-      <tr><td>VC2</td><td>statikus egyensúly, felhajtóerő</td><td>EQU, UPL</td><td>G: 1,0 kedvező</td></tr>
+      <tr><td>VC2</td><td>statikus egyensúly, felhajtóerő</td><td>EQU, UPL</td><td>G: 1,35·k<sub>F</sub> vagy 1,0; stabilizáló rész: 1,15 vagy 1,0</td></tr>
       <tr><td>VC3</td><td>a hatás és az ellenállás is a talajból: rézsű, általános állékonyság</td><td>GEO, ≈ DA-3</td><td>G: 1,0; Q: 1,3 + M2 anyagtényezők</td></tr>
       <tr><td>VC4</td><td>a tényező a hatás következményére (pl. támfalak)</td><td>≈ DA-2*</td><td>E: 1,35·k<sub>F</sub></td></tr>
     </tbody></table></div>
