@@ -60,7 +60,6 @@ c5e6c38	d) Flooding the lowest level
 402547a	e) Wall friction from earth pressure<span></span>
 4cef9a2	none
 8a59735	K<sub>0</sub> · tan δ
-0a53296	c) You can model dewatering with the groundwater level slider. Illustrative example: walls 0.4 m, slabs 0.35 and 0.30 m; the soil on the projection is 19 kN/m³ above the water and 20 kN/m³ below it. Wall friction: σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>, K<sub>0</sub> = 1 − sin 30° = 0.5, δ = ⅔ · φ′ = 20°, R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub> (1.4).
 bcffac8	Four countermeasures
 f7c491f	Extending the base slab
 dde9e47	Beyond the walls, if there is room: the soil resting on the projection adds load as well. In the example, with a 1 m extension a 0.67 m slab is enough instead of 1.28 m – but the uplift force acts on the projection too.

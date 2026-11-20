@@ -270,7 +270,9 @@
             <div class="rg"><label>e) Oldalfal-súrlódás a földnyomásból<span></span></label><div class="seg" id="fu_fr"><button class="on" data-v="0" type="button">nincs</button><button data-v="1" type="button">K<sub>0</sub> · tg δ</button></div></div>
           </div>
           <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
-          <p class="small muted" style="margin-top:10px">c) A leszívást a talajvízszint csúszkával modellezheted. Szemléltető példa: falak 0,4 m, födémek 0,35 és 0,30 m; a perem talaja a víz felett 19, alatta 20 kN/m³. Oldalfal-súrlódás: σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>, K<sub>0</sub> = 1 − sin 30° = 0,5, δ = ⅔ · φ′ = 20°, R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub> (1,4).</p>
+          <p class="small muted" style="margin-top:10px">c) A leszívást a talajvízszint csúszkával modellezheted. Szemléltető példa: falak 0,4 m, födémek 0,35 és 0,30 m; a perem talaja a víz felett 19, alatta 20 kN/m³.</p>
+          <p class="small muted simf">Oldalfal-súrlódás:</p>
+          <ul class="small muted simf"><li>σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub></li><li>K<sub>0</sub> = 1 − sin 30° = 0,5</li><li>δ = ⅔ · φ′ = 20°</li><li>R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub>, γ<sub>s;t</sub> = 1,4</li></ul>
         </div>
       </div>
     </div>
@@ -443,6 +445,26 @@
     <div class="tfgrid" id="tfgrid"></div>
   </div>
 </section>
+<!-- ===================== A SOROZAT TÖBBI RÉSZE ===================== -->
+<section class="chap k0" id="tovabb">
+  <div class="wrap">
+    <div class="chead"><div class="code">→</div><h2>Az Alapozás tananyagai</h2><p>A sorozat többi része – mindegyik külön, interaktív oldal.</p></div>
+    <div class="series">
+      <a class="next" href="https://sikalapok-sullyedesszamitasa.vercel.app/" target="_blank" rel="noopener"><b>Következik: síkalapok süllyedésszámítása ↗</b><small>Feszültségek az altalajban, süllyedés és süllyedéskülönbség</small></a>
+      <a href="https://bme-alapozas.vercel.app/" target="_blank" rel="noopener"><b>Alapozás – nyitóoldal ↗</b><small>Bevezetés, a tárgy útja kilenc állomáson és minden tananyag egy helyen</small></a>
+      <a href="https://talajfelderites.vercel.app/" target="_blank" rel="noopener"><b>Talajfelderítés ↗</b><small>Fúrás, szondázás, geofizika, mintavétel – mit tudunk meg a talajról</small></a>
+      <a href="https://sikalapoktervezese.vercel.app/" target="_blank" rel="noopener"><b>Síkalapok tervezése ↗</b><small>Alaptípusok, alapsík, szerkezeti kialakítás – a síkalap megválasztása</small></a>
+      <a href="https://sikalapok-teherbirasszamitasa.vercel.app/" target="_blank" rel="noopener"><b>Síkalapok teherbírásszámítása ↗</b><small>Az alapfelület méretezése teherbírási határállapotban – képlet, mintapéldák, kalkulátor</small></a>
+      <a href="https://vedekezesakarossullyedesekellen.vercel.app/" target="_blank" rel="noopener"><b>Védekezés a káros süllyedések ellen ↗</b><small>Kisebb talpnyomás, mélyebb alapsík, talajjavítás</small></a>
+      <a href="https://kedvezotlen-altalaj.vercel.app/" target="_blank" rel="noopener"><b>Alapozás kedvezőtlen altalajon ↗</b><small>Térfogatváltozó agyag, roskadékony lösz, feltöltés, szerves talaj</small></a>
+      <a href="https://sikalapokaterohatasok.vercel.app/" target="_blank" rel="noopener"><b>A síkalapokat érő hatások ↗</b><small>Rezgés, földrengés, üreg, kimosás és fagy az alap alatt</small></a>
+      <a href="https://melyalapozasok.vercel.app/" target="_blank" rel="noopener"><b>Mélyalapozások ↗</b><small>Cölöpök, résfalak, kutak – ha a teherbíró réteg mélyen van</small></a>
+      <a href="https://munkaterhatarolasok.vercel.app/" target="_blank" rel="noopener"><b>Munkatérhatárolások ↗</b><small>Dúcolás, falak, horgonyzás – a mélyebb alapsík munkagödre</small></a>
+      <a href="https://bme-alapozas.vercel.app/telek/" target="_blank" rel="noopener"><b>Egy telek, egy félév ↗</b><small>Kilenc feladat egyetlen telken – te vagy a geotechnikus</small></a>
+      <a href="https://bme-alapozas.vercel.app/ar-labor/" target="_blank" rel="noopener"><b>Alapozás AR labor ↗</b><small>Talajtörés, feszültséghagyma, CFA cölöp és munkagödör a saját asztalodon</small></a>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -450,11 +472,6 @@
     <div>
       <p><b>Síkalapok állékonyságvizsgálata</b> – interaktív tananyag a BME Építőmérnöki Kar Alapozás tárgyához, az MSZ EN 1997-1 (Eurocode 7) és nemzeti melléklete szerint.</p>
       <p class="small">A szimulátorok és példák szemléltető modellek; tervezéshez a hatályos szabványokat, a nemzeti mellékletet és igazolt programokat kell használni.</p>
-    </div>
-    <div class="links small">
-      <a href="https://sikalapok-sullyedesszamitasa.vercel.app/" target="_blank" rel="noopener">Síkalapok süllyedésszámítása</a>
-      <a href="https://vedekezesakarossullyedesekellen.vercel.app/" target="_blank" rel="noopener">Védekezés a káros süllyedések ellen</a>
-      <a href="https://kedvezotlen-altalaj.vercel.app/" target="_blank" rel="noopener">Alapozás kedvezőtlen altalajon</a>
     </div>
   </div>
 </footer>

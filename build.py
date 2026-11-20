@@ -126,6 +126,7 @@ print('alsó indexek (sz/t → str/soil):', nsub)
 build(EN, R / 'en.html', 'en-GB')
 # a társoldalak angol változatára mutató hivatkozások (…/en, a fejezet-horgonnyal együtt)
 p = R / 'en.html'; t = p.read_text(); tot = 0
-for site in ['sikalapoktervezese', 'sikalapok-teherbirasszamitasa', 'talajfelderites', 'kedvezotlen-altalaj', 'sikalapok-sullyedesszamitasa', 'vedekezesakarossullyedesekellen']:
+for site in ['sikalapoktervezese', 'sikalapok-teherbirasszamitasa', 'talajfelderites', 'kedvezotlen-altalaj', 'sikalapok-sullyedesszamitasa', 'vedekezesakarossullyedesekellen', 'sikalapokaterohatasok', 'melyalapozasok', 'munkaterhatarolasok']:
     t, n = re.subn(rf'https://{site}\.vercel\.app/(#[\w-]+)?(?=["\'])', lambda m, s=site: f'https://{s}.vercel.app/en' + (m.group(1) or ''), t); tot += n
+t, n = re.subn(r'https://bme-alapozas\.vercel\.app/((?:telek|ar-labor)/)?(?=["\'])', lambda m: 'https://bme-alapozas.vercel.app/' + (m.group(1) or '') + 'en', t); tot += n
 p.write_text(t); print('társoldal-linkek → /en:', tot)

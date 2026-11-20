@@ -49,7 +49,7 @@ JS = r"""
     }
   }
   // dobozcímek
-  for (const h of document.querySelectorAll('main .card h3, main .card h4, main .card h5, main .callout > b:first-child, main .box h4, main .gloss dt, main .panel .ph h4, main .fact h4, main .quiz .qh h4, main .case h4, main .vcard h4, main .cx-card h4, main .mp-step h4, main .note > b:first-child')) {
+  for (const h of document.querySelectorAll('main .card h3, main .card h4, main .card h5, main .callout > b:first-child, main .box h4, main .gloss dt, main .panel .ph h4, main .fact h4, main .quiz .qh h4, main .vcard h4, main .cx-card h4, main .mp-step h4, main .note > b:first-child')) {
     if (h.tagName === 'B' && !/^(block|flex)$/.test(getComputedStyle(h).display)) continue;   // a szövegbe futó félkövér felvezetés nem cím
     if (!vis(h)) continue; if (h.closest('header, table, summary, [data-bxt-skip]')) continue;
     const cs = getComputedStyle(h); if (cs.textAlign !== 'center' && !h.classList.contains('bxt')) { const r = h.getBoundingClientRect(), pr = h.parentElement.getBoundingClientRect(); const mid = (r.left + r.right) / 2, pm = (pr.left + pr.right) / 2; if (Math.abs(mid - pm) > 12 || r.width > pr.width * 0.9) out.titles.push(h.textContent.trim().slice(0, 50)); }

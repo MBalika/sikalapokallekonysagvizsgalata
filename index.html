@@ -146,6 +146,19 @@ sub { font-size: .7em; line-height: 0; }
 .fact p { font-size: .93em; margin: 4px 0 6px; color: var(--ink2); }
 .note { border: 1px dashed var(--line2); border-radius: var(--r2); padding: 12px 16px; font-size: .93em; color: var(--ink2); background: var(--plumT); margin: 16px 0; }
 .note b { color: var(--ink); }
+/* ---- a sorozat többi része ---- */
+.series { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+@media (max-width: 1000px) { .series { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .series { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 440px) { .series { grid-template-columns: 1fr; } }
+.series a { display: flex; flex-direction: column; justify-content: center; gap: 4px; text-align: center; text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: var(--r2); padding: 16px 16px; box-shadow: var(--sh); transition: transform .2s, border-color .2s; }
+.series a:hover { transform: translateY(-2px); border-color: var(--plum2); }
+.series a b { display: block; font: 750 16.5px/1.25 var(--fd); text-wrap: balance; }
+.series a small { color: var(--mute); font-size: 13.5px; line-height: 1.4; text-wrap: balance; }
+.series a.next { background: var(--plum); border-color: var(--plum); color: var(--paper); }
+.series a.next small { color: color-mix(in srgb, var(--paper) 78%, transparent); }
+.simf { margin: 8px 0 0; } ul.simf { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 2px; text-align: center; font-family: var(--fd); font-weight: 600; color: var(--ink2); }
+.lam .sub .chip { display: inline-block; white-space: nowrap; padding: 2px 9px; margin: 3px 5px 0 0; border-radius: 999px; background: var(--paper2); border: 1px solid var(--line); font-size: .93em; }
 .case { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .case:last-child { border-bottom: 0; }
 .case .yr { font: 800 26px/1 var(--fd); color: var(--k); min-width: 88px; font-variant-numeric: tabular-nums; }
@@ -293,7 +306,8 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 @media (max-width: 760px) { .tline { grid-template-columns: 1fr; gap: 14px; } .tline::before { left: 7px; right: auto; top: 0; bottom: 0; width: 3px; height: auto; } .tline div { padding: 0 0 0 30px; } .tline div::before { top: 2px; } }
 /* lábléc */
 footer { margin-top: 80px; padding: 34px 0 60px; border-top: 1px solid var(--line); color: var(--mute); font-size: .92em; }
-footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+footer .wrap { display: block; max-width: 880px; text-align: center; }
+footer p { text-align: center !important; text-wrap: balance; }
 @media (max-width: 760px) { footer .wrap { grid-template-columns: 1fr; } }
 .links { display: grid; gap: 8px; }
 .totop { position: fixed; right: 16px; bottom: 16px; z-index: 40; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line2); background: var(--card); box-shadow: var(--sh); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .3s; }
@@ -990,7 +1004,9 @@ main .rag, footer .rag { text-align: left !important; }
             <div class="rg"><label>e) Oldalfal-súrlódás a földnyomásból<span></span></label><div class="seg" id="fu_fr"><button class="on" data-v="0" type="button">nincs</button><button data-v="1" type="button">K<sub>0</sub> · tg δ</button></div></div>
           </div>
           <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
-          <p class="small muted" style="margin-top:10px">c) A leszívást a talajvízszint csúszkával modellezheted. Szemléltető példa: falak 0,4 m, födémek 0,35 és 0,30 m; a perem talaja a víz felett 19, alatta 20 kN/m³. Oldalfal-súrlódás: σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>, K<sub>0</sub> = 1 − sin 30° = 0,5, δ = ⅔ · φ′ = 20°, R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub> (1,4).</p>
+          <p class="small muted" style="margin-top:10px">c) A leszívást a talajvízszint csúszkával modellezheted. Szemléltető példa: falak 0,4 m, födémek 0,35 és 0,30 m; a perem talaja a víz felett 19, alatta 20 kN/m³.</p>
+          <p class="small muted simf">Oldalfal-súrlódás:</p>
+          <ul class="small muted simf"><li>σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub></li><li>K<sub>0</sub> = 1 − sin 30° = 0,5</li><li>δ = ⅔ · φ′ = 20°</li><li>R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub>, γ<sub>s;t</sub> = 1,4</li></ul>
         </div>
       </div>
     </div>
@@ -1229,6 +1245,26 @@ main .rag, footer .rag { text-align: left !important; }
     <div class="tfgrid" id="tfgrid"></div>
   </div>
 </section>
+<!-- ===================== A SOROZAT TÖBBI RÉSZE ===================== -->
+<section class="chap k0" id="tovabb">
+  <div class="wrap">
+    <div class="chead"><div class="code">→</div><h2>Az Alapozás tananyagai</h2><p>A sorozat többi része – mindegyik külön, interaktív oldal.</p></div>
+    <div class="series">
+      <a class="next" href="https://sikalapok-sullyedesszamitasa.vercel.app/" target="_blank" rel="noopener"><b>Következik: síkalapok süllyedésszámítása ↗</b><small>Feszültségek az altalajban, süllyedés és süllyedéskülönbség</small></a>
+      <a href="https://bme-alapozas.vercel.app/" target="_blank" rel="noopener"><b>Alapozás – nyitóoldal ↗</b><small>Bevezetés, a tárgy útja kilenc állomáson és minden tananyag egy helyen</small></a>
+      <a href="https://talajfelderites.vercel.app/" target="_blank" rel="noopener"><b>Talajfelderítés ↗</b><small>Fúrás, szondázás, geofizika, mintavétel – mit tudunk meg a talajról</small></a>
+      <a href="https://sikalapoktervezese.vercel.app/" target="_blank" rel="noopener"><b>Síkalapok tervezése ↗</b><small>Alaptípusok, alapsík, szerkezeti kialakítás – a síkalap megválasztása</small></a>
+      <a href="https://sikalapok-teherbirasszamitasa.vercel.app/" target="_blank" rel="noopener"><b>Síkalapok teherbírásszámítása ↗</b><small>Az alapfelület méretezése teherbírási határállapotban – képlet, mintapéldák, kalkulátor</small></a>
+      <a href="https://vedekezesakarossullyedesekellen.vercel.app/" target="_blank" rel="noopener"><b>Védekezés a káros süllyedések ellen ↗</b><small>Kisebb talpnyomás, mélyebb alapsík, talajjavítás</small></a>
+      <a href="https://kedvezotlen-altalaj.vercel.app/" target="_blank" rel="noopener"><b>Alapozás kedvezőtlen altalajon ↗</b><small>Térfogatváltozó agyag, roskadékony lösz, feltöltés, szerves talaj</small></a>
+      <a href="https://sikalapokaterohatasok.vercel.app/" target="_blank" rel="noopener"><b>A síkalapokat érő hatások ↗</b><small>Rezgés, földrengés, üreg, kimosás és fagy az alap alatt</small></a>
+      <a href="https://melyalapozasok.vercel.app/" target="_blank" rel="noopener"><b>Mélyalapozások ↗</b><small>Cölöpök, résfalak, kutak – ha a teherbíró réteg mélyen van</small></a>
+      <a href="https://munkaterhatarolasok.vercel.app/" target="_blank" rel="noopener"><b>Munkatérhatárolások ↗</b><small>Dúcolás, falak, horgonyzás – a mélyebb alapsík munkagödre</small></a>
+      <a href="https://bme-alapozas.vercel.app/telek/" target="_blank" rel="noopener"><b>Egy telek, egy félév ↗</b><small>Kilenc feladat egyetlen telken – te vagy a geotechnikus</small></a>
+      <a href="https://bme-alapozas.vercel.app/ar-labor/" target="_blank" rel="noopener"><b>Alapozás AR labor ↗</b><small>Talajtörés, feszültséghagyma, CFA cölöp és munkagödör a saját asztalodon</small></a>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -1236,11 +1272,6 @@ main .rag, footer .rag { text-align: left !important; }
     <div>
       <p><b>Síkalapok állékonyságvizsgálata</b> – interaktív tananyag a BME Építőmérnöki Kar Alapozás tárgyához, az MSZ EN 1997-1 (Eurocode 7) és nemzeti melléklete szerint.</p>
       <p class="small">A szimulátorok és példák szemléltető modellek; tervezéshez a hatályos szabványokat, a nemzeti mellékletet és igazolt programokat kell használni.</p>
-    </div>
-    <div class="links small">
-      <a href="https://sikalapok-sullyedesszamitasa.vercel.app/" target="_blank" rel="noopener">Síkalapok süllyedésszámítása</a>
-      <a href="https://vedekezesakarossullyedesekellen.vercel.app/" target="_blank" rel="noopener">Védekezés a káros süllyedések ellen</a>
-      <a href="https://kedvezotlen-altalaj.vercel.app/" target="_blank" rel="noopener">Alapozás kedvezőtlen altalajon</a>
     </div>
   </div>
 </footer>
@@ -3163,6 +3194,10 @@ function speckTex(base, spots, n, sz, seed, lines = 0) {
   for (let k = 0; k < lines; k++) { const y = (k + 0.5) * S / lines; g.fillStyle = 'rgba(60,45,25,0.25)'; g.fillRect(0, y, S, 2); }
   const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t;
 }
+function tileTex() { const S = 128, c = document.createElement('canvas'); c.width = c.height = S; const g = c.getContext('2d'); g.fillStyle = '#b9583a'; g.fillRect(0, 0, S, S);
+  for (let r = 0; r < 8; r++) { const y = r * 16; g.fillStyle = 'rgba(70,25,12,0.45)'; g.fillRect(0, y + 14, S, 2); g.fillStyle = 'rgba(255,190,150,0.16)'; g.fillRect(0, y, S, 3);
+    for (let k = 0; k < 8; k++) { g.fillStyle = 'rgba(70,25,12,0.3)'; g.fillRect(k * 16 + (r % 2 ? 8 : 0), y, 1.5, 14); } }
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t; }
 let TX = null;
 function tex() {
   if (TX) return TX;
@@ -3174,6 +3209,9 @@ function tex() {
     fill: speckTex('#b39468', ['#9f8257', '#c6a87a', '#8c7350'], 2200, 2.4, 13, 4),
     conc: speckTex('#bcb8b0', ['#aaa69e', '#cfcbc2', '#9d9991'], 1600, 1.2, 17),
     grass: speckTex('#7c9a46', ['#6d8a3c', '#8bab52', '#5f7a33'], 1800, 2.5, 19),
+    plaster: speckTex('#efe4cb', ['#e6d9bc', '#f5ecd8', '#e0d2b2'], 900, 1.6, 23),
+    asphalt: speckTex('#5a5d63', ['#4d5056', '#676a70', '#43464b'], 1500, 1.4, 29),
+    tile: tileTex(),
   };
   return TX;
 }
@@ -3185,9 +3223,25 @@ function ext(pts, z0 = 0, z1 = -6, holes = []) { const s = new THREE.Shape(pts.m
 function box(w, h, d, m, x = 0, y = 0, z = 0) { const o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); o.position.set(x, y, z); o.castShadow = true; o.receiveShadow = true; return o; }
 function arrow(color) { const g = new THREE.Group(); const m = new THREE.MeshBasicMaterial({ color, depthTest: false, transparent: true }); const sh = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 1, 10), m); sh.position.y = 0.5; const hd = new THREE.Mesh(new THREE.ConeGeometry(0.17, 0.4, 14), m); hd.position.y = 1.15; g.add(sh, hd); g.renderOrder = 10; sh.renderOrder = 10; hd.renderOrder = 10; g.userData = { sh, hd }; return g; }
 function setArrow(a, from, dir, len) { const d = dir.clone().normalize(); a.position.copy(from); a.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d); const L = Math.max(0.05, len - 0.4); a.userData.sh.scale.y = L; a.userData.sh.position.y = L / 2; a.userData.hd.position.y = L + 0.2; a.visible = len > 0.05; }
-function house(w = 6, d = 7, h = 2.8) { const g = new THREE.Group(); const wm = new THREE.MeshStandardMaterial({ color: 0xeee2c6, roughness: 0.9 }), rm = new THREE.MeshStandardMaterial({ color: 0xc0603d, roughness: 0.8 }), gl = new THREE.MeshStandardMaterial({ color: 0x2e3a46, roughness: 0.2 });
-  g.add(box(w, h, d, wm, 0, h / 2, -d / 2)); const sh = new THREE.Shape([new THREE.Vector2(-w / 2 - 0.4, 0), new THREE.Vector2(w / 2 + 0.4, 0), new THREE.Vector2(0, 2.0)]); const roof = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: d + 0.8, bevelEnabled: false }), rm); roof.position.set(0, h, -d - 0.4); roof.castShadow = true; g.add(roof);
-  g.add(box(1.1, 1.1, 0.06, gl, -w / 4, 1.5, 0.02)); g.add(box(0.9, 1.9, 0.06, new THREE.MeshStandardMaterial({ color: 0x6b4a2c }), w / 4, 0.95, 0.02)); return g; }
+function house(w = 6, d = 7, h = 2.8) { const g = new THREE.Group(), T = tex(); const wm = mat(T.plaster, 0.45, 0xffffff, { roughness: 0.95 }), rm = new THREE.MeshStandardMaterial({ map: texRep(T.tile, 0.9), roughness: 0.8 }), gl = new THREE.MeshStandardMaterial({ color: 0x2b3946, roughness: 0.15, metalness: 0.3 }), fr = new THREE.MeshStandardMaterial({ color: 0xf7f4ec, roughness: 0.7 }), pl = mat(T.conc, 0.8, 0xbdb7ab), dm = new THREE.MeshStandardMaterial({ color: 0x6b4a2c, roughness: 0.7 });
+  g.add(box(w + 0.12, 0.35, d + 0.12, pl, 0, 0.175, -d / 2)); g.add(box(w, h - 0.35, d, wm, 0, 0.35 + (h - 0.35) / 2, -d / 2));
+  const sh = new THREE.Shape([new THREE.Vector2(-w / 2 - 0.45, 0), new THREE.Vector2(w / 2 + 0.45, 0), new THREE.Vector2(0, Math.min(2.0, w * 0.42))]); const roof = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: d + 0.8, bevelEnabled: false }), rm); roof.position.set(0, h, -d - 0.4); roof.castShadow = true; roof.receiveShadow = true; g.add(roof);
+  g.add(box(0.5, 1.3, 0.5, mat(T.fill, 0.6, 0xc98f6f), w * 0.22, h + Math.min(2.0, w * 0.42) * 0.55, -d * 0.7));
+  const win = (x, y, z, side) => { const a = side ? [0.07, 1.15, 1.15] : [1.15, 1.15, 0.07], b = side ? [0.09, 1.0, 1.0] : [1.0, 1.0, 0.09]; g.add(box(a[0], a[1], a[2], fr, x, y, z), box(b[0], b[1], b[2], gl, x, y, z)); const c = side ? [0.1, 1.0, 0.05] : [0.05, 1.0, 0.1]; g.add(box(c[0], c[1], c[2], fr, x, y, z)); };
+  win(-w / 4, 1.6, 0.02, false); g.add(box(1.0, 2.05, 0.07, fr, w / 4, 1.37, 0.02), box(0.86, 1.95, 0.09, dm, w / 4, 1.33, 0.02), box(1.3, 0.14, 0.5, pl, w / 4, 0.3, 0.25));
+  for (const zz of [-d * 0.28, -d * 0.72]) { win(w / 2 + 0.01, 1.6, zz, true); win(-w / 2 - 0.01, 1.6, zz, true); }
+  return g; }
+function tree(hh = 4.2, seed = 1) { const g = new THREE.Group(); const tm = new THREE.MeshStandardMaterial({ color: 0x6a4a2e, roughness: 1 }), lm = new THREE.MeshStandardMaterial({ color: seed % 2 ? 0x4f8a3a : 0x5d9a42, roughness: 0.95, flatShading: true });
+  const tr = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.2, hh * 0.5, 8), tm); tr.position.y = hh * 0.25; tr.castShadow = true; g.add(tr);
+  for (const [dx, dy, dz, r] of [[0, 0.62, 0, 0.3], [0.32, 0.5, 0.15, 0.22], [-0.3, 0.52, -0.12, 0.23], [0.05, 0.8, -0.05, 0.2]]) { const c = new THREE.Mesh(new THREE.IcosahedronGeometry(hh * r, 1), lm); c.position.set(dx * hh * 0.5, hh * dy, dz * hh * 0.5); c.castShadow = true; g.add(c); }
+  return g; }
+function carModel(color) { const g = new THREE.Group(); const cm = new THREE.MeshStandardMaterial({ color, roughness: 0.35, metalness: 0.45 }), gm = new THREE.MeshStandardMaterial({ color: 0x1c2630, roughness: 0.15, metalness: 0.4 }), tm = new THREE.MeshStandardMaterial({ color: 0x17181b, roughness: 0.9 }), lm = new THREE.MeshStandardMaterial({ color: 0xfff3c4, emissive: 0x554a20 });
+  const prof = new THREE.Shape(); prof.moveTo(-2.1, 0.28); prof.lineTo(2.1, 0.28); prof.lineTo(2.1, 0.72); prof.quadraticCurveTo(2.05, 0.86, 1.6, 0.9); prof.lineTo(0.95, 0.95); prof.lineTo(0.45, 1.4); prof.quadraticCurveTo(0.35, 1.46, 0.1, 1.46); prof.lineTo(-1.1, 1.46); prof.quadraticCurveTo(-1.35, 1.44, -1.5, 1.3); prof.lineTo(-1.95, 0.96); prof.quadraticCurveTo(-2.1, 0.9, -2.1, 0.7); prof.lineTo(-2.1, 0.28);
+  const body = new THREE.Mesh(new THREE.ExtrudeGeometry(prof, { depth: 1.7, bevelEnabled: true, bevelSize: 0.05, bevelThickness: 0.05, bevelSegments: 2, curveSegments: 6 }), cm); body.position.z = -0.85; body.castShadow = true; g.add(body);
+  const gp = new THREE.Shape(); gp.moveTo(0.88, 0.98); gp.lineTo(0.42, 1.38); gp.lineTo(-1.08, 1.38); gp.lineTo(-1.82, 0.98); gp.lineTo(0.88, 0.98); const glass = new THREE.Mesh(new THREE.ExtrudeGeometry(gp, { depth: 1.83, bevelEnabled: false }), gm); glass.position.z = -0.915; g.add(glass);
+  for (const x of [-1.3, 1.3]) for (const z of [-0.84, 0.84]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.33, 0.33, 0.24, 16).rotateX(Math.PI / 2), tm); w.position.set(x, 0.33, z); g.add(w); const hb = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.17, 0.26, 10).rotateX(Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0xb9bec6, metalness: 0.7, roughness: 0.3 })); hb.position.copy(w.position); g.add(hb); }
+  for (const z of [-0.6, 0.6]) g.add(box(0.06, 0.16, 0.34, lm, 2.14, 0.7, z));
+  return g; }
 
 // a GPU-memória kímélése: egyszerre csak a képernyő közelében lévő szimulátorok élnek; a többi felszabadítja a WebGL-kontextusát
 const SIMS = [];
@@ -3240,15 +3294,19 @@ class Sim {
   bindAll(ids, fn) { ids.forEach(id => { const e = this.ctl(id); if (!e) return; if (e.type !== 'range') return; if (this._bound.has(id)) return; this._bound.add(id); U.bindRange(id, () => { if (this.alive) fn(); }); }); }
   segAll(ids, fn) { ids.forEach(id => { const el = this.root.querySelector('#' + id); if (!el) return; const on = el.querySelector('button.on'); if (on) this.state[id] = on.dataset.v;
     if (this._bound.has('s:' + id)) return; this._bound.add('s:' + id); U.seg(el, (v) => { this.state[id] = v; if (this.alive) fn(); }); }); }
-  lam(v, sub) { const el = this.root.querySelector('.lam'); if (!el) return; const b = el.querySelector('b'), bar = el.querySelector('.bar i'), s = el.querySelector('.sub'); b.textContent = (v > 9.99 ? '> 9,99' : fmt(v, 2)); bar.style.width = clamp(v / 1.5, 0, 1) * 100 + '%'; el.classList.toggle('fail', v > 1); el.classList.toggle('warn', v > 0.9 && v <= 1); if (s && sub) s.innerHTML = sub; window.LEDGER && window.LEDGER.set(this.mode, v); }
+  lam(v, sub) { const el = this.root.querySelector('.lam'); if (!el) return; const b = el.querySelector('b'), bar = el.querySelector('.bar i'), s = el.querySelector('.sub'); b.textContent = (v > 9.99 ? '> 9,99' : fmt(v, 2)); bar.style.width = clamp(v / 1.5, 0, 1) * 100 + '%'; el.classList.toggle('fail', v > 1); el.classList.toggle('warn', v > 0.9 && v <= 1); if (s && sub) s.innerHTML = sub.indexOf(' · ') > 0 ? sub.split(' · ').map(q => `<span class="chip">${q}</span>`).join('') : sub; window.LEDGER && window.LEDGER.set(this.mode, v); }
+  // ferde vagy vízszintes füves sáv két (x, y) pont között, z0…z1 mélységben
+  strip(xa, ya, xb, yb, z0, z1, m, parent) { const L = Math.hypot(xb - xa, yb - ya); if (!(L > 0.05)) return null; const o = new THREE.Mesh(new THREE.PlaneGeometry(L, z1 - z0).rotateX(-Math.PI / 2), m); o.rotation.z = Math.atan2(yb - ya, xb - xa); o.position.set((xa + xb) / 2, (ya + yb) / 2 + 0.014, (z0 + z1) / 2); o.receiveShadow = true; (parent || this.scene).add(o); return o; }
   ground(x0, x1, y, z0 = -26, z1 = 26) { const m = new THREE.Mesh(new THREE.PlaneGeometry(x1 - x0, z1 - z0).rotateX(-Math.PI / 2), mat(this.T.grass, 0.25)); m.position.set((x0 + x1) / 2, y - 0.005, (z0 + z1) / 2 - 0); m.receiveShadow = true; this.scene.add(m); return m; }
 
   // ===================== ELCSÚSZÁS: szögtámfal =====================
   build_csuszas() {
-    const S = this.scene; this.camera.position.set(4.6, 2.5, 10.8); this.controls.target.set(-0.4, 0.1, -1); this.controls.minDistance = 6; this.controls.maxDistance = 24;
+    const S = this.scene; this.camera.position.set(5.4, 3.6, 12.2); this.controls.target.set(-0.7, 0.9, -1.4); this.controls.minDistance = 6; this.controls.maxDistance = 30; this.fit = { w: 13.5, h: 8.4 }; this.fitView(); this.controls.addEventListener('start', () => { this._userCam = true; });
     this.mConc = mat(this.T.conc, 0.8); this.mSoil = mat(this.T.sand, 0.6); this.mClay = mat(this.T.clay, 0.6); this.mFill = mat(this.T.fill, 0.7);
     this.wall = new THREE.Group(); S.add(this.wall);
-    this.soilG = null; this.fillG = null; this.gr = this.ground(4, 30, 0, -6, 6);
+    this.soilG = null; this.fillG = null; this.gr = this.ground(4, 30, 0, -6, 6); this.topG = new THREE.Group(); S.add(this.topG); this.mGrass = mat(this.T.grass, 0.25); this.mRoad = mat(this.T.asphalt, 0.5);
+    this.initLabels([['h', 'x'], ['r', 'g'], ['p', 'w']]); this.post = () => this.updLabels();
+    { const t1 = tree(3.6, 1), t2 = tree(4.4, 2); t1.position.set(9.5, 0, -4.2); t2.position.set(7.2, 0, -5.2); S.add(t1, t2); }
     this.grB = this.ground(-30, -0.5, 0, -26, -6.01); this.grB.visible = false;
     this.aH = arrow(0xd23c3c); this.aR = arrow(0x1f8f54); this.aP = arrow(0x2a86d4); S.add(this.aH, this.aR, this.aP);
     // passzív földellenállás: ék + teljes (körvonal) és mobilizált (kitöltött) nyomásábra a homlokfal előtt
@@ -3295,6 +3353,8 @@ class Sim {
       const prof = [[x0, yb], [x1, yb], [x1, yt], [xs1, yt], [xs1 - 0.03, ftop + 0.1], [xs0, ftop + 0.1], [xs0, yt], [x0, yt]];
       const w = new THREE.Mesh(ext(prof, 0.02, -6), this.mConc); w.castShadow = true; w.receiveShadow = true; this.wall.add(w);
       this.geo = { x0, x1, xs0, xs1, yb, yt, ftop, D, xa, xA0, Lp }; this._gapU = -1;
+      // füves felszín az álló részeken, szervizút a háttöltésen
+      geoOnly(this.topG); this.topG.clear(); this.strip(x1 + Lp + 0.15, 0, 12, 0, -6, 0, this.mGrass, this.topG); this.strip(-12, ftop, -9.2, ftop, -6, 0, this.mGrass, this.topG); this.strip(-9.2, ftop, -3.6, ftop, -6, 0, this.mRoad, this.topG); if (xa - 0.25 > -3.6) this.strip(-3.6, ftop, xa - 0.25, ftop, -6, 0, this.mGrass, this.topG);
     }
     { const gm = sec(drained ? this.mSoil : this.mClay); this.soilG.material = gm; this.rearSoil.material = gm; this.frontSoil.material = gm; this._gapU = -1; }
     const G = this.geo;
@@ -3319,6 +3379,7 @@ class Sim {
       const fg = new THREE.BufferGeometry(); fg.setAttribute('position', new THREE.Float32BufferAttribute(fp, 3)); this.pasFill.geometry.dispose(); this.pasFill.geometry = fg;
       this.pasArrows.forEach((a, i) => { const yy = G.yb * (i + 0.75) / 4.4, len = frac * pmax * sc * (-yy / D); a.visible = rpOn && len > 0.15; setArrow(a, new THREE.Vector3(x1 + len, yy, 0.08), new THREE.Vector3(-1, 0, 0), len); });
       for (const m of [this.pasWedge, this.pasEdge, this.pasFull, this.pasFill]) m.visible = rpOn; }
+    this.setLbl('h', 'H<sub>d</sub>', G.x0 - 0.45 - r.Hd * k, G.yb + 0.62, 0.4, r.Hd > 1); this.setLbl('r', 'R<sub>d</sub>', G.x1 - 0.2 - r.Rd * k - 0.35, G.yb - 0.62, 0.4, r.Rd > 1); this.setLbl('p', 'R<sub>p;d</sub>', G.x1 + 0.55 + r.Rpd * k, G.yb / 3 + 0.38, 0.45, rpOn);
     this.truck.visible = q > 0.5; this.truck.position.set(-6.5, G.ftop, -3);
     this.slide = r.lam > 1 ? Math.min(0.6, 0.25 + (r.lam - 1) * 1.2) : 0;
     this.setHud([`H<sub>d</sub> = ${fmt(r.Hd, 0)} kN/m`, `R<sub>d</sub> = ${fmt(r.Rd, 0)} kN/m`, `R<sub>p;d</sub> = ${fmt(r.Rpd, 0)} kN/m`]);
@@ -3494,8 +3555,9 @@ class Sim {
   // ===================== FELÚSZÁS: mélygarázs =====================
   build_feluszas() {
     const S = this.scene; this.camera.position.set(8, 3.5, 44); this.controls.target.set(0, -2.6, -3); this.controls.minDistance = 16; this.controls.maxDistance = 110; this.fit = { w: 48, h: 21 }; this.fitView(); this.controls.addEventListener('start', () => { this._userCam = true; });
-    this.mConc = mat(this.T.conc, 0.4); this.mSoil = mat(this.T.sand, 0.3);
-    this.gr = this.ground(-60, 60, 0, -60, -8.51);
+    this.mConc = mat(this.T.conc, 0.4); this.mSoil = mat(this.T.sand, 0.3); this.mPave = mat(this.T.conc, 1.6, 0xd9d4c8);
+    this.gr = this.ground(-70, 70, 0, -70, -8.51);
+    for (const [x, z, hh] of [[-22, -13, 5.2], [-12, -15.5, 6], [-1, -13.5, 5], [10, -16, 6.4], [21, -13, 5.4], [29, -17, 6]]) { const t = tree(hh, Math.round(x)); t.position.set(x, 0, z); S.add(t); }
     this.box = new THREE.Group(); S.add(this.box);
     this.wMat = new THREE.MeshBasicMaterial({ color: 0x2f8fe0, transparent: true, opacity: 0.42, depthWrite: false });
     this.wL = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), this.wMat); this.wR = this.wL.clone(); this.wB = this.wL.clone(); [this.wL, this.wR, this.wB].forEach(m => { m.position.z = 0.05; m.renderOrder = 5; S.add(m); });
@@ -3517,25 +3579,26 @@ class Sim {
   calc_feluszas() {
     const v = (id) => +this.ctl(id).value; const gw = v('fu_gw'), t = v('fu_t'), o = v('fu_o'), n = Math.round(v('fu_n')), f = v('fu_f');
     const fr = this.state.fu_fr === '1' ? 1 : 0; const r = M.uplift({ gw, t, o, n, f, fr });
-    const bot = -6, X = 15 + o;
+    const bot = -6, X = 15 + o, XW = 64, YB = -34;
     const key = [t, o].join('|');
     if (key !== this._key) { this._key = key;
       if (this.soilG) { this.scene.remove(this.soilG); this.soilG.geometry.dispose(); }
-      this.soilG = new THREE.Mesh(ext([[-36, -18], [36, -18], [36, 0], [X, 0], [X, bot], [-X, bot], [-X, 0], [-36, 0]], 0, -8.5), sec(this.mSoil)); this.soilG.receiveShadow = true; this.scene.add(this.soilG);
-      disposeTree(this.box, new Set([this.mConc])); this.box.clear(); const D = 8.5, z = 0.02, m = this.mConc;
+      this.soilG = new THREE.Mesh(ext([[-XW, YB], [XW, YB], [XW, 0], [X, 0], [X, bot], [-X, bot], [-X, 0], [-XW, 0]], 0, -8.5), sec(this.mSoil)); this.soilG.receiveShadow = true; this.scene.add(this.soilG);
+      disposeTree(this.box, new Set([this.mConc, this.mPave])); this.box.clear(); const D = 8.5, z = 0.02, m = this.mConc;
       const add = (w, h, d, x, y, zz) => { this.box.add(box(w, h, d, m, x, y, zz)); };
       add(30, 0.35, D, 0, -0.175, z - D / 2); add(23.2, 0.3, D, -3, -3.0, z - D / 2); add(0.4, 6, D, -14.8, -3, z - D / 2); add(0.4, 6, D, 14.8, -3, z - D / 2); add(30, 6, 0.4, 0, -3, z - D + 0.2);
       add(30 + 2 * o, t, D, 0, bot + t / 2, z - D / 2);
+      { const pv = new THREE.Mesh(new THREE.PlaneGeometry(29.2, D - 0.5).rotateX(-Math.PI / 2), this.mPave); pv.position.set(0, 0.006, z - D / 2 - 0.2); pv.receiveShadow = true; this.box.add(pv); }
       for (const x of [-9, -3, 3, 9]) { add(0.45, 2.6, 0.45, x, -1.6, -3.5); add(0.45, 6 - 3.3 - t, 0.45, x, (bot + t - 3.15) / 2, -3.5); }
-      const cc = [0xc0392b, 0x2e86de, 0xdfe4ea, 0x2d3436, 0xf0a33a, 0x6c5ce7]; let k = 0; for (const y of [-2.85, bot + t]) for (const x of [-11, -5, 1]) { const car = new THREE.Group(); const cm = new THREE.MeshStandardMaterial({ color: cc[k++ % 6], roughness: 0.4, metalness: 0.3 }); car.add(box(4.2, 0.65, 1.8, cm, 0, 0.55, 0), box(2.2, 0.55, 1.6, new THREE.MeshStandardMaterial({ color: 0x24303a }), -0.2, 1.15, 0)); car.position.set(x, y, -2.4); this.box.add(car); }
+      const cc = [0xc0392b, 0x2e86de, 0xdfe4ea, 0x2d3436, 0xf0a33a, 0x6c5ce7]; let k = 0; for (const y of [-2.85, bot + t]) for (const x of [-11, -5, 1]) { const car = carModel(cc[k % 6]); car.rotation.y = k % 2 ? Math.PI : 0; k++; car.position.set(x, y, -2.4); this.box.add(car); }
     }
     // horgonyok
     disposeTree(this.anch); this.anch.clear(); const sm = new THREE.MeshStandardMaterial({ color: 0x8a929b, metalness: 0.6, roughness: 0.4 }); const nv = Math.min(n, 14);
     for (let i = 0; i < nv; i++) { const x = nv === 1 ? 0 : -13 + 26 * i / (nv - 1); const a = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 8, 8), sm); a.position.set(x, bot - 4, -0.3); this.anch.add(a); }
     // talajvíz
-    const top = Math.min(gw, 0), hw = Math.max(0, top - (-18));
-    this.wL.scale.set(36 - X, hw, 1); this.wL.position.set(-(X + 36) / 2, -18 + hw / 2, 0.05); this.wR.scale.copy(this.wL.scale); this.wR.position.set((X + 36) / 2, -18 + hw / 2, 0.05);
-    const hb = Math.max(0.001, Math.min(top, bot) - (-18)); this.wB.scale.set(2 * X, hb, 1); this.wB.position.set(0, -18 + hb / 2, 0.05);
+    const top = Math.min(gw, 0), hw = Math.max(0, top - YB);
+    this.wL.scale.set(XW - X, hw, 1); this.wL.position.set(-(X + XW) / 2, YB + hw / 2, 0.05); this.wR.scale.copy(this.wL.scale); this.wR.position.set((X + XW) / 2, YB + hw / 2, 0.05);
+    const hb = Math.max(0.001, Math.min(top, bot) - YB); this.wB.scale.set(2 * X, hb, 1); this.wB.position.set(0, YB + hb / 2, 0.05);
     this.inW.visible = f > 0.01; this.inW.scale.set(29.0, Math.max(0.001, f), 8.0); this._inY = bot + t + f / 2; this.inW.position.set(0, this._inY, -4.25);
     // oldalfal-súrlódás: földnyomás (kék, a fal felé) és súrlódás (zöld, lefelé) a metszetsíkban, a fal külső oldalán
     this.fric.visible = !!fr;
@@ -3549,7 +3612,7 @@ class Sim {
       for (; k < 24; k++) { this.pArr[k].visible = false; this.fArr[k].visible = false; } }
     if (fr) { this.setLbl('pr', `földnyomás σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>`, -X - 3.2, -2.2, 0.2); this.setLbl('fr', `súrlódás τ = σ′<sub>h</sub> · tg δ – lefelé hat`, X + 1.2, -6.9, 0.2); } else { this.setLbl('pr', '', 0, 0, 0, false); this.setLbl('fr', '', 0, 0, 0, false); }
     // talajvízszint, felhajtóerő (víznyomás a lemez alatt), önsúly
-    const hwB = Math.max(0, Math.min(gw, 0) - bot); this.gwL.visible = gw > -18; this.gwL.geometry.setFromPoints([new THREE.Vector3(-36, Math.min(gw, 0), 0.15), new THREE.Vector3(36, Math.min(gw, 0), 0.15)]); this.gwL.computeLineDistances();
+    const hwB = Math.max(0, Math.min(gw, 0) - bot); this.gwL.visible = gw > -18; this.gwL.geometry.setFromPoints([new THREE.Vector3(-XW, Math.min(gw, 0), 0.15), new THREE.Vector3(XW, Math.min(gw, 0), 0.15)]); this.gwL.computeLineDistances();
     this.setLbl('gw', `▽ tervezési talajvízszint ${fmt(gw, 1)} m`, -X - 9, Math.min(gw, 0) + 0.7, 0.2);
     this.upA.forEach((a, i) => { const x = -X + 1.5 + (2 * X - 3) * i / 8, len = hwB * 0.5; a.visible = len > 0.2; setArrow(a, new THREE.Vector3(x, bot - 0.08 - len, 0.2), new THREE.Vector3(0, 1, 0), len / 2.2); });
     this.setLbl('up', `víznyomás alulról: u = γ<sub>w</sub> · h<sub>w</sub> = ${fmt(10 * hwB, 0)} kPa → V<sub>dst;d</sub>`, 0, bot - hwB * 0.5 - 1.3, 0.2, hwB > 0.2);
@@ -3562,7 +3625,8 @@ class Sim {
   // ===================== ÁLTALÁNOS ÁLLÉKONYSÁG: ház a rézsű koronáján =====================
   build_altalanos() {
     const S = this.scene; this.camera.position.set(14, 4, 30); this.controls.target.set(2, -3, -3); this.controls.minDistance = 12; this.controls.maxDistance = 60;
-    this.mSoil = mat(this.T.loess, 0.35); this.mMass = mat(this.T.loess, 0.35, 0xffd9c4);
+    this.mSoil = mat(this.T.loess, 0.35); this.mMass = mat(this.T.loess, 0.35, 0xffd9c4); this.mGrass = mat(this.T.grass, 0.25);
+    for (const [x, z, hh] of [[22, -4, 4.6], [26.5, -7.5, 5.4], [20.5, -8.6, 4.2], [-19, -6.5, 5], [-15.5, -8.8, 4.2]]) { const t = tree(hh, Math.round(x)); t.position.set(x, x > 0 ? -8 : 0, z); S.add(t); }
     this.piv = new THREE.Group(); S.add(this.piv); this.inner = new THREE.Group(); this.piv.add(this.inner);
     this.h = house(3.0, 7, 2.6); this.inner.add(this.h);
     this.arcLine = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineDashedMaterial({ color: 0xd23c3c, dashSize: 0.5, gapSize: 0.3, linewidth: 2, depthTest: false })); this.arcLine.renderOrder = 9; S.add(this.arcLine);
@@ -3589,6 +3653,10 @@ class Sim {
       this.piv.position.set(c.xc, c.yc, 0); this.inner.position.set(-c.xc, -c.yc, 0); this.inner.add(this.msG);
       const ap = arc(aA, aT, 60).map(p => new THREE.Vector3(p[0], p[1], 0.08)); this.arcLine.geometry.dispose(); this.arcLine.geometry = new THREE.BufferGeometry().setFromPoints(ap); this.arcLine.computeLineDistances();
     }
+    (this.gz || []).forEach(o => { if (o) { (o.parent || this.scene).remove(o); o.geometry.dispose(); } }); this.gz = [];
+    if (c) { const mg = this.mGrass, x1c = Math.min(c.x1, LX), yOn = (x) => x <= 0 ? 0 : x >= LX ? -H : -H * x / LX;
+      this.gz.push(this.strip(-24, 0, XA - 0.04, 0, -10, 0, mg), this.strip(XA + 0.04, 0, 0, 0, -10, 0, mg, this.inner), this.strip(0, 0, x1c, yOn(x1c), -10, 0, mg, this.inner));
+      if (c.x1 < LX - 0.3) this.gz.push(this.strip(c.x1 + 0.04, yOn(c.x1 + 0.04), LX, -H, -10, 0, mg)); this.gz.push(this.strip(Math.max(LX, c.x1 + 0.04), -H, 30, -H, -10, 0, mg)); }
     this.grA = this.ground(-60, -24, 0, -60, 60); this.grB = this.ground(30, 60, -H, -60, 60);
     const gm2 = mat(this.T.grass, 0.25); this.grC = new THREE.Mesh(new THREE.PlaneGeometry(54, 50).rotateX(-Math.PI / 2), gm2); this.grC.position.set(3, -H - 0.01, -35); this.scene.add(this.grC);
     // ház (a csúszó tömegen, ha rajta van)
