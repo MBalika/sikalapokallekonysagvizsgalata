@@ -111,7 +111,7 @@
       S.push({ t: 'Megadott tervezési adatok', b: fl(Vks, u_(Vke, 1, un)) + fl(sb('H', 'd'), u_(Hd, 1, un)) + (ud ? fl(sb('V', 'd'), u_(Vd, 1, un)) + fl('B′', 'B − 2e', `${F(B, 2)} − 2 · ${F(Math.abs(e), 3)}`, u_(Bp, 3, 'm')) + (strip ? '' : fl('L′', 'L − 2e<sub>L</sub>', u_(Lp, 3, 'm'))) + fl(sb('A', 'c'), strip ? 'B′ · 1 m' : 'B′ · L′', u_(Ac, 3, strip ? 'm²/m' : 'm²')) : '') });
     }
     if (dr) S.push({ t: 'Drénezett nyírási ellenállás az alapsíkon (γ<sub>R;h</sub> = 1,1)', b: `<p class="cx-c">${p.cast === 'precast' ? 'Sima, előregyártott alaptest: ' + nw('δ<sub>k</sub> = ⅔ · φ′<sub>cv;k</sub>') : 'Helyben betonozott alaptest: ' + nw('δ<sub>k</sub> = φ′<sub>cv;k</sub>')}. A c′ hatékony kohéziót figyelmen kívül hagyjuk.</p>` + fl(sb('δ', 'k'), p.cast === 'precast' ? `⅔ · ${u_(p.phicv, 1, '°')}` : '', u_(delta, 2, '°')) + fl(sb('R', 'd'), `${Vks} · tg${NB}δ<sub>k</sub> / γ<sub>R;h</sub>`, `${F(Math.max(0, Vke), 1)} · tg${NB}${F(delta, 2)}° / 1,1`, `${F(Math.max(0, Vke), 1)} · ${F(tg(delta), 4)} / 1,1`, u_(RdD, 1, un)) });
-    if (ud) S.push({ t: 'Drénezetlen nyírási ellenállás és a 0,4·V<sub>d</sub> korlát', b: fl(sb('R', 'd;0'), 'A<sub>c</sub> · c<sub>u;k</sub> / γ<sub>R;h</sub>', `${F(Ac, 3)} · ${F(p.cu, 1)} / 1,1`, u_(Rd0, 1, un)) + fl('0,4 · V<sub>d</sub>', `0,4 · ${F(Vd, 1)}`, u_(cap, 1, un)) + fl(sb('R', 'd'), `min(${F(Rd0, 1)}; ${F(cap, 1)})`, u_(RdU, 1, un)) + (capGov ? '<p class="cx-c">A korlát a mértékadó: az alap és a talaj között hézag nyílhat, ezért nem számíthatunk a függőleges erő 40%-ánál nagyobb ellenállásra.</p>' : '') });
+    if (ud) S.push({ t: 'Drénezetlen nyírási ellenállás és a 0,4·V<sub>d</sub> korlát', b: fl(sb('R', 'd;0'), 'A<sub>c</sub> · c<sub>u;k</sub> / γ<sub>R;h</sub>', `${F(Ac, 3)} · ${F(p.cu, 1)} / 1,1`, u_(Rd0, 1, un)) + fl('0,4 · V<sub>d</sub>', `0,4 · ${F(Vd, 1)}`, u_(cap, 1, un)) + fl(sb('R', 'd'), `min(${F(Rd0, 1)}; ${F(cap, 1)})`, u_(RdU, 1, un)) + (capGov ? '<p class="cx-c">A korlát a mértékadó: az alap és a talaj között hézag nyílhat, ezért nem számíthatunk a függőleges erő 40 %-ánál nagyobb ellenállásra.</p>' : '') });
     if (nu > 0) {
       let b = `<p class="cx-c">Működési magasság: ${p.pH === 'face' ? 'az alaptest homloka' : 'a terepszinttől az alapsíkig'} (${nw(`${F(z1, 2)}…${F(z2, 2)}${NB}m`)}); mobilizált hányad ν = ${nu === 0.5 ? '½' : '⅔'}; γ<sub>R;e</sub> = 1,4.</p>`;
       if (dr) b += fl(sb('K', 'p'), `tg²(45° + φ′<sub>k</sub>/2)`, `tg²(45° + ${F(p.phiP, 1)}°/2)`, F(Kp, 3)) + fl(sb('E', 'p;k') + ' (drénezett)', `∫(K<sub>p</sub> · σ′<sub>v</sub> + 2c′√K<sub>p</sub>) dz${strip ? '' : ' · L'}`, u_(EpD, 2, un)) + fl(sb('R', 'p;d'), `ν · E<sub>p;k</sub> / γ<sub>R;e</sub>`, `${F(nu, 3)} · ${F(EpD, 2)} / 1,4`, u_(RpD, 1, un));
@@ -431,7 +431,7 @@
     Object.assign(v, { m, sr, crit, critF, F0, Fd, lam, phid, cd, ms, und, phid2: und ? 0 : deg(Math.atan(Math.tan(rad(p.phi2)) / p.gm)), cd2: und ? p.cu2 / p.gcu : p.c2 / p.gm });
     // figyelmeztetések
     if (!und && (p.phi < 10 || p.phi > 42)) R.warn.push(`Szokatlan φ′<sub>k</sub> = ${u_(p.phi, 1, '°')}.`);
-    if (!und && p.c > 60) R.warn.push(`Nagy hatékony kohézió (c′<sub>k</sub> = ${u_(p.c, 0, 'kPa')}) – a rézsű biztonságát erősen túlbecsülheti.`);
+    if (!und && p.c > 60) R.warn.push(`Nagy hatékony kohézió (c′<sub>k</sub> = ${u_(p.c, 0, 'kPa')}) – emiatt a számítás a rézsű biztonságát erősen túlbecsülheti.`);
     if (und && p.water !== 'none') R.info.push('Drénezetlen (teljes feszültségű) vizsgálatban a pórusvíznyomás nem szerepel külön – a víz hatása a c<sub>u</sub> értékében van.');
     if (!und && p.water === 'ru' && (p.ru < 0 || p.ru > 0.6)) R.warn.push(`Szokatlan pórusvíznyomás-arány: r<sub>u</sub> = ${F(p.ru, 2)}.`);
     if (p.n < 1) R.warn.push('1 : 1-nél meredekebb rézsű – ellenőrizd, hogy körhengeres csúszólap reális-e.');
@@ -448,9 +448,9 @@
     const S = R.steps;
     S.push({ t: `Tervezési szilárdsági paraméterek (${DA3}, M2)`, b: und ? fl(sb('c', 'u;d'), `c<sub>u;k</sub> / γ<sub>cu</sub>`, `${F(p.cu, 1)} / ${F(p.gcu, 2)}`, u_(cd, 2, 'kPa')) + (p.lay2 ? fl(sb('c', 'u;d;2'), `${F(p.cu2, 1)} / ${F(p.gcu, 2)}`, u_(v.cd2, 2, 'kPa')) : '') : fl(`tg${NB}φ′<sub>d</sub>`, `tg${NB}φ′<sub>k</sub> / γ<sub>φ′</sub>`, `tg${NB}${F(p.phi, 1)}° / ${F(p.gm, 2)}`, `${F(Math.tan(rad(p.phi)) / p.gm, 4)} → φ′<sub>d</sub> = ${u_(phid, 2, '°')}`) + fl(sb('c′', 'd'), `c′<sub>k</sub> / γ<sub>c′</sub>`, `${F(p.c, 1)} / ${F(p.gm, 2)}`, u_(cd, 2, 'kPa')) + (p.lay2 ? fl('2. réteg: φ′<sub>d</sub>', u_(v.phid2, 2, '°')) + fl(sb('c′', 'd'), u_(v.cd2, 2, 'kPa')) : '') });
     if (m.loads.length) S.push({ t: 'Az alapok terhe (γ<sub>G</sub> = 1,0; γ<sub>Q</sub> = 1,3)', b: m.loads.map((l, i) => fl(`${i + 1}. sávalap: q<sub>d</sub>`, `(1,0 · G<sub>k</sub> + 1,3 · Q<sub>k</sub>) / B`, `(${F(l.G, 1)} + 1,3 · ${F(l.Q, 1)}) / ${F(l.B, 2)}`, u_(l.q, 1, 'kPa')) + `<p class="cx-c">${nw(`${F(l.Pd, 1)}${NB}kN/m`)} a rézsűéltől ${nw(u_(l.a, 2, 'm'))}–${nw(u_(l.a + l.B, 2, 'm'))} között, ${nw(u_(l.Df, 2, 'm'))} mélyen.</p>`).join('') });
-    S.push({ t: 'Csúszólap-keresés', b: `<p class="cx-c">${sr.nx} × ${sr.ny} középpontú háló, középpontonként a rézsűlábon átmenő és ${sr.nx ? (p.fine ? 22 : 14) : 0} különböző mélységet érintő kör, majd mintakereséses finomítás. ${nw(sb('n', 'lamella') + ' = ' + m.ns)}. Számítási idő: ${nw(F(ms, 0) + NB + 'ms')}.</p>` + `<div class="cx-fl nw">mértékadó kör: O(${F(crit.xc, 2)}; ${F(crit.yc, 2)})${NB}m, r = ${u_(crit.R, 2, 'm')}</div><div class="cx-fl nw">belépés: ${u_(-crit.x0, 2, 'm')} a rézsűél mögött</div><div class="cx-fl nw">kilépés: ${Math.abs(crit.x1 - m.LX) < 0.05 ? 'a rézsűlábnál' : crit.x1 > m.LX ? u_(crit.x1 - m.LX, 2, 'm') + ' a rézsűláb előtt' : 'a rézsűn, ' + u_(m.H + m.ground(crit.x1), 2, 'm') + '-rel a láb felett'}</div><p class="cx-c">A koordináták origója a rézsűél; x a rézsűláb felé, y felfelé pozitív.</p>` });
+    S.push({ t: 'Csúszólap-keresés', b: `<p class="cx-c">${sr.nx} × ${sr.ny} középpontú háló, középpontonként a rézsűlábon átmenő és ${sr.nx ? (p.fine ? 22 : 14) : 0} (alaponként további 2) különböző mélységet érintő kör, majd mintakereséses finomítás. ${nw(sb('n', 'lamella') + ' = ' + m.ns)}. Számítási idő: ${nw(F(ms, 0) + NB + 'ms')}.</p>` + `<div class="cx-fl nw">mértékadó kör: O(${F(crit.xc, 2)}; ${F(crit.yc, 2)})${NB}m, r = ${u_(crit.R, 2, 'm')}</div><div class="cx-fl nw">belépés: ${u_(-crit.x0, 2, 'm')} a rézsűél mögött</div><div class="cx-fl nw">kilépés: ${Math.abs(crit.x1 - m.LX) < 0.05 ? 'a rézsűlábnál' : crit.x1 > m.LX ? u_(crit.x1 - m.LX, 2, 'm') + ' a rézsűláb előtt' : 'a rézsűn, ' + u_(m.H + m.ground(crit.x1), 2, 'm') + '-rel a láb felett'}</div><p class="cx-c">A koordináták origója a rézsűél; x a rézsűláb felé, y felfelé pozitív.</p>` });
     S.push({ t: 'Egyszerűsített Bishop-módszer', b: fl(sb('F', 'd'), `Σ [c<sub>d</sub>·b + (W + P − u·b)·tg${NB}φ<sub>d</sub>] / m<sub>α</sub> / Σ (W + P)·sin${NB}α`) + fl(sb('m', 'α'), `cos${NB}α + sin${NB}α · tg${NB}φ<sub>d</sub> / F<sub>d</sub>`) + sliceTable(crit, m) + fl(sb('F', 'd'), `${F(crit.num, 1)} / ${F(crit.den, 1)}`, `<b>${F(Fd, 3)}</b>`) });
-    S.push({ t: 'Igazolás', b: fl('Λ', `1 / F<sub>d</sub>`, `1 / ${F(Fd, 3)}`, `<b>${F(lam, 3)}</b>`) + `<p class="cx-c">${Fd >= 1 - 1e-9 ? nw('F<sub>d</sub> ≥ 1,0') + ' → az általános állékonyság megfelel.' : nw('F<sub>d</sub> < 1,0') + ' → nem felel meg.'}${F0 ? ' Az alapok terhe nélkül: ' + nw('F<sub>d</sub> = ' + F(F0, 3)) + '.' : ''}</p>` });
+    S.push({ t: 'Igazolás', b: fl('Λ', `1 / F<sub>d</sub>`, `1 / ${F(Fd, 4)}`, `<b>${F(lam, 3)}</b>`) + `<p class="cx-c">${Fd >= 1 - 1e-9 ? nw('F<sub>d</sub> ≥ 1,0') + ' → az általános állékonyság megfelel.' : nw('F<sub>d</sub> < 1,0') + ' → nem felel meg.'}${F0 ? ' Az alapok terhe nélkül: ' + nw('F<sub>d</sub> = ' + F(F0, 3)) + '.' : ''}</p>` });
     return R;
   }
   function sliceTable(c, m) {
@@ -484,25 +484,48 @@
   const r1 = (v) => Math.round(v * 10) / 10, PTS = (pts) => pts.map(p => r1(p[0]) + ',' + r1(p[1])).join(' ');
   function Sv(W, H) {
     const id = 'cv' + (++SVGID), o = [], k = W < 480 ? 0.86 : W < 640 ? 0.93 : 1;
-    const S = { W, H, id, o, k, add: (s) => o.push(s),
-      line: (x1, y1, x2, y2, c, ex = '') => o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="${c}" ${ex}/>`),
-      poly: (pts, c, ex = '') => o.push(`<polygon points="${PTS(pts)}" class="${c}" ${ex}/>`),
-      pl: (pts, c, ex = '') => o.push(`<polyline points="${PTS(pts)}" class="${c}" ${ex}/>`),
+    // Feliratelhelyező: minden vonal, nyíl, méretvonal és körvonal akadály; a feliratok a kirajzolás végén kerülnek a helyükre,
+    // és ha vonalba vagy másik feliratba lógnának, a legközelebbi szabad helyre csúsznak (a méretszöveg a méretvonala mentén).
+    const obs = [], txt = [], NOOBS = /cv-(soil|soild|water|rock|hatch|concp|mass|gc|upl|pbox|cz|ac|inner|ball|pres\b|pass|plate|wsym)/;
+    const seg = (x1, y1, x2, y2) => { if (isFinite(x1 + y1 + x2 + y2)) obs.push([x1, y1, x2, y2]); };
+    const ring = (pts) => { for (let i = 0; i < pts.length; i++) { const a = pts[i], b = pts[(i + 1) % pts.length]; seg(a[0], a[1], b[0], b[1]); } };
+    const S = { W, H, id, o, k, add: (s) => o.push(s), seg, ring,
+      line: (x1, y1, x2, y2, c, ex = '') => (seg(x1, y1, x2, y2), o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="${c}" ${ex}/>`)),
+      poly: (pts, c, ex = '') => { if (!NOOBS.test(c)) ring(pts); o.push(`<polygon points="${PTS(pts)}" class="${c}" ${ex}/>`); },
+      pl: (pts, c, ex = '') => { for (let i = 1; i < pts.length; i++) seg(pts[i - 1][0], pts[i - 1][1], pts[i][0], pts[i][1]); o.push(`<polyline points="${PTS(pts)}" class="${c}" ${ex}/>`); },
       path: (d, c, ex = '') => o.push(`<path d="${d}" class="${c}" ${ex}/>`),
-      rect: (x, y, w, h, c, ex = '') => o.push(`<rect x="${r1(Math.min(x, x + w))}" y="${r1(Math.min(y, y + h))}" width="${r1(Math.abs(w))}" height="${r1(Math.abs(h))}" class="${c}" ${ex}/>`),
-      circ: (x, y, rr, c, ex = '') => o.push(`<circle cx="${r1(x)}" cy="${r1(y)}" r="${r1(rr)}" class="${c}" ${ex}/>`),
-      text: (x, y, s, c = '', a = 'start', fs = 13, ex = '') => { fs = Math.round(fs * k * 10) / 10; const w = tw(s, fs); let xx = x; if (a === 'start') xx = Math.min(Math.max(x, 4), W - 4 - w); else if (a === 'end') xx = Math.max(Math.min(x, W - 4), 4 + w); else xx = Math.min(Math.max(x, 4 + w / 2), W - 4 - w / 2); o.push(`<text x="${r1(xx)}" y="${r1(y)}" class="cv-t ${c}" text-anchor="${a}" font-size="${fs}" ${ex}>${rich(s, fs)}</text>`); return { x: xx, w }; },
-      textR: (x, y, s, c = '', fs = 12) => (fs = Math.round(fs * k * 10) / 10, o.push(`<text x="${r1(x)}" y="${r1(y)}" class="cv-t ${c}" text-anchor="middle" font-size="${fs}" transform="rotate(-90 ${r1(x)} ${r1(y)})">${rich(s, fs)}</text>`)),
-      arrow: (x1, y1, x2, y2, c, w = 2.6, hd = 11) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 3) return; const ux = (x2 - x1) / L, uy = (y2 - y1) / L, h = Math.min(hd, L * 0.7), bx = x2 - ux * h, by = y2 - uy * h, px = -uy * h * 0.42, py = ux * h * 0.42; o.push(`<g class="cv-ar ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(bx + ux)}" y2="${r1(by + uy)}" stroke-width="${w}"/><polygon points="${PTS([[x2, y2], [bx + px, by + py], [bx - px, by - py]])}"/></g>`); },
-      dim: (x1, y1, x2, y2, s, c = '', fs = 12) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 4) return; const ux = (x2 - x1) / L, uy = (y2 - y1) / L, t = 4; o.push(`<g class="cv-dim ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}"/><line x1="${r1(x1 - t * (ux - uy))}" y1="${r1(y1 - t * (uy + ux))}" x2="${r1(x1 + t * (ux - uy))}" y2="${r1(y1 + t * (uy + ux))}"/><line x1="${r1(x2 - t * (ux - uy))}" y1="${r1(y2 - t * (uy + ux))}" x2="${r1(x2 + t * (ux - uy))}" y2="${r1(y2 + t * (uy + ux))}"/></g>`); const mx = (x1 + x2) / 2, my = (y1 + y2) / 2; if (Math.abs(ux) > 0.7) S.text(mx, my - 5, s, 'cv-dt ' + c, 'middle', fs); else S.textR(mx - 5, my, s, 'cv-dt ' + c, fs); },
-      ext: (x1, y1, x2, y2) => o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="cv-ext"/>`),
-      svg: (cls = '', label = '') => `<svg class="cv ${cls}" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${esc(label)}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-gs0"/><stop offset="1" class="cv-gs1"/></linearGradient><linearGradient id="${id}g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-g2s0"/><stop offset="1" class="cv-g2s1"/></linearGradient><pattern id="${id}d" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".9" class="cv-dot"/><circle cx="7" cy="8" r=".75" class="cv-dot"/><circle cx="8" cy="1.5" r=".55" class="cv-dot"/></pattern><pattern id="${id}h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="cv-hl"/></pattern><pattern id="${id}c" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".8" class="cv-cdot"/><path d="M9 9l2 -1l.6 1.8z" class="cv-cdot"/></pattern></defs>${o.join('')}</svg>`,
+      rect: (x, y, w, h, c, ex = '') => { if (!NOOBS.test(c)) ring([[x, y], [x + w, y], [x + w, y + h], [x, y + h]]); o.push(`<rect x="${r1(Math.min(x, x + w))}" y="${r1(Math.min(y, y + h))}" width="${r1(Math.abs(w))}" height="${r1(Math.abs(h))}" class="${c}" ${ex}/>`); },
+      circ: (x, y, rr, c, ex = '') => { if (!NOOBS.test(c)) { const n = rr > 12 ? 24 : 8, q = []; for (let i = 0; i < n; i++) q.push([x + rr * Math.cos(i / n * 6.2832), y + rr * Math.sin(i / n * 6.2832)]); ring(q); } o.push(`<circle cx="${r1(x)}" cy="${r1(y)}" r="${r1(rr)}" class="${c}" ${ex}/>`); },
+      text: (x, y, s, c = '', a = 'start', fs = 13, ex = '') => { fs = Math.round(fs * k * 10) / 10; const w = tw(s, fs); let xx = x; if (a === 'start') xx = Math.min(Math.max(x, 4), W - 4 - w); else if (a === 'end') xx = Math.max(Math.min(x, W - 4), 4 + w); else xx = Math.min(Math.max(x, 4 + w / 2), W - 4 - w / 2); const t = { x: xx, y, s, c, a, fs, ex, w, rot: false, along: null }; txt.push(t); o.push(t); return t; },
+      textR: (x, y, s, c = '', fs = 12) => { fs = Math.round(fs * k * 10) / 10; const t = { x, y, s, c, a: 'middle', fs, ex: '', w: tw(s, fs), rot: true, along: null }; txt.push(t); o.push(t); return t; },
+      arrow: (x1, y1, x2, y2, c, w = 2.6, hd = 11) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 3) return; seg(x1, y1, x2, y2); const ux = (x2 - x1) / L, uy = (y2 - y1) / L, h = Math.min(hd, L * 0.7), bx = x2 - ux * h, by = y2 - uy * h, px = -uy * h * 0.42, py = ux * h * 0.42; o.push(`<g class="cv-ar ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(bx + ux)}" y2="${r1(by + uy)}" stroke-width="${w}"/><polygon points="${PTS([[x2, y2], [bx + px, by + py], [bx - px, by - py]])}"/></g>`); },
+      dim: (x1, y1, x2, y2, s, c = '', fs = 12) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 4) return; const ux = (x2 - x1) / L, uy = (y2 - y1) / L, t = 4; o.push(`<g class="cv-dim ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}"/><line x1="${r1(x1 - t * (ux - uy))}" y1="${r1(y1 - t * (uy + ux))}" x2="${r1(x1 + t * (ux - uy))}" y2="${r1(y1 + t * (uy + ux))}"/><line x1="${r1(x2 - t * (ux - uy))}" y1="${r1(y2 - t * (uy + ux))}" x2="${r1(x2 + t * (ux - uy))}" y2="${r1(y2 + t * (uy + ux))}"/></g>`); seg(x1, y1, x2, y2); seg(x1 - 5, y1 - 5, x1 + 5, y1 + 5); seg(x2 - 5, y2 - 5, x2 + 5, y2 + 5); const mx = (x1 + x2) / 2, my = (y1 + y2) / 2; const lb = Math.abs(ux) > 0.7 ? S.text(mx, my - 5, s, 'cv-dt ' + c, 'middle', fs) : S.textR(mx - 5, my, s, 'cv-dt ' + c, fs); lb.along = [ux, uy, L]; },
+      ext: (x1, y1, x2, y2) => (seg(x1, y1, x2, y2), o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="cv-ext"/>`)),
+      svg: (cls = '', label = '') => (place(), `<svg class="cv ${cls}" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${esc(label)}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-gs0"/><stop offset="1" class="cv-gs1"/></linearGradient><linearGradient id="${id}g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-g2s0"/><stop offset="1" class="cv-g2s1"/></linearGradient><pattern id="${id}d" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".9" class="cv-dot"/><circle cx="7" cy="8" r=".75" class="cv-dot"/><circle cx="8" cy="1.5" r=".55" class="cv-dot"/></pattern><pattern id="${id}h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="cv-hl"/></pattern><pattern id="${id}c" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".8" class="cv-cdot"/><path d="M9 9l2 -1l.6 1.8z" class="cv-cdot"/></pattern></defs>${o.filter(q => typeof q === 'string').join('')}${txt.map(tsvg).join('')}</svg>`),
     };
+    const tsvg = (t) => t.rot ? `<text x="${r1(t.x)}" y="${r1(t.y)}" class="cv-t ${t.c}" text-anchor="middle" font-size="${t.fs}" transform="rotate(-90 ${r1(t.x)} ${r1(t.y)})">${rich(t.s, t.fs)}</text>` : `<text x="${r1(t.x)}" y="${r1(t.y)}" class="cv-t ${t.c}" text-anchor="${t.a}" font-size="${t.fs}" ${t.ex}>${rich(t.s, t.fs)}</text>`;
+    const box = (t, dx = 0, dy = 0) => { const sub = /_\{/.test(t.s) ? 0.2 * t.fs : 0, up = 0.74 * t.fs, dn = 0.16 * t.fs + sub;
+      if (t.rot) return [t.x + dx - up, t.y + dy - t.w / 2, t.x + dx + dn, t.y + dy + t.w / 2];
+      const x0 = t.a === 'start' ? t.x : t.a === 'end' ? t.x - t.w : t.x - t.w / 2; return [x0 + dx, t.y + dy - up, x0 + dx + t.w, t.y + dy + dn]; };
+    const hitSeg = (b, q) => { let t0 = 0, t1 = 1; const dx = q[2] - q[0], dy = q[3] - q[1]; const P = [-dx, dx, -dy, dy], Q = [q[0] - b[0], b[2] - q[0], q[1] - b[1], b[3] - q[1]];
+      for (let i = 0; i < 4; i++) { if (Math.abs(P[i]) < 1e-9) { if (Q[i] < 0) return false; } else { const r = Q[i] / P[i]; if (P[i] < 0) { if (r > t1) return false; if (r > t0) t0 = r; } else { if (r < t0) return false; if (r < t1) t1 = r; } } } return t1 - t0 > 1e-6 || (dx === 0 && dy === 0); };
+    const cost = (t, dx, dy, done) => { const b = box(t, dx, dy); if (b[0] < 3 || b[2] > W - 3 || b[1] < 3 || b[3] > H - 2) return 99; let n = 0; const bi = [b[0] + 1, b[1] + 1, b[2] - 1, b[3] - 1];
+      for (const q of obs) if (hitSeg(bi, q)) n++; for (const d of done) { const e = box(d); if (b[0] < e[2] + 2 && e[0] < b[2] + 2 && b[1] < e[3] + 1 && e[1] < b[3] + 1) n += 3; } return n; };
+    function place() { const done = []; const R = [6, 10, 14, 18, 24, 30, 38, 46, 56, 70];
+      for (const t of txt) { if (/cv-(hd|msg)/.test(t.c) || t.fixed) { done.push(t); continue; }
+        let best = [0, 0], bc = cost(t, 0, 0, done);
+        if (bc > 0) { const cand = [];
+          if (t.along) { const [ux, uy, L] = t.along, lim = Math.max(0, L / 2 - t.w / 2 - 4); for (const r of R) if (r <= lim) cand.push([ux * r, uy * r], [-ux * r, -uy * r]); }
+          const grid = []; for (const dx of [0, 8, -8, 16, -16, 26, -26, 40, -40, 58, -58]) for (const dy of [0, -7, 7, -12, 12, -18, 18, -26, 26, -36, 36, -48, 48]) if (dx || dy) grid.push([dx, dy]);
+          grid.sort((a, b) => Math.hypot(a[0] * 0.8, a[1]) - Math.hypot(b[0] * 0.8, b[1])); cand.push(...grid);
+          for (const [dx, dy] of cand) { const c2 = cost(t, dx, dy, done) + Math.hypot(dx, dy) * 0.004; if (c2 < bc - 0.5) { bc = c2; best = [dx, dy]; if (c2 < 0.5) break; } } }
+        if (G_.CVDBG) G_.CVDBG.push([t.s, box(t).map(Math.round), bc, best, obs.filter(q => hitSeg(box(t, best[0], best[1]), q)).map(q => q.map(Math.round))]);
+        t.x += best[0]; t.y += best[1]; done.push(t); } }
     S.soil = (pts, lay2) => { S.poly(pts, 'cv-soil', `fill="url(#${id}${lay2 ? 'g2' : 'g'})"`); S.poly(pts, 'cv-soild', `fill="url(#${id}d)"`); };
     S.conc = (pts) => { S.poly(pts, 'cv-conc'); S.poly(pts, 'cv-concp', `fill="url(#${id}c)"`); };
     S.hatch = (pts) => S.poly(pts, 'cv-hatch', `fill="url(#${id}h)"`);
-    S.gh = (x1, x2, y, step = 9, up = false) => { let d = ''; for (let x = x1 + 3; x < x2 - 2; x += step) d += `M${r1(x)} ${r1(y)}l${-5} ${up ? -5 : 5}`; if (d) o.push(`<path d="${d}" class="cv-gh"/>`); };
-    S.water = (x, y, lab) => { o.push(`<g class="cv-wsym"><polygon points="${PTS([[x, y - 1], [x - 6, y - 10], [x + 6, y - 10]])}"/><line x1="${r1(x - 6)}" y1="${r1(y + 4)}" x2="${r1(x + 6)}" y2="${r1(y + 4)}"/><line x1="${r1(x - 3.5)}" y1="${r1(y + 8)}" x2="${r1(x + 3.5)}" y2="${r1(y + 8)}"/></g>`); if (lab) S.text(x + 10, y - 4, lab, 'cv-wt', 'start', 12); };
+    S.gh = (x1, x2, y, step = 9, up = false) => { let d = ''; for (let x = x1 + 3; x < x2 - 2; x += step) d += `M${r1(x)} ${r1(y)}l${-5} ${up ? -5 : 5}`; if (d) { o.push(`<path d="${d}" class="cv-gh"/>`); seg(x1, y + (up ? -4 : 4), x2, y + (up ? -4 : 4)); } };
+    S.water = (x, y, lab) => { o.push(`<g class="cv-wsym"><polygon points="${PTS([[x, y - 1], [x - 6, y - 10], [x + 6, y - 10]])}"/><line x1="${r1(x - 6)}" y1="${r1(y + 4)}" x2="${r1(x + 6)}" y2="${r1(y + 4)}"/><line x1="${r1(x - 3.5)}" y1="${r1(y + 8)}" x2="${r1(x + 3.5)}" y2="${r1(y + 8)}"/></g>`); ring([[x - 7, y - 11], [x + 7, y - 11], [x + 7, y + 9], [x - 7, y + 9]]); if (lab) S.text(x + 13, y + 15, lab, 'cv-wt', 'start', 12); };
     S.brk = (x1, x2, y) => { const m = (x1 + x2) / 2, k = Math.min(8, (x2 - x1) / 5); o.push(`<polyline points="${PTS([[x1 - 4, y], [m - k, y], [m - k / 2, y - k], [m + k / 2, y + k], [m + k, y], [x2 + 4, y]])}" class="cv-brk"/>`); };
     return S;
   }
@@ -539,7 +562,7 @@
       const f = v.dr ? v.epD : v.epU, emax = Math.max(1e-6, f(v.z2), f(v.z1)), kx = Math.max(0.7, 0.55 * (ext.x1 - B / 2)) / emax; const pts = [];
       for (let i = 0; i <= 24; i++) { const z = v.z1 + v.hp * i / 24; pts.push([X(B / 2 + f(z) * kx), Y(-z)]); }
       S.poly([[X(B / 2), Y(-v.z1)], ...pts, [X(B / 2), Y(-v.z2)]], 'cv-pass');
-      S.line(X(B / 2), Y(-D), X(B / 2 + wedge), Y(0), 'cv-wedge'); S.text(X(B / 2 + wedge * 0.62) + 6, Y(-D * 0.38) , 'passzív ék', 'cv-mt', 'start', 11);
+      S.line(X(B / 2), Y(-D), X(B / 2 + wedge), Y(0), 'cv-wedge'); S.text(X(B / 2 + wedge * 0.62) + 10, Y(-D * 0.38) + 13, 'passzív ék', 'cv-mt', 'start', 11);
       const zp = v.dr ? v.zpD : v.zpU, Rp = v.dr ? v.RpD : v.RpU, xs = X(B / 2 + f(zp) * kx) + 34;
       S.arrow(xs, Y(-zp), X(B / 2) + 2, Y(-zp), 'cv-res', 2.6);
       S.text(xs + 4, Y(-zp) + 4, `R_{p;d} = ${u_(Rp, 1, v.un)}`, 'cv-rt', 'start', 12);
@@ -566,7 +589,7 @@
     // méretvonalak
     const showD = (k) => !opt.dims || opt.dims.includes(k);
     const yd = Math.min(H - 10, yR + 8); if (showD('B')) { S.ext(X(-B / 2), Y(-D) + 3, X(-B / 2), yd + 4); S.ext(X(B / 2), Y(-D) + 3, X(B / 2), yd + 4); S.dim(X(-B / 2), yd, X(B / 2), yd, `B = ${u_(B, 2, 'm')}`); }
-    if (D > 0 && showD('D')) { const xdd = Math.max(X(L0) + 16, X(-B / 2) - 18); S.ext(X(-B / 2) - 2, Y(-D), xdd - 4, Y(-D)); S.dim(xdd, Y(0), xdd, Y(-D), `D = ${u_(D, 2, 'm')}`); }
+    if (D > 0 && showD('D')) { const xArr = v.Hd > 0 && yH < 0 && yH > -D ? X(xH) - len(v.Hd) - 16 : Infinity; const xdd = Math.max(X(L0) + 16, Math.min(X(-B / 2) - 18, xArr)); S.ext(X(-B / 2) - 2, Y(-D), xdd - 4, Y(-D)); S.dim(xdd, Y(0), xdd, Y(-D), `D = ${u_(D, 2, 'm')}`); }
     if (v.char && p.hH > 0 && v.Hd > 0 && showD('h')) { const xs0 = X(xH) - len(v.Hd) - 2, xh = Math.min(xs0, X(-B / 2)) - 40; if (xh > 24) { S.ext(xh - 4, Y(yH), xs0, Y(yH)); S.ext(xh - 4, Y(-D), X(-B / 2) - 2, Y(-D)); S.dim(xh, Y(-D), xh, Y(yH), `h_{H} = ${u_(p.hH, 2, 'm')}`, 'cv-dimh'); } }
     // fejléc
     // alaprajz (pilléralap, drénezetlen: nyomott felület)
@@ -606,7 +629,7 @@
       S.poly([[X(-B / 2), yB], ...pts, [X(B / 2), yB]], 'cv-pres'); S.pl(pts, 'cv-presl');
       const sR = sg(B / 2), sL = sg(-B / 2), right = sR >= sL; S.text(X(right ? B / 2 : -B / 2) + (right ? 6 : -6), yB + Math.max(sR, sL) * ks - 2, `σ_{max} = ${u_(Math.max(sR, sL), 1, 'kPa')}`, 'cv-prt', right ? 'start' : 'end', 12);
       if (ct.full) S.text(X(right ? -B / 2 : B / 2) + (right ? -6 : 6), yB + Math.min(sR, sL) * ks + 12, `σ_{min} = ${u_(Math.min(sR, sL), 1, 'kPa')}`, 'cv-prt', right ? 'end' : 'start', 11);
-      else { const x0 = Math.abs(ct.b) > 1e-12 ? -ct.a / ct.b : 0; const xe = right ? -B / 2 : B / 2; S.line(X(xe), yB + 3, X(x0), yB + 3, 'cv-lift'); S.text((X(xe) + X(x0)) / 2, yB + 17, 'elemelkedik', 'cv-lt', 'middle', 11); }
+      else { const x0 = Math.abs(ct.b) > 1e-12 ? -ct.a / ct.b : 0; const xe = right ? -B / 2 : B / 2; S.line(X(xe), yB + 3, X(x0), yB + 3, 'cv-lift'); S.text(X(xe) + (right ? -6 : 6), yB + 15, 'elemelkedik', 'cv-lt', right ? 'end' : 'start', 11); }
     }
     // alaptest + oszlop
     const ytop = yb0 + hmax;
@@ -617,7 +640,7 @@
     const g = v.gov, sgn = circ ? Math.sign(g.nx) || 1 : (g.nx ? Math.sign(g.nx) : 1), xp = (circ ? g.dp * (g.nx || 1) : (g.nx ? g.nx * g.dp : g.dp));
     const xP = circ ? g.dp * Math.sign(g.nx || 1) : xp;
     S.circ(X(xP), yB, 5.5, 'cv-piv'); S.text(X(xP) + (sgn > 0 ? -8 : 8), yB - 9, 'forgáspont', 'cv-pvt', sgn > 0 ? 'end' : 'start', 11);
-    if (v.fp > 0) { const xe = sgn * B / 2; S.dim(X(xe), yB - 22, X(xP), yB - 22, circ ? 'D/10' : 'B/10', 'cv-dimp', 10.5); }
+    if (v.fp > 0) { const xe = sgn * B / 2, thin = yB - Y(yft) < 40, near = yft < 0 && Y(yft) - Y(0) < 32, yq = thin ? (near ? Y(0) - 12 : Y(yft) - 9) : yB - 22; if (thin) { S.ext(X(xP), yB - 7, X(xP), yq - 3); } S.dim(X(xe), yq, X(xP), yq, circ ? 'D/10' : 'B/10', 'cv-dimp', 10.5); }
     // erők
     const fArrow = (H0, h, lab) => { if (!H0 || !isFinite(h)) return; const y = Y(yb0 + h), dir = Math.sign(H0), l = Math.min(0.22 * sw, 34 + Math.abs(H0) / Math.max(1, v.Vk) * 0.9 * sw); const x2 = X(xg - dir * bp / 2) - dir * 2; S.arrow(x2 - dir * l, y, x2, y, 'cv-act', 3); S.text(x2 - dir * (l + 6), y + 4, lab, 'cv-at', dir > 0 ? 'end' : 'start', 12.5); };
     fArrow(p.HQk, p.hQ, `H_{Q;k} = ${u_(p.HQk, 1, 'kN')}`); fArrow(p.HGk, p.hG, `H_{G;k} = ${u_(p.HGk, 1, 'kN')}`);
@@ -678,12 +701,13 @@
     const hole = [[-B / 2 + tw, yb + tb], [-B / 2 + tw, yt - tr], [B / 2 - tw, yt - tr], [B / 2 - tw, yb + tb]];
     S.path('M' + shell.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z M' + hole.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z', 'cv-conc', 'fill-rule="evenodd"');
     S.path('M' + shell.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z M' + hole.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z', 'cv-concp', `fill-rule="evenodd" fill="url(#${S.id}c)"`);
+    S.ring(shell.map(q => [X(q[0]), Y(q[1])])); S.ring(hole.map(q => [X(q[0]), Y(q[1])]));
     for (let i = 1; i <= ni; i++) { const y = yb + tb + (Hb - tb - tr) * i / (ni + 1); S.conc([[-B / 2 + tw, y - ti / 2], [B / 2 - tw, y - ti / 2], [B / 2 - tw, y + ti / 2], [-B / 2 + tw, y + ti / 2]].map(q => [X(q[0]), Y(q[1])])); }
     if (!geom) S.text(X(0), Y((yb + yt) / 2), `G_{sz;k} = ${u_(v.Gs, 0, 'kN')}`, 'cv-pt', 'middle', 13);
     // felhajtóerő
     if (v.hw > 0) { const pu = GW * v.hw, hp = Math.min(up * 0.85, 0.4 + pu / 80) * T.s, y0 = Y(yb); S.rect(X(-Bo / 2), y0, X(Bo / 2) - X(-Bo / 2), hp, 'cv-upl');
       const na = Math.max(3, Math.min(9, Math.round((X(Bo / 2) - X(-Bo / 2)) / 46))); for (let i = 0; i < na; i++) { const x = X(-Bo / 2) + (i + 0.5) * (X(Bo / 2) - X(-Bo / 2)) / na; S.arrow(x, y0 + hp, x, y0 + 2, 'cv-wat', 2.2, 8); }
-      S.text(X(Bo / 2) + 8, y0 + hp / 2 + 4, `γ_{w}·h_{w} = ${u_(pu, 1, 'kPa')}`, 'cv-wt', 'start', 12); S.text(X(0), y0 + hp + 16, `V_{dst;d} = ${u_(v.Vdst, 0, 'kN')}`, 'cv-wt cv-bold', 'middle', 13); }
+      S.text(X(Bo / 2) + 8, y0 + hp / 2 + 4, `γ_{w}·h_{w} = ${u_(pu, 1, 'kPa')}`, 'cv-wt', 'start', 12); if (v.n > 0) S.text(X(Bo / 2) + 8, y0 + hp + 22, `V_{dst;d} = ${u_(v.Vdst, 0, 'kN')}`, 'cv-wt cv-bold', 'start', 13); else S.text(X(0), y0 + hp + 16, `V_{dst;d} = ${u_(v.Vdst, 0, 'kN')}`, 'cv-wt cv-bold', 'middle', 13); }
     // horgonyok
     if (v.n > 0) { const nv = Math.min(v.n, 9), al = anc * T.s; for (let i = 0; i < nv; i++) { const x = X(-Bo / 2 + 0.5) + (nv === 1 ? (X(Bo / 2 - 0.5) - X(-Bo / 2 + 0.5)) / 2 : i * (X(Bo / 2 - 0.5) - X(-Bo / 2 + 0.5)) / (nv - 1)); S.line(x, Y(yb), x, Y(yb) + al, 'cv-anc'); S.rect(x - 3.5, Y(yb) + al * 0.55, 7, al * 0.45, 'cv-ancb'); }
       S.text(X(-Bo / 2) - 6, Y(yb) + al * 0.8, `${v.n} × P_{d;1} = ${u_(v.Pd, 0, 'kN')}`, 'cv-rt', 'end', 12); }
@@ -744,7 +768,7 @@
     S.text(X(LX * 0.5) + 10, Y(-Hh * 0.5) - 8, `1 : ${F(m.n, 2)}`, 'cv-mt', 'start', 12);
     if (ls[0]) { const l = ls.reduce((a, b) => (b.a < a.a ? b : a)), hh = Math.min(2.6, Math.max(1.6, 0.25 * Hh)), yy = Y(hh + 1.9) - 6; if (X(0) - X(l.x1) > 6) { S.ext(X(l.x1), Y(-l.Df), X(l.x1), yy - 4); S.ext(X(0), Y(0), X(0), yy - 4); S.dim(X(l.x1), yy, X(0), yy, `a = ${u_(l.a, 2, 'm')}`, '', 11); } }
     // színskála
-    const lx = 14, ly = H - 36; if (W > 420) { for (let i = 0; i < 30; i++) S.rect(lx + i * 4, ly, 4.2, 7, 'cv-gc', `style="fill:${fcol(0.85 + 0.75 * i / 29)}"`); S.text(lx, ly + 22, '0,85', 'cv-mt', 'start', 10); S.text(lx + 60, ly + 22, '1,2', 'cv-mt', 'middle', 10); S.text(lx + 120, ly + 22, '≥ 1,6', 'cv-mt', 'end', 10); }
+    const lx = 18, yh = Y(m.yBot), ly = (yh > H - 62 && yh < H - 4) ? yh - 44 : H - 40; if (W > 420) { S.add(`<rect x="${lx - 8}" y="${r1(ly - 9)}" width="137" height="40" rx="7" class="cv-plate"/>`); S.ring([[lx - 8, ly - 9], [lx + 129, ly - 9], [lx + 129, ly + 31], [lx - 8, ly + 31]]); for (let i = 0; i < 30; i++) S.rect(lx + i * 4, ly, 4.2, 7, 'cv-gc', `style="fill:${fcol(0.85 + 0.75 * i / 29)}"`); S.text(lx, ly + 22, 'F = 0,85', 'cv-mt', 'start', 10).fixed = 1; S.text(lx + 68, ly + 22, '1,2', 'cv-mt', 'middle', 10).fixed = 1; S.text(lx + 120, ly + 22, '≥ 1,6', 'cv-mt', 'end', 10).fixed = 1; }
     return S.svg('cv-so', 'Általános állékonyság: rézsű a mértékadó csúszólappal');
   }
   const DRAW = { sliding: dSliding, overturn: dOverturn, uplift: dUplift, slope: dSlope };

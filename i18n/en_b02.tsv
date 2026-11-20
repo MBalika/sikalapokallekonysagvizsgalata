@@ -22,7 +22,6 @@ bf3d658	At e = B/3
 c4da6a3	Circular footing
 046bcb5	The radius of the kern is r/4. According to EC7, special precautions are needed if e &gt; 0.6·r.
 3fd0c70	Wind turbine footing
-4d1ba00	In the structural design of a Vestas V126 (R = 13.8 m, M = 149 MNm) e = 6.7 m &lt; 0.59·R = 8.1 m – this is the limit of the German wind turbine guideline (gap at most up to the centre).<br>
 d4516fb	Short-term or permanent?
 e3ea22e	It matters whether the overturning action is short-term (e.g. wind load) or permanent (e.g. earth pressure). In a gust the base lifts off temporarily and then settles back; under a permanent eccentric load the footing may gradually tilt. The German guideline for wind turbines therefore allows no gap under quasi-permanent loading, and under extreme loading a gap at most up to the centre.
 f758c8d	a larger base – the lever arm and the self-weight grow, e/B decreases;
@@ -33,7 +32,6 @@ fc25ec9	Quiz – overturning
 c6dfc23	With a high groundwater table, a light structure of large volume may be acted on by an uplift force greater than the sum of the permanent loads.
 03e1c28	In design practice it happens countless times that a light but “voluminous” structure – an underground tank, a pedestrian underpass, an underground car park – is acted on by a greater uplift force at high groundwater than the sum of the permanent loads. The Eurocode defines a separate ultimate limit state for this: <b>UPL</b> (uplift).
 4467800	=
-89623b8	V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub> – the uplift force (A<sub>k</sub>: the volume submerged below the groundwater, γ<sub>w</sub> = 10 kN/m³)
 f07c6b3	G<sub>stb;d</sub> = G<sub>sz;d</sub> + G<sub>t;d</sub> – the weight of the structure and of the soil loading it, with γ<sub>G;stb</sub>
 1841877	R<sub>d</sub> = T<sub>d</sub> + P<sub>d</sub> – friction between the structure and the soil, and the anchor force
 e7c0af0	The utilisation: Λ = V<sub>dst;d</sub> / (G<sub>stb;d</sub> + R<sub>d</sub>).
@@ -47,10 +45,7 @@ f31a8a0	=
 9d72d16	=
 2f61e23	0 – variable, stabilising
 2a9cf0e	The overall safety against uplift is usually only γ<sub>G;dst</sub> / γ<sub>G;stb</sub> = 1.0 / 0.9 = <b>1.11</b>. This is why it is particularly important to choose the water levels cautiously, or to introduce precautions that reduce the risk.
-601a5a5	For the resistance of friction and anchors EN 1997-1 recommends γ<sub>s;t</sub> = γ<sub>a</sub> = 1.4 (since the AC:2010 corrigendum they may be treated as stabilising permanent actions only if the National Annex allows it). The values of the Hungarian NA are worth checking in the standard.
 25795b2	The groundwater level is the most sensitive input
-8e4af2d	When buildings and structures are checked against uplift, the groundwater level is treated as a geometrical datum: its design value is either set directly or derived by adding a safety margin to the characteristic value. In the 30×15 m example car park, <b>water 1 m higher means +4500 kN, i.e. +20%</b> uplift force.
-70b1a15	On a site near the Danube a long-lasting flood is followed by the groundwater along the bank as well: in South Buda after the 1965 flood the groundwater along the bank rose by more than 3 m and came close to the maximum level of the river. The design flood level of Budapest (MÁSZ) at Vigadó tér is 104.24 mBf – derived from the discharge of the ice-free flood with a 1% probability.
 85edc78	Flood behind the bank
 bb62f6b	Danube levels in Budapest in mBf (Vigadó tér gauge: 0 cm = 94.97 mBf). Illustrative section, not to scale horizontally.
 7cfbeb5	Section: Danube flood levels, the groundwater along the bank and an underground car park
@@ -64,10 +59,9 @@ c5e6c38	d) Flooding the lowest level
 402547a	e) Wall friction from earth pressure<span></span>
 4cef9a2	none
 8a59735	K<sub>0</sub> · tan δ
-0a53296	c) You can model dewatering with the groundwater level slider. Illustrative example: walls 0.4 m, slabs 0.35 and 0.30 m; the soil on the toe is 19 kN/m³ above the water and 20 kN/m³ below it. Wall friction: σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>, K<sub>0</sub> = 1 − sin 30° = 0.5, δ = ⅔ · φ′ = 20°, R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub> (1.4).
 bcffac8	Four countermeasures
 f7c491f	Extending the base slab
-dde9e47	Beyond the walls, if there is room: the soil resting on the toe adds load as well. In the example, with a 1 m extension a 0.67 m slab is enough instead of 1.28 m – but the uplift force acts on the projecting toe too.
+dde9e47	Beyond the walls, if there is room: the soil resting on the projection adds load as well. In the example, with a 1 m extension a 0.67 m slab is enough instead of 1.28 m – but the uplift force acts on the projection too.
 fd65085	Anchoring
 d32e994	With piles, diaphragm wall panels or ground anchors. With a 0.6 m slab about 6300 kN is missing: overall at least 15 GEWI micropiles with a characteristic resistance of 600 kN each – because of the bending of the slab, a denser grid in practice.
 e3ba542	Lowering the groundwater
@@ -116,22 +110,17 @@ d7cf9d9	<span>Utilisation Λ = 1/F<sub>d</sub></span><b id="sl_L"></b>
 780f356	3D simulator: house on the crest of a slope
 04d8d1a	Distance from the crest
 79e7f9c	Wetting r
-2569ad2	The red dashed line is the critical slip surface; if Λ &gt; 1, the sliding mass moves together with the house.
 8b0a6fb	Solutions
 09835e3	moving the footing further away from the crest;
 9586efb	founding deeper – below the slip surface;
 10fb538	flattening or supporting the slope;
 00dfb6a	dewatering, sorting out the surface drainage.
 92b0998	How far is “far”?
-3a2067f	According to Meyerhof’s tests, a slope reduces the bearing resistance up to a distance of about 2–6·B. The US building code requires H/3 (at most 12.2 m) on the crest of a descending slope and H/2 (at most 4.6 m) at the toe of an ascending slope – for stable slopes only. These are indicative values; the verification is the slip surface calculation.
 b91cf68	Kulcs – loess bank
 49c8cf0	53 properties were put at risk and at least 14 buildings had to be demolished; experts had warned in advance, but there was no money to strengthen the bank.
-10c7463	Dunaszekcső, Hold-hegy
-d96b349	In February 2008 the 70 m high loess bluff slid and sank by about 10 m, and a shoal formed in the bed of the Danube. Research shows that the movement is driven mainly by changes in the groundwater level – its effect is about ten times that of the Danube water level.
 8f880f5	Balatonkenese – high bluff
 9726cb9	After a wet period, about 100 000 m³ of loess swept a train into Lake Balaton; the driver stopped in time, and there were no casualties.
 88d2a89	Po Shan Road, Hong Kong
-691d176	Rain of more than 200 mm a day on three consecutive days, and a 13 m deep unsupported cut at the toe of the slope: about 80 000 t of soil slid down in 7–10 seconds, and a 12–13 storey block of flats was torn off its foundation and collapsed. 67 people died.
 a88bc6e	Lotus Riverside, Shanghai
 5afef1f	A 13-storey building on piles toppled over almost intact: an underground car park pit was dug on one side, and the excavated soil was heaped about 10 m high on the other side, on the creek bank. It was a piled building, and a later analysis disputes the official cause – but it shows the danger of “fill next to the building” well.
 b34b0c3	<b>Contrast: Transcona, 1913.</b> The Winnipeg grain elevator tilted to about 27° within 24 hours – but this was a bearing failure of the soil under the raft (bearing resistance, GEO), not a loss of overall stability and not overturning as a rigid body.

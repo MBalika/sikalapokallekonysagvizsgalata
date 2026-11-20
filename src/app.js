@@ -4,7 +4,7 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 const lerp = (a, b, t) => a + (b - a) * t;
-const fmt = (v, d = 0) => { const s = (Math.round(v * 10 ** d) / 10 ** d).toLocaleString('hu-HU', { minimumFractionDigits: d, maximumFractionDigits: d }); return EN ? s.replace(',', '.') : s; };   // angolul is szóközös ezres tagolás, tizedespont
+const fmt = (v, d = 0) => { const s = (Math.round(v * 10 ** d) / 10 ** d).toLocaleString('hu-HU', { minimumFractionDigits: d, maximumFractionDigits: d }); return (EN ? s.replace(',', '.') : s).replace('-', '−'); };   // angolul is szóközös ezres tagolás, tizedespont; valódi mínuszjel
 function H(tag, attrs = {}, html) { const e = document.createElement(tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (html != null) e.innerHTML = html; return e; }
 const css = (name, el = document.documentElement) => getComputedStyle(el).getPropertyValue(name).trim();
 function fillRange(r) { const p = (r.value - r.min) / (r.max - r.min) * 100; r.style.setProperty('--p', p + '%'); }

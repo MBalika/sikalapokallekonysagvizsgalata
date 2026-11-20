@@ -9,7 +9,6 @@ b2e0db5	Dark theme
 e6a67ad	Stability of <span class="l2">shallow foundations</span>
 d533d42	A footing can lose its stability in four ways: it slides on its base, overturns, floats up, or slips together with the surrounding soil. Each of the four has to be verified separately. On this page you can work through them with simulators, animations and quizzes, and see what decides each case.
 81b7f4b	<a class="btn" href="#elcsuszas">Start with sliding</a><a class="btn ghost" href="#videok">The five animated videos</a>
-4427c61	In the top bar (verification panel) you can always see where the four simulators stand: the bar shows the utilisation, the mark is at 1.0.
 6f648a0	Animation: the four failure modes – sliding, overturning, uplift, loss of overall stability
 f5ddff5	Choose a failure mode
 3e93ac4	Sliding
@@ -20,7 +19,6 @@ c951bdc	Four checks, one idea
 b8ff5ab	Design value of the action ≤ design value of the resistance – for four different failure modes.
 933d7de	Together with sizing the footings – or after it – it must also be verified that the structure has adequate safety according to EC7 against <b>sliding, overturning and uplift</b>. In certain situations – near a slope, an excavation, a bank or a cavity – <b>overall stability</b> must be checked as well.
 ebf1017	The procedure is the same for each: we write down the design value of the actions (E<sub>d</sub>) and the design value of the resistance (R<sub>d</sub>), then verify that E<sub>d</sub> ≤ R<sub>d</sub>. For overturning we compare moments: M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>. Where the soil strength matters, both the <b>drained and the undrained</b> states are checked.
-2b0df99	The ratio of the two is the <b>utilisation</b>: Λ = E<sub>d</sub> / R<sub>d</sub>. If Λ ≤ 1.0, the footing satisfies that limit state. The verification panel shows the same.
 b9220e2	Limit state
 5100f90	Type
 17cde32	What resists?
@@ -54,7 +52,7 @@ a40395d	In design approach <b>DA-2*</b> according to the Hungarian National Anne
 e106d3c	The resistance has to be determined for two states: the <b>drained</b> state in the long term (effective stresses, friction) and, in cohesive soil, the <b>undrained</b> state in the short term (c<sub>u</sub>). The less favourable of the two governs.
 09b1b91	Case 1: drained state – long term
 e908326	R<sub>d</sub> = V′<sub>k</sub> · tan δ<sub>k</sub> / γ<sub>R;h</sub>
-93213e9	V′<sub>k</sub> – characteristic value of the vertical force; a variable action only if it surely acts together with H<sub>d</sub>
+93213e9	V′<sub>k</sub> – characteristic value of the vertical force; a variable action only if it is certain to act together with H<sub>d</sub>
 3472e91	δ<sub>k</sub> – interface friction angle between footing and soil, from the critical state φ′<sub>cv;k</sub>
 3cc6829	For a footing cast in situ the base is rough and the grains interlock: δ<sub>k</sub> = φ′<sub>cv;k</sub>. For a smooth precast footing only δ<sub>k</sub> = ⅔·φ′<sub>cv;k</sub> may be assumed.
 d12df38	The effective cohesion (c′) should generally be ignored: the adhesion that develops between cohesive soil and the footing depends strongly on the water content and consistency.
@@ -75,7 +73,6 @@ e1259a4	No greater shear resistance may be assumed than 40 per cent of the desig
 1afe620	Passive resistance – R<sub>p;d</sub>
 1017b13	The full passive earth resistance is mobilised only after a significant displacement, so typically only a part of it, <b>one half to two thirds</b>, may be taken into account, with the partial factor γ<sub>R;e</sub> = 1.4.
 d165c1e	It must also be borne in mind that erosion or some human intervention (e.g. a later utility trench) may remove the soil in front of the footing face, and in clay the soil may separate from the face because of seasonal changes in water content. If this cannot be ruled out, we conservatively take R<sub>p;d</sub> = 0.
-f2ac6e7	Some design software offers to take only ½–⅓ of the full passive earth resistance into account.
 45e0b84	Mobilised passive resistance
 83719e4	How much of the passive resistance develops at what displacement? (illustrative curve)
 d83de48	Mobilised passive resistance as a function of displacement
@@ -103,7 +100,7 @@ a17d306	A <b>shear key</b> under the base: it forces the slip surface lower, int
 5e257a1	A <b>deeper foundation level</b> – larger, more reliable passive resistance.
 bb79c35	A rough base cast in situ instead of a precast one.
 61c077e	Careful with shear keys
-8f25813	Experience shows that the benefit of a shear key is mixed: in strong soil and with a smooth precast base it helps a lot; with a shallow key, however, once the active pressure on it is also counted, the safety may even get worse (in one worked example from 1.39 to 1.24). Count on the passive resistance down to the bottom of the key only if it will surely remain.
+8f25813	Experience shows that the benefit of a shear key is mixed: in strong soil and with a smooth precast base it helps a lot; with a shallow key, however, once the active pressure on it is also counted, the safety may even get worse (in one worked example from 1.39 to 1.24). Count on the passive resistance down to the bottom of the key only if it is certain to remain.
 e73fcdc	Austin Dam, Pennsylvania, USA
 064870f	In January 1910, after rapid filling, the 15 m high gravity dam slid on its foundation: about 46 cm at the toe and about 79 cm at the crest. The slip surface formed along clay-filled bedding joints, and the uplift of water getting under the dam reduced the safety further. On 30 September 1911 the dam failed – 78 people died.
 19e5deb	Quiz – sliding

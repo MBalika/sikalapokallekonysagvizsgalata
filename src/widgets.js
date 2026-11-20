@@ -7,7 +7,9 @@
   const col = () => ({ ink: css('--ink'), ink2: css('--ink2'), mute: css('--mute'), line: css('--line'), card: css('--card'), paper: css('--paper2'), c1: css('--c1'), c2: css('--c2'), c3: css('--c3'), c4: css('--c4'), ok: css('--ok'), bad: css('--bad'), water: css('--water'), soil: css('--soil'), soil2: css('--soil2'), conc: css('--conc'), plum: css('--plum2') });
   function arrow(g, x0, y0, x1, y1, c, w = 4, hd = 12) { const a = Math.atan2(y1 - y0, x1 - x0); g.save(); g.strokeStyle = c; g.fillStyle = c; g.lineWidth = w; g.lineCap = 'round'; g.beginPath(); g.moveTo(x0, y0); g.lineTo(x1 - Math.cos(a) * hd * 0.8, y1 - Math.sin(a) * hd * 0.8); g.stroke(); g.beginPath(); g.moveTo(x1, y1); g.lineTo(x1 - Math.cos(a - 0.45) * hd, y1 - Math.sin(a - 0.45) * hd); g.lineTo(x1 - Math.cos(a + 0.45) * hd, y1 - Math.sin(a + 0.45) * hd); g.closePath(); g.fill(); g.restore(); }
   function hatch(g, x, y, w, h, c1, c2) { g.save(); g.fillStyle = c1; g.fillRect(x, y, w, h); g.beginPath(); g.rect(x, y, w, h); g.clip(); g.strokeStyle = c2; g.lineWidth = 1; g.globalAlpha = 0.35; for (let i = -h; i < w; i += 10) { g.beginPath(); g.moveTo(x + i, y + h); g.lineTo(x + i + h, y); g.stroke(); } g.restore(); }
-  function label(g, t, x, y, c, size = 14, align = 'left', w = 700) { g.save(); g.font = `${w} ${size}px Archivo, sans-serif`; g.fillStyle = c; g.textAlign = align; g.textBaseline = 'middle'; g.fillText(t, x, y); g.restore(); }
+  // keskeny képernyőn a vászon kicsinyítve jelenik meg: a feliratokat ennyivel nagyobbra rajzoljuk, hogy olvashatók maradjanak
+  const boost = (g) => { const cv = g.canvas, cw = cv.clientWidth || 0; if (!cw) return 1; const lw = cv.width / Math.min(2, devicePixelRatio || 1); return clamp(lw / cw * 0.72, 1, 1.85); };
+  function label(g, t, x, y, c, size = 14, align = 'left', w = 700) { g.save(); size = Math.round(size * boost(g) * 10) / 10; g.font = `${w} ${size}px Archivo, sans-serif`; g.fillStyle = c; g.textAlign = align; g.textBaseline = 'middle'; g.fillText(t, x, y); g.restore(); }
 
   // ================= HŐS: négy tönkremenetel =================
   (function hero() {
@@ -88,8 +90,9 @@
       g.save(); g.translate(sh, 0); g.fillStyle = C.conc; g.beginPath(); g.moveTo(-40, 0); g.lineTo(W + 40, 0); for (let x = W + 40; x >= -40; x -= 14) { const amp = rough ? 10 * Math.sin(x * 0.13) * Math.sin(x * 0.031 + 1) + 6 : 0; g.lineTo(x, 146 + amp); } g.closePath(); g.fill(); g.restore();
       label(g, rough ? 'Helyben betonozott – érdes felület, a szemcsék beakadnak' : 'Előregyártott – sima felület, a szemcsék elcsúsznak', 16, 22, C.ink, 15);
     }
-    const out = () => { const R1 = M.sliding({ phi, precast: false }), R2 = M.sliding({ phi, precast: true }); const R = typ === 'mono' ? R1 : R2;
-      $('#mi_delta').innerHTML = `${fmt(R.delta, 1)}°`; $('#mi_tg').textContent = fmt(Math.tan(R.delta * Math.PI / 180), 3); $('#mi_rd').innerHTML = `${fmt(R.Rd, 0)}<small>kN/m</small>`; const ro = $('#mi_lam'); ro.innerHTML = fmt(R.lam, 2); ro.parentElement.className = 'ro ' + (R.lam <= 1 ? 'ok' : 'bad'); };
+    const H0 = M.sliding({}).Hd;   // a példa vízszintes ereje rögzített (65 kN/m): itt csak a talp alatti súrlódás változik
+    const out = () => { const R1 = M.sliding({ phi, precast: false }), R2 = M.sliding({ phi, precast: true }); const R = typ === 'mono' ? R1 : R2; const lam = H0 / R.Rd;
+      $('#mi_delta').innerHTML = `${fmt(R.delta, 1)}°`; $('#mi_tg').textContent = fmt(Math.tan(R.delta * Math.PI / 180), 3); $('#mi_rd').innerHTML = `${fmt(R.Rd, 0)}<small>kN/m</small>`; const ro = $('#mi_lam'); ro.innerHTML = fmt(lam, 2); ro.parentElement.className = 'ro ' + (lam <= 1 ? 'ok' : 'bad'); };
     seg('mi_typ', (v) => { typ = v; out(); }); bindRange('mi_phi', (v) => { phi = v; out(); }, (v) => v + '°');
     const loop = (now) => { if (vis(cv)) draw(now / 1000); requestAnimationFrame(loop); }; draw(0); requestAnimationFrame(loop);
   })();
@@ -100,14 +103,14 @@
     const draw = () => { const C = col(); g.clearRect(0, 0, W, Hh); const L = 70, R = W - 30, T = 30, B = Hh - 50; const sx = (v) => L + v / 10 * (R - L), sy = (v) => B - v * (B - T);
       g.strokeStyle = C.line; g.lineWidth = 1; for (const v of [0.5, 0.667, 1]) { g.beginPath(); g.moveTo(L, sy(v)); g.lineTo(R, sy(v)); g.stroke(); }
       g.strokeStyle = C.ink2; g.lineWidth = 1.5; g.beginPath(); g.moveTo(L, T); g.lineTo(L, B); g.lineTo(R, B); g.stroke();
-      label(g, 'E_p / E_{p,max}', L - 8, T - 12, C.ink2, 13, 'left'); label(g, 'elmozdulás / alapmélység (%)', R, B + 30, C.ink2, 13, 'right');
+      const bk = boost(g) > 1.2; label(g, 'E_p / E_{p;max}', bk ? L + 10 : L - 8, bk ? T + 4 : T - 12, C.ink2, 13, 'left'); label(g, 'elmozdulás / alapmélység (%)', R, bk ? B - 18 : B + 30, C.ink2, 13, 'right');
       for (let v = 0; v <= 10; v += 2) label(g, String(v), sx(v), B + 14, C.mute, 12, 'center', 600);
       label(g, '½', L - 14, sy(0.5), C.c1, 14, 'center'); label(g, '⅔', L - 14, sy(0.667), C.c1, 14, 'center'); label(g, '1', L - 14, sy(1), C.mute, 13, 'center');
       const f = (x) => 1 - Math.exp(-x / 1.6);
       g.strokeStyle = C.water; g.lineWidth = 4; g.beginPath(); for (let x = 0; x <= 10; x += 0.1) { const X = sx(x), Y = sy(lost ? 0 : f(x)); x === 0 ? g.moveTo(X, Y) : g.lineTo(X, Y); } g.stroke();
       const v = lost ? 0 : f(u); g.fillStyle = C.water; g.beginPath(); g.arc(sx(u), sy(v), 8, 0, 7); g.fill();
       g.setLineDash([5, 5]); g.strokeStyle = C.water; g.beginPath(); g.moveTo(sx(u), B); g.lineTo(sx(u), sy(v)); g.lineTo(L, sy(v)); g.stroke(); g.setLineDash([]);
-      label(g, lost ? 'a talaj eltűnt a homlokfal elől: Rp = 0' : `mobilizált: ${fmt(v * 100, 0)} %`, sx(u) + 14, sy(v) - 14, lost ? C.bad : C.ink, 14);
+      { const tx = lost ? 'a talaj eltűnt a homlokfal elől: R_{p;d} = 0' : `mobilizált: ${fmt(v * 100, 0)} %`, low = sy(v) + 22 > B - 8; g.font = `700 ${14 * boost(g)}px Archivo, sans-serif`; const tw = g.measureText(tx).width; label(g, tx, Math.min(sx(u) + 14, R - tw), low ? sy(v) - 22 : sy(v) + 22, lost ? C.bad : C.ink, 14); }
     };
     bindRange('pa_u', (v) => { u = v; draw(); }, (v) => fmt(v, 1) + ' %'); seg('pa_lost', (v) => { lost = v === '1'; draw(); });
     addEventListener('themechange', draw); draw();
@@ -161,8 +164,10 @@
       const marks = [[104.24, 'MÁSZ (mértékadó árvízszint)', '104,24 mBf ≈ 927 cm', C.bad, true], [103.88, '2013. június – rekord', '103,88 mBf = 891 cm', C.c3, false], [103.57, '2006. április', '103,57 mBf = 860 cm', C.ink2, false], [103.0, 'talajvíz a parton 1965 után', '≈ 103 mBf', C.water, true]];
       let lastY = -99; const xL = xEnd + 22;
       marks.forEach(([v, nm, val, c, dash]) => { const y = sy(v); g.strokeStyle = c; g.lineWidth = 1.8; g.setLineDash(dash ? [5, 4] : []); if (v !== 103.0) { g.beginPath(); g.moveTo(0, y); g.lineTo(xBank - 14, y); g.stroke(); } g.save(); g.globalAlpha = 0.45; g.lineWidth = 1.2; g.beginPath(); g.moveTo(v === 103.0 ? xEnd - 70 : xBank, y); g.lineTo(xEnd + 6, y); g.stroke(); g.restore(); g.setLineDash([]);
-        const ty = Math.max(y, lastY + 38); lastY = ty; g.beginPath(); g.moveTo(xEnd + 6, y); g.lineTo(xL - 6, ty); g.stroke();
-        label(g, nm, xL, ty - 8, c, 12, 'left', 600); label(g, val, xL, ty + 8, c, 14, 'left', 800); });
+        const bk = boost(g), ty = Math.max(y, lastY + 38 * Math.min(bk, 1.6)); lastY = ty; g.beginPath(); g.moveTo(xEnd + 6, y); g.lineTo(xL - 6, ty); g.stroke();
+        // keskeny képernyőn a hosszú megnevezés a rendelkezésre álló szélességhez igazodik
+        const fitSz = (t, sz, wgt) => { g.font = `${wgt} ${sz * bk}px Archivo, sans-serif`; const w = g.measureText(t.replace(/_\{?|\}/g, '')).width; return w > W - xL - 4 ? sz * (W - xL - 4) / w : sz; };
+        label(g, nm, xL, ty - 8 * Math.min(bk, 1.5), c, fitSz(nm, 12, 600), 'left', 600); label(g, val, xL, ty + 8 * Math.min(bk, 1.5), c, fitSz(val, 14, 800), 'left', 800); });
       // mélygarázs
       const gx0 = 470, gx1 = 680, gb = 99.0; g.fillStyle = C.card; g.fillRect(gx0, sy(gs), gx1 - gx0, sy(gb) - sy(gs)); g.strokeStyle = C.ink; g.lineWidth = 3; g.strokeRect(gx0, sy(gs), gx1 - gx0, sy(gb) - sy(gs));
       g.lineWidth = 2; g.beginPath(); g.moveTo(gx0, sy(102)); g.lineTo(gx1, sy(102)); g.stroke();

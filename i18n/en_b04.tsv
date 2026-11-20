@@ -15,10 +15,10 @@ e4e6970	because the soil strength is lower than expected
 2938b5a	because groundwater always reduces it
 3991fea	The passive resistance is only fully mobilised after significant compression; at the allowable displacement only part of it develops. In addition, erosion, later excavation or shrinkage of the clay may remove it altogether.
 cdbaa07	Which variable load may be included in V′<sub>k</sub>?
-ae9a7cf	only one that surely acts together with H<sub>d</sub>
+ae9a7cf	only one that is certain to act together with H<sub>d</sub>
 dc86ed2	only the wind load
 797c018	traffic on the backfill, always
-d117a53	The vertical force increases the resistance, so only a variable load that surely acts at the same time as the horizontal force may be counted.
+d117a53	The vertical force increases the resistance, so only a variable load that is certain to act at the same time as the horizontal force may be counted.
 14d6356	What is the form of the overturning verification?
 83c61f7	The design value of the destabilising moment must not exceed that of the stabilising moment – both are taken about the same point.
 3a7babb	What are the partial factors for EQU (recommended values)?
@@ -49,8 +49,7 @@ febfedc	In UPL the factor on the uplift force is 1.00 and on the self-weight 0.9
 663ec3b	How is the design value of the uplift force calculated?
 6a41f66	with the weight of the structure
 40cd35b	from the anchor force
-f13a508	A<sub>k</sub> is the volume submerged below the groundwater level, γ<sub>w</sub> = 10 kN/m³; the uplift force is essentially the resultant of the water pressure acting on the structure.
-5d065f3	What is the overall safety against uplift without friction and anchors?
+5d065f3	What is the global factor of safety against uplift without friction and anchors?
 4d4f13b	γ<sub>G;dst</sub>/γ<sub>G;stb</sub> = 1.0/0.9 = 1.11 – little, so the water level must be chosen cautiously.
 1f9ef77	How are the cars parked in an underground car park taken into account?
 38f9480	as a favourable variable load: with 0
@@ -60,7 +59,6 @@ f13a508	A<sub>k</sub> is the volume submerged below the groundwater level, γ<su
 2305761	The factor on a favourable variable load in UPL is 0 – the verification must be done for the empty car park.
 b94db40	The 30×15 m box is reached by groundwater 1 m higher. By how much does the uplift force increase?
 3d7f6ef	it does not change
-fb17bff	450 m² · 1 m · 10 kN/m³ = 4500 kN – in the example this is +20%.
 ff32a7f	Which one is NOT a countermeasure against uplift?
 5831bb6	extending the base slab
 960447a	anchoring
@@ -85,7 +83,6 @@ a5a9179	The load of the footing enters as a geotechnical action, with set A2: 1.
 ef86401	the value of tan φ′
 cec2009	the weight of the slice
 b47e2c2	the radius of the slip surface
-fc1bde5	tan φ′<sub>d</sub> = tan φ′<sub>k</sub> / γ<sub>φ</sub> – for example with φ′<sub>k</sub> = 28° and γ = 1.35, φ′<sub>d</sub> ≈ 21.5°.
 b614664	What usually governs the stability of slopes?
 e38d9d0	the water conditions
 7ebfee2	the temperature
@@ -137,7 +134,6 @@ a012146	The deadline for national implementation is 30 September 2027, and for w
 d6ea2e5	An empty underground rainwater tank, high groundwater table
 4d027e5	The uplift force may overcome the self-weight (UPL).
 1def2fb	A cantilever wall with a smooth precast base, high earth pressure
-748e07e	δ = ⅔·φ′<sub>cv</sub> – the friction under the base may be too little.
 8452213	A family house two metres from the edge of a loess bluff
 1f0eec1	The slip surface may pass under the house too: overall stability.
 b42849d	A pedestrian underpass near the Danube, during a flood
@@ -146,7 +142,7 @@ f05a2dc	A long-lasting flood is followed by the groundwater – UPL.
 7815289	Undrained sliding: R<sub>d</sub> = A<sub>c</sub>·c<sub>u;k</sub>/1.1 ≤ 0.4·V<sub>d</sub>.
 e70ecfd	A circular shallow foundation of a wind turbine
 bdba133	For a circular footing, special precautions are needed if e > 0.6·r.
-e232a33	Footings of a hall at the edge of a planned deep excavation
+e232a33	Footings of an industrial building at the edge of a planned deep excavation
 577fda5	Near the excavation the soil mass may slide together with the footings.
 a982e43	The stability of a shallow foundation must be verified for four separate limit states.
 20d96b7	Sliding, overturning, uplift and overall stability – each one separately.

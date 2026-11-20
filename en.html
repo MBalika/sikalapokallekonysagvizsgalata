@@ -12,11 +12,20 @@
 <link rel="alternate" hreflang="en" href="https://sikalapokallekonysagvizsgalata.vercel.app/en">
 <link rel="alternate" hreflang="x-default" href="https://sikalapokallekonysagvizsgalata.vercel.app/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='9' fill='%233b2360'/%3E%3Cpath d='M8 24h18M11 24v-4h12v4M17 20V9' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 11l14 -3' stroke='%23ff8a4c' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800;62..125,900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="preload" href="fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style id="fonts">/* betűk helyből (fonts/), külső betűszolgáltató nélkül */
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(fonts/archivo-latin-ext-standard-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(fonts/archivo-latin-standard-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-greek-wght-normal.woff2) format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-latin-ext-wght-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-greek-wght-italic.woff2) format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-latin-ext-wght-italic.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-latin-wght-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
 <script src="vendor/hyphenopoly/Hyphenopoly_Loader.js"></script>
 <script>if (window.Hyphenopoly) Hyphenopoly.config({ require: { "en-gb": "FORCEHYPHENOPOLY" }, setup: { hide: "none", selectors: { ".hyphenate": { minWordLength: 6, compound: "auto" } } } });</script>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js","three/addons/":"./vendor/three/addons/"}}</script>
 <style>
 /* ===== Síkalapok állékonyságvizsgálata – megjelenés ===== */
 :root {
@@ -70,7 +79,7 @@ sub { font-size: .7em; line-height: 0; }
 .tbtn.lang b { background: var(--plum); color: var(--paper); }
 .tbtn.lang span { color: var(--ink2); }
 .tbtn.lang:hover span { background: var(--plumT); color: var(--ink); }
-@media (max-width: 760px) { .brand small, .top .hide-s { display: none; } }
+@media (max-width: 900px) { .brand small, .top .hide-s { display: none; } }
 @media (max-width: 560px) { .tbtn.lang { padding: 2px; } .tbtn.lang b { display: none; } .tbtn.lang span { min-width: 0; padding: 4px 8px; color: var(--ink); } }
 @media (max-width: 560px) { .top .wrap { gap: 8px; } .brand { white-space: normal; font-size: 14px; line-height: 1.12; min-width: 0; } .brand svg { width: 30px; height: 30px; } .tbtn { padding: 6px 11px; font-size: 13px; } }
 /* ---- igazolólap (ragadós sáv) ---- */
@@ -136,6 +145,19 @@ sub { font-size: .7em; line-height: 0; }
 .fact p { font-size: .93em; margin: 4px 0 6px; color: var(--ink2); }
 .note { border: 1px dashed var(--line2); border-radius: var(--r2); padding: 12px 16px; font-size: .93em; color: var(--ink2); background: var(--plumT); margin: 16px 0; }
 .note b { color: var(--ink); }
+/* ---- a sorozat többi része ---- */
+.series { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+@media (max-width: 1000px) { .series { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .series { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 440px) { .series { grid-template-columns: 1fr; } }
+.series a { display: flex; flex-direction: column; justify-content: center; gap: 4px; text-align: center; text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: var(--r2); padding: 16px 16px; box-shadow: var(--sh); transition: transform .2s, border-color .2s; }
+.series a:hover { transform: translateY(-2px); border-color: var(--plum2); }
+.series a b { display: block; font: 750 16.5px/1.25 var(--fd); text-wrap: balance; }
+.series a small { color: var(--mute); font-size: 13.5px; line-height: 1.4; text-wrap: balance; }
+.series a.next { background: var(--plum); border-color: var(--plum); color: var(--paper); }
+.series a.next small { color: color-mix(in srgb, var(--paper) 78%, transparent); }
+.simf { margin: 8px 0 0; } ul.simf { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 2px; text-align: center; font-family: var(--fd); font-weight: 600; color: var(--ink2); }
+.lam .sub .chip { display: inline-block; white-space: nowrap; padding: 2px 9px; margin: 3px 5px 0 0; border-radius: 999px; background: var(--paper2); border: 1px solid var(--line); font-size: .93em; }
 .case { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .case:last-child { border-bottom: 0; }
 .case .yr { font: 800 26px/1 var(--fd); color: var(--k); min-width: 88px; font-variant-numeric: tabular-nums; }
@@ -143,9 +165,9 @@ sub { font-size: .7em; line-height: 0; }
 .case p { margin: 4px 0 0; font-size: .95em; color: var(--ink2); }
 /* panelek (widgetek) */
 .panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--r3); box-shadow: var(--sh); margin: 22px 0; overflow: hidden; }
-.panel .ph { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 16px 20px 0; }
-.panel .ph h4 { font-size: 19px; margin: 0; }
-.panel .ph p { margin: 0; color: var(--mute); font-size: .92em; }
+.panel .ph { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 18px 20px 0; text-align: center; }
+.panel .ph h4 { font-size: 19px; margin: 0; text-align: center; }
+.panel .ph p { margin: 0; color: var(--mute); font-size: .92em; text-align: center; text-wrap: balance; max-width: 78ch; }
 .panel .pb { padding: 14px 20px 20px; }
 .panel canvas { display: block; width: 100%; height: auto; border-radius: var(--r2); background: var(--paper2); }
 .ctrl { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px 20px; margin-top: 14px; }
@@ -201,9 +223,10 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 .vthumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
 .vthumb .pl { position: absolute; left: 12px; bottom: 12px; width: 44px; height: 44px; border-radius: 50%; background: var(--k); display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0, 0, 0, .4); }
 .vthumb .d { position: absolute; right: 10px; bottom: 10px; background: rgba(0, 0, 0, .7); color: #fff; font: 700 12px/1 var(--fd); padding: 5px 7px; border-radius: 6px; }
-.vcard .vi { padding: 12px 14px 14px; border-top: 4px solid var(--k); }
+.vcard .vi { padding: 12px 14px 14px; border-top: 4px solid var(--k); text-align: center; text-wrap: balance; }
 .vcard .vi b { display: block; font: 750 17px/1.2 var(--fd); }
-.vcard .vi span { font-size: 14px; color: var(--mute); }
+.vcard .vi span { display: block; margin-top: 4px; font-size: 14px; line-height: 1.4; color: var(--mute); }
+.vcard { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; } .vcard .vi { flex: 1; }
 .vlink { display: inline-flex; align-items: center; gap: 10px; border: 1.5px solid var(--k); background: transparent; color: var(--ink); border-radius: 999px; padding: 8px 16px 8px 8px; cursor: pointer; font: 700 15px/1.2 var(--fb); margin: 8px 0; }
 .vlink i { width: 30px; height: 30px; border-radius: 50%; background: var(--k); display: grid; place-items: center; }
 .vmodal { position: fixed; inset: 0; z-index: 100; background: rgba(10, 6, 16, .86); display: none; align-items: center; justify-content: center; padding: 16px; }
@@ -270,6 +293,8 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 .tbl th { font: 700 14px/1.3 var(--fd); color: var(--ink2); background: var(--paper2); }
 .tbl td:first-child { font-weight: 700; }
 .tblw { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r2); margin: 16px 0; }
+.tbl td:has(> .dot) { position: relative; padding-left: 32px; }
+.tbl td > .dot { position: absolute; left: 12px; top: 1.12em; margin: 0; }
 .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--k); margin-right: 8px; vertical-align: middle; }
 /* idővonal */
 .tline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin: 26px 0; position: relative; }
@@ -281,7 +306,8 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 @media (max-width: 760px) { .tline { grid-template-columns: 1fr; gap: 14px; } .tline::before { left: 7px; right: auto; top: 0; bottom: 0; width: 3px; height: auto; } .tline div { padding: 0 0 0 30px; } .tline div::before { top: 2px; } }
 /* lábléc */
 footer { margin-top: 80px; padding: 34px 0 60px; border-top: 1px solid var(--line); color: var(--mute); font-size: .92em; }
-footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+footer .wrap { display: block; max-width: 880px; text-align: center; }
+footer p { text-align: center !important; text-wrap: balance; }
 @media (max-width: 760px) { footer .wrap { grid-template-columns: 1fr; } }
 .links { display: grid; gap: 8px; }
 .totop { position: fixed; right: 16px; bottom: 16px; z-index: 40; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line2); background: var(--card); box-shadow: var(--sh); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .3s; }
@@ -316,6 +342,7 @@ main .qres p { text-align: center; }
 .sim .lbls { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 2; }
 .sim .lbl3 { position: absolute; left: 0; top: 0; font: 700 12.5px/1.15 var(--fd); color: #fff; background: rgba(20, 14, 29, .8); padding: 3px 7px; border-radius: 6px; white-space: nowrap; font-variant-numeric: tabular-nums; will-change: transform; }
 .sim .lbl3.w { background: #1f6fb2; } .sim .lbl3.g { background: #1a7a48; } .sim .lbl3.r { background: #a8740a; } .sim .lbl3.s { background: #6c43cc; } .sim .lbl3.x { background: #c22f2f; } .sim .lbl3.p { background: #b02a2a; } .sim .lbl3.k6 { background: #158a52; padding: 2px 6px; transform-origin: center; } .sim .lbl3.k3 { background: #b9770b; padding: 2px 6px; }
+@media (max-width: 560px) { .sim .lbl3 { font-size: 11px; padding: 2px 5px; } .sim .lbl3.k6, .sim .lbl3.k3 { display: none !important; } }
 .sim .pip { position: absolute; right: 12px; bottom: 12px; padding: 0; border: 2px solid rgba(255, 255, 255, .9); border-radius: 10px; background: transparent; box-shadow: 0 6px 22px rgba(0, 0, 0, .35); cursor: pointer; z-index: 3; }
 .sim .pip span { position: absolute; left: 6px; top: 6px; font: 700 11px/1.2 var(--fd); background: rgba(20, 14, 29, .78); color: #fff; padding: 3px 7px; border-radius: 5px; }
 .sim .pip:focus-visible { outline: 3px solid var(--k2, #6c43cc); outline-offset: 2px; }
@@ -517,6 +544,7 @@ main .rag, footer .rag { text-align: left !important; }
 .cv-anc { stroke: var(--ink2); stroke-width: 2.4; } .cv-ancb { fill: var(--conc); stroke: var(--ink2); stroke-width: 1; rx: 3px; }
 .cv-lay { stroke: var(--ink2); stroke-width: 1.1; stroke-dasharray: 9 5; } .cv-hard { stroke: var(--ink); stroke-width: 2.2; }
 .cv-gc { stroke: none; opacity: .82; }
+.cv-plate { fill: var(--card); fill-opacity: .9; stroke: var(--line2); stroke-width: 1; }
 .cv-mass { fill: var(--plum2); fill-opacity: .14; stroke: none; } .cv-mass.cv-bad { fill: var(--bad); fill-opacity: .17; }
 .cv-slice { stroke: var(--plum2); stroke-width: .8; opacity: .45; }
 .cv-arc { fill: none; stroke: var(--plum2); stroke-width: 3.2; stroke-linecap: round; } .cv-arc.cv-bad { stroke: var(--bad); }
@@ -597,6 +625,112 @@ main .rag, footer .rag { text-align: left !important; }
 .mp-tbl td:first-child, .mp-tbl th:first-child { text-align: left; }
 
 </style>
+<style id="bxt-css">
+/* Dobozcímek középre – formázás skill */
+.bxt{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+.bxt-f,.bxt-row,.bxd-f{justify-content:center!important}
+.bxt-st{align-self:stretch!important}
+.bxd{margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+.bxd-as{align-self:center!important}
+.bxt-grow{flex:1 1 auto!important;min-width:0!important}
+.bxd-rl{position:relative!important;left:50%!important;transform:translateX(-50%)!important}
+.bxt-tc{text-align:center!important}
+.bxk-s{text-align:start}.bxk-l{text-align:left}.bxk-j{text-align:justify}.bxk-r{text-align:right}.bxk-e{text-align:end}
+</style>
+<script id="bxt-js">
+/* Dobozcímek középre (formázás skill, 5. pont): minden keretes/hátteres szövegdoboz saját címe
+   — és a cím előtti kis díszítők (ikon, sorszám, kicker) — vízszintesen középen. */
+(function(){
+  'use strict';
+  var HS='h2,h3,h4,h5,h6', SKIP='header,nav,footer,table,button,summary,label,svg,dialog form,[data-bxt-skip]';
+  var MEDIA=/^(IMG|CANVAS|VIDEO|PICTURE|FIGURE|IFRAME|OBJECT)$/;
+  function cs(e){return getComputedStyle(e);}
+  function isBox(e){
+    if(!e||/^(BODY|HTML|MAIN|SECTION)$/.test(e.tagName))return false;
+    var s=cs(e),bg=s.backgroundColor,hb=(bg&&bg!=='transparent'&&!/rgba\(\d+, \d+, \d+, 0\)/.test(bg))||s.backgroundImage!=='none';
+    var bw=0;['Top','Right','Bottom','Left'].forEach(function(k){if(parseFloat(s['border'+k+'Width'])>0&&s['border'+k+'Style']!=='none')bw++;});
+    var r=parseFloat(s.borderTopLeftRadius)||0,sh=s.boxShadow&&s.boxShadow!=='none';
+    return sh||bw>=3||(hb&&(r>0||bw>=1));
+  }
+  function isRow(p){
+    var s=cs(p),d=s.display;
+    if(/flex/.test(d))return !/column/.test(s.flexDirection);
+    if(/grid/.test(d)){var g=s.gridTemplateColumns;if(!g||g==='none')return false;var m=g.match(/repeat\(\s*(\d+)/);return m?+m[1]>1:g.trim().split(/\s+/).length>1;}
+    return false;
+  }
+  function isMedia(e){
+    if(MEDIA.test(e.tagName))return true;
+    if(e.tagName.toLowerCase()==='svg'){var w=e.getBoundingClientRect().width||parseFloat(e.getAttribute('width'))||0;return w>80;}
+    var c=typeof e.className==='string'?e.className:'';return !!e.querySelector('img,canvas,video,iframe,figure')||/(^|\s)(fh-cv|xw-box|thumb)/.test(c);
+  }
+  function interactive(e){return /^(BUTTON|INPUT|SELECT|TEXTAREA|A)$/.test(e.tagName)&&(e.tagName!=='A'||e.hasAttribute('href'))||!!e.querySelector('button,input,select,textarea,a[href]');}
+  function txt(e){return (e.textContent||'').replace(/\s+/g,' ').trim().length;}
+  function free(e){var s=cs(e);return s.position==='absolute'||s.position==='fixed'||s.float!=='none'||s.display==='none';}
+  function alone(d){
+    function blk(n){if(!n||n.nodeType!==1)return true;var x=cs(n);return x.display==='none'||!/^inline/.test(x.display)||x.position==='absolute'||x.position==='fixed';}
+    function ws(n,k){while(n&&n.nodeType!==1){if(n.nodeType===3&&n.textContent.trim())return null;n=n[k];}return n;}
+    var p=d.previousSibling,n=d.nextSibling,a=ws(p,'previousSibling'),b=ws(n,'nextSibling');
+    if(a===null||b===null)return false;
+    return blk(a)&&blk(b);
+  }
+  var TA={start:'s',left:'l',justify:'j',right:'r',end:'e',center:'c'};
+  function grp(P,decos,h){
+    if(!P||P.classList.contains('bxt-tc'))return;
+    for(var n=P.firstChild;n;n=n.nextSibling){if(n.nodeType===3&&n.textContent.trim())return;}
+    var pa=cs(P).textAlign;
+    [].forEach.call(P.children,function(c){
+      if(decos.indexOf(c)>=0||c===h||c.contains(h))return;
+      var ta=cs(c).textAlign;if(ta===pa&&TA[ta])c.classList.add('bxk-'+TA[ta]);
+    });
+    P.classList.add('bxt-tc');
+  }
+  function startJ(j){return /^(normal|flex-start|start|left)$/.test(j);}
+  function dbg(h,r){if(window.__bxtDebug)window.__bxtDebug.push([h,r]);}
+  function one(h){
+    if(h.__bxt)return; h.__bxt=1;
+    if(h.closest(SKIP))return;
+    var n=h,path=[],box=null;
+    for(var k=0;k<5;k++){var p=n.parentElement;if(!p||/^(BODY|MAIN)$/.test(p.tagName))break;path.push(n);if(isBox(p)){box=p;break;}n=p;}
+    if(!box)return;if(box.querySelector(HS)!==h)return dbg(h,'not-first');
+    var decos=[],rows=[],grow=[];
+    for(var i=0;i<path.length;i++){
+      var m=path[i],par=m.parentElement,sib=[].slice.call(par.children).filter(function(c){return c!==m&&!free(c);});
+      if(isRow(par)&&sib.length){
+        for(var q=0;q<sib.length;q++){if(isMedia(sib[q])||interactive(sib[q])||txt(sib[q])>40)return dbg(h,'row-sib');}
+        if(startJ(cs(par).justifyContent)&&/flex/.test(cs(par).display))rows.push(par);else grow.push(m);
+        continue;
+      }
+      for(var e=m.previousElementSibling;e;e=e.previousElementSibling){
+        if(free(e))continue;
+        if(isMedia(e))continue;
+        if(interactive(e)||txt(e)>60||e.querySelector(HS))return dbg(h,'pre-content');
+        decos.push(e);
+      }
+    }
+    var nx=h.nextElementSibling;
+    if(nx&&!free(nx)&&!interactive(nx)&&!isMedia(nx)&&!/^(UL|OL|TABLE|DL)$/.test(nx.tagName)&&!nx.querySelector(HS)){
+      var c=typeof nx.className==='string'?nx.className:'',L=txt(nx);
+      if(L>0&&L<=90&&(/(^|[-_\s])(sub|subtitle|subhead|caption|hint|meta|tagline|lede)([-_\s]|$)/i.test(c)||(nx.tagName==='P'&&L<=40)))decos.push(nx);
+    }
+    var hs=cs(h);h.classList.add('bxt');if(/flex/.test(hs.display))h.classList.add('bxt-f');
+    var hp=cs(h.parentElement);if(/flex/.test(hp.display)&&/column/.test(hp.flexDirection)&&!/stretch|normal/.test(hp.alignItems))h.classList.add('bxt-st');
+    decos.forEach(function(d){
+      var s=cs(d),dp=s.display;
+      if((/flex|grid/.test(dp))&&!startJ(s.justifyContent))return;
+      if(/^inline/.test(dp)){if(alone(d)&&s.transform==='none'&&s.position==='static')d.classList.add('bxd-rl');else grp(d.parentElement,decos,h);}
+      else{d.classList.add('bxd');if(/flex/.test(dp))d.classList.add('bxd-f');}
+      var pp=cs(d.parentElement);if(/flex/.test(pp.display)&&/column/.test(pp.flexDirection))d.classList.add('bxd-as');
+    });
+    rows.forEach(function(r){r.classList.add('bxt-row');});
+    grow.forEach(function(g){g.classList.add(/flex/.test(cs(g.parentElement).display)?'bxt-grow':'bxt-cell');});
+  }
+  function run(root){var l=(root||document).querySelectorAll(HS);for(var i=0;i<l.length;i++){try{one(l[i]);}catch(e){}}}
+  var t=0;function later(){if(t)return;t=setTimeout(function(){t=0;run();},60);}
+  function init(){run();try{new MutationObserver(function(r){for(var i=0;i<r.length;i++){if(r[i].addedNodes.length){later();return;}}}).observe(document.body,{childList:true,subtree:true});}catch(e){}}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  window.__boxTitles=run;
+})();
+</script>
 </head>
 <body>
 <a class="sr" href="#attekintes">Skip to content</a>
@@ -629,7 +763,7 @@ main .rag, footer .rag { text-align: left !important; }
       <h1>Stability of <span class="l2">shallow foundations</span></h1>
       <p class="lead">A footing can lose its stability in four ways: it slides on its base, overturns, floats up, or slips together with the surrounding soil. Each of the four has to be verified separately. On this page you can work through them with simulators, animations and quizzes, and see what decides each case.</p>
       <div class="ctas"><a class="btn" href="#elcsuszas">Start with sliding</a><a class="btn ghost" href="#videok">The five animated videos</a></div>
-      <p class="small muted" style="margin-top:18px">In the top bar (verification panel) you can always see where the four simulators stand: the bar shows the utilisation, the mark is at 1.0.</p>
+      <p class="small muted" style="margin-top:18px">The four buttons in the top bar take you to the start of the chapter of each of the four checks at any time.</p>
     </div>
     <figure class="stage" style="margin:0">
       <canvas id="heroCv" width="640" height="420" role="img" aria-label="Animation: the four failure modes – sliding, overturning, uplift, loss of overall stability"></canvas>
@@ -648,7 +782,7 @@ main .rag, footer .rag { text-align: left !important; }
       <div>
         <p>Together with sizing the footings – or after it – it must also be verified that the structure has adequate safety according to EC7 against <b>sliding, overturning and uplift</b>. In certain situations – near a slope, an excavation, a bank or a cavity – <b>overall stability</b> must be checked as well.</p>
         <p>The procedure is the same for each: we write down the design value of the actions (E<sub>d</sub>) and the design value of the resistance (R<sub>d</sub>), then verify that E<sub>d</sub> ≤ R<sub>d</sub>. For overturning we compare moments: M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>. Where the soil strength matters, both the <b>drained and the undrained</b> states are checked.</p>
-        <p>The ratio of the two is the <b>utilisation</b>: Λ = E<sub>d</sub> / R<sub>d</sub>. If Λ ≤ 1.0, the footing satisfies that limit state. The verification panel shows the same.</p>
+        <p>The ratio of the two is the <b>utilisation</b>: Λ = E<sub>d</sub> / R<sub>d</sub>. If Λ ≤ 1.0, the footing satisfies that limit state.</p>
       </div>
       <div class="tblw" style="margin-top:0">
         <table class="tbl">
@@ -688,7 +822,7 @@ main .rag, footer .rag { text-align: left !important; }
     <h3>Case 1: drained state – long term</h3>
     <div class="cols">
       <div>
-        <div class="eq" style="margin-top:0"><div class="f">R<sub>d</sub> = V′<sub>k</sub> · tan δ<sub>k</sub> / γ<sub>R;h</sub></div><div class="w"><div>V′<sub>k</sub> – characteristic value of the vertical force; a variable action only if it surely acts together with H<sub>d</sub></div><div>δ<sub>k</sub> – interface friction angle between footing and soil, from the critical state φ′<sub>cv;k</sub></div><div>γ<sub>R;h</sub> = 1.1</div></div></div>
+        <div class="eq" style="margin-top:0"><div class="f">R<sub>d</sub> = V′<sub>k</sub> · tan δ<sub>k</sub> / γ<sub>R;h</sub></div><div class="w"><div>V′<sub>k</sub> – characteristic value of the vertical force; a variable action only if it is certain to act together with H<sub>d</sub></div><div>δ<sub>k</sub> – interface friction angle between footing and soil, from the critical state φ′<sub>cv;k</sub></div><div>γ<sub>R;h</sub> = 1.1</div></div></div>
       </div>
       <div>
         <p style="margin-top:0">For a footing cast in situ the base is rough and the grains interlock: δ<sub>k</sub> = φ′<sub>cv;k</sub>. For a smooth precast footing only δ<sub>k</sub> = ⅔·φ′<sub>cv;k</sub> may be assumed.</p>
@@ -724,7 +858,7 @@ main .rag, footer .rag { text-align: left !important; }
       </div>
       <div>
         <p style="margin-top:0">It must also be borne in mind that erosion or some human intervention (e.g. a later utility trench) may remove the soil in front of the footing face, and in clay the soil may separate from the face because of seasonal changes in water content. If this cannot be ruled out, we conservatively take R<sub>p;d</sub> = 0.</p>
-        <p class="small muted">Some design software offers to take only ½–⅓ of the full passive earth resistance into account.</p>
+        <p class="small muted">Some design software also offers to count on only one third or one half of the full passive earth resistance.</p>
       </div>
     </div>
     <div class="panel k1">
@@ -761,7 +895,7 @@ main .rag, footer .rag { text-align: left !important; }
     <h3>If it fails</h3>
     <div class="split">
       <div class="box"><h4>Structural options</h4><ul><li>A <b>shear key</b> under the base: it forces the slip surface lower, into the soil, with passive resistance developing in front of it.</li><li><b>More self-weight</b>, a wider base – more soil on the heel: a larger V′<sub>k</sub>.</li><li>A <b>deeper foundation level</b> – larger, more reliable passive resistance.</li><li>A rough base cast in situ instead of a precast one.</li></ul></div>
-      <div class="box"><h4>Careful with shear keys</h4><p class="small" style="margin:0">Experience shows that the benefit of a shear key is mixed: in strong soil and with a smooth precast base it helps a lot; with a shallow key, however, once the active pressure on it is also counted, the safety may even get worse (in one worked example from 1.39 to 1.24). Count on the passive resistance down to the bottom of the key only if it will surely remain.</p></div>
+      <div class="box"><h4>Careful with shear keys</h4><p class="small" style="margin:0">Experience shows that the benefit of a shear key is mixed: in strong soil and with a smooth precast base it helps a lot; with a shallow key, however, once the active pressure on it is also counted, the safety may even get worse (in one worked example from 1.39 to 1.24). Count on the passive resistance down to the bottom of the key only if it is certain to remain.</p></div>
     </div>
     <div class="case k1"><div class="yr">1911</div><div><h4>Austin Dam, Pennsylvania, USA</h4><p>In January 1910, after rapid filling, the 15 m high gravity dam slid on its foundation: about 46 cm at the toe and about 79 cm at the crest. The slip surface formed along clay-filled bedding joints, and the uplift of water getting under the dam reduced the safety further. On 30 September 1911 the dam failed – 78 people died.</p></div></div>
     <div class="quiz k1" id="q1"><div class="qh"><h4>Quiz – sliding</h4><div class="dots"></div></div></div>
@@ -815,7 +949,7 @@ main .rag, footer .rag { text-align: left !important; }
     <div class="facts">
       <div class="fact k2"><div class="n">4×</div><h4>At e = B/3</h4><p>the length in compression is B/2, and the edge pressure is four times the mean contact pressure.</p></div>
       <div class="fact k2"><div class="n">0.6<small>·r</small></div><h4>Circular footing</h4><p>The radius of the kern is r/4. According to EC7, special precautions are needed if e &gt; 0.6·r.</p></div>
-      <div class="fact k2"><div class="n">6.7<small>m</small></div><h4>Wind turbine footing</h4><p>In the structural design of a Vestas V126 (R = 13.8 m, M = 149 MNm) e = 6.7 m &lt; 0.59·R = 8.1 m – this is the limit of the German wind turbine guideline (gap at most up to the centre).<br></p></div>
+      <div class="fact k2"><div class="n">6.7<small>m</small></div><h4>Wind turbine footing</h4><p>For the circular raft of a wind turbine with radius R = 13.8 m, e = 6.7 m &lt; 0.59·R = 8.1 m – the usual limit for wind turbines: the gap may reach the centre at most.</p></div>
     </div>
     <div class="split">
       <div class="box"><h4>Short-term or permanent?</h4><p class="small" style="margin:0">It matters whether the overturning action is short-term (e.g. wind load) or permanent (e.g. earth pressure). In a gust the base lifts off temporarily and then settles back; under a permanent eccentric load the footing may gradually tilt. The German guideline for wind turbines therefore allows no gap under quasi-permanent loading, and under extreme loading a gap at most up to the centre.</p></div>
@@ -834,13 +968,13 @@ main .rag, footer .rag { text-align: left !important; }
     <div class="cols">
       <div>
         <p>In design practice it happens countless times that a light but “voluminous” structure – an underground tank, a pedestrian underpass, an underground car park – is acted on by a greater uplift force at high groundwater than the sum of the permanent loads. The Eurocode defines a separate ultimate limit state for this: <b>UPL</b> (uplift).</p>
-        <div class="eq"><div class="f">V<sub>dst;d</sub> ≤ G<sub>stb;d</sub> + R<sub>d</sub></div><div class="w"><div>V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub> – the uplift force (A<sub>k</sub>: the volume submerged below the groundwater, γ<sub>w</sub> = 10 kN/m³)</div><div>G<sub>stb;d</sub> = G<sub>str;d</sub> + G<sub>soil;d</sub> – the weight of the structure and of the soil loading it, with γ<sub>G;stb</sub></div><div>R<sub>d</sub> = T<sub>d</sub> + P<sub>d</sub> – friction between the structure and the soil, and the anchor force</div></div></div>
+        <div class="eq"><div class="f">V<sub>dst;d</sub> ≤ G<sub>stb;d</sub> + R<sub>d</sub></div><div class="w"><div>V<sub>dst;d</sub> = γ<sub>G;dst</sub> · γ<sub>w</sub> · h<sub>w</sub> · A<sub>k</sub> – the uplift force (A<sub>k</sub>: the plan area of the base slab, h<sub>w</sub>: the height of the groundwater level above the underside of the base slab, γ<sub>w</sub> = 10 kN/m³)</div><div>G<sub>stb;d</sub> = G<sub>str;d</sub> + G<sub>soil;d</sub> – the weight of the structure and of the soil loading it, with γ<sub>G;stb</sub></div><div>R<sub>d</sub> = T<sub>d</sub> + P<sub>d</sub> – friction between the structure and the soil, and the anchor force</div></div></div>
         <p>The utilisation: Λ = V<sub>dst;d</sub> / (G<sub>stb;d</sub> + R<sub>d</sub>).</p>
       </div>
       <div>
         <div class="tblw" style="margin-top:0"><table class="tbl"><thead><tr><th colspan="2">UPL – partial factors on actions</th></tr></thead><tbody><tr><td>γ<sub>G;dst</sub></td><td>1.00 – permanent, destabilising (uplift force)</td></tr><tr><td>γ<sub>G;stb</sub></td><td>0.90 – permanent, stabilising (self-weight)</td></tr><tr><td>γ<sub>Q;dst</sub></td><td>1.50 – variable, destabilising</td></tr><tr><td>γ<sub>Q;stb</sub></td><td>0 – variable, stabilising</td></tr></tbody></table></div>
         <p>The overall safety against uplift is usually only γ<sub>G;dst</sub> / γ<sub>G;stb</sub> = 1.0 / 0.9 = <b>1.11</b>. This is why it is particularly important to choose the water levels cautiously, or to introduce precautions that reduce the risk.</p>
-        <p class="small muted">For the resistance of friction and anchors EN 1997-1 recommends γ<sub>s;t</sub> = γ<sub>a</sub> = 1.4 (since the AC:2010 corrigendum they may be treated as stabilising permanent actions only if the National Annex allows it). The values of the Hungarian NA are worth checking in the standard.</p>
+        <p class="small muted">For the resistance of friction and anchors EN 1997-1 recommends γ<sub>s;t</sub> = γ<sub>a</sub> = 1.4. They may be treated as stabilising permanent actions only if the National Annex allows it.</p>
       </div>
     </div>
     <h3>The groundwater level is the most sensitive input</h3>
@@ -849,7 +983,7 @@ main .rag, footer .rag { text-align: left !important; }
         <p>When buildings and structures are checked against uplift, the groundwater level is treated as a geometrical datum: its design value is either set directly or derived by adding a safety margin to the characteristic value. In the 30×15 m example car park, <b>water 1 m higher means +4500 kN, i.e. +20%</b> uplift force.</p>
       </div>
       <div>
-        <p>On a site near the Danube a long-lasting flood is followed by the groundwater along the bank as well: in South Buda after the 1965 flood the groundwater along the bank rose by more than 3 m and came close to the maximum level of the river. The design flood level of Budapest (MÁSZ) at Vigadó tér is 104.24 mBf – derived from the discharge of the ice-free flood with a 1% probability.</p>
+        <p>On a site near the Danube a long-lasting flood is followed by the groundwater along the bank as well: in South Buda after the 1965 flood the groundwater along the bank rose by more than 3 m and came close to the maximum level of the river. The design flood level of Budapest (MÁSZ) at Vigadó tér is 104.24 mBf (metres above Baltic Sea level) – derived from the discharge of the ice-free flood with a 1% probability.</p>
       </div>
     </div>
     <div class="panel k3">
@@ -871,13 +1005,15 @@ main .rag, footer .rag { text-align: left !important; }
             <div class="rg"><label>e) Wall friction from earth pressure<span></span></label><div class="seg" id="fu_fr"><button class="on" data-v="0" type="button">none</button><button data-v="1" type="button">K<sub>0</sub> · tan δ</button></div></div>
           </div>
           <div class="lam"><div class="t"><span>Utilisation Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1.0</span><span>1.5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
-          <p class="small muted" style="margin-top:10px">c) You can model dewatering with the groundwater level slider. Illustrative example: walls 0.4 m, slabs 0.35 and 0.30 m; the soil on the toe is 19 kN/m³ above the water and 20 kN/m³ below it. Wall friction: σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>, K<sub>0</sub> = 1 − sin 30° = 0.5, δ = ⅔ · φ′ = 20°, R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub> (1.4).</p>
+          <p class="small muted" style="margin-top:10px">c) You can model dewatering with the groundwater level slider. Illustrative example: walls 0.4 m, slabs 0.35 and 0.30 m (10% openings in the intermediate slab); the soil on the projection is 19 kN/m³ above the water and 20 kN/m³ below it.</p>
+          <p class="small muted simf">Wall friction:</p>
+          <ul class="small muted simf"><li>σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub></li><li>K<sub>0</sub> = 1 − sin 30° = 0.5</li><li>δ = ⅔ · φ′ = 20°</li><li>R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub>, γ<sub>s;t</sub> = 1.4</li></ul>
         </div>
       </div>
     </div>
     <h3>Four countermeasures</h3>
     <div class="facts">
-      <div class="fact k3"><div class="n">a)</div><h4>Extending the base slab</h4><p>Beyond the walls, if there is room: the soil resting on the toe adds load as well. In the example, with a 1 m extension a 0.67 m slab is enough instead of 1.28 m – but the uplift force acts on the projecting toe too.</p></div>
+      <div class="fact k3"><div class="n">a)</div><h4>Extending the base slab</h4><p>Beyond the walls, if there is room: the soil resting on the projection adds load as well. In the example, with a 1 m extension a 0.67 m slab is enough instead of 1.28 m – but the uplift force acts on the projection too.</p></div>
       <div class="fact k3"><div class="n">b)</div><h4>Anchoring</h4><p>With piles, diaphragm wall panels or ground anchors. With a 0.6 m slab about 6300 kN is missing: overall at least 15 GEWI micropiles with a characteristic resistance of 600 kN each – because of the bending of the slab, a denser grid in practice.</p></div>
       <div class="fact k3"><div class="n">c)</div><h4>Lowering the groundwater</h4><p>Around the structure, during rare high water (e.g. the flood wave of a nearby river), or reducing the water pressure under the structure by drainage. Only with a monitored system: the pump may stop, the filter may clog.</p></div>
       <div class="fact k3"><div class="n">d)</div><h4>Temporary flooding</h4><p>Part of the structure – e.g. the lowest level of an underground car park – is filled with water. In the example 2 m of water is about 8300 kN of ballast: with the 0.6 m slab Λ = 0.95.</p></div>
@@ -935,19 +1071,19 @@ main .rag, footer .rag { text-align: left !important; }
             <div class="rg"><label>γ<sub>φ</sub> = γ<sub>c</sub><span></span></label><div class="seg" id="al_gm"><button data-v="1.25" type="button">1.25</button><button class="on" data-v="1.35" type="button">1.35</button></div></div>
           </div>
           <div class="lam"><div class="t"><span>Utilisation Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1.0</span><span>1.5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
-          <p class="small muted" style="margin-top:10px">The red dashed line is the critical slip surface; if Λ &gt; 1, the sliding mass moves together with the house.</p>
+          <p class="small muted" style="margin-top:10px">The red dashed line is the critical slip surface; if Λ &gt; 1, the sliding mass moves together with the house. The two strip footings are 0.6 m wide with their base 0.8 m deep; circles cutting through a footing are excluded.</p>
         </div>
       </div>
     </div>
     <div class="split">
       <div class="box"><h4>Solutions</h4><ul><li>moving the footing further away from the crest;</li><li>founding deeper – below the slip surface;</li><li>flattening or supporting the slope;</li><li>dewatering, sorting out the surface drainage.</li></ul></div>
-      <div class="box"><h4>How far is “far”?</h4><p class="small" style="margin:0">According to Meyerhof’s tests, a slope reduces the bearing resistance up to a distance of about 2–6·B. The US building code requires H/3 (at most 12.2 m) on the crest of a descending slope and H/2 (at most 4.6 m) at the toe of an ascending slope – for stable slopes only. These are indicative values; the verification is the slip surface calculation.</p></div>
+      <div class="box"><h4>How far is “far”?</h4><p class="small" style="margin:0">Tests show that a slope reduces the bearing resistance up to a distance of about 2–6·B. The US building code requires H/3 (at most 12.2 m) on the crest of a descending slope and H/2 (at most 4.6 m) at the toe of an ascending slope – for stable slopes only. These are indicative values; the verification is the slip surface calculation.</p></div>
     </div>
     <h3>Cases</h3>
     <div class="case k4"><div class="yr">2011</div><div><h4>Kulcs – loess bank</h4><p>53 properties were put at risk and at least 14 buildings had to be demolished; experts had warned in advance, but there was no money to strengthen the bank.</p></div></div>
-    <div class="case k4"><div class="yr">2008</div><div><h4>Dunaszekcső, Hold-hegy</h4><p>In February 2008 the 70 m high loess bluff slid and sank by about 10 m, and a shoal formed in the bed of the Danube. Research shows that the movement is driven mainly by changes in the groundwater level – its effect is about ten times that of the Danube water level.</p></div></div>
+    <div class="case k4"><div class="yr">2008</div><div><h4>Dunaszekcső, loess bluff</h4><p>In February 2008 the roughly 50 m high loess bluff slid and sank by about 10 m, and a shoal formed in the bed of the Danube. Research shows that the movement is driven mainly by changes in the groundwater level – its effect is at least ten times that of the Danube water level.</p></div></div>
     <div class="case k4"><div class="yr">1914</div><div><h4>Balatonkenese – high bluff</h4><p>After a wet period, about 100 000 m³ of loess swept a train into Lake Balaton; the driver stopped in time, and there were no casualties.</p></div></div>
-    <div class="case k4"><div class="yr">1972</div><div><h4>Po Shan Road, Hong Kong</h4><p>Rain of more than 200 mm a day on three consecutive days, and a 13 m deep unsupported cut at the toe of the slope: about 80 000 t of soil slid down in 7–10 seconds, and a 12–13 storey block of flats was torn off its foundation and collapsed. 67 people died.</p></div></div>
+    <div class="case k4"><div class="yr">1972</div><div><h4>Po Shan Road, Hong Kong</h4><p>Rain of more than 200 mm a day on three consecutive days, and a 13 m deep unsupported cut at the toe of the slope: about 80 000 t of soil slid down in 7–10 seconds, and a 12-storey block of flats was torn off its foundation and collapsed. 67 people died.</p></div></div>
     <div class="case k4"><div class="yr">2009</div><div><h4>Lotus Riverside, Shanghai</h4><p>A 13-storey building on piles toppled over almost intact: an underground car park pit was dug on one side, and the excavated soil was heaped about 10 m high on the other side, on the creek bank. It was a piled building, and a later analysis disputes the official cause – but it shows the danger of “fill next to the building” well.</p></div></div>
     <div class="note"><b>Contrast: Transcona, 1913.</b> The Winnipeg grain elevator tilted to about 27° within 24 hours – but this was a bearing failure of the soil under the raft (bearing resistance, GEO), not a loss of overall stability and not overturning as a rigid body.</div>
     <div class="quiz k4" id="q4"><div class="qh"><h4>Quiz – overall stability</h4><div class="dots"></div></div></div>
@@ -1064,7 +1200,7 @@ main .rag, footer .rag { text-align: left !important; }
     <div class="note"><b>For information.</b> On this page every explanation, worked example, simulator and calculator follows the current EN 1997-1 and its Hungarian National Annex. This chapter only shows what will change with the second-generation standard.</div>
     <div class="split">
       <div class="box"><h4>Now – verification by DA-2* and DA-3</h4><ul><li>EQU: separate factors for stabilising and destabilising actions (γ<sub>G;stb</sub> = 0.9; γ<sub>G;dst</sub> = 1.1)</li><li>sliding, bearing resistance: DA-2* (A1 + M1 + R2)</li><li>soil parameters at characteristic values, the resistance reduced by γ<sub>R</sub></li><li>overall stability: DA-3</li></ul></div>
-      <div class="box"><h4>New – verification cases + MFA / RFA</h4><ul><li>equilibrium and uplift: VC2</li><li>shallow foundations, slopes, retaining walls: VC3 (MFA – with a factor on tan φ′ and c′)</li><li>RFA: the resistance with γ<sub>R</sub> (bearing ≈ 1.4, sliding 1.1); within RFA, VC1 or VC4 (≈ DA-2*)</li><li>the values come from the National Annex – not yet published</li></ul></div>
+      <div class="box"><h4>New – verification cases + MFA / RFA</h4><ul><li>equilibrium and uplift: VC2</li><li>shallow foundations, slopes, retaining walls: VC3 (MFA – with a factor on tan φ′ and c′)</li><li>RFA: the resistance with γ<sub>R</sub> (bearing ≈ 1.4, sliding 1.1); within RFA, VC1 or VC4 (≈ DA-2*)</li><li>the values are set by the National Annex</li></ul></div>
     </div>
     <div class="tblw"><table class="tbl"><thead><tr><th>Verification case</th><th>What for?</th><th>Old equivalent</th><th>Factors on actions (persistent situation)</th></tr></thead><tbody>
       <tr><td>VC1</td><td>structural resistance, foundations in general</td><td>STR, DA2</td><td>G: 1.35·k<sub>F</sub>; Q: 1.5·k<sub>F</sub></td></tr>
@@ -1075,7 +1211,7 @@ main .rag, footer .rag { text-align: left !important; }
     <div class="cols">
       <div>
         <h3>For shallow foundations</h3>
-        <ul><li>The bearing resistance formula has moved into the main text, probably with a ground inclination factor.</li><li><b>Overturning</b> (static equilibrium, without ground failure) and <b>toppling</b> (rotational bearing failure) are checked separately.</li><li>The eccentricity limit is e ≤ B/3, <b>0.59·r</b> for a circular footing; in the serviceability state no gap should open at the edge of the footing.</li><li>The 0.4 limit for undrained sliding remains; the factors for sliding and bearing resistance do not change numerically (1.1 and 1.4).</li></ul>
+        <ul><li>The bearing resistance formula has moved into the main text, with a new ground inclination factor.</li><li><b>Toppling</b> (loss of static equilibrium, without ground failure) and <b>overturning</b> (ground failure caused by rotation of the footing) are checked separately.</li><li>The eccentricity limit is e ≤ B/3, <b>0.59·r</b> for a circular footing; in the serviceability state no gap should open at the edge of the footing.</li><li>The 0.4 limit for undrained sliding remains; the factors for sliding and bearing resistance do not change numerically (1.1 and 1.4).</li></ul>
       </div>
       <div>
         <h3>New concepts</h3>
@@ -1089,7 +1225,7 @@ main .rag, footer .rag { text-align: left !important; }
       <div><b>30 Sep 2027</b><span>deadline for national implementation</span></div>
       <div><b>30 Mar 2028</b><span>withdrawal of the first generation</span></div>
     </div>
-    <p class="small muted">The final texts and the Hungarian National Annex are worth checking once they are published.</p>
+    <p class="small muted">The numerical values are to be taken from the Hungarian National Annex.</p>
         <div class="quiz k5" id="q6"><div class="qh"><h4>Quiz – the new Eurocode</h4><div class="dots"></div></div></div>
   </div>
 </section>
@@ -1110,6 +1246,26 @@ main .rag, footer .rag { text-align: left !important; }
     <div class="tfgrid" id="tfgrid"></div>
   </div>
 </section>
+<!-- ===================== A SOROZAT TÖBBI RÉSZE ===================== -->
+<section class="chap k0" id="tovabb">
+  <div class="wrap">
+    <div class="chead"><div class="code">→</div><h2>Foundation Engineering modules</h2><p>The other parts of the series – each one a separate, interactive page.</p></div>
+    <div class="series">
+      <a class="next" href="https://sikalapok-sullyedesszamitasa.vercel.app/en" target="_blank" rel="noopener"><b>Next: settlement of shallow foundations ↗</b><small>Stresses in the ground, settlement and differential settlement</small></a>
+      <a href="https://bme-alapozas.vercel.app/en" target="_blank" rel="noopener"><b>Foundation Engineering – home page ↗</b><small>Introduction, the nine stations of the course and every module in one place</small></a>
+      <a href="https://talajfelderites.vercel.app/en" target="_blank" rel="noopener"><b>Ground investigation ↗</b><small>Boring, probing, geophysics, sampling – what we learn about the ground</small></a>
+      <a href="https://sikalapoktervezese.vercel.app/en" target="_blank" rel="noopener"><b>Design of shallow foundations ↗</b><small>Foundation types, foundation level, structural form – choosing the shallow foundation</small></a>
+      <a href="https://sikalapok-teherbirasszamitasa.vercel.app/en" target="_blank" rel="noopener"><b>Bearing resistance of shallow foundations ↗</b><small>Sizing the foundation area in the ultimate limit state – formula, worked examples, calculator</small></a>
+      <a href="https://vedekezesakarossullyedesekellen.vercel.app/en" target="_blank" rel="noopener"><b>Protection against harmful settlement ↗</b><small>Lower contact pressure, deeper foundation level, ground improvement</small></a>
+      <a href="https://kedvezotlen-altalaj.vercel.app/en" target="_blank" rel="noopener"><b>Foundations on unfavourable ground ↗</b><small>Expansive clay, collapsible loess, made ground, organic soil</small></a>
+      <a href="https://sikalapokaterohatasok.vercel.app/en" target="_blank" rel="noopener"><b>External effects on shallow foundations ↗</b><small>Vibration, earthquake, cavities, erosion and frost beneath the footing</small></a>
+      <a href="https://melyalapozasok.vercel.app/en" target="_blank" rel="noopener"><b>Deep foundations ↗</b><small>Piles, diaphragm walls, caissons – when the bearing stratum lies deep</small></a>
+      <a href="https://munkaterhatarolasok.vercel.app/en" target="_blank" rel="noopener"><b>Excavation support ↗</b><small>Strutting, walls, anchoring – the excavation for a deeper foundation level</small></a>
+      <a href="https://bme-alapozas.vercel.app/telek/en" target="_blank" rel="noopener"><b>One site, one semester ↗</b><small>Nine tasks on a single site – you are the geotechnical engineer</small></a>
+      <a href="https://bme-alapozas.vercel.app/ar-labor/en" target="_blank" rel="noopener"><b>Foundation Engineering AR lab ↗</b><small>Bearing failure, pressure bulb, CFA pile and excavation on your own desk</small></a>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -1117,11 +1273,6 @@ main .rag, footer .rag { text-align: left !important; }
     <div>
       <p><b>Stability of shallow foundations</b> – interactive module for the Foundation Engineering course at the BME Faculty of Civil Engineering, according to EN 1997-1 (Eurocode 7) and its Hungarian National Annex.</p>
       <p class="small">The simulators and examples are illustrative models; for design, the standards in force, the National Annex and verified software must be used.</p>
-    </div>
-    <div class="links small">
-      <a href="https://sikalapok-sullyedesszamitasa.vercel.app/en" target="_blank" rel="noopener">Settlement of shallow foundations</a>
-      <a href="https://vedekezesakarossullyedesekellen.vercel.app/en" target="_blank" rel="noopener">Protection against harmful settlement</a>
-      <a href="https://kedvezotlen-altalaj.vercel.app/en" target="_blank" rel="noopener">Foundations on unfavourable ground</a>
     </div>
   </div>
 </footer>
@@ -1134,7 +1285,7 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 const lerp = (a, b, t) => a + (b - a) * t;
-const fmt = (v, d = 0) => { const s = (Math.round(v * 10 ** d) / 10 ** d).toLocaleString('hu-HU', { minimumFractionDigits: d, maximumFractionDigits: d }); return EN ? s.replace(',', '.') : s; };   // angolul is szóközös ezres tagolás, tizedespont
+const fmt = (v, d = 0) => { const s = (Math.round(v * 10 ** d) / 10 ** d).toLocaleString('hu-HU', { minimumFractionDigits: d, maximumFractionDigits: d }); return (EN ? s.replace(',', '.') : s).replace('-', '−'); };   // angolul is szóközös ezres tagolás, tizedespont; valódi mínuszjel
 function H(tag, attrs = {}, html) { const e = document.createElement(tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (html != null) e.innerHTML = html; return e; }
 const css = (name, el = document.documentElement) => getComputedStyle(el).getPropertyValue(name).trim();
 function fillRange(r) { const p = (r.value - r.min) / (r.max - r.min) * 100; r.style.setProperty('--p', p + '%'); }
@@ -1466,6 +1617,8 @@ addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RA
     let best = null; const all = [];
     for (let xc = -4; xc <= LX + 3; xc += 1) for (let yc = 2; yc <= 22; yc += 1.5) for (const dr of [-2, -1, 0, 1.5]) {
       const r = Math.hypot(xc - LX, yc + H) + dr; const res = bishop(xc, yc, r, o); if (!res || res.x1 - res.x0 < 5 || res.F < 0.2) continue;
+      // az alaptestet (B = 0,6 m, alapsík 0,8 m mélyen) metsző köröket kizárjuk – ahogy a kalkulátor és a mintapélda is
+      if (loads.some(L => [L.x - 0.3, L.x, L.x + 0.3].some(x => x > res.x0 && x < res.x1 && yc - Math.sqrt(Math.max(0, r * r - (x - xc) * (x - xc))) > -0.8))) continue;
       if (trials) all.push({ xc, yc, r, F: res.F });
       if (!best || res.F < best.F) best = { xc, yc, r, F: res.F, x0: res.x0, x1: res.x1, slices: res.slices };
     }
@@ -1485,7 +1638,9 @@ addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RA
   const col = () => ({ ink: css('--ink'), ink2: css('--ink2'), mute: css('--mute'), line: css('--line'), card: css('--card'), paper: css('--paper2'), c1: css('--c1'), c2: css('--c2'), c3: css('--c3'), c4: css('--c4'), ok: css('--ok'), bad: css('--bad'), water: css('--water'), soil: css('--soil'), soil2: css('--soil2'), conc: css('--conc'), plum: css('--plum2') });
   function arrow(g, x0, y0, x1, y1, c, w = 4, hd = 12) { const a = Math.atan2(y1 - y0, x1 - x0); g.save(); g.strokeStyle = c; g.fillStyle = c; g.lineWidth = w; g.lineCap = 'round'; g.beginPath(); g.moveTo(x0, y0); g.lineTo(x1 - Math.cos(a) * hd * 0.8, y1 - Math.sin(a) * hd * 0.8); g.stroke(); g.beginPath(); g.moveTo(x1, y1); g.lineTo(x1 - Math.cos(a - 0.45) * hd, y1 - Math.sin(a - 0.45) * hd); g.lineTo(x1 - Math.cos(a + 0.45) * hd, y1 - Math.sin(a + 0.45) * hd); g.closePath(); g.fill(); g.restore(); }
   function hatch(g, x, y, w, h, c1, c2) { g.save(); g.fillStyle = c1; g.fillRect(x, y, w, h); g.beginPath(); g.rect(x, y, w, h); g.clip(); g.strokeStyle = c2; g.lineWidth = 1; g.globalAlpha = 0.35; for (let i = -h; i < w; i += 10) { g.beginPath(); g.moveTo(x + i, y + h); g.lineTo(x + i + h, y); g.stroke(); } g.restore(); }
-  function label(g, t, x, y, c, size = 14, align = 'left', w = 700) { g.save(); g.font = `${w} ${size}px Archivo, sans-serif`; g.fillStyle = c; g.textAlign = align; g.textBaseline = 'middle'; g.fillText(t, x, y); g.restore(); }
+  // keskeny képernyőn a vászon kicsinyítve jelenik meg: a feliratokat ennyivel nagyobbra rajzoljuk, hogy olvashatók maradjanak
+  const boost = (g) => { const cv = g.canvas, cw = cv.clientWidth || 0; if (!cw) return 1; const lw = cv.width / Math.min(2, devicePixelRatio || 1); return clamp(lw / cw * 0.72, 1, 1.85); };
+  function label(g, t, x, y, c, size = 14, align = 'left', w = 700) { g.save(); size = Math.round(size * boost(g) * 10) / 10; g.font = `${w} ${size}px Archivo, sans-serif`; g.fillStyle = c; g.textAlign = align; g.textBaseline = 'middle'; g.fillText(t, x, y); g.restore(); }
 
   // ================= HŐS: négy tönkremenetel =================
   (function hero() {
@@ -1566,8 +1721,9 @@ addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RA
       g.save(); g.translate(sh, 0); g.fillStyle = C.conc; g.beginPath(); g.moveTo(-40, 0); g.lineTo(W + 40, 0); for (let x = W + 40; x >= -40; x -= 14) { const amp = rough ? 10 * Math.sin(x * 0.13) * Math.sin(x * 0.031 + 1) + 6 : 0; g.lineTo(x, 146 + amp); } g.closePath(); g.fill(); g.restore();
       label(g, rough ? 'Cast in situ – rough surface, the grains interlock' : 'Precast – smooth surface, the grains slide', 16, 22, C.ink, 15);
     }
-    const out = () => { const R1 = M.sliding({ phi, precast: false }), R2 = M.sliding({ phi, precast: true }); const R = typ === 'mono' ? R1 : R2;
-      $('#mi_delta').innerHTML = `${fmt(R.delta, 1)}°`; $('#mi_tg').textContent = fmt(Math.tan(R.delta * Math.PI / 180), 3); $('#mi_rd').innerHTML = `${fmt(R.Rd, 0)}<small>kN/m</small>`; const ro = $('#mi_lam'); ro.innerHTML = fmt(R.lam, 2); ro.parentElement.className = 'ro ' + (R.lam <= 1 ? 'ok' : 'bad'); };
+    const H0 = M.sliding({}).Hd;   // a példa vízszintes ereje rögzített (65 kN/m): itt csak a talp alatti súrlódás változik
+    const out = () => { const R1 = M.sliding({ phi, precast: false }), R2 = M.sliding({ phi, precast: true }); const R = typ === 'mono' ? R1 : R2; const lam = H0 / R.Rd;
+      $('#mi_delta').innerHTML = `${fmt(R.delta, 1)}°`; $('#mi_tg').textContent = fmt(Math.tan(R.delta * Math.PI / 180), 3); $('#mi_rd').innerHTML = `${fmt(R.Rd, 0)}<small>kN/m</small>`; const ro = $('#mi_lam'); ro.innerHTML = fmt(lam, 2); ro.parentElement.className = 'ro ' + (lam <= 1 ? 'ok' : 'bad'); };
     seg('mi_typ', (v) => { typ = v; out(); }); bindRange('mi_phi', (v) => { phi = v; out(); }, (v) => v + '°');
     const loop = (now) => { if (vis(cv)) draw(now / 1000); requestAnimationFrame(loop); }; draw(0); requestAnimationFrame(loop);
   })();
@@ -1578,14 +1734,14 @@ addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RA
     const draw = () => { const C = col(); g.clearRect(0, 0, W, Hh); const L = 70, R = W - 30, T = 30, B = Hh - 50; const sx = (v) => L + v / 10 * (R - L), sy = (v) => B - v * (B - T);
       g.strokeStyle = C.line; g.lineWidth = 1; for (const v of [0.5, 0.667, 1]) { g.beginPath(); g.moveTo(L, sy(v)); g.lineTo(R, sy(v)); g.stroke(); }
       g.strokeStyle = C.ink2; g.lineWidth = 1.5; g.beginPath(); g.moveTo(L, T); g.lineTo(L, B); g.lineTo(R, B); g.stroke();
-      label(g, 'E_p / E_{p,max}', L - 8, T - 12, C.ink2, 13, 'left'); label(g, 'displacement / embedment depth (%)', R, B + 30, C.ink2, 13, 'right');
+      const bk = boost(g) > 1.2; label(g, 'E_p / E_{p;max}', bk ? L + 10 : L - 8, bk ? T + 4 : T - 12, C.ink2, 13, 'left'); label(g, 'displacement / embedment depth (%)', R, bk ? B - 18 : B + 30, C.ink2, 13, 'right');
       for (let v = 0; v <= 10; v += 2) label(g, String(v), sx(v), B + 14, C.mute, 12, 'center', 600);
       label(g, '½', L - 14, sy(0.5), C.c1, 14, 'center'); label(g, '⅔', L - 14, sy(0.667), C.c1, 14, 'center'); label(g, '1', L - 14, sy(1), C.mute, 13, 'center');
       const f = (x) => 1 - Math.exp(-x / 1.6);
       g.strokeStyle = C.water; g.lineWidth = 4; g.beginPath(); for (let x = 0; x <= 10; x += 0.1) { const X = sx(x), Y = sy(lost ? 0 : f(x)); x === 0 ? g.moveTo(X, Y) : g.lineTo(X, Y); } g.stroke();
       const v = lost ? 0 : f(u); g.fillStyle = C.water; g.beginPath(); g.arc(sx(u), sy(v), 8, 0, 7); g.fill();
       g.setLineDash([5, 5]); g.strokeStyle = C.water; g.beginPath(); g.moveTo(sx(u), B); g.lineTo(sx(u), sy(v)); g.lineTo(L, sy(v)); g.stroke(); g.setLineDash([]);
-      label(g, lost ? 'the soil in front of the face is gone: Rp = 0' : `mobilised: ${fmt(v * 100, 0)} %`, sx(u) + 14, sy(v) - 14, lost ? C.bad : C.ink, 14);
+      { const tx = lost ? 'the soil in front of the face is gone: R_{p;d} = 0' : `mobilised: ${fmt(v * 100, 0)} %`, low = sy(v) + 22 > B - 8; g.font = `700 ${14 * boost(g)}px Archivo, sans-serif`; const tw = g.measureText(tx).width; label(g, tx, Math.min(sx(u) + 14, R - tw), low ? sy(v) - 22 : sy(v) + 22, lost ? C.bad : C.ink, 14); }
     };
     bindRange('pa_u', (v) => { u = v; draw(); }, (v) => fmt(v, 1) + ' %'); seg('pa_lost', (v) => { lost = v === '1'; draw(); });
     addEventListener('themechange', draw); draw();
@@ -1639,8 +1795,10 @@ addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RA
       const marks = [[104.24, 'MÁSZ (design flood level)', '104.24 mBf ≈ 927 cm', C.bad, true], [103.88, 'June 2013 – record', '103.88 mBf = 891 cm', C.c3, false], [103.57, 'April 2006', '103.57 mBf = 860 cm', C.ink2, false], [103.0, 'groundwater at the bank after 1965', '≈ 103 mBf', C.water, true]];
       let lastY = -99; const xL = xEnd + 22;
       marks.forEach(([v, nm, val, c, dash]) => { const y = sy(v); g.strokeStyle = c; g.lineWidth = 1.8; g.setLineDash(dash ? [5, 4] : []); if (v !== 103.0) { g.beginPath(); g.moveTo(0, y); g.lineTo(xBank - 14, y); g.stroke(); } g.save(); g.globalAlpha = 0.45; g.lineWidth = 1.2; g.beginPath(); g.moveTo(v === 103.0 ? xEnd - 70 : xBank, y); g.lineTo(xEnd + 6, y); g.stroke(); g.restore(); g.setLineDash([]);
-        const ty = Math.max(y, lastY + 38); lastY = ty; g.beginPath(); g.moveTo(xEnd + 6, y); g.lineTo(xL - 6, ty); g.stroke();
-        label(g, nm, xL, ty - 8, c, 12, 'left', 600); label(g, val, xL, ty + 8, c, 14, 'left', 800); });
+        const bk = boost(g), ty = Math.max(y, lastY + 38 * Math.min(bk, 1.6)); lastY = ty; g.beginPath(); g.moveTo(xEnd + 6, y); g.lineTo(xL - 6, ty); g.stroke();
+        // keskeny képernyőn a hosszú megnevezés a rendelkezésre álló szélességhez igazodik
+        const fitSz = (t, sz, wgt) => { g.font = `${wgt} ${sz * bk}px Archivo, sans-serif`; const w = g.measureText(t.replace(/_\{?|\}/g, '')).width; return w > W - xL - 4 ? sz * (W - xL - 4) / w : sz; };
+        label(g, nm, xL, ty - 8 * Math.min(bk, 1.5), c, fitSz(nm, 12, 600), 'left', 600); label(g, val, xL, ty + 8 * Math.min(bk, 1.5), c, fitSz(val, 14, 800), 'left', 800); });
       // mélygarázs
       const gx0 = 470, gx1 = 680, gb = 99.0; g.fillStyle = C.card; g.fillRect(gx0, sy(gs), gx1 - gx0, sy(gb) - sy(gs)); g.strokeStyle = C.ink; g.lineWidth = 3; g.strokeRect(gx0, sy(gs), gx1 - gx0, sy(gb) - sy(gs));
       g.lineWidth = 2; g.beginPath(); g.moveTo(gx0, sy(102)); g.lineTo(gx1, sy(102)); g.stroke();
@@ -1699,61 +1857,61 @@ addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RA
 /* ===== Kvízek, igaz/hamis állítások, osztályozó ===== */
 window.DATA = {
   q1: [
-    { q: 'What kind of limit state is sliding according to EC7?', o: ['EQU – loss of static equilibrium', 'GEO – failure of the ground', 'UPL – uplift', 'STR – structural failure'], a: 1, e: 'Sliding is resisted by the shear strength of the ground (and of the footing–soil interface), so it is a GEO limit state.' },
-    { q: 'What is the friction angle δ<sub>k</sub> for a footing cast in situ?', o: ['⅔·φ′<sub>cv;k</sub>', 'φ′<sub>cv;k</sub>', 'the peak φ′<sub>k</sub>', '0 – only the cohesion counts'], a: 1, e: 'For a footing cast in situ δ = φ′<sub>cv;k</sub>, for a smooth (precast) footing two thirds of it. The critical state angle is used because sliding involves large displacements and post-peak behaviour.' },
-    { q: 'What is the partial factor γ<sub>R;h</sub> in design approach DA-2*?', o: ['1.0', '1.1', '1.4', '1.35'], a: 1, e: 'For sliding γ<sub>R;h</sub> = 1.1 (for bearing resistance γ<sub>R;v</sub> = 1.4).' },
-    { q: 'In the undrained case, what is the upper limit of the shear resistance?', o: ['0.4 · V<sub>d</sub>', '0.6 · V<sub>d</sub>', 'A<sub>c</sub> · c<sub>u;k</sub>, without a limit', 'there is no limit'], a: 0, e: 'Water or air may get between the footing and the soil, so R<sub>d</sub> ≤ 0.4·V<sub>d</sub>. It may only be omitted if suction prevents a gap from forming even where there is no positive contact pressure – this is rare.' },
-    { q: 'Why can usually only one half to two thirds of the passive earth resistance be taken into account?', o: ['because the soil strength is lower than expected', 'because the full passive resistance needs a significant displacement', 'because EC7 forbids the full value', 'because groundwater always reduces it'], a: 1, e: 'The passive resistance is only fully mobilised after significant compression; at the allowable displacement only part of it develops. In addition, erosion, later excavation or shrinkage of the clay may remove it altogether.' },
-    { q: 'Which variable load may be included in V′<sub>k</sub>?', o: ['every variable load', 'only one that surely acts together with H<sub>d</sub>', 'only the wind load', 'traffic on the backfill, always'], a: 1, e: 'The vertical force increases the resistance, so only a variable load that surely acts at the same time as the horizontal force may be counted.' },
+    { q: 'What kind of limit state is sliding according to EC7?', o: ['EQU – loss of static equilibrium', 'UPL – uplift', 'GEO – failure of the ground', 'STR – structural failure'], a: 2, e: 'Sliding is resisted by the shear strength of the ground (and of the footing–soil interface), so it is a GEO limit state.' },
+    { q: 'What is the friction angle δ<sub>k</sub> for a footing cast in situ?', o: ['φ′<sub>cv;k</sub>', '⅔·φ′<sub>cv;k</sub>', 'the peak φ′<sub>k</sub>', '0 – only the cohesion counts'], a: 0, e: 'For a footing cast in situ δ = φ′<sub>cv;k</sub>, for a smooth (precast) footing two thirds of it. The critical state angle is used because sliding involves large displacements and post-peak behaviour.' },
+    { q: 'What is the partial factor γ<sub>R;h</sub> in design approach DA-2*?', o: ['1.0', '1.35', '1.4', '1.1'], a: 3, e: 'For sliding γ<sub>R;h</sub> = 1.1 (for bearing resistance γ<sub>R;v</sub> = 1.4).' },
+    { q: 'In the undrained case, what is the upper limit of the shear resistance?', o: ['0.6 · V<sub>d</sub>', '0.4 · V<sub>d</sub>', 'A<sub>c</sub> · c<sub>u;k</sub>, without a limit', 'there is no limit'], a: 1, e: 'Water or air may get between the footing and the soil, so R<sub>d</sub> ≤ 0.4·V<sub>d</sub>. It may only be omitted if suction prevents a gap from forming even where there is no positive contact pressure – this is rare.' },
+    { q: 'Why can usually only one half to two thirds of the passive earth resistance be taken into account?', o: ['because the soil strength is lower than expected', 'because groundwater always reduces it', 'because EC7 forbids the full value', 'because the full passive resistance needs a significant displacement'], a: 3, e: 'The passive resistance is only fully mobilised after significant compression; at the allowable displacement only part of it develops. In addition, erosion, later excavation or shrinkage of the clay may remove it altogether.' },
+    { q: 'Which variable load may be included in V′<sub>k</sub>?', o: ['every variable load', 'only one that is certain to act together with H<sub>d</sub>', 'only the wind load', 'traffic on the backfill, always'], a: 1, e: 'The vertical force increases the resistance, so only a variable load that is certain to act at the same time as the horizontal force may be counted.' },
   ],
   q2: [
     { q: 'What is the form of the overturning verification?', o: ['M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>', 'H<sub>d</sub> ≤ R<sub>d</sub>', 'V<sub>d</sub> ≤ R<sub>d</sub>', 'e ≤ B/2'], a: 0, e: 'The design value of the destabilising moment must not exceed that of the stabilising moment – both are taken about the same point.' },
-    { q: 'What are the partial factors for EQU (recommended values)?', o: ['γ<sub>G</sub> = 1.35; γ<sub>Q</sub> = 1.5', 'γ<sub>G;dst</sub> = 1.1; γ<sub>G;stb</sub> = 0.9; γ<sub>Q;dst</sub> = 1.5', 'γ<sub>G;dst</sub> = 1.0; γ<sub>G;stb</sub> = 0.9', 'all factors 1.0'], a: 1, e: 'In EQU the destabilising and the stabilising actions get separate factors; a favourable variable load may not be taken into account.' },
-    { q: 'About which point are the moments taken for a footing on soil, as a first approximation?', o: ['about the toe', 'about the centroid of the base', 'about a point at a distance B/10 from the toe', 'about a point B/3 from the toe'], a: 2, e: 'On sound rock about the toe; on soil – because the soil under the toe is pressed in – as a first approximation about a point B/10 from the toe.' },
-    { q: 'What has to be done if e > B/3 (rectangular footing)?', o: ['nothing, if the moment check is satisfied', 'special precautions are needed', 'the base passes automatically', 'the B/10 pivot point must be used'], a: 1, e: 'If e > B/3 (for a circular footing e > 0.6·r) the standard requires special precautions – half of the base no longer “works” then.' },
-    { q: 'According to DA-2*, what is the eccentricity calculated from?', o: ['from the design values of the actions', 'from the characteristic values of the actions', 'from the ground resistance', 'from the wind load only'], a: 1, e: 'In DA-2* the eccentricity is determined from the characteristic actions; the partial factors do not change it.' },
-    { q: 'With one-way eccentricity, at e = B/3, how many times the mean contact pressure is the edge pressure?', o: ['1.5 times', '2-szerese', '4-szerese', 'infinite'], a: 2, e: 'At e = B/3 the compressed length is B/2, the peak of the triangular distribution is 2V/(B/2·L) = 4·V/A – four times the mean.' },
+    { q: 'What are the partial factors for EQU (recommended values)?', o: ['γ<sub>G</sub> = 1.35; γ<sub>Q</sub> = 1.5', 'γ<sub>G;dst</sub> = 1.0; γ<sub>G;stb</sub> = 0.9', 'γ<sub>G;dst</sub> = 1.1; γ<sub>G;stb</sub> = 0.9; γ<sub>Q;dst</sub> = 1.5', 'all factors 1.0'], a: 2, e: 'In EQU the destabilising and the stabilising actions get separate factors; a favourable variable load may not be taken into account.' },
+    { q: 'About which point are the moments taken for a footing on soil, as a first approximation?', o: ['about the toe', 'about a point at a distance B/10 from the toe', 'about the centroid of the base', 'about a point B/3 from the toe'], a: 1, e: 'On sound rock about the toe; on soil – because the soil under the toe is pressed in – as a first approximation about a point B/10 from the toe.' },
+    { q: 'What has to be done if e > B/3 (rectangular footing)?', o: ['nothing, if the moment check is satisfied', 'the B/10 pivot point must be used', 'the base passes automatically', 'special precautions are needed'], a: 3, e: 'If e > B/3 (for a circular footing e > 0.6·r) the standard requires special precautions – half of the base no longer “works” then.' },
+    { q: 'According to DA-2*, what is the eccentricity calculated from?', o: ['from the design values of the actions', 'from the ground resistance', 'from the characteristic values of the actions', 'from the wind load only'], a: 2, e: 'In DA-2* the eccentricity is determined from the characteristic actions; the partial factors do not change it.' },
+    { q: 'With one-way eccentricity, at e = B/3, how many times the mean contact pressure is the edge pressure?', o: ['4-szerese', '2-szerese', '1.5 times', 'infinite'], a: 0, e: 'At e = B/3 the compressed length is B/2, the peak of the triangular distribution is 2V/(B/2·L) = 4·V/A – four times the mean.' },
   ],
   q3: [
     { q: 'What are the factors on the permanent actions in UPL?', o: ['γ<sub>G;dst</sub> = 1.1; γ<sub>G;stb</sub> = 0.9', 'γ<sub>G;dst</sub> = 1.00; γ<sub>G;stb</sub> = 0.90', 'γ<sub>G</sub> = 1.35; γ<sub>G</sub> = 1.0', 'both 1.0'], a: 1, e: 'In UPL the factor on the uplift force is 1.00 and on the self-weight 0.90; on a variable destabilising action 1.50, on a favourable variable one 0.' },
-    { q: 'How is the design value of the uplift force calculated?', o: ['V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub>', 'with the weight of the structure', 'γ<sub>w</sub> · H', 'from the anchor force'], a: 0, e: 'A<sub>k</sub> is the volume submerged below the groundwater level, γ<sub>w</sub> = 10 kN/m³; the uplift force is essentially the resultant of the water pressure acting on the structure.' },
-    { q: 'What is the overall safety against uplift without friction and anchors?', o: ['1.5', '1.35', '1.11', '1.0'], a: 2, e: 'γ<sub>G;dst</sub>/γ<sub>G;stb</sub> = 1.0/0.9 = 1.11 – little, so the water level must be chosen cautiously.' },
-    { q: 'How are the cars parked in an underground car park taken into account?', o: ['as a favourable variable load: with 0', 'as a stabilising permanent load', 'with a factor of 0.9', 'with a factor of 1.5'], a: 0, e: 'The factor on a favourable variable load in UPL is 0 – the verification must be done for the empty car park.' },
-    { q: 'The 30×15 m box is reached by groundwater 1 m higher. By how much does the uplift force increase?', o: ['approx. 450 kN', 'approx. 4500 kN', 'approx. 45 000 kN', 'it does not change'], a: 1, e: '450 m² · 1 m · 10 kN/m³ = 4500 kN – in the example this is +20%.' },
-    { q: 'Which one is NOT a countermeasure against uplift?', o: ['extending the base slab', 'anchoring', 'temporary flooding', 'compacting the soil under the base'], a: 3, e: 'Compaction helps with settlement, not with the uplift force. The four countermeasures: extension, anchoring, dewatering/drainage, temporary flooding.' },
+    { q: 'How is the design value of the uplift force calculated?', o: ['V<sub>dst;d</sub> = γ<sub>G;dst</sub> · γ<sub>w</sub> · h<sub>w</sub> · A<sub>k</sub>', 'with the weight of the structure', 'γ<sub>w</sub> · H', 'from the anchor force'], a: 0, e: 'A<sub>k</sub> is the plan area of the base slab, h<sub>w</sub> is the height of the groundwater level above the underside of the base slab, γ<sub>w</sub> = 10 kN/m³; the uplift force is the resultant of the water pressure acting on the base slab.' },
+    { q: 'What is the global factor of safety against uplift without friction and anchors?', o: ['1.5', '1.35', '1.11', '1.0'], a: 2, e: 'γ<sub>G;dst</sub>/γ<sub>G;stb</sub> = 1.0/0.9 = 1.11 – little, so the water level must be chosen cautiously.' },
+    { q: 'How are the cars parked in an underground car park taken into account?', o: ['with a factor of 1.5', 'as a stabilising permanent load', 'with a factor of 0.9', 'as a favourable variable load: with 0'], a: 3, e: 'The factor on a favourable variable load in UPL is 0 – the verification must be done for the empty car park.' },
+    { q: 'The 30×15 m box is reached by groundwater 1 m higher. By how much does the uplift force increase?', o: ['approx. 450 kN', 'approx. 45 000 kN', 'approx. 4500 kN', 'it does not change'], a: 2, e: '450 m² · 1 m · 10 kN/m³ = 4500 kN – in the example this is +20%.' },
+    { q: 'Which one is NOT a countermeasure against uplift?', o: ['compacting the soil under the base', 'anchoring', 'temporary flooding', 'extending the base slab'], a: 0, e: 'Compaction helps with settlement, not with the uplift force. The four countermeasures: extension, anchoring, dewatering/drainage, temporary flooding.' },
   ],
   q4: [
-    { q: 'When does overall stability have to be checked for a shallow foundation?', o: ['near a slope, an excavation, a retaining wall, a bank or a cavity', 'only for pile foundations', 'only on rock', 'never, if the bearing resistance is adequate'], a: 0, e: 'According to EN 1997-1 6.5.1: on or near a slope, near an excavation or a retaining wall, near a river, canal, lake, reservoir or the sea shore, and near mine workings or underground structures.' },
+    { q: 'When does overall stability have to be checked for a shallow foundation?', o: ['never, if the bearing resistance is adequate', 'only for pile foundations', 'only on rock', 'near a slope, an excavation, a retaining wall, a bank or a cavity'], a: 3, e: 'According to EN 1997-1 6.5.1: on or near a slope, near an excavation or a retaining wall, near a river, canal, lake, reservoir or the sea shore, and near mine workings or underground structures.' },
     { q: 'What is the typical failure pattern?', o: ['a small wedge under the base breaks out', 'the soil mass moves together with the footing, the slip surface runs below the footing', 'the structure overturns', 'the base slides on the foundation level'], a: 1, e: 'Overall stability checks the footing and the surrounding soil mass together – the bearing resistance may be adequate while the slope is not.' },
-    { q: 'What are the factors on actions in DA-3?', o: ['γ<sub>G</sub> = 1.35; γ<sub>Q</sub> = 1.5', 'γ<sub>G</sub> = 1.0; γ<sub>Q</sub> = 1.3', 'γ<sub>G;dst</sub> = 1.1; γ<sub>G;stb</sub> = 0.9', 'both 1.0'], a: 1, e: 'The load of the footing enters as a geotechnical action, with set A2: 1.0 / 1.3; the shear strength is reduced.' },
-    { q: 'What does the partial factor for friction divide?', o: ['the angle φ′ itself', 'the value of tan φ′', 'the weight of the slice', 'the radius of the slip surface'], a: 1, e: 'tan φ′<sub>d</sub> = tan φ′<sub>k</sub> / γ<sub>φ</sub> – for example with φ′<sub>k</sub> = 28° and γ = 1.35, φ′<sub>d</sub> ≈ 21.5°.' },
-    { q: 'What usually governs the stability of slopes?', o: ['the water conditions', 'the temperature', 'the concrete grade of the footing', 'the wind load'], a: 0, e: 'Rainfall, rising groundwater, seepage: the pore water pressure reduces the friction on the slip surface. The loess bank slides in Hungary and the 1972 Hong Kong case were also triggered by water.' },
-    { q: 'The bearing resistance check of the house footing is satisfied. Is overall stability then also certain?', o: ['yes', 'no – the slope may still slide', 'yes, except in clay', 'yes, except in sand'], a: 1, e: 'The bearing resistance checks local failure under the base; overall stability checks the sliding of a larger soil mass. They are two separate verifications.' },
+    { q: 'What are the factors on actions in DA-3?', o: ['γ<sub>G</sub> = 1.0; γ<sub>Q</sub> = 1.3', 'γ<sub>G</sub> = 1.35; γ<sub>Q</sub> = 1.5', 'γ<sub>G;dst</sub> = 1.1; γ<sub>G;stb</sub> = 0.9', 'both 1.0'], a: 0, e: 'The load of the footing enters as a geotechnical action, with set A2: 1.0 / 1.3; the shear strength is reduced.' },
+    { q: 'What does the partial factor for friction divide?', o: ['the angle φ′ itself', 'the value of tan φ′', 'the weight of the slice', 'the radius of the slip surface'], a: 1, e: 'tan φ′<sub>d</sub> = tan φ′<sub>k</sub> / γ<sub>φ</sub> – for example with φ′<sub>k</sub> = 28° and γ<sub>φ</sub> = 1.35, φ′<sub>d</sub> ≈ 21.5°.' },
+    { q: 'What usually governs the stability of slopes?', o: ['the concrete grade of the footing', 'the temperature', 'the water conditions', 'the wind load'], a: 2, e: 'Rainfall, rising groundwater, seepage: the pore water pressure reduces the friction on the slip surface. The loess bank slides in Hungary and the 1972 Hong Kong case were also triggered by water.' },
+    { q: 'The bearing resistance check of the house footing is satisfied. Is overall stability then also certain?', o: ['yes', 'yes, except in sand', 'yes, except in clay', 'no – the slope may still slide'], a: 3, e: 'The bearing resistance checks local failure under the base; overall stability checks the sliding of a larger soil mass. They are two separate verifications.' },
   ],
   q5: [
     { q: 'Which design approach does the Hungarian National Annex prescribe for the bearing resistance and sliding of shallow foundations?', o: ['DA-1', 'DA-2*', 'DA-3', 'allowable stresses'], a: 1, e: 'DA-2*: A1 + M1 + R2. For overall stability DA-3.' },
-    { q: 'What does the asterisk in DA-2* mean?', o: ['the partial factors are applied at the end of the calculation, to the effects of actions', 'a factor of safety of two', 'it is valid for the undrained state only', 'the soil parameters are reduced as well'], a: 0, e: 'The calculation runs with characteristic values (and so does the eccentricity), the factors come at the end.' },
-    { q: 'In set R2, what is the factor on the sliding resistance of a shallow foundation?', o: ['1.0', '1.1', '1.4', '1.5'], a: 1, e: 'γ<sub>R;h</sub> = 1.1; for bearing resistance γ<sub>R;v</sub> = 1.4.' },
-    { q: 'Which set of factors reduces the strength parameters of the soil?', o: ['A2', 'M2', 'R2', 'R3'], a: 1, e: 'M2: dividing tan φ′ and c′ (EN recommendation 1.25, for c<sub>u</sub> 1.4).' },
-    { q: 'Which limit state works independently of the design approach, with its own set of factors?', o: ['GEO – bearing resistance', 'STR', 'UPL', 'GEO – sliding'], a: 2, e: 'EQU, UPL and HYD get their own factors.' },
+    { q: 'What does the asterisk in DA-2* mean?', o: ['the soil parameters are reduced as well', 'a factor of safety of two', 'it is valid for the undrained state only', 'the partial factors are applied at the end of the calculation, to the effects of actions'], a: 3, e: 'The calculation runs with characteristic values (and so does the eccentricity), the factors come at the end.' },
+    { q: 'In set R2, what is the factor on the sliding resistance of a shallow foundation?', o: ['1.0', '1.4', '1.1', '1.5'], a: 2, e: 'γ<sub>R;h</sub> = 1.1; for bearing resistance γ<sub>R;v</sub> = 1.4.' },
+    { q: 'Which set of factors reduces the strength parameters of the soil?', o: ['M2', 'A2', 'R2', 'R3'], a: 0, e: 'M2: dividing tan φ′ and c′ (EN recommendation 1.25, for c<sub>u</sub> 1.4).' },
+    { q: 'Which limit state works independently of the design approach, with its own set of factors?', o: ['GEO – bearing resistance', 'STR', 'GEO – sliding', 'UPL'], a: 3, e: 'EQU, UPL and HYD get their own factors.' },
   ],
 
   q6: [
     { q: 'What replaces the design approaches (DA1–DA3) in the new EC7?', o: ['verification cases (VC1–VC4) and MFA / RFA', 'a single global factor of safety', 'allowable stresses', 'numerical modelling only'], a: 0, e: 'The limit states remain, the assignment of factors changes: verification cases and a material or resistance factor approach.' },
     { q: 'Which verification case covers static equilibrium and uplift?', o: ['VC1', 'VC2', 'VC3', 'VC4'], a: 1, e: 'VC2: static equilibrium, uplift (the old EQU, UPL).' },
-    { q: 'What does MFA mean?', o: ['the resistance is divided by γ<sub>R</sub>', 'the strength parameters of the soil are reduced by factors', 'no factors are used at all', 'a load test is carried out'], a: 1, e: 'Material Factor Approach: tan φ′ and c′ reduced by a factor. RFA reduces the resistance (≈ 1.4 for bearing, 1.1 for sliding).' },
-    { q: 'Where does overall stability go in the new suite of standards?', o: ['EN 1997-3, Clause 4: slopes, cuttings, embankments', 'EN 1990', 'EN 1992', 'it disappears as a separate check'], a: 0, e: 'Clause 4 of EN 1997-3 explicitly covers footings on or near a slope as well.' },
-    { q: 'When must the conflicting first-generation standards be withdrawn?', o: ['30 March 2026', '30 September 2027', '30 March 2028', '31 December 2030'], a: 2, e: 'The deadline for national implementation is 30 September 2027, and for withdrawal of the old standards 30 March 2028.' },
+    { q: 'What does MFA mean?', o: ['the resistance is divided by γ<sub>R</sub>', 'a load test is carried out', 'no factors are used at all', 'the strength parameters of the soil are reduced by factors'], a: 3, e: 'Material Factor Approach: tan φ′ and c′ reduced by a factor. RFA reduces the resistance (≈ 1.4 for bearing, 1.1 for sliding).' },
+    { q: 'Where does overall stability go in the new suite of standards?', o: ['EN 1992', 'EN 1990', 'EN 1997-3, Clause 4: slopes, cuttings, embankments', 'it disappears as a separate check'], a: 2, e: 'Clause 4 of EN 1997-3 explicitly covers footings on or near a slope as well.' },
+    { q: 'When must the conflicting first-generation standards be withdrawn?', o: ['30 March 2028', '30 September 2027', '30 March 2026', '31 December 2030'], a: 0, e: 'The deadline for national implementation is 30 September 2027, and for withdrawal of the old standards 30 March 2028.' },
   ],
   sorter: [
     { s: 'A tall billboard on a small footing, in a storm', a: 1, e: 'Large eccentricity: M<sub>dst;d</sub> ≤ M<sub>stb;d</sub> and e ≤ B/3 are the question.' },
     { s: 'An empty underground rainwater tank, high groundwater table', a: 2, e: 'The uplift force may overcome the self-weight (UPL).' },
-    { s: 'A cantilever wall with a smooth precast base, high earth pressure', a: 0, e: 'δ = ⅔·φ′<sub>cv</sub> – the friction under the base may be too little.' },
+    { s: 'A cantilever wall with a smooth precast base, high earth pressure', a: 0, e: 'δ<sub>k</sub> = ⅔·φ′<sub>cv;k</sub> – the friction under the base may be too little.' },
     { s: 'A family house two metres from the edge of a loess bluff', a: 3, e: 'The slip surface may pass under the house too: overall stability.' },
     { s: 'A pedestrian underpass near the Danube, during a flood', a: 2, e: 'A long-lasting flood is followed by the groundwater – UPL.' },
     { s: 'A bridge abutment footing with earth pressure from the backfill, on saturated clay, in the short term', a: 0, e: 'Undrained sliding: R<sub>d</sub> = A<sub>c</sub>·c<sub>u;k</sub>/1.1 ≤ 0.4·V<sub>d</sub>.' },
     { s: 'A circular shallow foundation of a wind turbine', a: 1, e: 'For a circular footing, special precautions are needed if e > 0.6·r.' },
-    { s: 'Footings of a hall at the edge of a planned deep excavation', a: 3, e: 'Near the excavation the soil mass may slide together with the footings.' },
+    { s: 'Footings of an industrial building at the edge of a planned deep excavation', a: 3, e: 'Near the excavation the soil mass may slide together with the footings.' },
   ],
   tf: [
     { s: 'The stability of a shallow foundation must be verified for four separate limit states.', t: true, e: 'Sliding, overturning, uplift and overall stability – each one separately.' },
@@ -1763,7 +1921,7 @@ window.DATA = {
     { s: 'For drained sliding, the effective cohesion should generally be ignored.', t: true, e: 'The adhesion depends strongly on the water content and the consistency.' },
     { s: 'In the undrained case R<sub>d</sub> may be at most 0.4·V<sub>d</sub>.', t: true, e: 'A gap may open, and water or air may get under the footing.' },
     { s: 'The full passive earth resistance develops at small displacements already.', t: false, e: 'It needs significant compression – this is why only one half to two thirds may be counted.' },
-    { s: 'A later utility trench may remove the passive resistance in front of the footing.', t: true, e: 'This is why it is only counted on if it will surely remain.' },
+    { s: 'A later utility trench may remove the passive resistance in front of the footing.', t: true, e: 'This is why it is only counted on if it is certain to remain.' },
     { s: 'Sliding must be checked for both the short-term and the long-term state.', t: true, e: 'For both the undrained (c<sub>u</sub>) and the drained (φ′) state.' },
     { s: 'A shear key always improves the safety against sliding.', t: false, e: 'With a shallow key, if the active pressure on it is also counted, the safety may even get worse – it helps most in strong soil and with a smooth base.' },
     { s: 'The overturning verification is M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>.', t: true, e: 'Both are calculated from the design values of the actions.' },
@@ -1775,12 +1933,12 @@ window.DATA = {
     { s: 'According to DA-2*, the eccentricity is calculated from the design actions.', t: false, e: 'From the characteristic actions; the factors do not change it.' },
     { s: 'Earlier Hungarian practice required e ≤ B/6.', t: true, e: 'The resultant had to stay within the kern.' },
     { s: 'Under a permanent overturning action (e.g. earth pressure) lift-off of the base is less favourable than under short-term wind.', t: true, e: 'Under a permanent eccentric load the footing may gradually tilt.' },
-    { s: 'For a circular footing the radius of the kern is r/4.', t: true, e: 'According to EC7, a circular footing needs special precautions if e > 0.6·r.' },
+    { s: 'For a circular footing the radius of the kern is r/4.', t: true, e: 'If e ≤ r/4 the whole base is in compression; special precautions are needed only above e > 0.6·r.' },
     { s: 'In UPL the factor on the uplift force is 1.1.', t: false, e: '1.00 – 1.1 is the EQU value.' },
     { s: 'When checking uplift, the parked cars may be counted as a stabilising load.', t: false, e: 'Favourable variable load: γ<sub>Q;stb</sub> = 0.' },
-    { s: 'Without R<sub>d</sub>, the overall safety against uplift is only 1.11.', t: true, e: '1.0 / 0.9 = 1.11.' },
+    { s: 'Without R<sub>d</sub>, the global factor of safety against uplift is only 1.11.', t: true, e: '1.0 / 0.9 = 1.11.' },
     { s: 'In the uplift check, the groundwater level may be treated as a geometrical datum, with a safety margin.', t: true, e: 'The design value is the characteristic level + a margin (the standard also allows factoring the water pressure).' },
-    { s: 'When the base slab is extended, no uplift force acts on the projecting part.', t: false, e: 'The uplift force acts on the whole slab – but the soil resting on the toe adds load.' },
+    { s: 'When the base slab is extended, no uplift force acts on the projecting part.', t: false, e: 'The uplift force acts on the whole slab – but the soil resting on the projection adds load.' },
     { s: 'Lowering the groundwater is only acceptable with a reliable, monitored system.', t: true, e: 'The pump may stop, the filter may clog – then the full uplift force returns.' },
     { s: 'As regards uplift, the state during construction is often less favourable than the final state.', t: true, e: 'There is no slab or cover yet; this is why the Kossuth Square excavation was flooded in 2013.' },
     { s: 'A 30×15 m box, 6 m deep, under 5 m of water pressure gets an uplift force of about 22 500 kN.', t: true, e: '450 m² · 5 m · 10 kN/m³.' },
@@ -1793,7 +1951,7 @@ window.DATA = {
     { s: 'The water conditions usually govern the stability of slopes.', t: true, e: 'Pore water pressure reduces the friction on the slip surface.' },
     { s: 'If the bearing resistance check is satisfied, overall stability is guaranteed.', t: false, e: 'The bearing resistance may be adequate while the slope is not.' },
     { s: 'According to the Hungarian National Annex, design approach DA-2* is used for shallow foundations.', t: true, e: 'DA-2* (A1 + M1 + R2) for bearing resistance and sliding; DA-3 for overall stability.' },
-    { s: 'In DA-2* the eccentricity is calculated from the design (factored) loads.', t: false, e: 'From the characteristic actions; the partial factors are applied at the end, to the effects of actions.' },
+    { s: 'In DA-3 the partial factor divides the resistance, and the strength parameters of the ground are unchanged.', t: false, e: 'The other way round: tan φ′ and c′ are divided (M2), and the resistance factor (R3) is 1.0.' },
     { s: 'The EQU, UPL and HYD limit states work with their own set of partial factors.', t: true, e: 'Independently of the design approach (EN 1997-1, Annex A).' },
     { s: 'For hydraulic heave (HYD) the factor on an unfavourable permanent action is 1.1.', t: false, e: 'HYD: γ<sub>G;dst</sub> = 1.35, γ<sub>G;stb</sub> = 0.90, γ<sub>Q;dst</sub> = 1.50.' },
   ],
@@ -1885,7 +2043,7 @@ window.DATA = {
     if (hf > D) R.info.push('The top of the footing is above ground level.');
     if (char && Uk > 0) R.info.push(`The groundwater is above the base: the resultant of the water pressure acting on the base has been deducted from V′<sub>k</sub> (U<sub>k</sub> = ${u_(Uk, 1, un)}).`);
     if (p.water && p.dw < 0) R.warn.push('The groundwater level is above ground level.');
-    if (char && p.qWith && p.Qk > 0) R.info.push('A variable vertical load may only be included in V′<sub>k</sub> if it surely acts together with the horizontal force.');
+    if (char && p.qWith && p.Qk > 0) R.info.push('A variable vertical load may only be included in V′<sub>k</sub> if it is certain to act together with the horizontal force.');
     if (nu > 0) R.warn.push('Passive resistance may only be taken into account if the soil in front of the face will remain permanently (erosion, a utility trench or separation due to shrinkage can be ruled out).');
     if (nu > 0 && (p.phiP < 15 || p.phiP > 45)) R.warn.push(`Unusual φ′<sub>k</sub> = ${u_(p.phiP, 0, '°')} in front of the face.`);
     if (Math.abs(e) > B / 3 && isFinite(e)) R.warn.push(`Large eccentricity: e = ${u_(e, 2, 'm')} > B/3 – special precautions are needed (see the Overturning tab).`);
@@ -1906,7 +2064,7 @@ window.DATA = {
       if (Uk > 0) b += fl(sb('U', 'k'), 'γ<sub>w</sub> · (D − d<sub>w</sub>) · A', `10 · ${F(D - zw, 2)} · ${F(A, 2)}`, u_(Uk, 1, un));
       b += fl(sb('V', 'k'), `G<sub>k</sub>${p.qWith ? ' + Q<sub>k</sub>' : ''}${p.selfw ? ' + W<sub>b</sub> + W<sub>t</sub>' : ''}`, u_(Vk, 1, un));
       b += fl(Vks, `V<sub>k</sub> − U<sub>k</sub>`, u_(Vke, 1, un));
-      b += `<p class="cx-c">The variable vertical load (Q<sub>k</sub> = ${u_(p.Qk, 1, un)}) ${p.qWith ? 'surely acts together with the horizontal force, so it has been taken into account.' : 'does not surely act together with the horizontal force, so it is not included in V′<sub>k</sub>.'}</p>`;
+      b += `<p class="cx-c">The variable vertical load (Q<sub>k</sub> = ${u_(p.Qk, 1, un)}) ${p.qWith ? 'is certain to act together with the horizontal force, so it has been taken into account.' : 'is not certain to act together with the horizontal force, so it is not included in V′<sub>k</sub>.'}</p>`;
       S.push({ t: 'Characteristic value of the vertical force', b });
       S.push({ t: 'Design value of the horizontal force (A1: γ<sub>G</sub> = 1.35; γ<sub>Q</sub> = 1.5)', b: fl(sb('H', 'd'), 'γ<sub>G</sub> · H<sub>G;k</sub> + γ<sub>Q</sub> · H<sub>Q;k</sub>', `1.35 · ${F(p.HGk, 1)} + 1.5 · ${F(p.HQk, 1)}`, u_(Hd, 1, un)) });
       S.push({ t: `Eccentricity from characteristic actions (${DA2})`, b: fl('e', 'H<sub>k</sub> · h<sub>H</sub> / V<sub>k</sub>', `${F(Hk, 1)} · ${F(p.hH, 2)} / ${F(Vk, 1)}`, u_(e, 3, 'm')) + fl('B′', 'B − 2e', `${F(B, 2)} − 2 · ${F(Math.abs(e), 3)}`, u_(Bp, 3, 'm')) + (strip ? '' : fl('L′', 'L', u_(Lp, 2, 'm'))) + fl(sb('A', 'c'), strip ? 'B′ · 1 m' : 'B′ · L′', u_(Ac, 3, strip ? 'm²/m' : 'm²')) });
@@ -2109,7 +2267,7 @@ window.DATA = {
     else g += fl(sb('G', 'str;k') + ' (given)', u_(Gs, 0, 'kN'));
     if (Gcov) g += fl(sb('G', 'soil;k') + ' (cover)', `${F(Ar, 2)} · Σγ·Δz (t = ${u_(p.tc, 2, 'm')})`, u_(Gcov, 0, 'kN'));
     if (Gwt) g += fl('water on the roof slab', u_(Gwt, 0, 'kN'));
-    if (Grim) g += fl(sb('G', 'toe;k'), `${F(Arim, 2)} · Σγ·Δz`, u_(Grim, 0, 'kN')) + `<p class="cx-c">The soil resting on the extended toe (γ above the water, γ<sub>sat</sub> below it).</p>`;
+    if (Grim) g += fl(sb('G', 'toe;k'), `${F(Arim, 2)} · Σγ·Δz`, u_(Grim, 0, 'kN')) + `<p class="cx-c">The soil resting on the projection (γ above the water, γ<sub>sat</sub> below it).</p>`;
     if (Gbal) g += fl('ballast water', `10 · ${F(p.hb, 2)} · ${F(Ai, 2)}`, u_(Gbal, 0, 'kN'));
     if (p.Gadd > 0) g += fl('other permanent', u_(p.Gadd, 0, 'kN'));
     g += fl(sb('G', 'stb;d'), `γ<sub>G;stb</sub> · ΣG<sub>k</sub>`, `0.9 · ${F(Gsum, 0)}`, u_(Gstb, 0, 'kN'));
@@ -2234,7 +2392,7 @@ window.DATA = {
     Object.assign(v, { m, sr, crit, critF, F0, Fd, lam, phid, cd, ms, und, phid2: und ? 0 : deg(Math.atan(Math.tan(rad(p.phi2)) / p.gm)), cd2: und ? p.cu2 / p.gcu : p.c2 / p.gm });
     // figyelmeztetések
     if (!und && (p.phi < 10 || p.phi > 42)) R.warn.push(`Unusual φ′<sub>k</sub> = ${u_(p.phi, 1, '°')}.`);
-    if (!und && p.c > 60) R.warn.push(`High effective cohesion (c′<sub>k</sub> = ${u_(p.c, 0, 'kPa')}) – it may greatly overestimate the safety of the slope.`);
+    if (!und && p.c > 60) R.warn.push(`High effective cohesion (c′<sub>k</sub> = ${u_(p.c, 0, 'kPa')}) – the analysis may therefore greatly overestimate the safety of the slope.`);
     if (und && p.water !== 'none') R.info.push('In an undrained (total stress) analysis the pore water pressure does not appear separately – the effect of water is contained in the value of c<sub>u</sub>.');
     if (!und && p.water === 'ru' && (p.ru < 0 || p.ru > 0.6)) R.warn.push(`Unusual pore pressure ratio: r<sub>u</sub> = ${F(p.ru, 2)}.`);
     if (p.n < 1) R.warn.push('Slope steeper than 1 : 1 – check whether a circular slip surface is realistic.');
@@ -2251,9 +2409,9 @@ window.DATA = {
     const S = R.steps;
     S.push({ t: `Design strength parameters (${DA3}, M2)`, b: und ? fl(sb('c', 'u;d'), `c<sub>u;k</sub> / γ<sub>cu</sub>`, `${F(p.cu, 1)} / ${F(p.gcu, 2)}`, u_(cd, 2, 'kPa')) + (p.lay2 ? fl(sb('c', 'u;d;2'), `${F(p.cu2, 1)} / ${F(p.gcu, 2)}`, u_(v.cd2, 2, 'kPa')) : '') : fl(`tan${NB}φ′<sub>d</sub>`, `tan${NB}φ′<sub>k</sub> / γ<sub>φ′</sub>`, `tan${NB}${F(p.phi, 1)}° / ${F(p.gm, 2)}`, `${F(Math.tan(rad(p.phi)) / p.gm, 4)} → φ′<sub>d</sub> = ${u_(phid, 2, '°')}`) + fl(sb('c′', 'd'), `c′<sub>k</sub> / γ<sub>c′</sub>`, `${F(p.c, 1)} / ${F(p.gm, 2)}`, u_(cd, 2, 'kPa')) + (p.lay2 ? fl('Layer 2: φ′<sub>d</sub>', u_(v.phid2, 2, '°')) + fl(sb('c′', 'd'), u_(v.cd2, 2, 'kPa')) : '') });
     if (m.loads.length) S.push({ t: 'Load of the footings (γ<sub>G</sub> = 1.0; γ<sub>Q</sub> = 1.3)', b: m.loads.map((l, i) => fl(`Strip footing ${i + 1}: q<sub>d</sub>`, `(1.0 · G<sub>k</sub> + 1.3 · Q<sub>k</sub>) / B`, `(${F(l.G, 1)} + 1.3 · ${F(l.Q, 1)}) / ${F(l.B, 2)}`, u_(l.q, 1, 'kPa')) + `<p class="cx-c">${nw(`${F(l.Pd, 1)}${NB}kN/m`)} between ${nw(u_(l.a, 2, 'm'))}–${nw(u_(l.a + l.B, 2, 'm'))} from the crest, ${nw(u_(l.Df, 2, 'm'))} deep.</p>`).join('') });
-    S.push({ t: 'Slip surface search', b: `<p class="cx-c">A grid of ${sr.nx} × ${sr.ny} centres; for each centre, circles passing through the toe of the slope and touching ${sr.nx ? (p.fine ? 22 : 14) : 0} different depths, then refinement by pattern search. ${nw(sb('n', 'slices') + ' = ' + m.ns)}. Computing time: ${nw(F(ms, 0) + NB + 'ms')}.</p>` + `<div class="cx-fl nw">critical circle: O(${F(crit.xc, 2)}; ${F(crit.yc, 2)})${NB}m, r = ${u_(crit.R, 2, 'm')}</div><div class="cx-fl nw">entry: ${u_(-crit.x0, 2, 'm')} behind the crest</div><div class="cx-fl nw">exit: ${Math.abs(crit.x1 - m.LX) < 0.05 ? 'at the toe of the slope' : crit.x1 > m.LX ? u_(crit.x1 - m.LX, 2, 'm') + ' in front of the toe' : 'on the slope, ' + u_(m.H + m.ground(crit.x1), 2, 'm') + ' above the toe'}</div><p class="cx-c">The origin of the coordinates is the crest; x is positive towards the toe, y upwards.</p>` });
+    S.push({ t: 'Slip surface search', b: `<p class="cx-c">A grid of ${sr.nx} × ${sr.ny} centres; for each centre, circles passing through the toe of the slope and touching ${sr.nx ? (p.fine ? 22 : 14) : 0} different depths (plus 2 more per footing), then refinement by pattern search. ${nw(sb('n', 'slices') + ' = ' + m.ns)}. Computing time: ${nw(F(ms, 0) + NB + 'ms')}.</p>` + `<div class="cx-fl nw">critical circle: O(${F(crit.xc, 2)}; ${F(crit.yc, 2)})${NB}m, r = ${u_(crit.R, 2, 'm')}</div><div class="cx-fl nw">entry: ${u_(-crit.x0, 2, 'm')} behind the crest</div><div class="cx-fl nw">exit: ${Math.abs(crit.x1 - m.LX) < 0.05 ? 'at the toe of the slope' : crit.x1 > m.LX ? u_(crit.x1 - m.LX, 2, 'm') + ' in front of the toe' : 'on the slope, ' + u_(m.H + m.ground(crit.x1), 2, 'm') + ' above the toe'}</div><p class="cx-c">The origin of the coordinates is the crest; x is positive towards the toe, y upwards.</p>` });
     S.push({ t: 'Simplified Bishop method', b: fl(sb('F', 'd'), `Σ [c<sub>d</sub>·b + (W + P − u·b)·tan${NB}φ<sub>d</sub>] / m<sub>α</sub> / Σ (W + P)·sin${NB}α`) + fl(sb('m', 'α'), `cos${NB}α + sin${NB}α · tan${NB}φ<sub>d</sub> / F<sub>d</sub>`) + sliceTable(crit, m) + fl(sb('F', 'd'), `${F(crit.num, 1)} / ${F(crit.den, 1)}`, `<b>${F(Fd, 3)}</b>`) });
-    S.push({ t: 'Verification', b: fl('Λ', `1 / F<sub>d</sub>`, `1 / ${F(Fd, 3)}`, `<b>${F(lam, 3)}</b>`) + `<p class="cx-c">${Fd >= 1 - 1e-9 ? nw('F<sub>d</sub> ≥ 1.0') + ' → overall stability is satisfied.' : nw('F<sub>d</sub> < 1.0') + ' → not satisfied.'}${F0 ? ' Without the load of the footings: ' + nw('F<sub>d</sub> = ' + F(F0, 3)) + '.' : ''}</p>` });
+    S.push({ t: 'Verification', b: fl('Λ', `1 / F<sub>d</sub>`, `1 / ${F(Fd, 4)}`, `<b>${F(lam, 3)}</b>`) + `<p class="cx-c">${Fd >= 1 - 1e-9 ? nw('F<sub>d</sub> ≥ 1.0') + ' → overall stability is satisfied.' : nw('F<sub>d</sub> < 1.0') + ' → not satisfied.'}${F0 ? ' Without the load of the footings: ' + nw('F<sub>d</sub> = ' + F(F0, 3)) + '.' : ''}</p>` });
     return R;
   }
   function sliceTable(c, m) {
@@ -2287,25 +2445,48 @@ window.DATA = {
   const r1 = (v) => Math.round(v * 10) / 10, PTS = (pts) => pts.map(p => r1(p[0]) + ',' + r1(p[1])).join(' ');
   function Sv(W, H) {
     const id = 'cv' + (++SVGID), o = [], k = W < 480 ? 0.86 : W < 640 ? 0.93 : 1;
-    const S = { W, H, id, o, k, add: (s) => o.push(s),
-      line: (x1, y1, x2, y2, c, ex = '') => o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="${c}" ${ex}/>`),
-      poly: (pts, c, ex = '') => o.push(`<polygon points="${PTS(pts)}" class="${c}" ${ex}/>`),
-      pl: (pts, c, ex = '') => o.push(`<polyline points="${PTS(pts)}" class="${c}" ${ex}/>`),
+    // Feliratelhelyező: minden vonal, nyíl, méretvonal és körvonal akadály; a feliratok a kirajzolás végén kerülnek a helyükre,
+    // és ha vonalba vagy másik feliratba lógnának, a legközelebbi szabad helyre csúsznak (a méretszöveg a méretvonala mentén).
+    const obs = [], txt = [], NOOBS = /cv-(soil|soild|water|rock|hatch|concp|mass|gc|upl|pbox|cz|ac|inner|ball|pres\b|pass|plate|wsym)/;
+    const seg = (x1, y1, x2, y2) => { if (isFinite(x1 + y1 + x2 + y2)) obs.push([x1, y1, x2, y2]); };
+    const ring = (pts) => { for (let i = 0; i < pts.length; i++) { const a = pts[i], b = pts[(i + 1) % pts.length]; seg(a[0], a[1], b[0], b[1]); } };
+    const S = { W, H, id, o, k, add: (s) => o.push(s), seg, ring,
+      line: (x1, y1, x2, y2, c, ex = '') => (seg(x1, y1, x2, y2), o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="${c}" ${ex}/>`)),
+      poly: (pts, c, ex = '') => { if (!NOOBS.test(c)) ring(pts); o.push(`<polygon points="${PTS(pts)}" class="${c}" ${ex}/>`); },
+      pl: (pts, c, ex = '') => { for (let i = 1; i < pts.length; i++) seg(pts[i - 1][0], pts[i - 1][1], pts[i][0], pts[i][1]); o.push(`<polyline points="${PTS(pts)}" class="${c}" ${ex}/>`); },
       path: (d, c, ex = '') => o.push(`<path d="${d}" class="${c}" ${ex}/>`),
-      rect: (x, y, w, h, c, ex = '') => o.push(`<rect x="${r1(Math.min(x, x + w))}" y="${r1(Math.min(y, y + h))}" width="${r1(Math.abs(w))}" height="${r1(Math.abs(h))}" class="${c}" ${ex}/>`),
-      circ: (x, y, rr, c, ex = '') => o.push(`<circle cx="${r1(x)}" cy="${r1(y)}" r="${r1(rr)}" class="${c}" ${ex}/>`),
-      text: (x, y, s, c = '', a = 'start', fs = 13, ex = '') => { fs = Math.round(fs * k * 10) / 10; const w = tw(s, fs); let xx = x; if (a === 'start') xx = Math.min(Math.max(x, 4), W - 4 - w); else if (a === 'end') xx = Math.max(Math.min(x, W - 4), 4 + w); else xx = Math.min(Math.max(x, 4 + w / 2), W - 4 - w / 2); o.push(`<text x="${r1(xx)}" y="${r1(y)}" class="cv-t ${c}" text-anchor="${a}" font-size="${fs}" ${ex}>${rich(s, fs)}</text>`); return { x: xx, w }; },
-      textR: (x, y, s, c = '', fs = 12) => (fs = Math.round(fs * k * 10) / 10, o.push(`<text x="${r1(x)}" y="${r1(y)}" class="cv-t ${c}" text-anchor="middle" font-size="${fs}" transform="rotate(-90 ${r1(x)} ${r1(y)})">${rich(s, fs)}</text>`)),
-      arrow: (x1, y1, x2, y2, c, w = 2.6, hd = 11) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 3) return; const ux = (x2 - x1) / L, uy = (y2 - y1) / L, h = Math.min(hd, L * 0.7), bx = x2 - ux * h, by = y2 - uy * h, px = -uy * h * 0.42, py = ux * h * 0.42; o.push(`<g class="cv-ar ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(bx + ux)}" y2="${r1(by + uy)}" stroke-width="${w}"/><polygon points="${PTS([[x2, y2], [bx + px, by + py], [bx - px, by - py]])}"/></g>`); },
-      dim: (x1, y1, x2, y2, s, c = '', fs = 12) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 4) return; const ux = (x2 - x1) / L, uy = (y2 - y1) / L, t = 4; o.push(`<g class="cv-dim ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}"/><line x1="${r1(x1 - t * (ux - uy))}" y1="${r1(y1 - t * (uy + ux))}" x2="${r1(x1 + t * (ux - uy))}" y2="${r1(y1 + t * (uy + ux))}"/><line x1="${r1(x2 - t * (ux - uy))}" y1="${r1(y2 - t * (uy + ux))}" x2="${r1(x2 + t * (ux - uy))}" y2="${r1(y2 + t * (uy + ux))}"/></g>`); const mx = (x1 + x2) / 2, my = (y1 + y2) / 2; if (Math.abs(ux) > 0.7) S.text(mx, my - 5, s, 'cv-dt ' + c, 'middle', fs); else S.textR(mx - 5, my, s, 'cv-dt ' + c, fs); },
-      ext: (x1, y1, x2, y2) => o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="cv-ext"/>`),
-      svg: (cls = '', label = '') => `<svg class="cv ${cls}" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${esc(label)}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-gs0"/><stop offset="1" class="cv-gs1"/></linearGradient><linearGradient id="${id}g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-g2s0"/><stop offset="1" class="cv-g2s1"/></linearGradient><pattern id="${id}d" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".9" class="cv-dot"/><circle cx="7" cy="8" r=".75" class="cv-dot"/><circle cx="8" cy="1.5" r=".55" class="cv-dot"/></pattern><pattern id="${id}h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="cv-hl"/></pattern><pattern id="${id}c" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".8" class="cv-cdot"/><path d="M9 9l2 -1l.6 1.8z" class="cv-cdot"/></pattern></defs>${o.join('')}</svg>`,
+      rect: (x, y, w, h, c, ex = '') => { if (!NOOBS.test(c)) ring([[x, y], [x + w, y], [x + w, y + h], [x, y + h]]); o.push(`<rect x="${r1(Math.min(x, x + w))}" y="${r1(Math.min(y, y + h))}" width="${r1(Math.abs(w))}" height="${r1(Math.abs(h))}" class="${c}" ${ex}/>`); },
+      circ: (x, y, rr, c, ex = '') => { if (!NOOBS.test(c)) { const n = rr > 12 ? 24 : 8, q = []; for (let i = 0; i < n; i++) q.push([x + rr * Math.cos(i / n * 6.2832), y + rr * Math.sin(i / n * 6.2832)]); ring(q); } o.push(`<circle cx="${r1(x)}" cy="${r1(y)}" r="${r1(rr)}" class="${c}" ${ex}/>`); },
+      text: (x, y, s, c = '', a = 'start', fs = 13, ex = '') => { fs = Math.round(fs * k * 10) / 10; const w = tw(s, fs); let xx = x; if (a === 'start') xx = Math.min(Math.max(x, 4), W - 4 - w); else if (a === 'end') xx = Math.max(Math.min(x, W - 4), 4 + w); else xx = Math.min(Math.max(x, 4 + w / 2), W - 4 - w / 2); const t = { x: xx, y, s, c, a, fs, ex, w, rot: false, along: null }; txt.push(t); o.push(t); return t; },
+      textR: (x, y, s, c = '', fs = 12) => { fs = Math.round(fs * k * 10) / 10; const t = { x, y, s, c, a: 'middle', fs, ex: '', w: tw(s, fs), rot: true, along: null }; txt.push(t); o.push(t); return t; },
+      arrow: (x1, y1, x2, y2, c, w = 2.6, hd = 11) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 3) return; seg(x1, y1, x2, y2); const ux = (x2 - x1) / L, uy = (y2 - y1) / L, h = Math.min(hd, L * 0.7), bx = x2 - ux * h, by = y2 - uy * h, px = -uy * h * 0.42, py = ux * h * 0.42; o.push(`<g class="cv-ar ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(bx + ux)}" y2="${r1(by + uy)}" stroke-width="${w}"/><polygon points="${PTS([[x2, y2], [bx + px, by + py], [bx - px, by - py]])}"/></g>`); },
+      dim: (x1, y1, x2, y2, s, c = '', fs = 12) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 4) return; const ux = (x2 - x1) / L, uy = (y2 - y1) / L, t = 4; o.push(`<g class="cv-dim ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}"/><line x1="${r1(x1 - t * (ux - uy))}" y1="${r1(y1 - t * (uy + ux))}" x2="${r1(x1 + t * (ux - uy))}" y2="${r1(y1 + t * (uy + ux))}"/><line x1="${r1(x2 - t * (ux - uy))}" y1="${r1(y2 - t * (uy + ux))}" x2="${r1(x2 + t * (ux - uy))}" y2="${r1(y2 + t * (uy + ux))}"/></g>`); seg(x1, y1, x2, y2); seg(x1 - 5, y1 - 5, x1 + 5, y1 + 5); seg(x2 - 5, y2 - 5, x2 + 5, y2 + 5); const mx = (x1 + x2) / 2, my = (y1 + y2) / 2; const lb = Math.abs(ux) > 0.7 ? S.text(mx, my - 5, s, 'cv-dt ' + c, 'middle', fs) : S.textR(mx - 5, my, s, 'cv-dt ' + c, fs); lb.along = [ux, uy, L]; },
+      ext: (x1, y1, x2, y2) => (seg(x1, y1, x2, y2), o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="cv-ext"/>`)),
+      svg: (cls = '', label = '') => (place(), `<svg class="cv ${cls}" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${esc(label)}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-gs0"/><stop offset="1" class="cv-gs1"/></linearGradient><linearGradient id="${id}g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-g2s0"/><stop offset="1" class="cv-g2s1"/></linearGradient><pattern id="${id}d" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".9" class="cv-dot"/><circle cx="7" cy="8" r=".75" class="cv-dot"/><circle cx="8" cy="1.5" r=".55" class="cv-dot"/></pattern><pattern id="${id}h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="cv-hl"/></pattern><pattern id="${id}c" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".8" class="cv-cdot"/><path d="M9 9l2 -1l.6 1.8z" class="cv-cdot"/></pattern></defs>${o.filter(q => typeof q === 'string').join('')}${txt.map(tsvg).join('')}</svg>`),
     };
+    const tsvg = (t) => t.rot ? `<text x="${r1(t.x)}" y="${r1(t.y)}" class="cv-t ${t.c}" text-anchor="middle" font-size="${t.fs}" transform="rotate(-90 ${r1(t.x)} ${r1(t.y)})">${rich(t.s, t.fs)}</text>` : `<text x="${r1(t.x)}" y="${r1(t.y)}" class="cv-t ${t.c}" text-anchor="${t.a}" font-size="${t.fs}" ${t.ex}>${rich(t.s, t.fs)}</text>`;
+    const box = (t, dx = 0, dy = 0) => { const sub = /_\{/.test(t.s) ? 0.2 * t.fs : 0, up = 0.74 * t.fs, dn = 0.16 * t.fs + sub;
+      if (t.rot) return [t.x + dx - up, t.y + dy - t.w / 2, t.x + dx + dn, t.y + dy + t.w / 2];
+      const x0 = t.a === 'start' ? t.x : t.a === 'end' ? t.x - t.w : t.x - t.w / 2; return [x0 + dx, t.y + dy - up, x0 + dx + t.w, t.y + dy + dn]; };
+    const hitSeg = (b, q) => { let t0 = 0, t1 = 1; const dx = q[2] - q[0], dy = q[3] - q[1]; const P = [-dx, dx, -dy, dy], Q = [q[0] - b[0], b[2] - q[0], q[1] - b[1], b[3] - q[1]];
+      for (let i = 0; i < 4; i++) { if (Math.abs(P[i]) < 1e-9) { if (Q[i] < 0) return false; } else { const r = Q[i] / P[i]; if (P[i] < 0) { if (r > t1) return false; if (r > t0) t0 = r; } else { if (r < t0) return false; if (r < t1) t1 = r; } } } return t1 - t0 > 1e-6 || (dx === 0 && dy === 0); };
+    const cost = (t, dx, dy, done) => { const b = box(t, dx, dy); if (b[0] < 3 || b[2] > W - 3 || b[1] < 3 || b[3] > H - 2) return 99; let n = 0; const bi = [b[0] + 1, b[1] + 1, b[2] - 1, b[3] - 1];
+      for (const q of obs) if (hitSeg(bi, q)) n++; for (const d of done) { const e = box(d); if (b[0] < e[2] + 2 && e[0] < b[2] + 2 && b[1] < e[3] + 1 && e[1] < b[3] + 1) n += 3; } return n; };
+    function place() { const done = []; const R = [6, 10, 14, 18, 24, 30, 38, 46, 56, 70];
+      for (const t of txt) { if (/cv-(hd|msg)/.test(t.c) || t.fixed) { done.push(t); continue; }
+        let best = [0, 0], bc = cost(t, 0, 0, done);
+        if (bc > 0) { const cand = [];
+          if (t.along) { const [ux, uy, L] = t.along, lim = Math.max(0, L / 2 - t.w / 2 - 4); for (const r of R) if (r <= lim) cand.push([ux * r, uy * r], [-ux * r, -uy * r]); }
+          const grid = []; for (const dx of [0, 8, -8, 16, -16, 26, -26, 40, -40, 58, -58]) for (const dy of [0, -7, 7, -12, 12, -18, 18, -26, 26, -36, 36, -48, 48]) if (dx || dy) grid.push([dx, dy]);
+          grid.sort((a, b) => Math.hypot(a[0] * 0.8, a[1]) - Math.hypot(b[0] * 0.8, b[1])); cand.push(...grid);
+          for (const [dx, dy] of cand) { const c2 = cost(t, dx, dy, done) + Math.hypot(dx, dy) * 0.004; if (c2 < bc - 0.5) { bc = c2; best = [dx, dy]; if (c2 < 0.5) break; } } }
+        if (G_.CVDBG) G_.CVDBG.push([t.s, box(t).map(Math.round), bc, best, obs.filter(q => hitSeg(box(t, best[0], best[1]), q)).map(q => q.map(Math.round))]);
+        t.x += best[0]; t.y += best[1]; done.push(t); } }
     S.soil = (pts, lay2) => { S.poly(pts, 'cv-soil', `fill="url(#${id}${lay2 ? 'g2' : 'g'})"`); S.poly(pts, 'cv-soild', `fill="url(#${id}d)"`); };
     S.conc = (pts) => { S.poly(pts, 'cv-conc'); S.poly(pts, 'cv-concp', `fill="url(#${id}c)"`); };
     S.hatch = (pts) => S.poly(pts, 'cv-hatch', `fill="url(#${id}h)"`);
-    S.gh = (x1, x2, y, step = 9, up = false) => { let d = ''; for (let x = x1 + 3; x < x2 - 2; x += step) d += `M${r1(x)} ${r1(y)}l${-5} ${up ? -5 : 5}`; if (d) o.push(`<path d="${d}" class="cv-gh"/>`); };
-    S.water = (x, y, lab) => { o.push(`<g class="cv-wsym"><polygon points="${PTS([[x, y - 1], [x - 6, y - 10], [x + 6, y - 10]])}"/><line x1="${r1(x - 6)}" y1="${r1(y + 4)}" x2="${r1(x + 6)}" y2="${r1(y + 4)}"/><line x1="${r1(x - 3.5)}" y1="${r1(y + 8)}" x2="${r1(x + 3.5)}" y2="${r1(y + 8)}"/></g>`); if (lab) S.text(x + 10, y - 4, lab, 'cv-wt', 'start', 12); };
+    S.gh = (x1, x2, y, step = 9, up = false) => { let d = ''; for (let x = x1 + 3; x < x2 - 2; x += step) d += `M${r1(x)} ${r1(y)}l${-5} ${up ? -5 : 5}`; if (d) { o.push(`<path d="${d}" class="cv-gh"/>`); seg(x1, y + (up ? -4 : 4), x2, y + (up ? -4 : 4)); } };
+    S.water = (x, y, lab) => { o.push(`<g class="cv-wsym"><polygon points="${PTS([[x, y - 1], [x - 6, y - 10], [x + 6, y - 10]])}"/><line x1="${r1(x - 6)}" y1="${r1(y + 4)}" x2="${r1(x + 6)}" y2="${r1(y + 4)}"/><line x1="${r1(x - 3.5)}" y1="${r1(y + 8)}" x2="${r1(x + 3.5)}" y2="${r1(y + 8)}"/></g>`); ring([[x - 7, y - 11], [x + 7, y - 11], [x + 7, y + 9], [x - 7, y + 9]]); if (lab) S.text(x + 13, y + 15, lab, 'cv-wt', 'start', 12); };
     S.brk = (x1, x2, y) => { const m = (x1 + x2) / 2, k = Math.min(8, (x2 - x1) / 5); o.push(`<polyline points="${PTS([[x1 - 4, y], [m - k, y], [m - k / 2, y - k], [m + k / 2, y + k], [m + k, y], [x2 + 4, y]])}" class="cv-brk"/>`); };
     return S;
   }
@@ -2342,7 +2523,7 @@ window.DATA = {
       const f = v.dr ? v.epD : v.epU, emax = Math.max(1e-6, f(v.z2), f(v.z1)), kx = Math.max(0.7, 0.55 * (ext.x1 - B / 2)) / emax; const pts = [];
       for (let i = 0; i <= 24; i++) { const z = v.z1 + v.hp * i / 24; pts.push([X(B / 2 + f(z) * kx), Y(-z)]); }
       S.poly([[X(B / 2), Y(-v.z1)], ...pts, [X(B / 2), Y(-v.z2)]], 'cv-pass');
-      S.line(X(B / 2), Y(-D), X(B / 2 + wedge), Y(0), 'cv-wedge'); S.text(X(B / 2 + wedge * 0.62) + 6, Y(-D * 0.38) , 'passive wedge', 'cv-mt', 'start', 11);
+      S.line(X(B / 2), Y(-D), X(B / 2 + wedge), Y(0), 'cv-wedge'); S.text(X(B / 2 + wedge * 0.62) + 10, Y(-D * 0.38) + 13, 'passive wedge', 'cv-mt', 'start', 11);
       const zp = v.dr ? v.zpD : v.zpU, Rp = v.dr ? v.RpD : v.RpU, xs = X(B / 2 + f(zp) * kx) + 34;
       S.arrow(xs, Y(-zp), X(B / 2) + 2, Y(-zp), 'cv-res', 2.6);
       S.text(xs + 4, Y(-zp) + 4, `R_{p;d} = ${u_(Rp, 1, v.un)}`, 'cv-rt', 'start', 12);
@@ -2369,7 +2550,7 @@ window.DATA = {
     // méretvonalak
     const showD = (k) => !opt.dims || opt.dims.includes(k);
     const yd = Math.min(H - 10, yR + 8); if (showD('B')) { S.ext(X(-B / 2), Y(-D) + 3, X(-B / 2), yd + 4); S.ext(X(B / 2), Y(-D) + 3, X(B / 2), yd + 4); S.dim(X(-B / 2), yd, X(B / 2), yd, `B = ${u_(B, 2, 'm')}`); }
-    if (D > 0 && showD('D')) { const xdd = Math.max(X(L0) + 16, X(-B / 2) - 18); S.ext(X(-B / 2) - 2, Y(-D), xdd - 4, Y(-D)); S.dim(xdd, Y(0), xdd, Y(-D), `D = ${u_(D, 2, 'm')}`); }
+    if (D > 0 && showD('D')) { const xArr = v.Hd > 0 && yH < 0 && yH > -D ? X(xH) - len(v.Hd) - 16 : Infinity; const xdd = Math.max(X(L0) + 16, Math.min(X(-B / 2) - 18, xArr)); S.ext(X(-B / 2) - 2, Y(-D), xdd - 4, Y(-D)); S.dim(xdd, Y(0), xdd, Y(-D), `D = ${u_(D, 2, 'm')}`); }
     if (v.char && p.hH > 0 && v.Hd > 0 && showD('h')) { const xs0 = X(xH) - len(v.Hd) - 2, xh = Math.min(xs0, X(-B / 2)) - 40; if (xh > 24) { S.ext(xh - 4, Y(yH), xs0, Y(yH)); S.ext(xh - 4, Y(-D), X(-B / 2) - 2, Y(-D)); S.dim(xh, Y(-D), xh, Y(yH), `h_{H} = ${u_(p.hH, 2, 'm')}`, 'cv-dimh'); } }
     // fejléc
     // alaprajz (pilléralap, drénezetlen: nyomott felület)
@@ -2409,7 +2590,7 @@ window.DATA = {
       S.poly([[X(-B / 2), yB], ...pts, [X(B / 2), yB]], 'cv-pres'); S.pl(pts, 'cv-presl');
       const sR = sg(B / 2), sL = sg(-B / 2), right = sR >= sL; S.text(X(right ? B / 2 : -B / 2) + (right ? 6 : -6), yB + Math.max(sR, sL) * ks - 2, `σ_{max} = ${u_(Math.max(sR, sL), 1, 'kPa')}`, 'cv-prt', right ? 'start' : 'end', 12);
       if (ct.full) S.text(X(right ? -B / 2 : B / 2) + (right ? -6 : 6), yB + Math.min(sR, sL) * ks + 12, `σ_{min} = ${u_(Math.min(sR, sL), 1, 'kPa')}`, 'cv-prt', right ? 'end' : 'start', 11);
-      else { const x0 = Math.abs(ct.b) > 1e-12 ? -ct.a / ct.b : 0; const xe = right ? -B / 2 : B / 2; S.line(X(xe), yB + 3, X(x0), yB + 3, 'cv-lift'); S.text((X(xe) + X(x0)) / 2, yB + 17, 'lifts off', 'cv-lt', 'middle', 11); }
+      else { const x0 = Math.abs(ct.b) > 1e-12 ? -ct.a / ct.b : 0; const xe = right ? -B / 2 : B / 2; S.line(X(xe), yB + 3, X(x0), yB + 3, 'cv-lift'); S.text(X(xe) + (right ? -6 : 6), yB + 15, 'lifts off', 'cv-lt', right ? 'end' : 'start', 11); }
     }
     // alaptest + oszlop
     const ytop = yb0 + hmax;
@@ -2420,7 +2601,7 @@ window.DATA = {
     const g = v.gov, sgn = circ ? Math.sign(g.nx) || 1 : (g.nx ? Math.sign(g.nx) : 1), xp = (circ ? g.dp * (g.nx || 1) : (g.nx ? g.nx * g.dp : g.dp));
     const xP = circ ? g.dp * Math.sign(g.nx || 1) : xp;
     S.circ(X(xP), yB, 5.5, 'cv-piv'); S.text(X(xP) + (sgn > 0 ? -8 : 8), yB - 9, 'pivot point', 'cv-pvt', sgn > 0 ? 'end' : 'start', 11);
-    if (v.fp > 0) { const xe = sgn * B / 2; S.dim(X(xe), yB - 22, X(xP), yB - 22, circ ? 'D/10' : 'B/10', 'cv-dimp', 10.5); }
+    if (v.fp > 0) { const xe = sgn * B / 2, thin = yB - Y(yft) < 40, near = yft < 0 && Y(yft) - Y(0) < 32, yq = thin ? (near ? Y(0) - 12 : Y(yft) - 9) : yB - 22; if (thin) { S.ext(X(xP), yB - 7, X(xP), yq - 3); } S.dim(X(xe), yq, X(xP), yq, circ ? 'D/10' : 'B/10', 'cv-dimp', 10.5); }
     // erők
     const fArrow = (H0, h, lab) => { if (!H0 || !isFinite(h)) return; const y = Y(yb0 + h), dir = Math.sign(H0), l = Math.min(0.22 * sw, 34 + Math.abs(H0) / Math.max(1, v.Vk) * 0.9 * sw); const x2 = X(xg - dir * bp / 2) - dir * 2; S.arrow(x2 - dir * l, y, x2, y, 'cv-act', 3); S.text(x2 - dir * (l + 6), y + 4, lab, 'cv-at', dir > 0 ? 'end' : 'start', 12.5); };
     fArrow(p.HQk, p.hQ, `H_{Q;k} = ${u_(p.HQk, 1, 'kN')}`); fArrow(p.HGk, p.hG, `H_{G;k} = ${u_(p.HGk, 1, 'kN')}`);
@@ -2481,12 +2662,13 @@ window.DATA = {
     const hole = [[-B / 2 + tw, yb + tb], [-B / 2 + tw, yt - tr], [B / 2 - tw, yt - tr], [B / 2 - tw, yb + tb]];
     S.path('M' + shell.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z M' + hole.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z', 'cv-conc', 'fill-rule="evenodd"');
     S.path('M' + shell.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z M' + hole.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z', 'cv-concp', `fill-rule="evenodd" fill="url(#${S.id}c)"`);
+    S.ring(shell.map(q => [X(q[0]), Y(q[1])])); S.ring(hole.map(q => [X(q[0]), Y(q[1])]));
     for (let i = 1; i <= ni; i++) { const y = yb + tb + (Hb - tb - tr) * i / (ni + 1); S.conc([[-B / 2 + tw, y - ti / 2], [B / 2 - tw, y - ti / 2], [B / 2 - tw, y + ti / 2], [-B / 2 + tw, y + ti / 2]].map(q => [X(q[0]), Y(q[1])])); }
     if (!geom) S.text(X(0), Y((yb + yt) / 2), `G_{str;k} = ${u_(v.Gs, 0, 'kN')}`, 'cv-pt', 'middle', 13);
     // felhajtóerő
     if (v.hw > 0) { const pu = GW * v.hw, hp = Math.min(up * 0.85, 0.4 + pu / 80) * T.s, y0 = Y(yb); S.rect(X(-Bo / 2), y0, X(Bo / 2) - X(-Bo / 2), hp, 'cv-upl');
       const na = Math.max(3, Math.min(9, Math.round((X(Bo / 2) - X(-Bo / 2)) / 46))); for (let i = 0; i < na; i++) { const x = X(-Bo / 2) + (i + 0.5) * (X(Bo / 2) - X(-Bo / 2)) / na; S.arrow(x, y0 + hp, x, y0 + 2, 'cv-wat', 2.2, 8); }
-      S.text(X(Bo / 2) + 8, y0 + hp / 2 + 4, `γ_{w}·h_{w} = ${u_(pu, 1, 'kPa')}`, 'cv-wt', 'start', 12); S.text(X(0), y0 + hp + 16, `V_{dst;d} = ${u_(v.Vdst, 0, 'kN')}`, 'cv-wt cv-bold', 'middle', 13); }
+      S.text(X(Bo / 2) + 8, y0 + hp / 2 + 4, `γ_{w}·h_{w} = ${u_(pu, 1, 'kPa')}`, 'cv-wt', 'start', 12); if (v.n > 0) S.text(X(Bo / 2) + 8, y0 + hp + 22, `V_{dst;d} = ${u_(v.Vdst, 0, 'kN')}`, 'cv-wt cv-bold', 'start', 13); else S.text(X(0), y0 + hp + 16, `V_{dst;d} = ${u_(v.Vdst, 0, 'kN')}`, 'cv-wt cv-bold', 'middle', 13); }
     // horgonyok
     if (v.n > 0) { const nv = Math.min(v.n, 9), al = anc * T.s; for (let i = 0; i < nv; i++) { const x = X(-Bo / 2 + 0.5) + (nv === 1 ? (X(Bo / 2 - 0.5) - X(-Bo / 2 + 0.5)) / 2 : i * (X(Bo / 2 - 0.5) - X(-Bo / 2 + 0.5)) / (nv - 1)); S.line(x, Y(yb), x, Y(yb) + al, 'cv-anc'); S.rect(x - 3.5, Y(yb) + al * 0.55, 7, al * 0.45, 'cv-ancb'); }
       S.text(X(-Bo / 2) - 6, Y(yb) + al * 0.8, `${v.n} × P_{d;1} = ${u_(v.Pd, 0, 'kN')}`, 'cv-rt', 'end', 12); }
@@ -2547,7 +2729,7 @@ window.DATA = {
     S.text(X(LX * 0.5) + 10, Y(-Hh * 0.5) - 8, `1 : ${F(m.n, 2)}`, 'cv-mt', 'start', 12);
     if (ls[0]) { const l = ls.reduce((a, b) => (b.a < a.a ? b : a)), hh = Math.min(2.6, Math.max(1.6, 0.25 * Hh)), yy = Y(hh + 1.9) - 6; if (X(0) - X(l.x1) > 6) { S.ext(X(l.x1), Y(-l.Df), X(l.x1), yy - 4); S.ext(X(0), Y(0), X(0), yy - 4); S.dim(X(l.x1), yy, X(0), yy, `a = ${u_(l.a, 2, 'm')}`, '', 11); } }
     // színskála
-    const lx = 14, ly = H - 36; if (W > 420) { for (let i = 0; i < 30; i++) S.rect(lx + i * 4, ly, 4.2, 7, 'cv-gc', `style="fill:${fcol(0.85 + 0.75 * i / 29)}"`); S.text(lx, ly + 22, '0.85', 'cv-mt', 'start', 10); S.text(lx + 60, ly + 22, '1.2', 'cv-mt', 'middle', 10); S.text(lx + 120, ly + 22, '≥ 1.6', 'cv-mt', 'end', 10); }
+    const lx = 18, yh = Y(m.yBot), ly = (yh > H - 62 && yh < H - 4) ? yh - 44 : H - 40; if (W > 420) { S.add(`<rect x="${lx - 8}" y="${r1(ly - 9)}" width="137" height="40" rx="7" class="cv-plate"/>`); S.ring([[lx - 8, ly - 9], [lx + 129, ly - 9], [lx + 129, ly + 31], [lx - 8, ly + 31]]); for (let i = 0; i < 30; i++) S.rect(lx + i * 4, ly, 4.2, 7, 'cv-gc', `style="fill:${fcol(0.85 + 0.75 * i / 29)}"`); S.text(lx, ly + 22, 'F = 0.85', 'cv-mt', 'start', 10).fixed = 1; S.text(lx + 68, ly + 22, '1.2', 'cv-mt', 'middle', 10).fixed = 1; S.text(lx + 120, ly + 22, '≥ 1.6', 'cv-mt', 'end', 10).fixed = 1; }
     return S.svg('cv-so', 'Overall stability: slope with the critical slip surface');
   }
   const DRAW = { sliding: dSliding, overturn: dOverturn, uplift: dUplift, slope: dSlope };
@@ -2568,7 +2750,7 @@ window.DATA = {
         s_('load', 'Input', [['char', 'Characteristic loads'], ['design', 'Design values']]),
         n_('Gk', 'G<sub>k</sub>', 'permanent vertical load', uL, 0, 20000, 5, [0, 1500], 1, { show: s => s.load === 'char' }),
         n_('Qk', 'Q<sub>k</sub>', 'variable vertical load', uL, 0, 20000, 5, [0, 600], 1, { show: s => s.load === 'char' }),
-        c_('qWith', 'Q<sub>k</sub> surely acts together with the horizontal force', { show: s => s.load === 'char' }),
+        c_('qWith', 'Q<sub>k</sub> is certain to act together with the horizontal force', { show: s => s.load === 'char' }),
         n_('HGk', 'H<sub>G;k</sub>', 'permanent horizontal (e.g. earth pressure)', uL, 0, 10000, 1, [0, 400], 1, { show: s => s.load === 'char' }),
         n_('HQk', 'H<sub>Q;k</sub>', 'variable horizontal (e.g. wind, braking)', uL, 0, 10000, 1, [0, 300], 1, { show: s => s.load === 'char' }),
         n_('hH', 'h<sub>H</sub>', 'lever arm of the horizontal force above the base', 'm', 0, 20, 0.05, [0, 6], 2, { show: s => s.load === 'char' }),
@@ -2821,7 +3003,7 @@ window.DATA = {
   // ---------------- a kilenc példa ----------------
   const EX = [
     { id: 'mp1', sub: 'GEO · drained', n: 'WE1', k: 'k1', title: 'Sliding in the drained state – strip footing cast in situ', short: 'Drained sliding', tags: ['GEO', DA2, 'drained'],
-      task: `<p>Check the safety against sliding of the strip footing cast in situ shown in the figure in the drained (long-term) state! The loads per metre: ${nw(Vk + ' = 280 kN/m')} – the characteristic value of the vertical force that surely acts together with ${Hd}; ${nw(Hd + ' = 90 kN/m')} – the design value of the horizontal force, including the active earth pressure. The critical state friction angle of the ground is ${nw(phicv + ' = 32°')}. Passive resistance is not taken into account.</p>`,
+      task: `<p>Check the safety against sliding of the strip footing cast in situ shown in the figure in the drained (long-term) state. The loads per metre: ${nw(Vk + ' = 280 kN/m')} – the characteristic value of the vertical force that is certain to act together with ${Hd}; ${nw(Hd + ' = 90 kN/m')} – the design value of the horizontal force, including the active earth pressure. The critical state friction angle of the ground is ${nw(phicv + ' = 32°')}. Passive resistance is not taken into account.</p>`,
       data: [[Vk, '280 kN/m'], [Hd, '90 kN/m'], [phicv, '32°'], ['construction', 'cast in situ'], [gRh, '1.1']],
       fig: { p: 'mp1', dims: [], cap: 'Strip footing cast in situ: friction develops within the soil, δ<sub>k</sub> = φ′<sub>cv;k</sub>.' },
       steps: [
@@ -2833,7 +3015,7 @@ window.DATA = {
       open: [{ p: 'mp1', l: 'Open in the calculator' }] },
 
     { id: 'mp2', sub: 'GEO · δ = ⅔·φ′', n: 'WE2', k: 'k1', title: 'Cast in situ or precast? – drained sliding', short: 'Cast in situ or precast', tags: ['GEO', DA2, 'δ = ⅔·φ′'],
-      task: `<p>The footing of the previous example now carries a greater horizontal force: ${nw(Hd + ' = 105 kN/m')} (${nw(Vk + ' = 280 kN/m')}, ${nw(phicv + ' = 32°')}). Check the safety against sliding for <b>a)</b> a footing cast in situ and <b>b)</b> a precast footing with a smooth surface!</p>`,
+      task: `<p>The footing of the previous example now carries a greater horizontal force: ${nw(Hd + ' = 105 kN/m')} (${nw(Vk + ' = 280 kN/m')}, ${nw(phicv + ' = 32°')}). Check the safety against sliding for <b>a)</b> a footing cast in situ and <b>b)</b> a precast footing with a smooth surface.</p>`,
       data: [[Vk, '280 kN/m'], [Hd, '105 kN/m'], [phicv, '32°'], [gRh, '1.1']],
       fig: { p: 'mp2b', dims: [], cap: 'Variant b): for a smooth precast base the friction angle is only ⅔·φ′<sub>cv;k</sub>.' },
       steps: [
@@ -2845,7 +3027,7 @@ window.DATA = {
       open: [{ p: 'mp2a', l: 'open a)' }, { p: 'mp2b', l: 'open b)' }] },
 
     { id: 'mp3', sub: 'GEO · undrained', n: 'WE3', k: 'k1', title: 'Sliding in the undrained state – the 0.4·V<sub>d</sub> limit', short: 'Undrained, 0.4·V<sub>d</sub>', tags: ['GEO', DA2, 'undrained'],
-      task: `<p>Check the safety against sliding of the ${nw('2.0 × 3.0 m')} pad footing in the undrained (short-term) state! The whole base is in compression: ${nw('A<sub>c</sub> = 6.0 m²')}. The undrained shear strength at the base is ${nw('c<sub>u;k</sub> = 60 kPa')}. The design values of the loads: ${nw('V<sub>d</sub> = 700 kN')}, ${nw(Hd + ' = 250 kN')}.</p>`,
+      task: `<p>Check the safety against sliding of the ${nw('2.0 × 3.0 m')} pad footing in the undrained (short-term) state. The whole base is in compression: ${nw('A<sub>c</sub> = 6.0 m²')}. The undrained shear strength at the base is ${nw('c<sub>u;k</sub> = 60 kPa')}. The design values of the loads: ${nw('V<sub>d</sub> = 700 kN')}, ${nw(Hd + ' = 250 kN')}.</p>`,
       data: [['B × L', '2.0 × 3.0 m'], ['A<sub>c</sub>', '6.0 m²'], ['c<sub>u;k</sub>', '60 kPa'], ['V<sub>d</sub>', '700 kN'], [Hd, '250 kN']],
       fig: { p: 'mp3', dims: ['B'], cap: 'In the undrained state the shear on the area in compression resists; in plan the area in compression is A<sub>c</sub>.' },
       steps: [
@@ -2857,7 +3039,7 @@ window.DATA = {
       open: [{ p: 'mp3', l: 'Open in the calculator' }] },
 
     { id: 'mp4', sub: 'GEO · R<sub>p;d</sub>', n: 'WE4', k: 'k1', title: 'Sliding with passive resistance', short: 'With passive resistance', tags: ['GEO', DA2, 'γ<sub>R;e</sub> = 1.4'],
-      task: `<p>The strip footing cast in situ carries ${nw(Vk + ' = 250 kN/m')} and ${nw(Hd + ' = 140 kN/m')}; ${nw(phicv + ' = 30°')}. The base is ${nw('D = 1.5 m')} deep, the soil in front of the face has ${nw('γ = 18 kN/m³')}, ${nw('φ′<sub>k</sub> = 30°')}. Check sliding <b>a)</b> without passive resistance, and <b>b)</b> taking into account half of the full passive earth resistance (${nw('γ<sub>R;e</sub> = 1.4')})!</p>`,
+      task: `<p>The strip footing cast in situ carries ${nw(Vk + ' = 250 kN/m')} and ${nw(Hd + ' = 140 kN/m')}; ${nw(phicv + ' = 30°')}. The base is ${nw('D = 1.5 m')} deep, the soil in front of the face has ${nw('γ = 18 kN/m³')}, ${nw('φ′<sub>k</sub> = 30°')}. Check sliding <b>a)</b> without passive resistance, and <b>b)</b> taking into account half of the full passive earth resistance (${nw('γ<sub>R;e</sub> = 1.4')}).</p>`,
       data: [[Vk, '250 kN/m'], [Hd, '140 kN/m'], [phicv, '30°'], ['D', '1.5 m'], ['γ (in front of the face)', '18 kN/m³'], ['φ′<sub>k</sub> (in front of the face)', '30°'], ['share taken into account', '½']],
       fig: { p: 'mp4b', dims: ['D'], cap: 'The passive resistance develops on the side (face) opposite to the horizontal force, and acts against it.' },
       steps: [
@@ -2872,7 +3054,7 @@ window.DATA = {
       open: [{ p: 'mp4a', l: 'open a)' }, { p: 'mp4b', l: 'open b)' }] },
 
     { id: 'mp5', sub: 'EQU · pivot point', n: 'WE5', k: 'k2', title: 'Checking overturning (EQU)', short: 'Overturning, B/10', tags: ['EQU', 'γ<sub>G;stb</sub> = 0.9', 'γ<sub>Q;dst</sub> = 1.5'],
-      task: `<p>A tall, slender structure (e.g. a billboard) stands on a square footing on soil with side ${nw('B = 2.4 m')}. The combined weight of the structure and the footing is ${nw('G<sub>k</sub> = 400 kN')} (concentric), and the wind load ${nw('H<sub>k</sub> = 60 kN')} (variable action) acts at a height of ${nw('h = 4.0 m')} above the base. Check the safety against overturning in the EQU limit state!</p>`,
+      task: `<p>A tall, slender structure (e.g. a billboard) stands on a square footing on soil with side ${nw('B = 2.4 m')}. The combined weight of the structure and the footing is ${nw('G<sub>k</sub> = 400 kN')} (concentric), and the wind load ${nw('H<sub>k</sub> = 60 kN')} (variable action) acts at a height of ${nw('h = 4.0 m')} above the base. Check the safety against overturning in the EQU limit state.</p>`,
       data: [['B × B', '2.4 × 2.4 m'], ['G<sub>k</sub>', '400 kN'], ['H<sub>k</sub> (variable)', '60 kN'], ['h', '4.0 m'], ['γ<sub>G;stb</sub>', '0.9'], ['γ<sub>Q;dst</sub>', '1.5']],
       fig: { p: 'mp5a', cap: 'On soil the pivot point is not at the toe but at a distance B/10 from it.' },
       steps: [
@@ -2885,14 +3067,14 @@ window.DATA = {
       open: [{ p: 'mp5a', l: 'open B = 2.4 m' }, { p: 'mp5b', l: 'B = 2.6 m' }, { p: 'mp5c', l: 'on rock' }] },
 
     { id: 'mp6', sub: DA2 + ' · e ≤ B/3', n: 'WE6', k: 'k2', title: 'Limiting the eccentricity, and the contact pressure', short: 'Eccentricity, edge pressure', tags: ['GEO', DA2, 'characteristic'],
-      task: `<p>The ${nw('B × L = 2.4 × 2.4 m')} footing carries a vertical force ${nw('V<sub>k</sub> = 500 kN')} and a horizontal force acting at a height of ${nw('h = 3.0 m')} above the base. According to ${DA2}, the eccentricity is calculated from the <b>characteristic</b> values of the actions. Determine and assess the eccentricity, and calculate the contact pressures for <b>a)</b> ${nw('H<sub>k</sub> = 50 kN')} and <b>b)</b> ${nw('H<sub>k</sub> = 100 kN')}!</p>`,
+      task: `<p>The ${nw('B × L = 2.4 × 2.4 m')} footing carries a vertical force ${nw('V<sub>k</sub> = 500 kN')} and a horizontal force acting at a height of ${nw('h = 3.0 m')} above the base. According to ${DA2}, the eccentricity is calculated from the <b>characteristic</b> values of the actions. Determine and assess the eccentricity, and calculate the contact pressures for <b>a)</b> ${nw('H<sub>k</sub> = 50 kN')} and <b>b)</b> ${nw('H<sub>k</sub> = 100 kN')}.</p>`,
       data: [['B × L', '2.4 × 2.4 m'], ['V<sub>k</sub>', '500 kN'], ['h', '3.0 m'], ['H<sub>k</sub>', 'a) 50 kN · b) 100 kN']],
       fig: { p: 'mp6b', cap: 'Case b): the resultant passes through the base outside the kern but within the B/3 limit – part of the base lifts off.' },
       steps: [
         { t: 'a) H<sub>k</sub> = 50 kN – within the kern', r: 'e = 0.30 m', b: `${fl('M<sub>k</sub>', '50 · 3.0', u_(150, 0, 'kNm'))}${fl('e', 'M<sub>k</sub> / V<sub>k</sub>', '150 / 500', u_(0.30, 2, 'm'))}<p>${nw('B/6 = 0.40 m')} → ${nw('e < B/6')}: the resultant is within the kern, the whole base is in compression (the earlier, stricter Hungarian requirement is also met).</p>` },
         { t: 'a) Trapezoidal contact pressure', r: 'σ<sub>max</sub> = 151.9 kPa', b: `${fl('σ<sub>max/min</sub>', 'V<sub>k</sub> / (B · L) · (1 ± 6e/B)', '86.8 · (1 ± 0.75)')}${fl('σ<sub>max</sub>', u_(151.9, 1, 'kPa'))}${fl('σ<sub>min</sub>', u_(21.7, 1, 'kPa'))}` },
         { t: 'b) H<sub>k</sub> = 100 kN – outside the kern, within the limit', r: 'e = 0.60 m', b: `${fl('M<sub>k</sub>', '100 · 3.0', u_(300, 0, 'kNm'))}${fl('e', '300 / 500', u_(0.60, 2, 'm'))}<p>${nw('B/6 = 0.40 m < e ≤ B/3 = 0.80 m')}: allowed, but part of the base lifts off.</p>` },
-        { t: 'b) Triangular contact pressure', r: 'σ<sub>max</sub> = 231.5 kPa', b: `${fl('c', 'B/2 − e', '1.20 − 0.60', u_(0.60, 2, 'm'))}${fl('length in compression', '3c', u_(1.80, 2, 'm') + ' (75% of the base)')}${fl('σ<sub>max</sub>', '2 · V<sub>k</sub> / (3 · c · L)', '2 · 500 / (3 · 0.60 · 2.4)', u_(231.5, 1, 'kPa'))}<p>The edge pressure has grown to 2.7 times the concentric value (86.8 kPa).</p>` },
+        { t: 'b) Triangular contact pressure', r: 'σ<sub>max</sub> = 231.5 kPa', b: `${fl('c', 'B/2 − e', '1.20 − 0.60', u_(0.60, 2, 'm'))}${fl('length in compression', '3c', u_(1.80, 2, 'm') + ' (a talp 75 %-a)')}${fl('σ<sub>max</sub>', '2 · V<sub>k</sub> / (3 · c · L)', '2 · 500 / (3 · 0.60 · 2.4)', u_(231.5, 1, 'kPa'))}<p>The edge pressure has grown to 2.7 times the concentric value (86.8 kPa).</p>` },
       ],
       res: [{ ok: true, h: `a) ${nw('e = 0.30 m ≤ B/6 = 0.40 m')} – within the kern, ${nw('σ<sub>max</sub> = 151.9 kPa')}.` }, { ok: true, h: `b) ${nw('B/6 < e = 0.60 m ≤ B/3')} – allowed, with partial lift-off, ${nw('σ<sub>max</sub> = 231.5 kPa')}.` }],
       notes: [{ cls: 'warn', h: `<b>If e > B/3</b> (here above 0.80 m), not even half of the base would work – special precautions are then needed. For a circular footing the limit is ${nw('e ≤ 0.6 · r')}.` },
@@ -2900,7 +3082,7 @@ window.DATA = {
       open: [{ p: 'mp6a', l: 'open a)' }, { p: 'mp6b', l: 'open b)' }] },
 
     { id: 'mp7', sub: 'UPL · surcharge', n: 'WE7', k: 'k3', title: 'Uplift with surcharge (UPL)', short: 'Uplift, soil cover', tags: ['UPL', 'γ<sub>G;dst</sub> = 1.0', 'γ<sub>G;stb</sub> = 0.9'],
-      task: `<p>The design groundwater level is ${nw('h<sub>w</sub> = 4.0 m')} above the underside of the base slab of an underground car park with a plan of ${nw('B × L = 12 × 30 m')}. The self-weight of the structure is ${nw('G<sub>str;k</sub> = 11' + NN + '000 kN')}, and there is a ${nw('t = 0.8 m')} thick soil cover on the roof slab (${nw('γ = 18 kN/m³')}, above the groundwater). Check the safety against uplift in the UPL limit state! (${nw('γ<sub>w</sub> = 10 kN/m³')})</p>`,
+      task: `<p>The design groundwater level is ${nw('h<sub>w</sub> = 4.0 m')} above the underside of the base slab of an underground car park with a plan of ${nw('B × L = 12 × 30 m')}. The self-weight of the structure is ${nw('G<sub>str;k</sub> = 11' + NN + '000 kN')}, and there is a ${nw('t = 0.8 m')} thick soil cover on the roof slab (${nw('γ = 18 kN/m³')}, above the groundwater). Check the safety against uplift in the UPL limit state. (${nw('γ<sub>w</sub> = 10 kN/m³')})</p>`,
       data: [['B × L', '12 × 30 m'], ['h<sub>w</sub>', '4.0 m'], ['G<sub>str;k</sub>', '11' + NN + '000 kN'], ['soil cover t', '0.8 m'], ['γ (cover)', '18 kN/m³']],
       fig: { p: 'mp7', cap: 'The uplift force is the resultant of the water pressure acting on the underside of the base slab; it is resisted by the weight of the structure and of the soil on the roof slab.' },
       steps: [
@@ -2909,7 +3091,7 @@ window.DATA = {
         { t: 'Verification', r: 'Λ = 0.989', b: `${fl('V<sub>dst;d</sub> = 14' + NN + '400 kN ≤ G<sub>stb;d</sub> + R<sub>d</sub> = 14' + NN + '566 kN')}<p>Friction and anchors are not taken into account: ${nw('R<sub>d</sub> = 0')}.</p>${fl('Λ', `14${NN}400 / 14${NN}566`, '<b>0.989</b>')}` },
       ],
       res: [{ ok: true, h: `${nw('V<sub>dst;d</sub> < G<sub>stb;d</sub>')} – satisfied, but the utilisation is 99%!` }],
-      notes: [{ cls: 'warn', h: `<b>Lesson.</b> The reserve is minimal, while the overall safety is only ${nw('1.0/0.9 = 1.11')} in the first place. The groundwater level is a geometrical datum: if the design water level has to be set only 5 cm higher (${nw('h<sub>w</sub> > 4.046 m')}), the verification is no longer satisfied. This is why the water level must be chosen cautiously, or a countermeasure (surcharge, anchoring, dewatering, flooding) applied.` }],
+      notes: [{ cls: 'warn', h: `<b>Lesson.</b> The reserve is minimal, while the global factor of safety is only ${nw('1.0/0.9 = 1.11')} in the first place. The groundwater level is a geometrical datum: if the design water level has to be set only 5 cm higher (${nw('h<sub>w</sub> > 4.046 m')}), the verification is no longer satisfied. This is why the water level must be chosen cautiously, or a countermeasure (surcharge, anchoring, dewatering, flooding) applied.` }],
       open: [{ p: 'mp7', l: 'Open in the calculator' }] },
 
     { id: 'mp8', sub: 'UPL · anchors', n: 'WE8', k: 'k3', title: 'Uplift with anchoring (UPL)', short: 'Uplift, anchors', tags: ['UPL', 'γ<sub>a</sub> = 1.4'],
@@ -2927,7 +3109,7 @@ window.DATA = {
       open: [{ p: 'mp8', l: 'Open in the calculator' }] },
 
     { id: 'mp9', sub: DA3 + ' · Bishop', n: 'WE9', k: 'k4', title: 'Overall stability – a house on the crest of a slope', short: 'House on the crest of a slope', tags: ['GEO', DA3, 'Bishop method'], dyn: true,
-      task: `<p>A family house is built on the crest of an ${nw('8 m')} high loess slope with an inclination of ${nw('1 : 1.5')}, on two ${nw('0.6 m')} wide strip footings. The strip footings are ${nw('0.8 m')} deep; the edge of the footing nearer the crest is ${nw('0.5 m')} from the crest, the other one ${nw('2.9 m')} (spacing of the axes ${nw('2.4 m')}). Each footing carries a permanent load ${nw('G<sub>k</sub> = 72 kN/m')} and a variable load ${nw('Q<sub>k</sub> = 18 kN/m')}. The soil: ${nw('γ = 19 kN/m³')}, ${nw('c′<sub>k</sub> = 14 kPa')}, ${nw('φ′<sub>k</sub> = 28°')}; the rigid layer is ${nw('6 m')} below the toe. Check overall stability according to ${DA3}, with the simplified Bishop method, <b>a)</b> in the dry state and <b>b)</b> with long-term wetting (${nw('r<sub>u</sub> = 0.2')})!</p>`,
+      task: `<p>A family house is built on the crest of an ${nw('8 m')} high loess slope with an inclination of ${nw('1 : 1.5')}, on two ${nw('0.6 m')} wide strip footings. The strip footings are ${nw('0.8 m')} deep; the edge of the footing nearer the crest is ${nw('0.5 m')} from the crest, the other one ${nw('2.9 m')} (spacing of the axes ${nw('2.4 m')}). Each footing carries a permanent load ${nw('G<sub>k</sub> = 72 kN/m')} and a variable load ${nw('Q<sub>k</sub> = 18 kN/m')}. The soil: ${nw('γ = 19 kN/m³')}, ${nw('c′<sub>k</sub> = 14 kPa')}, ${nw('φ′<sub>k</sub> = 28°')}; the rigid layer is ${nw('6 m')} below the toe. Check overall stability according to ${DA3}, with the simplified Bishop method, <b>a)</b> in the dry state and <b>b)</b> with long-term wetting (${nw('r<sub>u</sub> = 0.2')}).</p>`,
       data: [['H; inclination', '8 m; 1 : 1.5'], ['γ; c′<sub>k</sub>; φ′<sub>k</sub>', '19 kN/m³; 14 kPa; 28°'], ['strip footings: B; D', '0.6 m; 0.8 m'], ['distance from the crest', '0.5 m and 2.9 m'], ['loads per footing', '72 + 18 kN/m'], ['γ<sub>G</sub>; γ<sub>Q</sub>; γ<sub>φ′</sub> = γ<sub>c′</sub>', '1.0; 1.3; 1.35']],
       fig: { p: 'mp9a', cap: 'The critical slip surface (case a), the slices and the centres of the trial circles; their colour shows the lowest F.' },
       open: [{ p: 'mp9a', l: 'open a)' }, { p: 'mp9b', l: 'open b)' }] },
@@ -2947,9 +3129,9 @@ window.DATA = {
       steps: [
         { t: 'Design strength parameters (M2)', r: 'φ′<sub>d</sub> = ' + u_(a.phid, 1, '°'), b: `${fl('tan' + NB + 'φ′<sub>d</sub>', 'tan' + NB + 'φ′<sub>k</sub> / γ<sub>φ′</sub>', 'tan' + NB + '28° / 1.35', F(Math.tan(28 * Math.PI / 180) / 1.35, 4))}${fl('φ′<sub>d</sub>', u_(a.phid, 2, '°'))}${fl('c′<sub>d</sub>', 'c′<sub>k</sub> / γ<sub>c′</sub>', '14 / 1.35', u_(a.cd, 2, 'kPa'))}` },
         { t: 'Design load of the footings', r: 'P<sub>d</sub> = ' + u_(ld.Pd, 1, 'kN/m'), b: `${fl('P<sub>d</sub>', 'γ<sub>G</sub> · G<sub>k</sub> + γ<sub>Q</sub> · Q<sub>k</sub>', '1.0 · 72 + 1.3 · 18', u_(ld.Pd, 1, 'kN/m'))}<p>Per footing, uniformly distributed over the ${nw('0.6 m')} wide base: ${nw('q<sub>d</sub> = ' + u_(ld.q, 1, 'kPa'))}. The self-weight of the soil is taken with a factor ${nw('γ<sub>G</sub> = 1.0')}.</p>` },
-        { t: 'Searching for the critical slip surface', r: `r = ${u_(c.R, 1, 'm')}`, b: `<p>The centres of the circles were placed on a grid of ${a.sr.nx} × ${a.sr.ny} points; for each centre, circles passing through the toe of the slope and touching ${14} different depths were analysed, then the search was refined around the most unfavourable circles. Circles cutting through the footing were excluded.</p><div class="cx-fl nw">centre: O(${F(c.xc, 2)}; ${F(c.yc, 2)})${NB}m from the crest, radius ${u_(c.R, 2, 'm')}</div><p>The slip surface enters ${nw(u_(-c.x0, 2, 'm'))} behind the crest, behind both strip footings, and ${exitTxt}: the whole house stands on the sliding mass.</p>` },
+        { t: 'Searching for the critical slip surface', r: `r = ${u_(c.R, 1, 'm')}`, b: `<p>The centres of the circles were placed on a grid of ${a.sr.nx} × ${a.sr.ny} points; for each centre, circles passing through the toe of the slope and touching ${14} different depths (plus 2 more per footing) were analysed, then the search was refined around the most unfavourable circles. Circles cutting through the footing were excluded.</p><div class="cx-fl nw">centre: O(${F(c.xc, 2)}; ${F(c.yc, 2)})${NB}m from the crest, radius ${u_(c.R, 2, 'm')}</div><p>The slip surface enters ${nw(u_(-c.x0, 2, 'm'))} behind the crest, behind both strip footings, and ${exitTxt}: the whole house stands on the sliding mass.</p>` },
         { t: 'Calculation by slices (30 slices, grouped)', r: 'F<sub>d</sub> = ' + F(a.Fd, 3), b: `${fl('F<sub>d</sub>', `Σ [c′<sub>d</sub> · b + (W + P − u · b) · tan${NB}φ′<sub>d</sub>] / m<sub>α</sub> / Σ (W + P) · sin${NB}α`)}${fl('m<sub>α</sub>', `cos${NB}α + sin${NB}α · tan${NB}φ′<sub>d</sub> / F<sub>d</sub>`)}${tbl}<p>The iteration (F<sub>d</sub> appears on both sides) converges in a few steps:</p>${fl('F<sub>d</sub>', `${F(c.num, 1)} / ${F(c.den, 1)}`, `<b>${F(a.Fd, 3)}</b>`)}` },
-        { t: 'a) Verification – dry state', r: 'Λ = ' + F(a.lam, 2), b: `${fl('Λ', '1 / F<sub>d</sub>', `1 / ${F(a.Fd, 3)}`, `<b>${F(a.lam, 3)}</b>`)}<p>${a.Fd >= 1 ? nw('F<sub>d</sub> ≥ 1.0') + ': overall stability is satisfied.' : nw('F<sub>d</sub> < 1.0') + ': not satisfied.'} Without the house, the same slope would have a safety of ${nw('F<sub>d</sub> = ' + F(a.F0, 3))} : the load of the two strip footings reduces the safety by about ${F(drop, 0)}%.</p>` },
+        { t: 'a) Verification – dry state', r: 'Λ = ' + F(a.lam, 2), b: `${fl('Λ', '1 / F<sub>d</sub>', `1 / ${F(a.Fd, 4)}`, `<b>${F(a.lam, 3)}</b>`)}<p>${a.Fd >= 1 ? nw('F<sub>d</sub> ≥ 1.0') + ': overall stability is satisfied.' : nw('F<sub>d</sub> < 1.0') + ': not satisfied.'} Without the house, the same slope would have a safety of ${nw('F<sub>d</sub> = ' + F(a.F0, 3))} : the load of the two strip footings reduces the safety by about ${F(drop, 0)} %.</p>` },
         { t: 'b) Long-term wetting, r<sub>u</sub> = 0.2', r: 'F<sub>d</sub> = ' + F(b.Fd, 3), b: `<p>The pore water pressure ${nw('u = r<sub>u</sub> · γ · h')} reduces the effective normal force on the base of the slices, and so the frictional resistance too. Repeating the search:</p>${fl('F<sub>d</sub>', `<b>${F(b.Fd, 3)}</b>`)}${fl('Λ', `1 / ${F(b.Fd, 3)}`, `<b>${F(b.lam, 3)}</b>`)}` },
       ],
       res: [{ ok: a.Fd >= 1, h: `a) ${nw('F<sub>d</sub> = ' + F(a.Fd, 3) + (a.Fd >= 1 ? ' ≥ 1.0' : ' < 1.0'))} – ${a.Fd >= 1 ? 'satisfied' : 'not satisfied'} (${nw('Λ = ' + F(a.lam, 2))}).` }, { ok: b.Fd >= 1, h: `b) ${nw('F<sub>d</sub> = ' + F(b.Fd, 3) + (b.Fd >= 1 ? ' ≥ 1.0' : ' < 1.0'))} – ${b.Fd >= 1 ? 'satisfied' : 'not satisfied'} (${nw('Λ = ' + F(b.lam, 2))}): with long-term wetting the slope under the house is not stable.` }],
@@ -3020,6 +3202,10 @@ function speckTex(base, spots, n, sz, seed, lines = 0) {
   for (let k = 0; k < lines; k++) { const y = (k + 0.5) * S / lines; g.fillStyle = 'rgba(60,45,25,0.25)'; g.fillRect(0, y, S, 2); }
   const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t;
 }
+function tileTex() { const S = 128, c = document.createElement('canvas'); c.width = c.height = S; const g = c.getContext('2d'); g.fillStyle = '#b9583a'; g.fillRect(0, 0, S, S);
+  for (let r = 0; r < 8; r++) { const y = r * 16; g.fillStyle = 'rgba(70,25,12,0.45)'; g.fillRect(0, y + 14, S, 2); g.fillStyle = 'rgba(255,190,150,0.16)'; g.fillRect(0, y, S, 3);
+    for (let k = 0; k < 8; k++) { g.fillStyle = 'rgba(70,25,12,0.3)'; g.fillRect(k * 16 + (r % 2 ? 8 : 0), y, 1.5, 14); } }
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t; }
 let TX = null;
 function tex() {
   if (TX) return TX;
@@ -3031,6 +3217,9 @@ function tex() {
     fill: speckTex('#b39468', ['#9f8257', '#c6a87a', '#8c7350'], 2200, 2.4, 13, 4),
     conc: speckTex('#bcb8b0', ['#aaa69e', '#cfcbc2', '#9d9991'], 1600, 1.2, 17),
     grass: speckTex('#7c9a46', ['#6d8a3c', '#8bab52', '#5f7a33'], 1800, 2.5, 19),
+    plaster: speckTex('#efe4cb', ['#e6d9bc', '#f5ecd8', '#e0d2b2'], 900, 1.6, 23),
+    asphalt: speckTex('#5a5d63', ['#4d5056', '#676a70', '#43464b'], 1500, 1.4, 29),
+    tile: tileTex(),
   };
   return TX;
 }
@@ -3042,9 +3231,25 @@ function ext(pts, z0 = 0, z1 = -6, holes = []) { const s = new THREE.Shape(pts.m
 function box(w, h, d, m, x = 0, y = 0, z = 0) { const o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); o.position.set(x, y, z); o.castShadow = true; o.receiveShadow = true; return o; }
 function arrow(color) { const g = new THREE.Group(); const m = new THREE.MeshBasicMaterial({ color, depthTest: false, transparent: true }); const sh = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 1, 10), m); sh.position.y = 0.5; const hd = new THREE.Mesh(new THREE.ConeGeometry(0.17, 0.4, 14), m); hd.position.y = 1.15; g.add(sh, hd); g.renderOrder = 10; sh.renderOrder = 10; hd.renderOrder = 10; g.userData = { sh, hd }; return g; }
 function setArrow(a, from, dir, len) { const d = dir.clone().normalize(); a.position.copy(from); a.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d); const L = Math.max(0.05, len - 0.4); a.userData.sh.scale.y = L; a.userData.sh.position.y = L / 2; a.userData.hd.position.y = L + 0.2; a.visible = len > 0.05; }
-function house(w = 6, d = 7, h = 2.8) { const g = new THREE.Group(); const wm = new THREE.MeshStandardMaterial({ color: 0xeee2c6, roughness: 0.9 }), rm = new THREE.MeshStandardMaterial({ color: 0xc0603d, roughness: 0.8 }), gl = new THREE.MeshStandardMaterial({ color: 0x2e3a46, roughness: 0.2 });
-  g.add(box(w, h, d, wm, 0, h / 2, -d / 2)); const sh = new THREE.Shape([new THREE.Vector2(-w / 2 - 0.4, 0), new THREE.Vector2(w / 2 + 0.4, 0), new THREE.Vector2(0, 2.0)]); const roof = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: d + 0.8, bevelEnabled: false }), rm); roof.position.set(0, h, -d - 0.4); roof.castShadow = true; g.add(roof);
-  g.add(box(1.1, 1.1, 0.06, gl, -w / 4, 1.5, 0.02)); g.add(box(0.9, 1.9, 0.06, new THREE.MeshStandardMaterial({ color: 0x6b4a2c }), w / 4, 0.95, 0.02)); return g; }
+function house(w = 6, d = 7, h = 2.8) { const g = new THREE.Group(), T = tex(); const wm = mat(T.plaster, 0.45, 0xffffff, { roughness: 0.95 }), rm = new THREE.MeshStandardMaterial({ map: texRep(T.tile, 0.9), roughness: 0.8 }), gl = new THREE.MeshStandardMaterial({ color: 0x2b3946, roughness: 0.15, metalness: 0.3 }), fr = new THREE.MeshStandardMaterial({ color: 0xf7f4ec, roughness: 0.7 }), pl = mat(T.conc, 0.8, 0xbdb7ab), dm = new THREE.MeshStandardMaterial({ color: 0x6b4a2c, roughness: 0.7 });
+  g.add(box(w + 0.12, 0.35, d + 0.12, pl, 0, 0.175, -d / 2)); g.add(box(w, h - 0.35, d, wm, 0, 0.35 + (h - 0.35) / 2, -d / 2));
+  const sh = new THREE.Shape([new THREE.Vector2(-w / 2 - 0.45, 0), new THREE.Vector2(w / 2 + 0.45, 0), new THREE.Vector2(0, Math.min(2.0, w * 0.42))]); const roof = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: d + 0.8, bevelEnabled: false }), rm); roof.position.set(0, h, -d - 0.4); roof.castShadow = true; roof.receiveShadow = true; g.add(roof);
+  g.add(box(0.5, 1.3, 0.5, mat(T.fill, 0.6, 0xc98f6f), w * 0.22, h + Math.min(2.0, w * 0.42) * 0.55, -d * 0.7));
+  const win = (x, y, z, side) => { const a = side ? [0.07, 1.15, 1.15] : [1.15, 1.15, 0.07], b = side ? [0.09, 1.0, 1.0] : [1.0, 1.0, 0.09]; g.add(box(a[0], a[1], a[2], fr, x, y, z), box(b[0], b[1], b[2], gl, x, y, z)); const c = side ? [0.1, 1.0, 0.05] : [0.05, 1.0, 0.1]; g.add(box(c[0], c[1], c[2], fr, x, y, z)); };
+  win(-w / 4, 1.6, 0.02, false); g.add(box(1.0, 2.05, 0.07, fr, w / 4, 1.37, 0.02), box(0.86, 1.95, 0.09, dm, w / 4, 1.33, 0.02), box(1.3, 0.14, 0.5, pl, w / 4, 0.3, 0.25));
+  for (const zz of [-d * 0.28, -d * 0.72]) { win(w / 2 + 0.01, 1.6, zz, true); win(-w / 2 - 0.01, 1.6, zz, true); }
+  return g; }
+function tree(hh = 4.2, seed = 1) { const g = new THREE.Group(); const tm = new THREE.MeshStandardMaterial({ color: 0x6a4a2e, roughness: 1 }), lm = new THREE.MeshStandardMaterial({ color: seed % 2 ? 0x4f8a3a : 0x5d9a42, roughness: 0.95, flatShading: true });
+  const tr = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.2, hh * 0.5, 8), tm); tr.position.y = hh * 0.25; tr.castShadow = true; g.add(tr);
+  for (const [dx, dy, dz, r] of [[0, 0.62, 0, 0.3], [0.32, 0.5, 0.15, 0.22], [-0.3, 0.52, -0.12, 0.23], [0.05, 0.8, -0.05, 0.2]]) { const c = new THREE.Mesh(new THREE.IcosahedronGeometry(hh * r, 1), lm); c.position.set(dx * hh * 0.5, hh * dy, dz * hh * 0.5); c.castShadow = true; g.add(c); }
+  return g; }
+function carModel(color) { const g = new THREE.Group(); const cm = new THREE.MeshStandardMaterial({ color, roughness: 0.35, metalness: 0.45 }), gm = new THREE.MeshStandardMaterial({ color: 0x1c2630, roughness: 0.15, metalness: 0.4 }), tm = new THREE.MeshStandardMaterial({ color: 0x17181b, roughness: 0.9 }), lm = new THREE.MeshStandardMaterial({ color: 0xfff3c4, emissive: 0x554a20 });
+  const prof = new THREE.Shape(); prof.moveTo(-2.1, 0.28); prof.lineTo(2.1, 0.28); prof.lineTo(2.1, 0.72); prof.quadraticCurveTo(2.05, 0.86, 1.6, 0.9); prof.lineTo(0.95, 0.95); prof.lineTo(0.45, 1.4); prof.quadraticCurveTo(0.35, 1.46, 0.1, 1.46); prof.lineTo(-1.1, 1.46); prof.quadraticCurveTo(-1.35, 1.44, -1.5, 1.3); prof.lineTo(-1.95, 0.96); prof.quadraticCurveTo(-2.1, 0.9, -2.1, 0.7); prof.lineTo(-2.1, 0.28);
+  const body = new THREE.Mesh(new THREE.ExtrudeGeometry(prof, { depth: 1.7, bevelEnabled: true, bevelSize: 0.05, bevelThickness: 0.05, bevelSegments: 2, curveSegments: 6 }), cm); body.position.z = -0.85; body.castShadow = true; g.add(body);
+  const gp = new THREE.Shape(); gp.moveTo(0.88, 0.98); gp.lineTo(0.42, 1.38); gp.lineTo(-1.08, 1.38); gp.lineTo(-1.82, 0.98); gp.lineTo(0.88, 0.98); const glass = new THREE.Mesh(new THREE.ExtrudeGeometry(gp, { depth: 1.83, bevelEnabled: false }), gm); glass.position.z = -0.915; g.add(glass);
+  for (const x of [-1.3, 1.3]) for (const z of [-0.84, 0.84]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.33, 0.33, 0.24, 16).rotateX(Math.PI / 2), tm); w.position.set(x, 0.33, z); g.add(w); const hb = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.17, 0.26, 10).rotateX(Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0xb9bec6, metalness: 0.7, roughness: 0.3 })); hb.position.copy(w.position); g.add(hb); }
+  for (const z of [-0.6, 0.6]) g.add(box(0.06, 0.16, 0.34, lm, 2.14, 0.7, z));
+  return g; }
 
 // a GPU-memória kímélése: egyszerre csak a képernyő közelében lévő szimulátorok élnek; a többi felszabadítja a WebGL-kontextusát
 const SIMS = [];
@@ -3097,15 +3302,19 @@ class Sim {
   bindAll(ids, fn) { ids.forEach(id => { const e = this.ctl(id); if (!e) return; if (e.type !== 'range') return; if (this._bound.has(id)) return; this._bound.add(id); U.bindRange(id, () => { if (this.alive) fn(); }); }); }
   segAll(ids, fn) { ids.forEach(id => { const el = this.root.querySelector('#' + id); if (!el) return; const on = el.querySelector('button.on'); if (on) this.state[id] = on.dataset.v;
     if (this._bound.has('s:' + id)) return; this._bound.add('s:' + id); U.seg(el, (v) => { this.state[id] = v; if (this.alive) fn(); }); }); }
-  lam(v, sub) { const el = this.root.querySelector('.lam'); if (!el) return; const b = el.querySelector('b'), bar = el.querySelector('.bar i'), s = el.querySelector('.sub'); b.textContent = (v > 9.99 ? '> 9.99' : fmt(v, 2)); bar.style.width = clamp(v / 1.5, 0, 1) * 100 + '%'; el.classList.toggle('fail', v > 1); el.classList.toggle('warn', v > 0.9 && v <= 1); if (s && sub) s.innerHTML = sub; window.LEDGER && window.LEDGER.set(this.mode, v); }
+  lam(v, sub) { const el = this.root.querySelector('.lam'); if (!el) return; const b = el.querySelector('b'), bar = el.querySelector('.bar i'), s = el.querySelector('.sub'); b.textContent = (v > 9.99 ? '> 9.99' : fmt(v, 2)); bar.style.width = clamp(v / 1.5, 0, 1) * 100 + '%'; el.classList.toggle('fail', v > 1); el.classList.toggle('warn', v > 0.9 && v <= 1); if (s && sub) s.innerHTML = sub.indexOf(' · ') > 0 ? sub.split(' · ').map(q => `<span class="chip">${q}</span>`).join('') : sub; window.LEDGER && window.LEDGER.set(this.mode, v); }
+  // ferde vagy vízszintes füves sáv két (x, y) pont között, z0…z1 mélységben
+  strip(xa, ya, xb, yb, z0, z1, m, parent) { const L = Math.hypot(xb - xa, yb - ya); if (!(L > 0.05)) return null; const o = new THREE.Mesh(new THREE.PlaneGeometry(L, z1 - z0).rotateX(-Math.PI / 2), m); o.rotation.z = Math.atan2(yb - ya, xb - xa); o.position.set((xa + xb) / 2, (ya + yb) / 2 + 0.014, (z0 + z1) / 2); o.receiveShadow = true; (parent || this.scene).add(o); return o; }
   ground(x0, x1, y, z0 = -26, z1 = 26) { const m = new THREE.Mesh(new THREE.PlaneGeometry(x1 - x0, z1 - z0).rotateX(-Math.PI / 2), mat(this.T.grass, 0.25)); m.position.set((x0 + x1) / 2, y - 0.005, (z0 + z1) / 2 - 0); m.receiveShadow = true; this.scene.add(m); return m; }
 
   // ===================== ELCSÚSZÁS: szögtámfal =====================
   build_csuszas() {
-    const S = this.scene; this.camera.position.set(4.6, 2.5, 10.8); this.controls.target.set(-0.4, 0.1, -1); this.controls.minDistance = 6; this.controls.maxDistance = 24;
+    const S = this.scene; this.camera.position.set(5.4, 3.6, 12.2); this.controls.target.set(-0.7, 0.9, -1.4); this.controls.minDistance = 6; this.controls.maxDistance = 30; this.fit = { w: 13.5, h: 8.4 }; this.fitView(); this.controls.addEventListener('start', () => { this._userCam = true; });
     this.mConc = mat(this.T.conc, 0.8); this.mSoil = mat(this.T.sand, 0.6); this.mClay = mat(this.T.clay, 0.6); this.mFill = mat(this.T.fill, 0.7);
     this.wall = new THREE.Group(); S.add(this.wall);
-    this.soilG = null; this.fillG = null; this.gr = this.ground(4, 30, 0, -6, 6);
+    this.soilG = null; this.fillG = null; this.gr = this.ground(4, 30, 0, -6, 6); this.topG = new THREE.Group(); S.add(this.topG); this.mGrass = mat(this.T.grass, 0.25); this.mRoad = mat(this.T.asphalt, 0.5);
+    this.initLabels([['h', 'x'], ['r', 'g'], ['p', 'w']]); this.post = () => this.updLabels();
+    { const t1 = tree(3.6, 1), t2 = tree(4.4, 2); t1.position.set(9.5, 0, -4.2); t2.position.set(7.2, 0, -5.2); S.add(t1, t2); }
     this.grB = this.ground(-30, -0.5, 0, -26, -6.01); this.grB.visible = false;
     this.aH = arrow(0xd23c3c); this.aR = arrow(0x1f8f54); this.aP = arrow(0x2a86d4); S.add(this.aH, this.aR, this.aP);
     // passzív földellenállás: ék + teljes (körvonal) és mobilizált (kitöltött) nyomásábra a homlokfal előtt
@@ -3152,6 +3361,8 @@ class Sim {
       const prof = [[x0, yb], [x1, yb], [x1, yt], [xs1, yt], [xs1 - 0.03, ftop + 0.1], [xs0, ftop + 0.1], [xs0, yt], [x0, yt]];
       const w = new THREE.Mesh(ext(prof, 0.02, -6), this.mConc); w.castShadow = true; w.receiveShadow = true; this.wall.add(w);
       this.geo = { x0, x1, xs0, xs1, yb, yt, ftop, D, xa, xA0, Lp }; this._gapU = -1;
+      // füves felszín az álló részeken, szervizút a háttöltésen
+      geoOnly(this.topG); this.topG.clear(); this.strip(x1 + Lp + 0.15, 0, 12, 0, -6, 0, this.mGrass, this.topG); this.strip(-12, ftop, -9.2, ftop, -6, 0, this.mGrass, this.topG); this.strip(-9.2, ftop, -3.6, ftop, -6, 0, this.mRoad, this.topG); if (xa - 0.25 > -3.6) this.strip(-3.6, ftop, xa - 0.25, ftop, -6, 0, this.mGrass, this.topG);
     }
     { const gm = sec(drained ? this.mSoil : this.mClay); this.soilG.material = gm; this.rearSoil.material = gm; this.frontSoil.material = gm; this._gapU = -1; }
     const G = this.geo;
@@ -3176,10 +3387,11 @@ class Sim {
       const fg = new THREE.BufferGeometry(); fg.setAttribute('position', new THREE.Float32BufferAttribute(fp, 3)); this.pasFill.geometry.dispose(); this.pasFill.geometry = fg;
       this.pasArrows.forEach((a, i) => { const yy = G.yb * (i + 0.75) / 4.4, len = frac * pmax * sc * (-yy / D); a.visible = rpOn && len > 0.15; setArrow(a, new THREE.Vector3(x1 + len, yy, 0.08), new THREE.Vector3(-1, 0, 0), len); });
       for (const m of [this.pasWedge, this.pasEdge, this.pasFull, this.pasFill]) m.visible = rpOn; }
+    this.setLbl('h', 'H<sub>d</sub>', G.x0 - 0.45 - r.Hd * k, G.yb + 0.62, 0.4, r.Hd > 1); this.setLbl('r', 'R<sub>d</sub>', G.x1 - 0.2 - r.Rd * k - 0.35, G.yb - 0.62, 0.4, r.Rd > 1); this.setLbl('p', 'R<sub>p;d</sub>', G.x1 + 0.55 + r.Rpd * k, G.yb / 3 + 0.38, 0.45, rpOn);
     this.truck.visible = q > 0.5; this.truck.position.set(-6.5, G.ftop, -3);
     this.slide = r.lam > 1 ? Math.min(0.6, 0.25 + (r.lam - 1) * 1.2) : 0;
     this.setHud([`H<sub>d</sub> = ${fmt(r.Hd, 0)} kN/m`, `R<sub>d</sub> = ${fmt(r.Rd, 0)} kN/m`, `R<sub>p;d</sub> = ${fmt(r.Rpd, 0)} kN/m`]);
-    this.lam(r.lam, drained ? `V′<sub>k</sub> = ${fmt(r.Vk, 0)} kN/m · δ = ${fmt(r.delta, 1)}°` : `A<sub>c</sub>·c<sub>u</sub>/1.1 = ${fmt(r.Rcu, 0)} · 0.4·V<sub>d</sub> = ${fmt(r.R04, 0)} kN/m`);
+    this.lam(r.lam, drained ? `V′<sub>k</sub> = ${fmt(r.Vk, 0)} kN/m · δ = ${fmt(r.delta, 1)}°` : `A<sub>c</sub>·c<sub>u;k</sub>/1.1 = ${fmt(r.Rcu, 0)} · 0.4·V<sub>d</sub> = ${fmt(r.R04, 0)} kN/m`);
   }
 
   // ===================== FELBORULÁS: reklámtábla – átlátszó talajtömb, 3D talpfeszültség-test, kis ablakban az egész tábla =====================
@@ -3256,7 +3468,7 @@ class Sim {
     const applyPreset = (cam, key, tgt) => { const q = this.presetPos(cam, key); cam.position.copy(q.p); if (tgt) tgt.copy(q.t); cam.lookAt(q.t); };
     this.applyPreset = applyPreset; this.controls.addEventListener('start', () => { this._userCam = true; });
     applyPreset(this.camera, 'base', this.controls.target); this.controls.update();
-    const setPip = () => { const o = this.vmode === 'base' ? 'all' : 'base'; applyPreset(this.icam, o); this.pip.querySelector('span').textContent = o === 'all' ? 'whole board – click' : 'footing – click'; };
+    const setPip = () => { const o = this.vmode === 'base' ? 'all' : 'base'; applyPreset(this.icam, o); this.pip.querySelector('span').textContent = o === 'all' ? 'whole billboard – click' : 'footing – click'; };
     setPip();
     this.pip.addEventListener('click', () => { const from = { p: this.camera.position.clone(), t: this.controls.target.clone() }; this.vmode = this.vmode === 'base' ? 'all' : 'base'; this.camTw = { from, to: this.presetPos(this.camera, this.vmode), t0: performance.now() }; this._userCam = false; setPip(); });
     this.setPip = setPip; this.fitView = () => { if (!this._userCam && !this.camTw && this.applyPreset) this.applyPreset(this.camera, this.vmode, this.controls.target); };
@@ -3344,15 +3556,16 @@ class Sim {
     this.sg.visible = ok; this.aR.visible = ok; this.aRg.visible = ok; this.dot.visible = ok;
     for (const k of ['smax', 'smin', 'up', 'k6', 'k3', 'e', 'r']) if (!ok) this.L[k].on = false;
     this.tiltT = r.lam > 1 ? Math.min(0.9, 0.35 + (r.lam - 1) * 2.5) : (r.e > B / 6 ? 0.012 * clamp((r.e - B / 6) / (B / 6), 0, 2) : 0);
-    this.setHud([`e = ${fmt(r.e, 2)} m`, `B/6 = ${fmt(B / 6, 2)} · B/3 = ${fmt(B / 3, 2)} m`, `σ<sub>max</sub> = ${inside ? fmt(r.smax, 0) + ' kPa' : '∞'}`, inside && ok ? `scale: 1 m ≙ ${fmt(1 / this.kS, 0)} kPa` : 'the board overturns']);
+    this.setHud([`e = ${fmt(r.e, 2)} m`, `B/6 = ${fmt(B / 6, 2)} · B/3 = ${fmt(B / 3, 2)} m`, `σ<sub>max</sub> = ${inside ? fmt(r.smax, 0) + ' kPa' : '∞'}`, inside && ok ? `scale: 1 m ≙ ${fmt(1 / this.kS, 0)} kPa` : 'the billboard overturns']);
     this.lam(r.lam, `M<sub>dst;d</sub> = ${fmt(r.Mdst, 0)} · M<sub>stb;d</sub> = ${fmt(r.Mstb, 0)} kNm · ${r.e <= B / 6 ? 'whole base in compression' : r.e <= B / 3 ? `length in compression ${fmt(3 * (B / 2 - r.e), 2)} m` : r.e < B / 2 ? 'e > B/3 – precautions needed' : 'e > B/2'}`);
   }
 
   // ===================== FELÚSZÁS: mélygarázs =====================
   build_feluszas() {
     const S = this.scene; this.camera.position.set(8, 3.5, 44); this.controls.target.set(0, -2.6, -3); this.controls.minDistance = 16; this.controls.maxDistance = 110; this.fit = { w: 48, h: 21 }; this.fitView(); this.controls.addEventListener('start', () => { this._userCam = true; });
-    this.mConc = mat(this.T.conc, 0.4); this.mSoil = mat(this.T.sand, 0.3);
-    this.gr = this.ground(-60, 60, 0, -60, -8.51);
+    this.mConc = mat(this.T.conc, 0.4); this.mSoil = mat(this.T.sand, 0.3); this.mPave = mat(this.T.conc, 1.6, 0xd9d4c8);
+    this.gr = this.ground(-70, 70, 0, -70, -8.51);
+    for (const [x, z, hh] of [[-22, -13, 5.2], [-12, -15.5, 6], [-1, -13.5, 5], [10, -16, 6.4], [21, -13, 5.4], [29, -17, 6]]) { const t = tree(hh, Math.round(x)); t.position.set(x, 0, z); S.add(t); }
     this.box = new THREE.Group(); S.add(this.box);
     this.wMat = new THREE.MeshBasicMaterial({ color: 0x2f8fe0, transparent: true, opacity: 0.42, depthWrite: false });
     this.wL = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), this.wMat); this.wR = this.wL.clone(); this.wB = this.wL.clone(); [this.wL, this.wR, this.wB].forEach(m => { m.position.z = 0.05; m.renderOrder = 5; S.add(m); });
@@ -3374,25 +3587,26 @@ class Sim {
   calc_feluszas() {
     const v = (id) => +this.ctl(id).value; const gw = v('fu_gw'), t = v('fu_t'), o = v('fu_o'), n = Math.round(v('fu_n')), f = v('fu_f');
     const fr = this.state.fu_fr === '1' ? 1 : 0; const r = M.uplift({ gw, t, o, n, f, fr });
-    const bot = -6, X = 15 + o;
+    const bot = -6, X = 15 + o, XW = 64, YB = -34;
     const key = [t, o].join('|');
     if (key !== this._key) { this._key = key;
       if (this.soilG) { this.scene.remove(this.soilG); this.soilG.geometry.dispose(); }
-      this.soilG = new THREE.Mesh(ext([[-36, -18], [36, -18], [36, 0], [X, 0], [X, bot], [-X, bot], [-X, 0], [-36, 0]], 0, -8.5), sec(this.mSoil)); this.soilG.receiveShadow = true; this.scene.add(this.soilG);
-      disposeTree(this.box, new Set([this.mConc])); this.box.clear(); const D = 8.5, z = 0.02, m = this.mConc;
+      this.soilG = new THREE.Mesh(ext([[-XW, YB], [XW, YB], [XW, 0], [X, 0], [X, bot], [-X, bot], [-X, 0], [-XW, 0]], 0, -8.5), sec(this.mSoil)); this.soilG.receiveShadow = true; this.scene.add(this.soilG);
+      disposeTree(this.box, new Set([this.mConc, this.mPave])); this.box.clear(); const D = 8.5, z = 0.02, m = this.mConc;
       const add = (w, h, d, x, y, zz) => { this.box.add(box(w, h, d, m, x, y, zz)); };
       add(30, 0.35, D, 0, -0.175, z - D / 2); add(23.2, 0.3, D, -3, -3.0, z - D / 2); add(0.4, 6, D, -14.8, -3, z - D / 2); add(0.4, 6, D, 14.8, -3, z - D / 2); add(30, 6, 0.4, 0, -3, z - D + 0.2);
       add(30 + 2 * o, t, D, 0, bot + t / 2, z - D / 2);
+      { const pv = new THREE.Mesh(new THREE.PlaneGeometry(29.2, D - 0.5).rotateX(-Math.PI / 2), this.mPave); pv.position.set(0, 0.006, z - D / 2 - 0.2); pv.receiveShadow = true; this.box.add(pv); }
       for (const x of [-9, -3, 3, 9]) { add(0.45, 2.6, 0.45, x, -1.6, -3.5); add(0.45, 6 - 3.3 - t, 0.45, x, (bot + t - 3.15) / 2, -3.5); }
-      const cc = [0xc0392b, 0x2e86de, 0xdfe4ea, 0x2d3436, 0xf0a33a, 0x6c5ce7]; let k = 0; for (const y of [-2.85, bot + t]) for (const x of [-11, -5, 1]) { const car = new THREE.Group(); const cm = new THREE.MeshStandardMaterial({ color: cc[k++ % 6], roughness: 0.4, metalness: 0.3 }); car.add(box(4.2, 0.65, 1.8, cm, 0, 0.55, 0), box(2.2, 0.55, 1.6, new THREE.MeshStandardMaterial({ color: 0x24303a }), -0.2, 1.15, 0)); car.position.set(x, y, -2.4); this.box.add(car); }
+      const cc = [0xc0392b, 0x2e86de, 0xdfe4ea, 0x2d3436, 0xf0a33a, 0x6c5ce7]; let k = 0; for (const y of [-2.85, bot + t]) for (const x of [-11, -5, 1]) { const car = carModel(cc[k % 6]); car.rotation.y = k % 2 ? Math.PI : 0; k++; car.position.set(x, y, -2.4); this.box.add(car); }
     }
     // horgonyok
     disposeTree(this.anch); this.anch.clear(); const sm = new THREE.MeshStandardMaterial({ color: 0x8a929b, metalness: 0.6, roughness: 0.4 }); const nv = Math.min(n, 14);
     for (let i = 0; i < nv; i++) { const x = nv === 1 ? 0 : -13 + 26 * i / (nv - 1); const a = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 8, 8), sm); a.position.set(x, bot - 4, -0.3); this.anch.add(a); }
     // talajvíz
-    const top = Math.min(gw, 0), hw = Math.max(0, top - (-18));
-    this.wL.scale.set(36 - X, hw, 1); this.wL.position.set(-(X + 36) / 2, -18 + hw / 2, 0.05); this.wR.scale.copy(this.wL.scale); this.wR.position.set((X + 36) / 2, -18 + hw / 2, 0.05);
-    const hb = Math.max(0.001, Math.min(top, bot) - (-18)); this.wB.scale.set(2 * X, hb, 1); this.wB.position.set(0, -18 + hb / 2, 0.05);
+    const top = Math.min(gw, 0), hw = Math.max(0, top - YB);
+    this.wL.scale.set(XW - X, hw, 1); this.wL.position.set(-(X + XW) / 2, YB + hw / 2, 0.05); this.wR.scale.copy(this.wL.scale); this.wR.position.set((X + XW) / 2, YB + hw / 2, 0.05);
+    const hb = Math.max(0.001, Math.min(top, bot) - YB); this.wB.scale.set(2 * X, hb, 1); this.wB.position.set(0, YB + hb / 2, 0.05);
     this.inW.visible = f > 0.01; this.inW.scale.set(29.0, Math.max(0.001, f), 8.0); this._inY = bot + t + f / 2; this.inW.position.set(0, this._inY, -4.25);
     // oldalfal-súrlódás: földnyomás (kék, a fal felé) és súrlódás (zöld, lefelé) a metszetsíkban, a fal külső oldalán
     this.fric.visible = !!fr;
@@ -3406,20 +3620,21 @@ class Sim {
       for (; k < 24; k++) { this.pArr[k].visible = false; this.fArr[k].visible = false; } }
     if (fr) { this.setLbl('pr', `earth pressure σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>`, -X - 3.2, -2.2, 0.2); this.setLbl('fr', `friction τ = σ′<sub>h</sub> · tan δ – acts downwards`, X + 1.2, -6.9, 0.2); } else { this.setLbl('pr', '', 0, 0, 0, false); this.setLbl('fr', '', 0, 0, 0, false); }
     // talajvízszint, felhajtóerő (víznyomás a lemez alatt), önsúly
-    const hwB = Math.max(0, Math.min(gw, 0) - bot); this.gwL.visible = gw > -18; this.gwL.geometry.setFromPoints([new THREE.Vector3(-36, Math.min(gw, 0), 0.15), new THREE.Vector3(36, Math.min(gw, 0), 0.15)]); this.gwL.computeLineDistances();
+    const hwB = Math.max(0, Math.min(gw, 0) - bot); this.gwL.visible = gw > -18; this.gwL.geometry.setFromPoints([new THREE.Vector3(-XW, Math.min(gw, 0), 0.15), new THREE.Vector3(XW, Math.min(gw, 0), 0.15)]); this.gwL.computeLineDistances();
     this.setLbl('gw', `▽ design groundwater level ${fmt(gw, 1)} m`, -X - 9, Math.min(gw, 0) + 0.7, 0.2);
     this.upA.forEach((a, i) => { const x = -X + 1.5 + (2 * X - 3) * i / 8, len = hwB * 0.5; a.visible = len > 0.2; setArrow(a, new THREE.Vector3(x, bot - 0.08 - len, 0.2), new THREE.Vector3(0, 1, 0), len / 2.2); });
     this.setLbl('up', `water pressure from below: u = γ<sub>w</sub> · h<sub>w</sub> = ${fmt(10 * hwB, 0)} kPa → V<sub>dst;d</sub>`, 0, bot - hwB * 0.5 - 1.3, 0.2, hwB > 0.2);
     setArrow(this.gA, new THREE.Vector3(5.5, 5.5, 0.2), new THREE.Vector3(0, -1, 0), 4.6 / 2.6); this.setLbl('g', `G<sub>stb;d</sub> = 0.9 · G<sub>k</sub>`, 5.5, 6.4, 0.2);
     this.liftT = r.lam > 1 ? Math.min(0.9, 0.2 + (r.lam - 1) * 1.5) : 0;
     this.setHud([`groundwater ${fmt(gw, 1)} m`, `V<sub>dst;d</sub> = ${fmt(r.V, 0)} kN`, `G<sub>stb;d</sub> + R<sub>d</sub> = ${fmt(r.R, 0)} kN`].concat(fr ? [`T<sub>d</sub> = ${fmt(r.Td, 0)} kN`] : []));
-    this.lam(r.lam, `self-weight ${fmt(r.Gk, 0)} kN · soil on toe ${fmt(r.Grim, 0)} kN · anchors ${fmt(r.Pd, 0)} kN · water ${fmt(r.Wf, 0)} kN · friction ${fmt(r.Td, 0)} kN`);
+    this.lam(r.lam, `self-weight ${fmt(r.Gk, 0)} kN · soil on projection ${fmt(r.Grim, 0)} kN · anchors ${fmt(r.Pd, 0)} kN · water ${fmt(r.Wf, 0)} kN · friction ${fmt(r.Td, 0)} kN`);
   }
 
   // ===================== ÁLTALÁNOS ÁLLÉKONYSÁG: ház a rézsű koronáján =====================
   build_altalanos() {
     const S = this.scene; this.camera.position.set(14, 4, 30); this.controls.target.set(2, -3, -3); this.controls.minDistance = 12; this.controls.maxDistance = 60;
-    this.mSoil = mat(this.T.loess, 0.35); this.mMass = mat(this.T.loess, 0.35, 0xffd9c4);
+    this.mSoil = mat(this.T.loess, 0.35); this.mMass = mat(this.T.loess, 0.35, 0xffd9c4); this.mGrass = mat(this.T.grass, 0.25);
+    for (const [x, z, hh] of [[22, -4, 4.6], [26.5, -7.5, 5.4], [20.5, -8.6, 4.2], [-19, -6.5, 5], [-15.5, -8.8, 4.2]]) { const t = tree(hh, Math.round(x)); t.position.set(x, x > 0 ? -8 : 0, z); S.add(t); }
     this.piv = new THREE.Group(); S.add(this.piv); this.inner = new THREE.Group(); this.piv.add(this.inner);
     this.h = house(3.0, 7, 2.6); this.inner.add(this.h);
     this.arcLine = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineDashedMaterial({ color: 0xd23c3c, dashSize: 0.5, gapSize: 0.3, linewidth: 2, depthTest: false })); this.arcLine.renderOrder = 9; S.add(this.arcLine);
@@ -3446,6 +3661,10 @@ class Sim {
       this.piv.position.set(c.xc, c.yc, 0); this.inner.position.set(-c.xc, -c.yc, 0); this.inner.add(this.msG);
       const ap = arc(aA, aT, 60).map(p => new THREE.Vector3(p[0], p[1], 0.08)); this.arcLine.geometry.dispose(); this.arcLine.geometry = new THREE.BufferGeometry().setFromPoints(ap); this.arcLine.computeLineDistances();
     }
+    (this.gz || []).forEach(o => { if (o) { (o.parent || this.scene).remove(o); o.geometry.dispose(); } }); this.gz = [];
+    if (c) { const mg = this.mGrass, x1c = Math.min(c.x1, LX), yOn = (x) => x <= 0 ? 0 : x >= LX ? -H : -H * x / LX;
+      this.gz.push(this.strip(-24, 0, XA - 0.04, 0, -10, 0, mg), this.strip(XA + 0.04, 0, 0, 0, -10, 0, mg, this.inner), this.strip(0, 0, x1c, yOn(x1c), -10, 0, mg, this.inner));
+      if (c.x1 < LX - 0.3) this.gz.push(this.strip(c.x1 + 0.04, yOn(c.x1 + 0.04), LX, -H, -10, 0, mg)); this.gz.push(this.strip(Math.max(LX, c.x1 + 0.04), -H, 30, -H, -10, 0, mg)); }
     this.grA = this.ground(-60, -24, 0, -60, 60); this.grB = this.ground(30, 60, -H, -60, 60);
     const gm2 = mat(this.T.grass, 0.25); this.grC = new THREE.Mesh(new THREE.PlaneGeometry(54, 50).rotateX(-Math.PI / 2), gm2); this.grC.position.set(3, -H - 0.01, -35); this.scene.add(this.grC);
     // ház (a csúszó tömegen, ha rajta van)

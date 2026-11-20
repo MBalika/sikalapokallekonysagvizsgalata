@@ -190,6 +190,7 @@
 .cv-anc { stroke: var(--ink2); stroke-width: 2.4; } .cv-ancb { fill: var(--conc); stroke: var(--ink2); stroke-width: 1; rx: 3px; }
 .cv-lay { stroke: var(--ink2); stroke-width: 1.1; stroke-dasharray: 9 5; } .cv-hard { stroke: var(--ink); stroke-width: 2.2; }
 .cv-gc { stroke: none; opacity: .82; }
+.cv-plate { fill: var(--card); fill-opacity: .9; stroke: var(--line2); stroke-width: 1; }
 .cv-mass { fill: var(--plum2); fill-opacity: .14; stroke: none; } .cv-mass.cv-bad { fill: var(--bad); fill-opacity: .17; }
 .cv-slice { stroke: var(--plum2); stroke-width: .8; opacity: .45; }
 .cv-arc { fill: none; stroke: var(--plum2); stroke-width: 3.2; stroke-linecap: round; } .cv-arc.cv-bad { stroke: var(--bad); }

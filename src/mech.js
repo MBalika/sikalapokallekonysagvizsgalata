@@ -60,6 +60,8 @@
     let best = null; const all = [];
     for (let xc = -4; xc <= LX + 3; xc += 1) for (let yc = 2; yc <= 22; yc += 1.5) for (const dr of [-2, -1, 0, 1.5]) {
       const r = Math.hypot(xc - LX, yc + H) + dr; const res = bishop(xc, yc, r, o); if (!res || res.x1 - res.x0 < 5 || res.F < 0.2) continue;
+      // az alaptestet (B = 0,6 m, alapsík 0,8 m mélyen) metsző köröket kizárjuk – ahogy a kalkulátor és a mintapélda is
+      if (loads.some(L => [L.x - 0.3, L.x, L.x + 0.3].some(x => x > res.x0 && x < res.x1 && yc - Math.sqrt(Math.max(0, r * r - (x - xc) * (x - xc))) > -0.8))) continue;
       if (trials) all.push({ xc, yc, r, F: res.F });
       if (!best || res.F < best.F) best = { xc, yc, r, F: res.F, x0: res.x0, x1: res.x1, slices: res.slices };
     }

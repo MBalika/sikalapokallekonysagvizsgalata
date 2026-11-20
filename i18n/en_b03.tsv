@@ -8,7 +8,6 @@ ce6bc39	New – verification cases + MFA / RFA
 50cbf75	equilibrium and uplift: VC2
 58b839a	shallow foundations, slopes, retaining walls: VC3 (MFA – with a factor on tan φ′ and c′)
 c1660bf	RFA: the resistance with γ<sub>R</sub> (bearing ≈ 1.4, sliding 1.1); within RFA, VC1 or VC4 (≈ DA-2*)
-68073c2	the values come from the National Annex – not yet published
 80b4032	Verification case
 5a10991	What for?
 be3f302	Old equivalent
@@ -28,13 +27,11 @@ e56346d	G: 1.0; Q: 1.3 + M2 material factors
 6dd2e06	the factor on the effect of actions (e.g. retaining walls)
 a5fec06	=
 366d871	For shallow foundations
-a314e70	The bearing resistance formula has moved into the main text, probably with a ground inclination factor.
-21ca7e2	<b>Overturning</b> (static equilibrium, without ground failure) and <b>toppling</b> (rotational bearing failure) are checked separately.
+21ca7e2	<b>Toppling</b> (loss of static equilibrium, without ground failure) and <b>overturning</b> (ground failure caused by rotation of the footing) are checked separately.
 8ccbfb7	The eccentricity limit is e ≤ B/3, <b>0.59·r</b> for a circular footing; in the serviceability state no gap should open at the edge of the footing.
 8dbc74a	The 0.4 limit for undrained sliding remains; the factors for sliding and bearing resistance do not change numerically (1.1 and 1.4).
 8f7a288	New concepts
 7133908	<b>Ground Model</b> → <b>Geotechnical Design Model</b>: a mandatory line of reasoning.
-89edba3	The <b>Geotechnical Category</b> results from the consequence class (CC) combined with the complexity of the ground conditions (GCC).
 3da8b14	Overall stability moves into <b>Clause 4 of EN 1997-3</b> (slopes, cuttings, embankments); the zone of influence is a new concept.
 a1163fa	<b>Representative</b> values instead of characteristic ones.
 e99aa1c	<b>2024</b><span>EN 1997-1 and -2 published</span>
@@ -42,7 +39,6 @@ e99aa1c	<b>2024</b><span>EN 1997-1 and -2 published</span>
 cec5c9e	<b>30 Mar 2026</b><span>texts with the national standards bodies</span>
 42cf5d6	<b>30 Sep 2027</b><span>deadline for national implementation</span>
 9903af1	<b>30 Mar 2028</b><span>withdrawal of the first generation</span>
-ee821dc	The final texts and the Hungarian National Annex are worth checking once they are published.
 90f0f76	Quiz – the new Eurocode
 5a07bd1	Animated videos
 5b56d8e	Five short 3D animations on the four limit states and the summary.
@@ -51,7 +47,6 @@ ae17fbe	Forty statements from all four limit states – with an instant explanat
 015daff	Start again
 80bddb5	<b>Stability of shallow foundations</b> – interactive module for the Foundation Engineering course at the BME Faculty of Civil Engineering, according to EN 1997-1 (Eurocode 7) and its Hungarian National Annex.
 f87cb09	The simulators and examples are illustrative models; for design, the standards in force, the National Annex and verified software must be used.
-3299b03	<a href="https://sikalapok-sullyedesszamitasa.vercel.app/" target="_blank" rel="noopener">Settlement of shallow foundations</a>⏎      <a href="https://vedekezesakarossullyedesekellen.vercel.app/" target="_blank" rel="noopener">Protection against harmful settlement</a>⏎      <a href="https://kedvezotlen-altalaj.vercel.app/" target="_blank" rel="noopener">Foundations on unfavourable ground</a>
 5a43d6c	Back to top
 b571c6c	Video
 879eb3e	Full screen
@@ -149,8 +144,6 @@ d085464	GEO – the soil mass moves together with the footing
 57e3082	Cast in situ – rough surface, the grains interlock
 66f1b04	Precast – smooth surface, the grains slide
 27845d2	displacement / embedment depth (%)
-f6d6bab	the soil in front of the face is gone: Rp = 0
-e7a62dd	mobilised: ${fmt(v * 100, 0)} %
 8419414	plan: the kern (B/6) and the B/3 limit
 7362f64	${isFinite(smax) ? fmt(smax / (V / A), 2) : '∞'}<small>× mean</small>
 8d5dedb	B/6 < e ≤ B/3: part of the base lifts off

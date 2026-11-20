@@ -26,7 +26,7 @@ af451f4	uplift force ↔ self-weight, surcharge, friction, anchors
 c7887cc	intermediate floor slab
 8cc2cf0	 (cover)
 d0dfa34	water on the roof slab
-e89ef2b	<p class="cx-c">The soil resting on the extended toe (γ above the water, γ<sub>sat</sub> below it).</p>
+e89ef2b	<p class="cx-c">The soil resting on the projection (γ above the water, γ<sub>sat</sub> below it).</p>
 a8d9879	ballast water
 2023ff3	other permanent
 e6c920d	Stabilising permanent actions (γ<sub>G;stb</sub> = 0.90)
@@ -45,7 +45,6 @@ e534ba3	Ballast water for Λ = 1
 be82290	The shear strength parameters must not be negative (and at least one of them must be positive).
 d733c60	The unit weight must be positive.
 3d7cb2c	No valid slip surface found – check the geometry (e.g. a foundation depth that is too large or a rigid layer that is too shallow).
-a519020	High effective cohesion (c′<sub>k</sub> = ${u_(p.c, 0, 'kPa')}) – it may greatly overestimate the safety of the slope.
 88974fc	In an undrained (total stress) analysis the pore water pressure does not appear separately – the effect of water is contained in the value of c<sub>u</sub>.
 2880172	Unusual pore pressure ratio: r<sub>u</sub> = ${F(p.ru, 2)}.
 e0b5a5f	Slope steeper than 1 : 1 – check whether a circular slip surface is realistic.
@@ -66,7 +65,6 @@ b438a80	Slip surface involving the footings
 a681d25	 from the crest, 
 dcc5d23	 deep.</p>
 cdfaff3	Slip surface search
-920a99c	<p class="cx-c">A grid of ${sr.nx} × ${sr.ny} centres; for each centre, circles passing through the toe of the slope and touching ${sr.nx ? (p.fine ? 22 : 14) : 0} different depths, then refinement by pattern search. ${nw(sb('n', 'lamella') + ' = ' + m.ns)}. Computing time: ${nw(F(ms, 0) + NB + 'ms')}.</p>
 2fed8f8	<div class="cx-fl nw">critical circle: O(${F(crit.xc, 2)}; ${F(crit.yc, 2)})${NB}m, r = ${u_(crit.R, 2, 'm')}</div><div class="cx-fl nw">entry: ${u_(-crit.x0, 2, 'm')} behind the crest</div><div class="cx-fl nw">exit: ${Math.abs(crit.x1 - m.LX) < 0.05 ? 'a rézsűlábnál' : crit.x1 > m.LX ? u_(crit.x1 - m.LX, 2, 'm') + ' a rézsűláb előtt' : 'a rézsűn, ' + u_(m.H + m.ground(crit.x1), 2, 'm') + '-rel a láb felett'}</div><p class="cx-c">The origin of the coordinates is the crest; x is positive towards the toe, y upwards.</p>
 2405b81	at the toe of the slope
 c8d82d5	 in front of the toe
@@ -110,7 +108,7 @@ f76198c	Input
 1297821	Design values
 3aab01c	permanent vertical load
 a05ff7d	variable vertical load
-914a5d0	Q<sub>k</sub> surely acts together with the horizontal force
+914a5d0	Q<sub>k</sub> is certain to act together with the horizontal force
 8d21b42	permanent horizontal (e.g. earth pressure)
 07d9d41	variable horizontal (e.g. wind, braking)
 c0b9df9	lever arm of the horizontal force above the base

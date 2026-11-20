@@ -28,7 +28,7 @@
       <h1>Síkalapok <span class="l2">állékonyság&shy;vizsgálata</span></h1>
       <p class="lead">Egy alaptest négyféleképpen veszítheti el az állékonyságát: elcsúszik az alapsíkon, felborul, felúszik, vagy a környező talajjal együtt megcsúszik. Mind a négyet külön kell igazolni. Ezen az oldalon szimulátorokkal, animációkkal és kvízekkel járhatod végig, mi dönti el az egyes esetekben.</p>
       <div class="ctas"><a class="btn" href="#elcsuszas">Kezdés az elcsúszással</a><a class="btn ghost" href="#videok">Az öt animációs videó</a></div>
-      <p class="small muted" style="margin-top:18px">A felső sávban (igazolólap) mindig látod, hol tart a négy szimulátor: a sáv a kihasználtságot mutatja, a jelölés 1,0-nál van.</p>
+      <p class="small muted" style="margin-top:18px">A felső sáv négy gombjával bármikor a négy vizsgálat fejezetének elejére ugorhatsz.</p>
     </div>
     <figure class="stage" style="margin:0">
       <canvas id="heroCv" width="640" height="420" role="img" aria-label="Animáció: a négy tönkremeneteli mód – elcsúszás, felborulás, felúszás, általános állékonyságvesztés"></canvas>
@@ -47,7 +47,7 @@
       <div>
         <p>Az alaptestek méreteinek meghatározásával párhuzamosan – vagy azt követően – azt is igazolni kell, hogy a létesítmény az EC7 szerint kellő állékonysági biztonsággal rendelkezik <b>elcsúszással, felborulással és felúszással</b> szemben. Bizonyos helyzetekben – rézsű, munkagödör, part vagy üreg közelében – az <b>általános állékonyságot</b> is ellenőrizni kell.</p>
         <p>A közös menet mindegyiknél ugyanaz: felírjuk a hatások tervezési értékét (E<sub>d</sub>) és az ellenállás tervezési értékét (R<sub>d</sub>), majd igazoljuk, hogy E<sub>d</sub> ≤ R<sub>d</sub>. A felborulásnál nyomatékokat vetünk össze: M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>. Ahol a talaj szilárdsága számít, ott <b>drénezett és drénezetlen</b> állapotra is.</p>
-        <p>A kettő hányadosa a <b>kihasználtság</b>: Λ = E<sub>d</sub> / R<sub>d</sub>. Ha Λ ≤ 1,0, az alaptest az adott határállapotra megfelel. Az igazolólap is ezt mutatja.</p>
+        <p>A kettő hányadosa a <b>kihasználtság</b>: Λ = E<sub>d</sub> / R<sub>d</sub>. Ha Λ ≤ 1,0, az alaptest az adott határállapotra megfelel.</p>
       </div>
       <div class="tblw" style="margin-top:0">
         <table class="tbl">
@@ -123,7 +123,7 @@
       </div>
       <div>
         <p style="margin-top:0">Gondolni kell arra is, hogy az alaptest homlokfala mellől az erózió vagy valamilyen emberi beavatkozás (pl. egy utólagos közműárok) eltávolíthatja a talajt, agyagban pedig a szezonális víztartalom-változás miatt a talaj elválhat a homlokfaltól. Ha ez nem zárható ki, a biztonság javára R<sub>p;d</sub> = 0-val számolunk.</p>
-        <p class="small muted">Egyes tervezőszoftverek felajánlják, hogy a teljes passzív földellenállásnak csak ½–⅓ része legyen figyelembe véve.</p>
+        <p class="small muted">Egyes tervezőszoftverek azt is felajánlják, hogy a teljes passzív földellenállásnak csak a harmadával vagy a felével számoljunk.</p>
       </div>
     </div>
     <div class="panel k1">
@@ -214,7 +214,7 @@
     <div class="facts">
       <div class="fact k2"><div class="n">4×</div><h4>e = B/3-nál</h4><p>a nyomott hossz B/2, a sarokfeszültség az átlagos talpfeszültség négyszerese.</p></div>
       <div class="fact k2"><div class="n">0,6<small>·r</small></div><h4>Kör alaprajz</h4><p>A belső mag sugara r/4. Az EC7 szerint e &gt; 0,6·r esetén külön óvintézkedés kell.</p></div>
-      <div class="fact k2"><div class="n">6,7<small>m</small></div><h4>Szélerőmű síkalapja</h4><p>Egy Vestas V126 statikájában (R = 13,8 m, M = 149 MNm) e = 6,7 m &lt; 0,59·R = 8,1 m – ez a német szélerőmű-irányelv határa (hézag legfeljebb a súlypontig).<br></p></div>
+      <div class="fact k2"><div class="n">6,7<small>m</small></div><h4>Szélerőmű síkalapja</h4><p>Egy szélerőmű R = 13,8 m sugarú körlemez alapjánál e = 6,7 m &lt; 0,59·R = 8,1 m – a szélerőműveknél szokásos határ: a hézag legfeljebb a súlypontig érhet.</p></div>
     </div>
     <div class="split">
       <div class="box"><h4>Rövid idejű vagy tartós?</h4><p class="small" style="margin:0">Nem mindegy, hogy a felborító hatás rövid idejű (pl. szélteher) vagy tartós (pl. földnyomás). Szélrohamnál a talp átmenetileg elemelkedik, majd visszaül; tartós külpontos tehernél az alap fokozatosan megbillenhet. A szélerőművekre vonatkozó német irányelv ezért kvázi-állandó teherre nem enged hézagot, szélsőséges teherre legfeljebb a súlypontig.</p></div>
@@ -233,22 +233,22 @@
     <div class="cols">
       <div>
         <p>A tervezési gyakorlatban számtalan esetben előfordul, hogy kis önsúlyú, de nagy „térfogatú” műtárgyra – földalatti tartály, gyalogos aluljáró, földalatti garázs – magas talajvízálláskor nagyobb felhajtóerő hat, mint az állandó terhek összege. Az Eurocode erre külön teherbírási határállapotot jelöl meg: <b>UPL</b> (uplift).</p>
-        <div class="eq"><div class="f">V<sub>dst;d</sub> ≤ G<sub>stb;d</sub> + R<sub>d</sub></div><div class="w"><div>V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub> – a felhajtóerő (A<sub>k</sub>: a talajvíz alatti bemerülő térfogat, γ<sub>w</sub> = 10 kN/m³)</div><div>G<sub>stb;d</sub> = G<sub>sz;d</sub> + G<sub>t;d</sub> – a szerkezet és a leterhelő talaj súlya, γ<sub>G;stb</sub>-vel</div><div>R<sub>d</sub> = T<sub>d</sub> + P<sub>d</sub> – súrlódás a szerkezet és a talaj között, illetve horgonyerő</div></div></div>
+        <div class="eq"><div class="f">V<sub>dst;d</sub> ≤ G<sub>stb;d</sub> + R<sub>d</sub></div><div class="w"><div>V<sub>dst;d</sub> = γ<sub>G;dst</sub> · γ<sub>w</sub> · h<sub>w</sub> · A<sub>k</sub> – a felhajtóerő (A<sub>k</sub>: az alaplemez alapterülete, h<sub>w</sub>: a talajvízszint magassága az alaplemez alsó síkja felett, γ<sub>w</sub> = 10 kN/m³)</div><div>G<sub>stb;d</sub> = G<sub>sz;d</sub> + G<sub>t;d</sub> – a szerkezet és a leterhelő talaj súlya, γ<sub>G;stb</sub>-vel</div><div>R<sub>d</sub> = T<sub>d</sub> + P<sub>d</sub> – súrlódás a szerkezet és a talaj között, illetve horgonyerő</div></div></div>
         <p>A kihasználtság: Λ = V<sub>dst;d</sub> / (G<sub>stb;d</sub> + R<sub>d</sub>).</p>
       </div>
       <div>
         <div class="tblw" style="margin-top:0"><table class="tbl"><thead><tr><th colspan="2">UPL – a hatások parciális tényezői</th></tr></thead><tbody><tr><td>γ<sub>G;dst</sub></td><td>1,00 – állandó, állékonyságcsökkentő (felhajtóerő)</td></tr><tr><td>γ<sub>G;stb</sub></td><td>0,90 – állandó, állékonyságnövelő (önsúly)</td></tr><tr><td>γ<sub>Q;dst</sub></td><td>1,50 – esetleges, állékonyságcsökkentő</td></tr><tr><td>γ<sub>Q;stb</sub></td><td>0 – esetleges, állékonyságnövelő</td></tr></tbody></table></div>
         <p>A felúszással szembeni globális biztonság többnyire csak γ<sub>G;dst</sub> / γ<sub>G;stb</sub> = 1,0 / 0,9 = <b>1,11</b>. Ezért különösen fontos a vízszintek óvatos felvétele, vagy a veszélyt csökkentő óvintézkedések bevezetése.</p>
-        <p class="small muted">A súrlódás és a horgonyok ellenállására az EN 1997-1 ajánlása γ<sub>s;t</sub> = γ<sub>a</sub> = 1,4 (az AC:2010 helyesbítés óta stabilizáló állandó teherként csak a nemzeti melléklet engedélyével vehetők). A magyar NA értékeit a szabványban érdemes ellenőrizni.</p>
+        <p class="small muted">A súrlódás és a horgonyok ellenállására az EN 1997-1 ajánlása γ<sub>s;t</sub> = γ<sub>a</sub> = 1,4. Stabilizáló állandó hatásként csak akkor kezelhetők, ha a nemzeti melléklet megengedi.</p>
       </div>
     </div>
     <h3>A talajvízszint a legérzékenyebb adat</h3>
     <div class="cols">
       <div>
-        <p>Az épületek, műtárgyak felúszással szembeni ellenőrzésekor a talajvízszint geometriai adatként kezelendő: tervezési értékét vagy közvetlenül, vagy a karakterisztikus érték biztonsági tartalékkal való növelésével származtatjuk. A 30×15 m-es példagarázsnál <b>1 m-rel magasabb víz +4500 kN, azaz +20%</b> felhajtóerőt jelent.</p>
+        <p>Az épületek, műtárgyak felúszással szembeni ellenőrzésekor a talajvízszint geometriai adatként kezelendő: tervezési értékét vagy közvetlenül, vagy a karakterisztikus érték biztonsági tartalékkal való növelésével származtatjuk. A 30×15 m-es példagarázsnál <b>1 m-rel magasabb víz +4500 kN, azaz +20 %</b> felhajtóerőt jelent.</p>
       </div>
       <div>
-        <p>Duna-közeli telken a tartós árvizet a part menti talajvíz is követi: Dél-Budán az 1965-ös árvíz után a talajvíz a part mentén több mint 3 m-rel emelkedett, és megközelítette a folyó maximális szintjét. A budapesti mértékadó árvízszint (MÁSZ) a Vigadó térnél 104,24 mBf – az 1%-os valószínűségű jégmentes árvíz vízhozamából származtatva.</p>
+        <p>Duna-közeli telken a tartós árvizet a part menti talajvíz is követi: Dél-Budán az 1965-ös árvíz után a talajvíz a part mentén több mint 3 m-rel emelkedett, és megközelítette a folyó maximális szintjét. A budapesti mértékadó árvízszint (MÁSZ) a Vigadó térnél 104,24 mBf (méter a Balti-tenger szintje felett) – az 1 %-os valószínűségű jégmentes árvíz vízhozamából származtatva.</p>
       </div>
     </div>
     <div class="panel k3">
@@ -270,7 +270,9 @@
             <div class="rg"><label>e) Oldalfal-súrlódás a földnyomásból<span></span></label><div class="seg" id="fu_fr"><button class="on" data-v="0" type="button">nincs</button><button data-v="1" type="button">K<sub>0</sub> · tg δ</button></div></div>
           </div>
           <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
-          <p class="small muted" style="margin-top:10px">c) A leszívást a talajvízszint csúszkával modellezheted. Szemléltető példa: falak 0,4 m, födémek 0,35 és 0,30 m; a perem talaja a víz felett 19, alatta 20 kN/m³. Oldalfal-súrlódás: σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>, K<sub>0</sub> = 1 − sin 30° = 0,5, δ = ⅔ · φ′ = 20°, R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub> (1,4).</p>
+          <p class="small muted" style="margin-top:10px">c) A leszívást a talajvízszint csúszkával modellezheted. Szemléltető példa: falak 0,4 m, födémek 0,35 és 0,30 m (a közbenső födémben 10 % nyílás); a perem talaja a víz felett 19, alatta 20 kN/m³.</p>
+          <p class="small muted simf">Oldalfal-súrlódás:</p>
+          <ul class="small muted simf"><li>σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub></li><li>K<sub>0</sub> = 1 − sin 30° = 0,5</li><li>δ = ⅔ · φ′ = 20°</li><li>R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub>, γ<sub>s;t</sub> = 1,4</li></ul>
         </div>
       </div>
     </div>
@@ -334,19 +336,19 @@
             <div class="rg"><label>γ<sub>φ</sub> = γ<sub>c</sub><span></span></label><div class="seg" id="al_gm"><button data-v="1.25" type="button">1,25</button><button class="on" data-v="1.35" type="button">1,35</button></div></div>
           </div>
           <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
-          <p class="small muted" style="margin-top:10px">A piros szaggatott vonal a mértékadó csúszólap; ha Λ &gt; 1, a csúszó tömeg a házzal együtt elmozdul.</p>
+          <p class="small muted" style="margin-top:10px">A piros szaggatott vonal a mértékadó csúszólap; ha Λ &gt; 1, a csúszó tömeg a házzal együtt elmozdul. A két sávalap 0,6 m széles, alapsíkjuk 0,8 m mélyen van; az alaptestet metsző köröket kizárjuk.</p>
         </div>
       </div>
     </div>
     <div class="split">
       <div class="box"><h4>Megoldások</h4><ul><li>az alapot távolabb visszük a rézsűéltől;</li><li>mélyebbre alapozunk – a csúszólap alá;</li><li>laposítjuk vagy megtámasztjuk a rézsűt;</li><li>víztelenítünk, rendezzük a felszíni vízelvezetést.</li></ul></div>
-      <div class="box"><h4>Mennyi a „távol”?</h4><p class="small" style="margin:0">Meyerhof kísérletei szerint a rézsű teherbírás-csökkentő hatása kb. 2–6·B távolságig érződik. Az amerikai építési szabályzat lefelé eső rézsű koronáján H/3 (legfeljebb 12,2 m), felfelé emelkedő rézsű tövénél H/2 (legfeljebb 4,6 m) távolságot ír elő – csak állékony rézsűre. Ezek tájékoztató értékek; az igazolás a csúszólapos számítás.</p></div>
+      <div class="box"><h4>Mennyi a „távol”?</h4><p class="small" style="margin:0">Kísérletek szerint a rézsű teherbírás-csökkentő hatása kb. 2–6·B távolságig érződik. Az amerikai építési szabályzat lefelé eső rézsű koronáján H/3 (legfeljebb 12,2 m), felfelé emelkedő rézsű tövénél H/2 (legfeljebb 4,6 m) távolságot ír elő – csak állékony rézsűre. Ezek tájékoztató értékek; az igazolás a csúszólapos számítás.</p></div>
     </div>
     <h3>Esetek</h3>
     <div class="case k4"><div class="yr">2011</div><div><h4>Kulcs – löszpart</h4><p>53 ingatlan került veszélybe, legalább 14 épületet le kellett bontani; a szakértők előre figyelmeztettek, de a partfal megerősítésére nem jutott pénz.</p></div></div>
-    <div class="case k4"><div class="yr">2008</div><div><h4>Dunaszekcső, Hold-hegy</h4><p>A 70 m magas löszfal 2008 februárjában megcsúszott és kb. 10 m-t süllyedt, a Duna medrében zátony keletkezett. A kutatások szerint a mozgást főleg a talajvízszint változása vezérli – hatása kb. tízszerese a Duna vízszintjének.</p></div></div>
+    <div class="case k4"><div class="yr">2008</div><div><h4>Dunaszekcső, löszmagaspart</h4><p>A kb. 50 m magas löszfal 2008 februárjában megcsúszott és kb. 10 m-t süllyedt, a Duna medrében zátony keletkezett. A kutatások szerint a mozgást főleg a talajvízszint változása vezérli – hatása legalább tízszer akkora, mint a Duna vízszintjéé.</p></div></div>
     <div class="case k4"><div class="yr">1914</div><div><h4>Balatonkenese – magaspart</h4><p>Csapadékos időszak után kb. 100 000 m³ lösz sodort a Balatonba egy vasúti szerelvényt; a mozdonyvezető időben megállt, áldozat nem volt.</p></div></div>
-    <div class="case k4"><div class="yr">1972</div><div><h4>Po Shan Road, Hongkong</h4><p>Három egymást követő napon napi 200 mm feletti eső, a rézsű lábánál egy 13 m mély, megtámasztatlan bevágás: kb. 80 000 t föld csúszott le 7–10 másodperc alatt, egy 12–13 emeletes lakóház leszakadt az alapjáról és ledőlt. 67 ember halt meg.</p></div></div>
+    <div class="case k4"><div class="yr">1972</div><div><h4>Po Shan Road, Hongkong</h4><p>Három egymást követő napon napi 200 mm feletti eső, a rézsű lábánál egy 13 m mély, megtámasztatlan bevágás: kb. 80 000 t föld csúszott le 7–10 másodperc alatt, egy 12 szintes lakóház leszakadt az alapjáról és ledőlt. 67 ember halt meg.</p></div></div>
     <div class="case k4"><div class="yr">2009</div><div><h4>Lotus Riverside, Sanghaj</h4><p>Egy 13 emeletes, cölöpalapozású ház szinte épen dőlt fel: az egyik oldalon mélygarázs-gödröt ástak, a kitermelt földet a másik oldalon, a patakparton kb. 10 m magasra halmozták. Cölöpös épület volt, és a hivatalos okot egy későbbi elemzés vitatja – a „töltés az épület mellett” veszélyét viszont jól mutatja.</p></div></div>
     <div class="note"><b>Kontraszt: Transcona, 1913.</b> A winnipegi gabonasiló 24 óra alatt kb. 27°-ra billent – ez azonban a lemezalap alatti talajtörés (teherbírás, GEO) volt, nem általános állékonyságvesztés és nem merev testként való felborulás.</div>
     <div class="quiz k4" id="q4"><div class="qh"><h4>Kvíz – általános állékonyság</h4><div class="dots"></div></div></div>
@@ -397,7 +399,7 @@
     <div class="note"><b>Tájékoztatásul.</b> Ezen az oldalon minden magyarázat, mintapélda, szimulátor és kalkulátor a jelenleg érvényes MSZ EN 1997-1 és nemzeti melléklete szerint számol. Ez a fejezet csak azt mutatja be, mi változik majd a második generációs szabvánnyal.</div>
     <div class="split">
       <div class="box"><h4>Most – DA-2* és DA-3 szerinti igazolás</h4><ul><li>EQU: külön tényező a stabilizáló és destabilizáló hatásra (γ<sub>G;stb</sub> = 0,9; γ<sub>G;dst</sub> = 1,1)</li><li>elcsúszás, teherbírás: DA-2* (A1 + M1 + R2)</li><li>talajparaméterek jellemző értékkel, az ellenállás γ<sub>R</sub>-rel csökkentve</li><li>általános állékonyság: DA-3</li></ul></div>
-      <div class="box"><h4>Új – igazolási esetek + MFA / RFA</h4><ul><li>egyensúly és felhajtóerő: VC2</li><li>síkalap, rézsű, támfal: VC3 (MFA – tg φ′ és c′ tényezővel)</li><li>RFA: az ellenállás γ<sub>R</sub>-rel (teherbírás ≈ 1,4, elcsúszás 1,1); RFA-n belül VC1 vagy VC4 (≈ DA-2*)</li><li>az értékeket a nemzeti melléklet adja – ez még nem készült el</li></ul></div>
+      <div class="box"><h4>Új – igazolási esetek + MFA / RFA</h4><ul><li>egyensúly és felhajtóerő: VC2</li><li>síkalap, rézsű, támfal: VC3 (MFA – tg φ′ és c′ tényezővel)</li><li>RFA: az ellenállás γ<sub>R</sub>-rel (teherbírás ≈ 1,4, elcsúszás 1,1); RFA-n belül VC1 vagy VC4 (≈ DA-2*)</li><li>az értékeket a nemzeti melléklet adja meg</li></ul></div>
     </div>
     <div class="tblw"><table class="tbl"><thead><tr><th>Igazolási eset</th><th>Mire?</th><th>Régi megfelelője</th><th>Hatástényezők (tartós helyzet)</th></tr></thead><tbody>
       <tr><td>VC1</td><td>szerkezeti ellenállás, alapozás általában</td><td>STR, DA2</td><td>G: 1,35·k<sub>F</sub>; Q: 1,5·k<sub>F</sub></td></tr>
@@ -408,11 +410,11 @@
     <div class="cols">
       <div>
         <h3>Síkalapoknál</h3>
-        <ul><li>A teherbírási képlet a főszövegbe került, várhatóan terephajlás-tényezővel.</li><li>A <b>felborulás</b> (statikus egyensúly, talajtörés nélkül) és az <b>átfordulás</b> (forgásos teherbírási törés) külön vizsgálat.</li><li>A külpontosság határa e ≤ B/3, kör alaprajznál <b>0,59·r</b>; használhatósági állapotban az alap szélén ne nyíljon rés.</li><li>A drénezetlen elcsúszás 0,4-es korlátja megmarad; az elcsúszás és a teherbírás tényezői számszerűen nem változnak (1,1 és 1,4).</li></ul>
+        <ul><li>A teherbírási képlet a főszövegbe került, új terephajlás-tényezővel.</li><li>A <b>felborulás</b> (statikus egyensúly, talajtörés nélkül) és az <b>átfordulás</b> (forgásos teherbírási törés) külön vizsgálat.</li><li>A külpontosság határa e ≤ B/3, kör alaprajznál <b>0,59·r</b>; használhatósági állapotban az alap szélén ne nyíljon rés.</li><li>A drénezetlen elcsúszás 0,4-es korlátja megmarad; az elcsúszás és a teherbírás tényezői számszerűen nem változnak (1,1 és 1,4).</li></ul>
       </div>
       <div>
         <h3>Új fogalmak</h3>
-        <ul><li><b>Talajmodell</b> (Ground Model) → <b>geotechnikai tervezési modell</b>: kötelező gondolatmenet.</li><li>A <b>geotechnikai kategória</b> a következményi osztály (CC) és a talajviszonyok bonyolultsága (GCC) együtteséből adódik.</li><li>Az általános állékonyság az <b>EN 1997-3 4. fejezetébe</b> (rézsűk, bevágások, töltések) kerül; új fogalom a hatászóna.</li><li>Karakterisztikus helyett <b>reprezentatív</b> érték.</li></ul>
+        <ul><li><b>Talajmodell</b> (Ground Model) → <b>geotechnikai tervezési modell</b>: kötelező gondolatmenet.</li><li>A <b>geotechnikai kategória</b> a következményosztály (CC) és a talajviszonyok bonyolultsága (GCC) együtteséből adódik.</li><li>Az általános állékonyság az <b>EN 1997-3 4. fejezetébe</b> (rézsűk, bevágások, töltések) kerül; új fogalom a hatászóna.</li><li>Karakterisztikus helyett <b>reprezentatív</b> érték.</li></ul>
       </div>
     </div>
     <div class="tline">
@@ -422,7 +424,7 @@
       <div><b>2027. szept. 30.</b><span>nemzeti bevezetés határideje</span></div>
       <div><b>2028. márc. 30.</b><span>az első generáció visszavonása</span></div>
     </div>
-    <p class="small muted">A végleges szövegeket és a magyar nemzeti mellékletet a megjelenésük után érdemes ellenőrizni.</p>
+    <p class="small muted">A számértékeket a magyar nemzeti mellékletből kell venni.</p>
         <div class="quiz k5" id="q6"><div class="qh"><h4>Kvíz – az új Eurocode</h4><div class="dots"></div></div></div>
   </div>
 </section>
@@ -443,6 +445,26 @@
     <div class="tfgrid" id="tfgrid"></div>
   </div>
 </section>
+<!-- ===================== A SOROZAT TÖBBI RÉSZE ===================== -->
+<section class="chap k0" id="tovabb">
+  <div class="wrap">
+    <div class="chead"><div class="code">→</div><h2>Az Alapozás tananyagai</h2><p>A sorozat többi része – mindegyik külön, interaktív oldal.</p></div>
+    <div class="series">
+      <a class="next" href="https://sikalapok-sullyedesszamitasa.vercel.app/" target="_blank" rel="noopener"><b>Következik: síkalapok süllyedésszámítása ↗</b><small>Feszültségek az altalajban, süllyedés és süllyedéskülönbség</small></a>
+      <a href="https://bme-alapozas.vercel.app/" target="_blank" rel="noopener"><b>Alapozás – nyitóoldal ↗</b><small>Bevezetés, a tárgy útja kilenc állomáson és minden tananyag egy helyen</small></a>
+      <a href="https://talajfelderites.vercel.app/" target="_blank" rel="noopener"><b>Talajfelderítés ↗</b><small>Fúrás, szondázás, geofizika, mintavétel – mit tudunk meg a talajról</small></a>
+      <a href="https://sikalapoktervezese.vercel.app/" target="_blank" rel="noopener"><b>Síkalapok tervezése ↗</b><small>Alaptípusok, alapsík, szerkezeti kialakítás – a síkalap megválasztása</small></a>
+      <a href="https://sikalapok-teherbirasszamitasa.vercel.app/" target="_blank" rel="noopener"><b>Síkalapok teherbírásszámítása ↗</b><small>Az alapfelület méretezése teherbírási határállapotban – képlet, mintapéldák, kalkulátor</small></a>
+      <a href="https://vedekezesakarossullyedesekellen.vercel.app/" target="_blank" rel="noopener"><b>Védekezés a káros süllyedések ellen ↗</b><small>Kisebb talpnyomás, mélyebb alapsík, talajjavítás</small></a>
+      <a href="https://kedvezotlen-altalaj.vercel.app/" target="_blank" rel="noopener"><b>Alapozás kedvezőtlen altalajon ↗</b><small>Térfogatváltozó agyag, roskadékony lösz, feltöltés, szerves talaj</small></a>
+      <a href="https://sikalapokaterohatasok.vercel.app/" target="_blank" rel="noopener"><b>A síkalapokat érő hatások ↗</b><small>Rezgés, földrengés, üreg, kimosás és fagy az alap alatt</small></a>
+      <a href="https://melyalapozasok.vercel.app/" target="_blank" rel="noopener"><b>Mélyalapozások ↗</b><small>Cölöpök, résfalak, kutak – ha a teherbíró réteg mélyen van</small></a>
+      <a href="https://munkaterhatarolasok.vercel.app/" target="_blank" rel="noopener"><b>Munkatérhatárolások ↗</b><small>Dúcolás, falak, horgonyzás – a mélyebb alapsík munkagödre</small></a>
+      <a href="https://bme-alapozas.vercel.app/telek/" target="_blank" rel="noopener"><b>Egy telek, egy félév ↗</b><small>Kilenc feladat egyetlen telken – te vagy a geotechnikus</small></a>
+      <a href="https://bme-alapozas.vercel.app/ar-labor/" target="_blank" rel="noopener"><b>Alapozás AR labor ↗</b><small>Talajtörés, feszültséghagyma, CFA cölöp és munkagödör a saját asztalodon</small></a>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -450,11 +472,6 @@
     <div>
       <p><b>Síkalapok állékonyságvizsgálata</b> – interaktív tananyag a BME Építőmérnöki Kar Alapozás tárgyához, az MSZ EN 1997-1 (Eurocode 7) és nemzeti melléklete szerint.</p>
       <p class="small">A szimulátorok és példák szemléltető modellek; tervezéshez a hatályos szabványokat, a nemzeti mellékletet és igazolt programokat kell használni.</p>
-    </div>
-    <div class="links small">
-      <a href="https://sikalapok-sullyedesszamitasa.vercel.app/" target="_blank" rel="noopener">Síkalapok süllyedésszámítása</a>
-      <a href="https://vedekezesakarossullyedesekellen.vercel.app/" target="_blank" rel="noopener">Védekezés a káros süllyedések ellen</a>
-      <a href="https://kedvezotlen-altalaj.vercel.app/" target="_blank" rel="noopener">Alapozás kedvezőtlen altalajon</a>
     </div>
   </div>
 </footer>
