@@ -629,6 +629,19 @@ main .rag, footer .rag { text-align: left !important; }
 .mp-tbl td, .mp-tbl th { padding: 6px 9px; white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
 .mp-tbl td:first-child, .mp-tbl th:first-child { text-align: left; }
 
+/* ---------- szövegdobozok: cím és szöveg középen (2026-11-20) ----------
+   A doboz szövege középre kerül; a több soros, sorkizárt bekezdés sorkizárt marad, de az utolsó sora is középre áll.
+   Balra zárt marad: felsorolás, táblázat, jelmagyarázat, űrlap, a Λ-sáv skálája. */
+.tf .st, .tf .fb, .ro, .eq, .fact, .box, .mp-tile, .cx-tab, .cx-iq, .cx-ct > div, .mp-fig figcaption, .cx-m > :last-child, .cx-sum { text-align: center; }
+main .tf .fb, main .fact p, main .box p, main .mp-fig figcaption, main .cx-m > :last-child, main .cx-card p { text-align-last: center; }
+main .tf .rag, main .fact .rag, main .box .rag, main .eq .rag, main .cx-m .rag, main .mp-fig figcaption.rag { text-align: center !important; }
+.box ul, .box ol, .box li, .eq ul, .fact ul, .fact li { text-align: left; text-align-last: auto; }
+.cx-ct > div { flex: 1; min-width: 0; }
+.cx-sum { justify-content: center; }
+.cx-m { grid-template-columns: 22px minmax(0, max-content); justify-content: center; }
+.cx-det > summary { justify-content: center; text-align: center; }
+main .eq .w > div { text-align: center !important; text-align-last: center; }   /* a képlet jeleinek rövid magyarázata: rövid, középre zárt sorok */
+
 </style>
 <style id="bxt-css">
 /* Dobozcímek középre – formázás skill */
