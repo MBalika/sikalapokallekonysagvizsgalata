@@ -312,6 +312,7 @@ main .qres p { text-align: center; }
 .sim .lbls { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 2; }
 .sim .lbl3 { position: absolute; left: 0; top: 0; font: 700 12.5px/1.15 var(--fd); color: #fff; background: rgba(20, 14, 29, .8); padding: 3px 7px; border-radius: 6px; white-space: nowrap; font-variant-numeric: tabular-nums; will-change: transform; }
 .sim .lbl3.w { background: #1f6fb2; } .sim .lbl3.g { background: #1a7a48; } .sim .lbl3.r { background: #a8740a; } .sim .lbl3.s { background: #6c43cc; } .sim .lbl3.x { background: #c22f2f; } .sim .lbl3.p { background: #b02a2a; } .sim .lbl3.k6 { background: #158a52; padding: 2px 6px; transform-origin: center; } .sim .lbl3.k3 { background: #b9770b; padding: 2px 6px; }
+@media (max-width: 560px) { .sim .lbl3 { font-size: 11px; padding: 2px 5px; } .sim .lbl3.k6, .sim .lbl3.k3 { display: none !important; } }
 .sim .pip { position: absolute; right: 12px; bottom: 12px; padding: 0; border: 2px solid rgba(255, 255, 255, .9); border-radius: 10px; background: transparent; box-shadow: 0 6px 22px rgba(0, 0, 0, .35); cursor: pointer; z-index: 3; }
 .sim .pip span { position: absolute; left: 6px; top: 6px; font: 700 11px/1.2 var(--fd); background: rgba(20, 14, 29, .78); color: #fff; padding: 3px 7px; border-radius: 5px; }
 .sim .pip:focus-visible { outline: 3px solid var(--k2, #6c43cc); outline-offset: 2px; }
