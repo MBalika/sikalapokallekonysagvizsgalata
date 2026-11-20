@@ -881,7 +881,8 @@ main .rag, footer .rag { text-align: left !important; }
           <div class="ctrl">
             <div class="rg"><label for="cs_h">Megtámasztott magasság (talptól) <output data-out="cs_h"></output></label><input type="range" id="cs_h" min="2.5" max="6" step="0.1" value="3.9" data-fmt="1" data-u=" m"></div>
             <div class="rg"><label for="cs_B">Talpszélesség B <output data-out="cs_B"></output></label><input type="range" id="cs_B" min="1.6" max="4.5" step="0.05" value="2.6" data-fmt="2" data-u=" m"></div>
-            <div class="rg"><label for="cs_phi">φ′<sub>cv;k</sub> <output data-out="cs_phi"></output></label><input type="range" id="cs_phi" min="24" max="38" step="1" value="30" data-u="°"></div>
+            <div class="rg"><label for="cs_phi">Altalaj a talp alatt: φ′<sub>cv;k</sub> <output data-out="cs_phi"></output></label><input type="range" id="cs_phi" min="24" max="38" step="1" value="30" data-u="°"></div>
+            <div class="rg"><label for="cs_phib">Háttöltés: φ′<sub>k</sub> <output data-out="cs_phib"></output></label><input type="range" id="cs_phib" min="24" max="38" step="1" value="30" data-u="°"></div>
             <div class="rg"><label for="cs_q">Esetleges teher a töltésen q <output data-out="cs_q"></output></label><input type="range" id="cs_q" min="0" max="20" step="1" value="0" data-u=" kPa"></div>
             <div class="rg"><label>Állapot<span></span></label><div class="seg" id="cs_dr"><button class="on" data-v="d" type="button">Drénezett (homok)</button><button data-v="u" type="button">Drénezetlen (agyag)</button></div></div>
             <div class="rg"><label for="cs_cu">c<sub>u;k</sub> <output data-out="cs_cu"></output></label><input type="range" id="cs_cu" min="15" max="120" step="5" value="60" data-u=" kPa"></div>
@@ -889,7 +890,7 @@ main .rag, footer .rag { text-align: left !important; }
             <div class="rg"><label>Passzív földellenállás hányada<span></span></label><div class="seg" id="cs_rp"><button class="on" data-v="0" type="button">0</button><button data-v="0.5" type="button">½</button><button data-v="0.6667" type="button">⅔</button></div></div>
           </div>
           <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
-          <p class="small muted" style="margin-top:10px">Modell: 1 m-es faldarab; γ = 19 kN/m³, K<sub>a</sub> = tg²(45° − φ/2); H<sub>d</sub> = 1,35·E<sub>a</sub> + 1,5·E<sub>a,q</sub>; R<sub>p;d</sub> = hányad · E<sub>p</sub>/1,4 (γ<sub>R;e</sub> = 1,4); drénezetlenül V<sub>d</sub> = V<sub>k</sub>. A q függőleges hatását a talpon nem számítjuk.</p>
+          <p class="small muted" style="margin-top:10px">Modell: 1 m-es faldarab; γ = 19 kN/m³, K<sub>a</sub> = tg²(45° − φ′<sub>k</sub>/2) a háttöltés φ′<sub>k</sub>-jával; a talp alatti súrlódás az altalaj φ′<sub>cv;k</sub>-jából; H<sub>d</sub> = 1,35·E<sub>a</sub> + 1,5·E<sub>a,q</sub>; R<sub>p;d</sub> = hányad · E<sub>p</sub>/1,4 (γ<sub>R;e</sub> = 1,4); drénezetlenül V<sub>d</sub> = V<sub>k</sub>. A q függőleges hatását a talpon nem számítjuk.</p>
         </div>
       </div>
     </div>
@@ -1560,10 +1561,11 @@ addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RA
 (function () {
   const rad = (d) => d * Math.PI / 180, tg = (d) => Math.tan(rad(d));
   // --- Elcsúszás: szögtámfal 1 m-es darabja ---
-  function sliding({ h = 3.9, B = 2.6, phi = 30, q = 0, cu = 60, precast = false, rp = 0, drained = true }) {
+  // phi: az altalaj φ′cv;k-ja (talp alatti súrlódás, földellenállás); phiB: a háttöltés φ′k-ja (aktív földnyomás)
+  function sliding({ h = 3.9, B = 2.6, phi = 30, phiB = 30, q = 0, cu = 60, precast = false, rp = 0, drained = true }) {
     const g = 19, toe = 0.7, st = 0.35, tB = 0.5, heel = Math.max(0.2, B - toe - st);
     const Vk = 25 * (B * tB + st * (h - tB)) + g * heel * (h - tB);
-    const Ka = tg(45 - phi / 2) ** 2, Kp = tg(45 + phi / 2) ** 2;
+    const Ka = tg(45 - phiB / 2) ** 2, Kp = tg(45 + phi / 2) ** 2;
     const EaG = 0.5 * g * h * h * Ka, EaQ = q * h * Ka; const Hd = 1.35 * EaG + 1.5 * EaQ;
     const delta = precast ? phi * 2 / 3 : phi; const D = 0.9;
     let Rd, Rcu = null, R04 = null, Ep;
@@ -3325,7 +3327,7 @@ class Sim {
     this.pasFill = new THREE.Mesh(new THREE.BufferGeometry(), new THREE.MeshBasicMaterial({ color: 0x4aa3ff, transparent: true, opacity: 0.6, depthTest: false, side: THREE.DoubleSide })); S.add(this.pasFill);
     this.pasArrows = []; for (let i = 0; i < 4; i++) { const a = arrow(0x0f5fae); a.scale.setScalar(0.42); S.add(a); this.pasArrows.push(a); }
     this.truck = new THREE.Group(); { const y = new THREE.MeshStandardMaterial({ color: 0xe8a51c }), d = new THREE.MeshStandardMaterial({ color: 0x23262b }); this.truck.add(box(3.6, 1.0, 1.6, y, 0, 1.1, 0), box(1.3, 1.1, 1.6, y, 2.3, 1.2, 0)); for (const x of [-1.2, 1.2, 2.3]) for (const z of [-0.8, 0.8]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.4, 0.4, 0.3, 14).rotateX(Math.PI / 2), d); w.position.set(x, 0.4, z); this.truck.add(w); } } S.add(this.truck);
-    const ids = ['cs_h', 'cs_B', 'cs_phi', 'cs_q', 'cs_cu'];
+    const ids = ['cs_h', 'cs_B', 'cs_phi', 'cs_phib', 'cs_q', 'cs_cu'];
     this.state = { cs_typ: 'mono', cs_rp: '0', cs_dr: 'd' };
     this.rearG = new THREE.Group(); this.frontG = new THREE.Group(); S.add(this.rearG, this.frontG); this.gapM = null; this._gapU = -1;
     this.mLoose = mat(this.T.sand, 0.6, 0xd9c49a); this.mLooseC = mat(this.T.clay, 0.6, 0xa8988a);
@@ -3339,16 +3341,16 @@ class Sim {
   }
   calc_csuszas() {
     const v = (id) => +this.ctl(id).value, s = this.state;
-    const h = v('cs_h'), B = v('cs_B'), phi = v('cs_phi'), q = v('cs_q'), cu = v('cs_cu'); const drained = s.cs_dr === 'd';
-    const r = M.sliding({ h, B, phi, q, cu, precast: s.cs_typ === 'pre', rp: +s.cs_rp, drained });
+    const h = v('cs_h'), B = v('cs_B'), phi = v('cs_phi'), phiB = v('cs_phib'), q = v('cs_q'), cu = v('cs_cu'); const drained = s.cs_dr === 'd';
+    const r = M.sliding({ h, B, phi, phiB, q, cu, precast: s.cs_typ === 'pre', rp: +s.cs_rp, drained });
     this.root.querySelector('[data-out="cs_cu"]').closest('.rg').style.display = drained ? 'none' : '';
     // geometria: talp alja −0,9, talp 0,5, orr 0,7, szár 0,35
     const D = 0.9, tB = 0.5, toe = 0.7, st = 0.35, x1 = 1.0, x0 = x1 - B, xs1 = x1 - toe, xs0 = xs1 - st, ftop = h - D;
-    const phE = (drained ? phi : 0) * Math.PI / 180, key = [h, B, phE].join('|');
+    const phE = (drained ? phi : 0) * Math.PI / 180, phA = phiB * Math.PI / 180, key = [h, B, phE, phA].join('|');
     if (key !== this._key) { this._key = key;
       if (this.soilG) { this.scene.remove(this.soilG); this.soilG.geometry.dispose(); } if (this.fillG) { this.scene.remove(this.fillG); this.fillG.geometry.dispose(); }
       for (const g of [this.rearG, this.frontG]) { geoOnly(g); g.clear(); }
-      const yb = -D, yt = -D + tB, tA = Math.tan(Math.PI / 4 + phE / 2), Lp = D / Math.tan(Math.PI / 4 - phE / 2);
+      const yb = -D, yt = -D + tB, tA = Math.tan(Math.PI / 4 + phA / 2), Lp = D / Math.tan(Math.PI / 4 - phE / 2);
       const xA0 = x0 - (0 - yt) / tA, xa = x0 - (ftop - yt) / tA;   // aktív csúszólap: a sarok hátsó élétől 45° + φ/2 alatt
       const gm = sec(drained ? this.mSoil : this.mClay), add = (grp, pts, m, cast) => { const o = new THREE.Mesh(ext(pts), m); o.receiveShadow = true; o.castShadow = !!cast; grp.add(o); return o; };
       // álló talaj: a passzív és az aktív csúszólapig

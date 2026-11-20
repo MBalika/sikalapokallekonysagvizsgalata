@@ -145,7 +145,8 @@
           <div class="ctrl">
             <div class="rg"><label for="cs_h">Megtámasztott magasság (talptól) <output data-out="cs_h"></output></label><input type="range" id="cs_h" min="2.5" max="6" step="0.1" value="3.9" data-fmt="1" data-u=" m"></div>
             <div class="rg"><label for="cs_B">Talpszélesség B <output data-out="cs_B"></output></label><input type="range" id="cs_B" min="1.6" max="4.5" step="0.05" value="2.6" data-fmt="2" data-u=" m"></div>
-            <div class="rg"><label for="cs_phi">φ′<sub>cv;k</sub> <output data-out="cs_phi"></output></label><input type="range" id="cs_phi" min="24" max="38" step="1" value="30" data-u="°"></div>
+            <div class="rg"><label for="cs_phi">Altalaj a talp alatt: φ′<sub>cv;k</sub> <output data-out="cs_phi"></output></label><input type="range" id="cs_phi" min="24" max="38" step="1" value="30" data-u="°"></div>
+            <div class="rg"><label for="cs_phib">Háttöltés: φ′<sub>k</sub> <output data-out="cs_phib"></output></label><input type="range" id="cs_phib" min="24" max="38" step="1" value="30" data-u="°"></div>
             <div class="rg"><label for="cs_q">Esetleges teher a töltésen q <output data-out="cs_q"></output></label><input type="range" id="cs_q" min="0" max="20" step="1" value="0" data-u=" kPa"></div>
             <div class="rg"><label>Állapot<span></span></label><div class="seg" id="cs_dr"><button class="on" data-v="d" type="button">Drénezett (homok)</button><button data-v="u" type="button">Drénezetlen (agyag)</button></div></div>
             <div class="rg"><label for="cs_cu">c<sub>u;k</sub> <output data-out="cs_cu"></output></label><input type="range" id="cs_cu" min="15" max="120" step="5" value="60" data-u=" kPa"></div>
@@ -153,7 +154,7 @@
             <div class="rg"><label>Passzív földellenállás hányada<span></span></label><div class="seg" id="cs_rp"><button class="on" data-v="0" type="button">0</button><button data-v="0.5" type="button">½</button><button data-v="0.6667" type="button">⅔</button></div></div>
           </div>
           <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
-          <p class="small muted" style="margin-top:10px">Modell: 1 m-es faldarab; γ = 19 kN/m³, K<sub>a</sub> = tg²(45° − φ/2); H<sub>d</sub> = 1,35·E<sub>a</sub> + 1,5·E<sub>a,q</sub>; R<sub>p;d</sub> = hányad · E<sub>p</sub>/1,4 (γ<sub>R;e</sub> = 1,4); drénezetlenül V<sub>d</sub> = V<sub>k</sub>. A q függőleges hatását a talpon nem számítjuk.</p>
+          <p class="small muted" style="margin-top:10px">Modell: 1 m-es faldarab; γ = 19 kN/m³, K<sub>a</sub> = tg²(45° − φ′<sub>k</sub>/2) a háttöltés φ′<sub>k</sub>-jával; a talp alatti súrlódás az altalaj φ′<sub>cv;k</sub>-jából; H<sub>d</sub> = 1,35·E<sub>a</sub> + 1,5·E<sub>a,q</sub>; R<sub>p;d</sub> = hányad · E<sub>p</sub>/1,4 (γ<sub>R;e</sub> = 1,4); drénezetlenül V<sub>d</sub> = V<sub>k</sub>. A q függőleges hatását a talpon nem számítjuk.</p>
         </div>
       </div>
     </div>

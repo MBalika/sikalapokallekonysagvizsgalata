@@ -2,10 +2,11 @@
 (function () {
   const rad = (d) => d * Math.PI / 180, tg = (d) => Math.tan(rad(d));
   // --- Elcsúszás: szögtámfal 1 m-es darabja ---
-  function sliding({ h = 3.9, B = 2.6, phi = 30, q = 0, cu = 60, precast = false, rp = 0, drained = true }) {
+  // phi: az altalaj φ′cv;k-ja (talp alatti súrlódás, földellenállás); phiB: a háttöltés φ′k-ja (aktív földnyomás)
+  function sliding({ h = 3.9, B = 2.6, phi = 30, phiB = 30, q = 0, cu = 60, precast = false, rp = 0, drained = true }) {
     const g = 19, toe = 0.7, st = 0.35, tB = 0.5, heel = Math.max(0.2, B - toe - st);
     const Vk = 25 * (B * tB + st * (h - tB)) + g * heel * (h - tB);
-    const Ka = tg(45 - phi / 2) ** 2, Kp = tg(45 + phi / 2) ** 2;
+    const Ka = tg(45 - phiB / 2) ** 2, Kp = tg(45 + phi / 2) ** 2;
     const EaG = 0.5 * g * h * h * Ka, EaQ = q * h * Ka; const Hd = 1.35 * EaG + 1.5 * EaQ;
     const delta = precast ? phi * 2 / 3 : phi; const D = 0.9;
     let Rd, Rcu = null, R04 = null, Ep;

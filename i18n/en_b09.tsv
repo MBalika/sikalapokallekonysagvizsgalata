@@ -143,3 +143,6 @@ de442bf	G: 1.35·k<sub>F</sub> or 1.0; stabilising part: 1.15 or 1.0
 1a38eba	M2: tan φ′ and c′ divided, for c<sub>u</sub> γ<sub>cu</sub> = 1.5
 845b67c	γ<sub>φ</sub> = γ<sub>c</sub> = 1.35, γ<sub>cu</sub> = 1.5; the M2 values recommended by EN 1997-1 are 1.25 and 1.4.
 a2cb6e7	Open b) – fails the EQU check
+6dc298d	Model: 1 m of wall; γ = 19 kN/m³, K<sub>a</sub> = tan²(45° − φ′<sub>k</sub>/2) with φ′<sub>k</sub> of the backfill; base friction from φ′<sub>cv;k</sub> of the subsoil; H<sub>d</sub> = 1.35·E<sub>a</sub> + 1.5·E<sub>a,q</sub>; R<sub>p;d</sub> = share · E<sub>p</sub>/1.4 (γ<sub>R;e</sub> = 1.4); undrained V<sub>d</sub> = V<sub>k</sub>. The vertical effect of q on the heel is not counted.
+ca797c5	Backfill: φ′
+6018b17	Subsoil under the base: φ′

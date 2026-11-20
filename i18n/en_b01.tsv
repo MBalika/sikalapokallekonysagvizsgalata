@@ -92,7 +92,6 @@ e3e997f	Variable load on the backfill q
 c5e3dc4	Cast in situ
 5f62315	Share of passive resistance<span></span>
 5c84038	<span>Utilisation Λ</span><b>–</b>
-fceca7f	Model: 1 m of wall; γ = 19 kN/m³, K<sub>a</sub> = tan²(45° − φ/2); H<sub>d</sub> = 1.35·E<sub>a</sub> + 1.5·E<sub>a,q</sub>; R<sub>p;d</sub> = share · E<sub>p</sub>/1.4 (γ<sub>R;e</sub> = 1.4); undrained V<sub>d</sub> = V<sub>k</sub>. The vertical effect of q on the heel is not counted.
 b2ab7d6	If it fails
 389a214	Structural options
 a17d306	A <b>shear key</b> under the base: it forces the slip surface lower, into the soil, with passive resistance developing in front of it.

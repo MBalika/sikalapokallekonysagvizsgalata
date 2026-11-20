@@ -134,7 +134,7 @@ class Sim {
     this.pasFill = new THREE.Mesh(new THREE.BufferGeometry(), new THREE.MeshBasicMaterial({ color: 0x4aa3ff, transparent: true, opacity: 0.6, depthTest: false, side: THREE.DoubleSide })); S.add(this.pasFill);
     this.pasArrows = []; for (let i = 0; i < 4; i++) { const a = arrow(0x0f5fae); a.scale.setScalar(0.42); S.add(a); this.pasArrows.push(a); }
     this.truck = new THREE.Group(); { const y = new THREE.MeshStandardMaterial({ color: 0xe8a51c }), d = new THREE.MeshStandardMaterial({ color: 0x23262b }); this.truck.add(box(3.6, 1.0, 1.6, y, 0, 1.1, 0), box(1.3, 1.1, 1.6, y, 2.3, 1.2, 0)); for (const x of [-1.2, 1.2, 2.3]) for (const z of [-0.8, 0.8]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.4, 0.4, 0.3, 14).rotateX(Math.PI / 2), d); w.position.set(x, 0.4, z); this.truck.add(w); } } S.add(this.truck);
-    const ids = ['cs_h', 'cs_B', 'cs_phi', 'cs_q', 'cs_cu'];
+    const ids = ['cs_h', 'cs_B', 'cs_phi', 'cs_phib', 'cs_q', 'cs_cu'];
     this.state = { cs_typ: 'mono', cs_rp: '0', cs_dr: 'd' };
     this.rearG = new THREE.Group(); this.frontG = new THREE.Group(); S.add(this.rearG, this.frontG); this.gapM = null; this._gapU = -1;
     this.mLoose = mat(this.T.sand, 0.6, 0xd9c49a); this.mLooseC = mat(this.T.clay, 0.6, 0xa8988a);
@@ -148,16 +148,16 @@ class Sim {
   }
   calc_csuszas() {
     const v = (id) => +this.ctl(id).value, s = this.state;
-    const h = v('cs_h'), B = v('cs_B'), phi = v('cs_phi'), q = v('cs_q'), cu = v('cs_cu'); const drained = s.cs_dr === 'd';
-    const r = M.sliding({ h, B, phi, q, cu, precast: s.cs_typ === 'pre', rp: +s.cs_rp, drained });
+    const h = v('cs_h'), B = v('cs_B'), phi = v('cs_phi'), phiB = v('cs_phib'), q = v('cs_q'), cu = v('cs_cu'); const drained = s.cs_dr === 'd';
+    const r = M.sliding({ h, B, phi, phiB, q, cu, precast: s.cs_typ === 'pre', rp: +s.cs_rp, drained });
     this.root.querySelector('[data-out="cs_cu"]').closest('.rg').style.display = drained ? 'none' : '';
     // geometria: talp alja −0,9, talp 0,5, orr 0,7, szár 0,35
     const D = 0.9, tB = 0.5, toe = 0.7, st = 0.35, x1 = 1.0, x0 = x1 - B, xs1 = x1 - toe, xs0 = xs1 - st, ftop = h - D;
-    const phE = (drained ? phi : 0) * Math.PI / 180, key = [h, B, phE].join('|');
+    const phE = (drained ? phi : 0) * Math.PI / 180, phA = phiB * Math.PI / 180, key = [h, B, phE, phA].join('|');
     if (key !== this._key) { this._key = key;
       if (this.soilG) { this.scene.remove(this.soilG); this.soilG.geometry.dispose(); } if (this.fillG) { this.scene.remove(this.fillG); this.fillG.geometry.dispose(); }
       for (const g of [this.rearG, this.frontG]) { geoOnly(g); g.clear(); }
-      const yb = -D, yt = -D + tB, tA = Math.tan(Math.PI / 4 + phE / 2), Lp = D / Math.tan(Math.PI / 4 - phE / 2);
+      const yb = -D, yt = -D + tB, tA = Math.tan(Math.PI / 4 + phA / 2), Lp = D / Math.tan(Math.PI / 4 - phE / 2);
       const xA0 = x0 - (0 - yt) / tA, xa = x0 - (ftop - yt) / tA;   // aktív csúszólap: a sarok hátsó élétől 45° + φ/2 alatt
       const gm = sec(drained ? this.mSoil : this.mClay), add = (grp, pts, m, cast) => { const o = new THREE.Mesh(ext(pts), m); o.receiveShadow = true; o.castShadow = !!cast; grp.add(o); return o; };
       // álló talaj: a passzív és az aktív csúszólapig
