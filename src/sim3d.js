@@ -171,7 +171,7 @@ class Sim {
     this.truck.visible = q > 0.5; this.truck.position.set(-6.5, G.ftop, -3);
     this.slide = r.lam > 1 ? Math.min(0.6, 0.25 + (r.lam - 1) * 1.2) : 0;
     this.setHud([`H<sub>d</sub> = ${fmt(r.Hd, 0)} kN/m`, `R<sub>d</sub> = ${fmt(r.Rd, 0)} kN/m`, `R<sub>p;d</sub> = ${fmt(r.Rpd, 0)} kN/m`]);
-    this.lam(r.lam, drained ? `V′<sub>k</sub> = ${fmt(r.Vk, 0)} kN/m · δ = ${fmt(r.delta, 1)}°` : `A<sub>c</sub>·c<sub>u</sub>/1,1 = ${fmt(r.Rcu, 0)} · 0,4·V<sub>d</sub> = ${fmt(r.R04, 0)} kN/m`);
+    this.lam(r.lam, drained ? `V′<sub>k</sub> = ${fmt(r.Vk, 0)} kN/m · δ = ${fmt(r.delta, 1)}°` : `A<sub>c</sub>·c<sub>u;k</sub>/1,1 = ${fmt(r.Rcu, 0)} · 0,4·V<sub>d</sub> = ${fmt(r.R04, 0)} kN/m`);
   }
 
   // ===================== FELBORULÁS: reklámtábla – átlátszó talajtömb, 3D talpfeszültség-test, kis ablakban az egész tábla =====================
@@ -405,7 +405,7 @@ class Sim {
     setArrow(this.gA, new THREE.Vector3(5.5, 5.5, 0.2), new THREE.Vector3(0, -1, 0), 4.6 / 2.6); this.setLbl('g', `G<sub>stb;d</sub> = 0,9 · G<sub>k</sub>`, 5.5, 6.4, 0.2);
     this.liftT = r.lam > 1 ? Math.min(0.9, 0.2 + (r.lam - 1) * 1.5) : 0;
     this.setHud([`talajvíz ${fmt(gw, 1)} m`, `V<sub>dst;d</sub> = ${fmt(r.V, 0)} kN`, `G<sub>stb;d</sub> + R<sub>d</sub> = ${fmt(r.R, 0)} kN`].concat(fr ? [`T<sub>d</sub> = ${fmt(r.Td, 0)} kN`] : []));
-    this.lam(r.lam, `önsúly ${fmt(r.Gk, 0)} kN · perem-talaj ${fmt(r.Grim, 0)} kN · horgony ${fmt(r.Pd, 0)} kN · víz ${fmt(r.Wf, 0)} kN · súrlódás ${fmt(r.Td, 0)} kN`);
+    this.lam(r.lam, `önsúly ${fmt(r.Gk, 0)} kN · peremre ülő talaj ${fmt(r.Grim, 0)} kN · horgony ${fmt(r.Pd, 0)} kN · víz ${fmt(r.Wf, 0)} kN · súrlódás ${fmt(r.Td, 0)} kN`);
   }
 
   // ===================== ÁLTALÁNOS ÁLLÉKONYSÁG: ház a rézsű koronáján =====================

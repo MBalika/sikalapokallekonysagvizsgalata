@@ -100,14 +100,14 @@
     const draw = () => { const C = col(); g.clearRect(0, 0, W, Hh); const L = 70, R = W - 30, T = 30, B = Hh - 50; const sx = (v) => L + v / 10 * (R - L), sy = (v) => B - v * (B - T);
       g.strokeStyle = C.line; g.lineWidth = 1; for (const v of [0.5, 0.667, 1]) { g.beginPath(); g.moveTo(L, sy(v)); g.lineTo(R, sy(v)); g.stroke(); }
       g.strokeStyle = C.ink2; g.lineWidth = 1.5; g.beginPath(); g.moveTo(L, T); g.lineTo(L, B); g.lineTo(R, B); g.stroke();
-      label(g, 'E_p / E_{p,max}', L - 8, T - 12, C.ink2, 13, 'left'); label(g, 'elmozdulás / alapmélység (%)', R, B + 30, C.ink2, 13, 'right');
+      label(g, 'E_p / E_{p;max}', L - 8, T - 12, C.ink2, 13, 'left'); label(g, 'elmozdulás / alapmélység (%)', R, B + 30, C.ink2, 13, 'right');
       for (let v = 0; v <= 10; v += 2) label(g, String(v), sx(v), B + 14, C.mute, 12, 'center', 600);
       label(g, '½', L - 14, sy(0.5), C.c1, 14, 'center'); label(g, '⅔', L - 14, sy(0.667), C.c1, 14, 'center'); label(g, '1', L - 14, sy(1), C.mute, 13, 'center');
       const f = (x) => 1 - Math.exp(-x / 1.6);
       g.strokeStyle = C.water; g.lineWidth = 4; g.beginPath(); for (let x = 0; x <= 10; x += 0.1) { const X = sx(x), Y = sy(lost ? 0 : f(x)); x === 0 ? g.moveTo(X, Y) : g.lineTo(X, Y); } g.stroke();
       const v = lost ? 0 : f(u); g.fillStyle = C.water; g.beginPath(); g.arc(sx(u), sy(v), 8, 0, 7); g.fill();
       g.setLineDash([5, 5]); g.strokeStyle = C.water; g.beginPath(); g.moveTo(sx(u), B); g.lineTo(sx(u), sy(v)); g.lineTo(L, sy(v)); g.stroke(); g.setLineDash([]);
-      label(g, lost ? 'a talaj eltűnt a homlokfal elől: Rp = 0' : `mobilizált: ${fmt(v * 100, 0)} %`, sx(u) + 14, sy(v) - 14, lost ? C.bad : C.ink, 14);
+      { const tx = lost ? 'a talaj eltűnt a homlokfal elől: R_{p;d} = 0' : `mobilizált: ${fmt(v * 100, 0)} %`, low = sy(v) + 22 > B - 8; g.font = '700 14px Archivo, sans-serif'; const tw = g.measureText(tx).width; label(g, tx, Math.min(sx(u) + 14, R - tw), low ? sy(v) - 22 : sy(v) + 22, lost ? C.bad : C.ink, 14); }
     };
     bindRange('pa_u', (v) => { u = v; draw(); }, (v) => fmt(v, 1) + ' %'); seg('pa_lost', (v) => { lost = v === '1'; draw(); });
     addEventListener('themechange', draw); draw();

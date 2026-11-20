@@ -109,18 +109,17 @@ cddabea	friction, anchors
 0b4f29f	GEO · drained
 2198783	Sliding in the drained state – strip footing cast in situ
 6664706	Drained sliding
-153f5da	<p>Check the safety against sliding of the strip footing cast in situ shown in the figure in the drained (long-term) state! The loads per metre: ${nw(Vk + ' = 280 kN/m')} – the characteristic value of the vertical force that surely acts together with ${Hd}; ${nw(Hd + ' = 90 kN/m')} – the design value of the horizontal force, including the active earth pressure. The critical state friction angle of the ground is ${nw(phicv + ' = 32°')}. Passive resistance is not taken into account.</p>
+153f5da	<p>Check the safety against sliding of the strip footing cast in situ shown in the figure in the drained (long-term) state. The loads per metre: ${nw(Vk + ' = 280 kN/m')} – the characteristic value of the vertical force that is certain to act together with ${Hd}; ${nw(Hd + ' = 90 kN/m')} – the design value of the horizontal force, including the active earth pressure. The critical state friction angle of the ground is ${nw(phicv + ' = 32°')}. Passive resistance is not taken into account.</p>
 558bc5e	Strip footing cast in situ: friction develops within the soil, δ<sub>k</sub> = φ′<sub>cv;k</sub>.
 a5d4367	The friction angle on the base
 db85359	<p>For a footing cast in situ the base is rough and shearing takes place within the soil, so the full critical state friction angle may be taken into account:</p>${fl(dk, phicv, '32°')}${fl('tg' + NB + dk, 'tg' + NB + '32°', '0,6249')}
 6cb5c39	Design value of the shear resistance
 1219fa9	<p>According to 
 9467755	 the effective cohesion c′ is ignored: the adhesion between soil and concrete depends strongly on the water content and is not reliable.</p>
-e4c846e	${nw(Hd + ' = 90 kN/m < ' + Rd + ' = 159,1 kN/m')} – the footing is safe against sliding, the utilisation is 57%.
 71041c0	Open in the calculator
 644d850	Cast in situ or precast? – drained sliding
 268232c	Cast in situ or precast
-d055933	<p>The footing of the previous example now carries a greater horizontal force: ${nw(Hd + ' = 105 kN/m')} (${nw(Vk + ' = 280 kN/m')}, ${nw(phicv + ' = 32°')}). Check the safety against sliding for <b>a)</b> a footing cast in situ and <b>b)</b> a precast footing with a smooth surface!</p>
+d055933	<p>The footing of the previous example now carries a greater horizontal force: ${nw(Hd + ' = 105 kN/m')} (${nw(Vk + ' = 280 kN/m')}, ${nw(phicv + ' = 32°')}). Check the safety against sliding for <b>a)</b> a footing cast in situ and <b>b)</b> a precast footing with a smooth surface.</p>
 90d3ecc	Variant b): for a smooth precast base the friction angle is only ⅔·φ′<sub>cv;k</sub>.
 a79a6bf	b) Smooth precast footing
 ff026ec	<p>The friction between a smooth concrete surface and the soil is lower:</p>
@@ -130,6 +129,6 @@ bd6b285	open a)
 92ec2f1	GEO · undrained
 0b01d92	Sliding in the undrained state – the 0.4·V<sub>d</sub> limit
 452fd89	Undrained, 0.4·V<sub>d</sub>
-28efe85	<p>Check the safety against sliding of the ${nw('2,0 × 3,0 m')} pad footing in the undrained (short-term) state! The whole base is in compression: ${nw('A<sub>c</sub> = 6,0 m²')}. The undrained shear strength at the base is ${nw('c<sub>u;k</sub> = 60 kPa')}. The design values of the loads: ${nw('V<sub>d</sub> = 700 kN')}, ${nw(Hd + ' = 250 kN')}.</p>
+28efe85	<p>Check the safety against sliding of the ${nw('2,0 × 3,0 m')} pad footing in the undrained (short-term) state. The whole base is in compression: ${nw('A<sub>c</sub> = 6,0 m²')}. The undrained shear strength at the base is ${nw('c<sub>u;k</sub> = 60 kPa')}. The design values of the loads: ${nw('V<sub>d</sub> = 700 kN')}, ${nw(Hd + ' = 250 kN')}.</p>
 7769aba	In the undrained state the shear on the area in compression resists; in plan the area in compression is A<sub>c</sub>.
 1e12ff5	Shear resistance on the area in compression

@@ -1,9 +1,8 @@
 c0794f5	The 0.4·V<sub>d</sub> limit
-5dee7e6	<p>A gap may open between the footing and the soil (erosion, shrinkage, water or air may get under the base), so no shear resistance greater than 40% of the vertical force may be counted on:</p>${fl('0,4 · V<sub>d</sub>', '0,4 · 700', u_(280, 1, 'kN'))}<p>Since ${nw('327,3 kN > 280 kN')}, the limit governs: ${nw(Rd + ' = 280 kN')}.</p>
 bb52ad4	${nw(Hd + ' = 250 kN < ' + Rd + ' = 280 kN')} – satisfied. Without the 0.4·V<sub>d</sub> limit we would wrongly have counted on a resistance of 327 kN.
 7d01774	Sliding with passive resistance
 b63fbab	With passive resistance
-8b97c3a	<p>The strip footing cast in situ carries ${nw(Vk + ' = 250 kN/m')} and ${nw(Hd + ' = 140 kN/m')}; ${nw(phicv + ' = 30°')}. The base is ${nw('D = 1,5 m')} deep, the soil in front of the face has ${nw('γ = 18 kN/m³')}, ${nw('φ′<sub>k</sub> = 30°')}. Check sliding <b>a)</b> without passive resistance, and <b>b)</b> taking into account half of the full passive earth resistance (${nw('γ<sub>R;e</sub> = 1,4')})!</p>
+8b97c3a	<p>The strip footing cast in situ carries ${nw(Vk + ' = 250 kN/m')} and ${nw(Hd + ' = 140 kN/m')}; ${nw(phicv + ' = 30°')}. The base is ${nw('D = 1,5 m')} deep, the soil in front of the face has ${nw('γ = 18 kN/m³')}, ${nw('φ′<sub>k</sub> = 30°')}. Check sliding <b>a)</b> without passive resistance, and <b>b)</b> taking into account half of the full passive earth resistance (${nw('γ<sub>R;e</sub> = 1,4')}).</p>
 52f48cf	γ (in front of the face)
 6ff3324	φ′<sub>k</sub> (in front of the face)
 598c803	share taken into account
@@ -20,7 +19,7 @@ ac12082	b) Verification
 5f5f7ed	EQU · pivot point
 f8ff8d3	Checking overturning (EQU)
 ca238b4	Overturning, B/10
-1b82844	<p>A tall, slender structure (e.g. a billboard) stands on a square footing on soil with side ${nw('B = 2,4 m')}. The combined weight of the structure and the footing is ${nw('G<sub>k</sub> = 400 kN')} (concentric), and the wind load ${nw('H<sub>k</sub> = 60 kN')} (variable action) acts at a height of ${nw('h = 4,0 m')} above the base. Check the safety against overturning in the EQU limit state!</p>
+1b82844	<p>A tall, slender structure (e.g. a billboard) stands on a square footing on soil with side ${nw('B = 2,4 m')}. The combined weight of the structure and the footing is ${nw('G<sub>k</sub> = 400 kN')} (concentric), and the wind load ${nw('H<sub>k</sub> = 60 kN')} (variable action) acts at a height of ${nw('h = 4,0 m')} above the base. Check the safety against overturning in the EQU limit state.</p>
 e0a4c18	On soil the pivot point is not at the toe but at a distance B/10 from it.
 adc9936	Position of the pivot point
 e40729f	<p>For a footing on soil – since the soil under the toe is pressed in – the moments are taken, as a first approximation, about a point at a distance B/10 from the toe. The lever arm of the stabilising weight:</p>${fl('a', 'B/2 − B/10', '1,20 − 0,24', u_(0.96, 2, 'm'))}
@@ -32,7 +31,7 @@ dd40fa4	Stabilising and destabilising moments
 348ac92	on rock
 b6042bd	Limiting the eccentricity, and the contact pressure
 65a3983	Eccentricity, edge pressure
-0586906	<p>The ${nw('B × L = 2,4 × 2,4 m')} footing carries a vertical force ${nw('V<sub>k</sub> = 500 kN')} and a horizontal force acting at a height of ${nw('h = 3,0 m')} above the base. According to ${DA2}, the eccentricity is calculated from the <b>characteristic</b> values of the actions. Determine and assess the eccentricity, and calculate the contact pressures for <b>a)</b> ${nw('H<sub>k</sub> = 50 kN')} and <b>b)</b> ${nw('H<sub>k</sub> = 100 kN')}!</p>
+0586906	<p>The ${nw('B × L = 2,4 × 2,4 m')} footing carries a vertical force ${nw('V<sub>k</sub> = 500 kN')} and a horizontal force acting at a height of ${nw('h = 3,0 m')} above the base. According to ${DA2}, the eccentricity is calculated from the <b>characteristic</b> values of the actions. Determine and assess the eccentricity, and calculate the contact pressures for <b>a)</b> ${nw('H<sub>k</sub> = 50 kN')} and <b>b)</b> ${nw('H<sub>k</sub> = 100 kN')}.</p>
 ac9befc	Case b): the resultant passes through the base outside the kern but within the B/3 limit – part of the base lifts off.
 9dc2226	a) H<sub>k</sub> = 50 kN – within the kern
 7c912f4	${fl('M<sub>k</sub>', '50 · 3,0', u_(150, 0, 'kNm'))}${fl('e', 'M<sub>k</sub> / V<sub>k</sub>', '150 / 500', u_(0.30, 2, 'm'))}<p>${nw('B/6 = 0,40 m')} → ${nw('e < B/6')}: the resultant is within the kern, the whole base is in compression (the earlier, stricter Hungarian requirement is also met).</p>
@@ -40,7 +39,6 @@ f82db22	a) Trapezoidal contact pressure
 35ab213	b) H<sub>k</sub> = 100 kN – outside the kern, within the limit
 53053fe	${fl('M<sub>k</sub>', '100 · 3,0', u_(300, 0, 'kNm'))}${fl('e', '300 / 500', u_(0.60, 2, 'm'))}<p>${nw('B/6 = 0,40 m < e ≤ B/3 = 0,80 m')}: allowed, but part of the base lifts off.</p>
 462331b	b) Triangular contact pressure
-de32279	${fl('c', 'B/2 − e', '1,20 − 0,60', u_(0.60, 2, 'm'))}${fl('nyomott hossz', '3c', u_(1.80, 2, 'm') + ' (a talp 75%-a)')}${fl('σ<sub>max</sub>', '2 · V<sub>k</sub> / (3 · c · L)', '2 · 500 / (3 · 0,60 · 2,4)', u_(231.5, 1, 'kPa'))}<p>The edge pressure has grown to 2.7 times the concentric value (86.8 kPa).</p>
 07f9b8a	a) ${nw('e = 0,30 m ≤ B/6 = 0,40 m')} – within the kern, ${nw('σ<sub>max</sub> = 151,9 kPa')}.
 425a498	b) ${nw('B/6 < e = 0,60 m ≤ B/3')} – allowed, with partial lift-off, ${nw('σ<sub>max</sub> = 231,5 kPa')}.
 b39ad7f	<b>If e > B/3</b> (here above 0.80 m), not even half of the base would work – special precautions are then needed. For a circular footing the limit is ${nw('e ≤ 0,6 · r')}.
@@ -48,15 +46,12 @@ b39ad7f	<b>If e > B/3</b> (here above 0.80 m), not even half of the base would w
 e3efe0f	UPL · surcharge
 41aceb8	Uplift with surcharge (UPL)
 479d76a	Uplift, soil cover
-cca036a	<p>The design groundwater level is ${nw('h<sub>w</sub> = 4,0 m')} above the underside of the base slab of an underground car park with a plan of ${nw('B × L = 12 × 30 m')}. The self-weight of the structure is ${nw('G<sub>sz;k</sub> = 11' + NN + '000 kN')}, and there is a ${nw('t = 0,8 m')} thick soil cover on the roof slab (${nw('γ = 18 kN/m³')}, above the groundwater). Check the safety against uplift in the UPL limit state! (${nw('γ<sub>w</sub> = 10 kN/m³')})</p>
 ce58428	soil cover t
 24d2602	γ (cover)
 5f956ea	The uplift force is the resultant of the water pressure acting on the underside of the base slab; it is resisted by the weight of the structure and of the soil on the roof slab.
 1743ac6	Uplift force
 b22a5d3	Stabilising actions
 a7676c2	<p>Friction and anchors are not taken into account: 
-ca94476	${nw('V<sub>dst;d</sub> < G<sub>stb;d</sub>')} – satisfied, but the utilisation is 99%!
-d097419	<b>Lesson.</b> The reserve is minimal, while the overall safety is only ${nw('1,0/0,9 = 1,11')} in the first place. The groundwater level is a geometrical datum: if the design water level has to be set only 5 cm higher (${nw('h<sub>w</sub> > 4,046 m')}), the verification is no longer satisfied. This is why the water level must be chosen cautiously, or a countermeasure (surcharge, anchoring, dewatering, flooding) applied.
 6c396ea	Uplift with anchoring (UPL)
 f67fe0b	Uplift, anchors
 0ad1fbc	<p>The car park of the previous example is built without soil cover (the roof slab is also the ground surface). What anchoring force is needed for safety against uplift, and how many anchor elements are needed if the characteristic tensile resistance of one element is ${nw('R<sub>k</sub> = 210 kN')} (${nw('γ<sub>a</sub> = 1,4')})?</p>
@@ -74,7 +69,7 @@ d694486	 (unchanged)
 0a8764e	Overall stability – a house on the crest of a slope
 0f02caf	House on the crest of a slope
 43ee7b3	Bishop method
-28dc8bc	<p>A family house is built on the crest of an ${nw('8 m')} high loess slope with an inclination of ${nw('1 : 1,5')}, on two ${nw('0,6 m')} wide strip footings. The strip footings are ${nw('0,8 m')} deep; the edge of the footing nearer the crest is ${nw('0,5 m')} from the crest, the other one ${nw('2,9 m')} (spacing of the axes ${nw('2,4 m')}). Each footing carries a permanent load ${nw('G<sub>k</sub> = 72 kN/m')} and a variable load ${nw('Q<sub>k</sub> = 18 kN/m')}. The soil: ${nw('γ = 19 kN/m³')}, ${nw('c′<sub>k</sub> = 14 kPa')}, ${nw('φ′<sub>k</sub> = 28°')}; the rigid layer is ${nw('6 m')} below the toe. Check overall stability according to ${DA3}, with the simplified Bishop method, <b>a)</b> in the dry state and <b>b)</b> with long-term wetting (${nw('r<sub>u</sub> = 0,2')})!</p>
+28dc8bc	<p>A family house is built on the crest of an ${nw('8 m')} high loess slope with an inclination of ${nw('1 : 1,5')}, on two ${nw('0,6 m')} wide strip footings. The strip footings are ${nw('0,8 m')} deep; the edge of the footing nearer the crest is ${nw('0,5 m')} from the crest, the other one ${nw('2,9 m')} (spacing of the axes ${nw('2,4 m')}). Each footing carries a permanent load ${nw('G<sub>k</sub> = 72 kN/m')} and a variable load ${nw('Q<sub>k</sub> = 18 kN/m')}. The soil: ${nw('γ = 19 kN/m³')}, ${nw('c′<sub>k</sub> = 14 kPa')}, ${nw('φ′<sub>k</sub> = 28°')}; the rigid layer is ${nw('6 m')} below the toe. Check overall stability according to ${DA3}, with the simplified Bishop method, <b>a)</b> in the dry state and <b>b)</b> with long-term wetting (${nw('r<sub>u</sub> = 0,2')}).</p>
 9dc1f56	H; inclination
 80ac4ac	strip footings: B; D
 89cb0b5	distance from the crest
@@ -96,7 +91,6 @@ ee2dde0	${fl('P<sub>d</sub>', 'γ<sub>G</sub> · G<sub>k</sub> + γ<sub>Q</sub> 
 89a75d4	: overall stability is satisfied.
 aeaa486	 Without the house, the same slope would have a safety of 
 6b3ab79	: the load of the two strip footings reduces the safety by about 
-7c896da	%.</p>
 69f5d63	b) Long-term wetting, r<sub>u</sub> = 0.2
 04aba76	<p>The pore water pressure 
 878e9b8	 reduces the effective normal force on the base of the slices, and so the frictional resistance too. Repeating the search:</p>
@@ -108,20 +102,19 @@ d2e88d6	Collapse all steps
 98b7b95	Expand all steps
 bcd935e	<p style="padding:20px">The 3D view needs WebGL.</p>
 2487211	STABLE?
-bada7ef	whole board – click
+bada7ef	whole billboard – click
 47758dd	part lifting off
 236d497	R<sub>k</sub> resultant
 7b69420	axis of rotation (B/10)
 cae13a3	axis of rotation (toe)
 414fba8	scale: 1 m ≙ ${fmt(1 / this.kS, 0)} kPa
-b8fb20f	the board overturns
+b8fb20f	the billboard overturns
 f56f70e	e > B/3 – precautions needed
 3d782d5	earth pressure σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub>
 81771ed	friction τ = σ′<sub>h</sub> · tan δ – acts downwards
 9c360e5	▽ design groundwater level ${fmt(gw, 1)} m
 b901d9f	water pressure from below: u = γ<sub>w</sub> · h<sub>w</sub> = ${fmt(10 * hwB, 0)} kPa → V<sub>dst;d</sub>
 a20aa88	groundwater ${fmt(gw, 1)} m
-cdd8e09	self-weight ${fmt(r.Gk, 0)} kN · soil on toe ${fmt(r.Grim, 0)} kN · anchors ${fmt(r.Pd, 0)} kN · water ${fmt(r.Wf, 0)} kN · friction ${fmt(r.Td, 0)} kN
 f5a89e2	setback ${fmt(s, 1)} m
 9725e4b	critical circle: centre (${fmt(c ? c.xc : 0, 1)}; ${fmt(c ? c.yc : 0, 1)}) m, r = ${fmt(c ? c.r : 0, 1)} m · simplified Bishop
 1334e01	The 3D view needs a WebGL-capable browser.

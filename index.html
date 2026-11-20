@@ -13,11 +13,20 @@
 <link rel="alternate" hreflang="x-default" href="https://sikalapokallekonysagvizsgalata.vercel.app/">
 <script>/*nyelv*/try{if(localStorage.getItem('alap-lang')==='en'&&!/[?&]hu\b/.test(location.search))location.replace('en'+location.hash)}catch(e){}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='9' fill='%233b2360'/%3E%3Cpath d='M8 24h18M11 24v-4h12v4M17 20V9' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 11l14 -3' stroke='%23ff8a4c' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800;62..125,900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="preload" href="fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style id="fonts">/* betűk helyből (fonts/), külső betűszolgáltató nélkül */
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(fonts/archivo-latin-ext-standard-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(fonts/archivo-latin-standard-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-greek-wght-normal.woff2) format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-latin-ext-wght-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-greek-wght-italic.woff2) format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-latin-ext-wght-italic.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-latin-wght-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
 <script src="vendor/hyphenopoly/Hyphenopoly_Loader.js"></script>
 <script>if (window.Hyphenopoly) Hyphenopoly.config({ require: { hu: "FORCEHYPHENOPOLY" }, setup: { hide: "none", selectors: { ".hyphenate": { minWordLength: 6, compound: "auto" } } } });</script>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js","three/addons/":"./vendor/three/addons/"}}</script>
 <style>
 /* ===== Síkalapok állékonyságvizsgálata – megjelenés ===== */
 :root {
@@ -144,9 +153,9 @@ sub { font-size: .7em; line-height: 0; }
 .case p { margin: 4px 0 0; font-size: .95em; color: var(--ink2); }
 /* panelek (widgetek) */
 .panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--r3); box-shadow: var(--sh); margin: 22px 0; overflow: hidden; }
-.panel .ph { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 16px 20px 0; }
-.panel .ph h4 { font-size: 19px; margin: 0; }
-.panel .ph p { margin: 0; color: var(--mute); font-size: .92em; }
+.panel .ph { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 18px 20px 0; text-align: center; }
+.panel .ph h4 { font-size: 19px; margin: 0; text-align: center; }
+.panel .ph p { margin: 0; color: var(--mute); font-size: .92em; text-align: center; text-wrap: balance; max-width: 78ch; }
 .panel .pb { padding: 14px 20px 20px; }
 .panel canvas { display: block; width: 100%; height: auto; border-radius: var(--r2); background: var(--paper2); }
 .ctrl { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px 20px; margin-top: 14px; }
@@ -271,6 +280,8 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 .tbl th { font: 700 14px/1.3 var(--fd); color: var(--ink2); background: var(--paper2); }
 .tbl td:first-child { font-weight: 700; }
 .tblw { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r2); margin: 16px 0; }
+.tbl td:has(> .dot) { position: relative; padding-left: 32px; }
+.tbl td > .dot { position: absolute; left: 12px; top: 1.12em; margin: 0; }
 .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--k); margin-right: 8px; vertical-align: middle; }
 /* idővonal */
 .tline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin: 26px 0; position: relative; }
@@ -518,6 +529,7 @@ main .rag, footer .rag { text-align: left !important; }
 .cv-anc { stroke: var(--ink2); stroke-width: 2.4; } .cv-ancb { fill: var(--conc); stroke: var(--ink2); stroke-width: 1; rx: 3px; }
 .cv-lay { stroke: var(--ink2); stroke-width: 1.1; stroke-dasharray: 9 5; } .cv-hard { stroke: var(--ink); stroke-width: 2.2; }
 .cv-gc { stroke: none; opacity: .82; }
+.cv-plate { fill: var(--card); fill-opacity: .9; stroke: var(--line2); stroke-width: 1; }
 .cv-mass { fill: var(--plum2); fill-opacity: .14; stroke: none; } .cv-mass.cv-bad { fill: var(--bad); fill-opacity: .17; }
 .cv-slice { stroke: var(--plum2); stroke-width: .8; opacity: .45; }
 .cv-arc { fill: none; stroke: var(--plum2); stroke-width: 3.2; stroke-linecap: round; } .cv-arc.cv-bad { stroke: var(--bad); }
@@ -736,7 +748,7 @@ main .rag, footer .rag { text-align: left !important; }
       <h1>Síkalapok <span class="l2">állékonyság&shy;vizsgálata</span></h1>
       <p class="lead">Egy alaptest négyféleképpen veszítheti el az állékonyságát: elcsúszik az alapsíkon, felborul, felúszik, vagy a környező talajjal együtt megcsúszik. Mind a négyet külön kell igazolni. Ezen az oldalon szimulátorokkal, animációkkal és kvízekkel járhatod végig, mi dönti el az egyes esetekben.</p>
       <div class="ctas"><a class="btn" href="#elcsuszas">Kezdés az elcsúszással</a><a class="btn ghost" href="#videok">Az öt animációs videó</a></div>
-      <p class="small muted" style="margin-top:18px">A felső sávban (igazolólap) mindig látod, hol tart a négy szimulátor: a sáv a kihasználtságot mutatja, a jelölés 1,0-nál van.</p>
+      <p class="small muted" style="margin-top:18px">A felső sáv négy gombjával bármikor a négy vizsgálat fejezetének elejére ugorhatsz.</p>
     </div>
     <figure class="stage" style="margin:0">
       <canvas id="heroCv" width="640" height="420" role="img" aria-label="Animáció: a négy tönkremeneteli mód – elcsúszás, felborulás, felúszás, általános állékonyságvesztés"></canvas>
@@ -755,7 +767,7 @@ main .rag, footer .rag { text-align: left !important; }
       <div>
         <p>Az alaptestek méreteinek meghatározásával párhuzamosan – vagy azt követően – azt is igazolni kell, hogy a létesítmény az EC7 szerint kellő állékonysági biztonsággal rendelkezik <b>elcsúszással, felborulással és felúszással</b> szemben. Bizonyos helyzetekben – rézsű, munkagödör, part vagy üreg közelében – az <b>általános állékonyságot</b> is ellenőrizni kell.</p>
         <p>A közös menet mindegyiknél ugyanaz: felírjuk a hatások tervezési értékét (E<sub>d</sub>) és az ellenállás tervezési értékét (R<sub>d</sub>), majd igazoljuk, hogy E<sub>d</sub> ≤ R<sub>d</sub>. A felborulásnál nyomatékokat vetünk össze: M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>. Ahol a talaj szilárdsága számít, ott <b>drénezett és drénezetlen</b> állapotra is.</p>
-        <p>A kettő hányadosa a <b>kihasználtság</b>: Λ = E<sub>d</sub> / R<sub>d</sub>. Ha Λ ≤ 1,0, az alaptest az adott határállapotra megfelel. Az igazolólap is ezt mutatja.</p>
+        <p>A kettő hányadosa a <b>kihasználtság</b>: Λ = E<sub>d</sub> / R<sub>d</sub>. Ha Λ ≤ 1,0, az alaptest az adott határállapotra megfelel.</p>
       </div>
       <div class="tblw" style="margin-top:0">
         <table class="tbl">
@@ -831,7 +843,7 @@ main .rag, footer .rag { text-align: left !important; }
       </div>
       <div>
         <p style="margin-top:0">Gondolni kell arra is, hogy az alaptest homlokfala mellől az erózió vagy valamilyen emberi beavatkozás (pl. egy utólagos közműárok) eltávolíthatja a talajt, agyagban pedig a szezonális víztartalom-változás miatt a talaj elválhat a homlokfaltól. Ha ez nem zárható ki, a biztonság javára R<sub>p;d</sub> = 0-val számolunk.</p>
-        <p class="small muted">Egyes tervezőszoftverek felajánlják, hogy a teljes passzív földellenállásnak csak ½–⅓ része legyen figyelembe véve.</p>
+        <p class="small muted">Egyes tervezőszoftverek azt is felajánlják, hogy a teljes passzív földellenállásnak csak a harmadával vagy a felével számoljunk.</p>
       </div>
     </div>
     <div class="panel k1">
@@ -922,7 +934,7 @@ main .rag, footer .rag { text-align: left !important; }
     <div class="facts">
       <div class="fact k2"><div class="n">4×</div><h4>e = B/3-nál</h4><p>a nyomott hossz B/2, a sarokfeszültség az átlagos talpfeszültség négyszerese.</p></div>
       <div class="fact k2"><div class="n">0,6<small>·r</small></div><h4>Kör alaprajz</h4><p>A belső mag sugara r/4. Az EC7 szerint e &gt; 0,6·r esetén külön óvintézkedés kell.</p></div>
-      <div class="fact k2"><div class="n">6,7<small>m</small></div><h4>Szélerőmű síkalapja</h4><p>Egy Vestas V126 statikájában (R = 13,8 m, M = 149 MNm) e = 6,7 m &lt; 0,59·R = 8,1 m – ez a német szélerőmű-irányelv határa (hézag legfeljebb a súlypontig).<br></p></div>
+      <div class="fact k2"><div class="n">6,7<small>m</small></div><h4>Szélerőmű síkalapja</h4><p>Egy szélerőmű R = 13,8 m sugarú körlemez alapjánál e = 6,7 m &lt; 0,59·R = 8,1 m – a szélerőműveknél szokásos határ: a hézag legfeljebb a súlypontig érhet.</p></div>
     </div>
     <div class="split">
       <div class="box"><h4>Rövid idejű vagy tartós?</h4><p class="small" style="margin:0">Nem mindegy, hogy a felborító hatás rövid idejű (pl. szélteher) vagy tartós (pl. földnyomás). Szélrohamnál a talp átmenetileg elemelkedik, majd visszaül; tartós külpontos tehernél az alap fokozatosan megbillenhet. A szélerőművekre vonatkozó német irányelv ezért kvázi-állandó teherre nem enged hézagot, szélsőséges teherre legfeljebb a súlypontig.</p></div>
@@ -947,16 +959,16 @@ main .rag, footer .rag { text-align: left !important; }
       <div>
         <div class="tblw" style="margin-top:0"><table class="tbl"><thead><tr><th colspan="2">UPL – a hatások parciális tényezői</th></tr></thead><tbody><tr><td>γ<sub>G;dst</sub></td><td>1,00 – állandó, állékonyságcsökkentő (felhajtóerő)</td></tr><tr><td>γ<sub>G;stb</sub></td><td>0,90 – állandó, állékonyságnövelő (önsúly)</td></tr><tr><td>γ<sub>Q;dst</sub></td><td>1,50 – esetleges, állékonyságcsökkentő</td></tr><tr><td>γ<sub>Q;stb</sub></td><td>0 – esetleges, állékonyságnövelő</td></tr></tbody></table></div>
         <p>A felúszással szembeni globális biztonság többnyire csak γ<sub>G;dst</sub> / γ<sub>G;stb</sub> = 1,0 / 0,9 = <b>1,11</b>. Ezért különösen fontos a vízszintek óvatos felvétele, vagy a veszélyt csökkentő óvintézkedések bevezetése.</p>
-        <p class="small muted">A súrlódás és a horgonyok ellenállására az EN 1997-1 ajánlása γ<sub>s;t</sub> = γ<sub>a</sub> = 1,4 (az AC:2010 helyesbítés óta stabilizáló állandó teherként csak a nemzeti melléklet engedélyével vehetők). A magyar NA értékeit a szabványban érdemes ellenőrizni.</p>
+        <p class="small muted">A súrlódás és a horgonyok ellenállására az EN 1997-1 ajánlása γ<sub>s;t</sub> = γ<sub>a</sub> = 1,4. Stabilizáló állandó hatásként csak akkor kezelhetők, ha a nemzeti melléklet megengedi.</p>
       </div>
     </div>
     <h3>A talajvízszint a legérzékenyebb adat</h3>
     <div class="cols">
       <div>
-        <p>Az épületek, műtárgyak felúszással szembeni ellenőrzésekor a talajvízszint geometriai adatként kezelendő: tervezési értékét vagy közvetlenül, vagy a karakterisztikus érték biztonsági tartalékkal való növelésével származtatjuk. A 30×15 m-es példagarázsnál <b>1 m-rel magasabb víz +4500 kN, azaz +20%</b> felhajtóerőt jelent.</p>
+        <p>Az épületek, műtárgyak felúszással szembeni ellenőrzésekor a talajvízszint geometriai adatként kezelendő: tervezési értékét vagy közvetlenül, vagy a karakterisztikus érték biztonsági tartalékkal való növelésével származtatjuk. A 30×15 m-es példagarázsnál <b>1 m-rel magasabb víz +4500 kN, azaz +20 %</b> felhajtóerőt jelent.</p>
       </div>
       <div>
-        <p>Duna-közeli telken a tartós árvizet a part menti talajvíz is követi: Dél-Budán az 1965-ös árvíz után a talajvíz a part mentén több mint 3 m-rel emelkedett, és megközelítette a folyó maximális szintjét. A budapesti mértékadó árvízszint (MÁSZ) a Vigadó térnél 104,24 mBf – az 1%-os valószínűségű jégmentes árvíz vízhozamából származtatva.</p>
+        <p>Duna-közeli telken a tartós árvizet a part menti talajvíz is követi: Dél-Budán az 1965-ös árvíz után a talajvíz a part mentén több mint 3 m-rel emelkedett, és megközelítette a folyó maximális szintjét. A budapesti mértékadó árvízszint (MÁSZ) a Vigadó térnél 104,24 mBf (méter a Balti-tenger szintje felett) – az 1 %-os valószínűségű jégmentes árvíz vízhozamából származtatva.</p>
       </div>
     </div>
     <div class="panel k3">
@@ -1048,13 +1060,13 @@ main .rag, footer .rag { text-align: left !important; }
     </div>
     <div class="split">
       <div class="box"><h4>Megoldások</h4><ul><li>az alapot távolabb visszük a rézsűéltől;</li><li>mélyebbre alapozunk – a csúszólap alá;</li><li>laposítjuk vagy megtámasztjuk a rézsűt;</li><li>víztelenítünk, rendezzük a felszíni vízelvezetést.</li></ul></div>
-      <div class="box"><h4>Mennyi a „távol”?</h4><p class="small" style="margin:0">Meyerhof kísérletei szerint a rézsű teherbírás-csökkentő hatása kb. 2–6·B távolságig érződik. Az amerikai építési szabályzat lefelé eső rézsű koronáján H/3 (legfeljebb 12,2 m), felfelé emelkedő rézsű tövénél H/2 (legfeljebb 4,6 m) távolságot ír elő – csak állékony rézsűre. Ezek tájékoztató értékek; az igazolás a csúszólapos számítás.</p></div>
+      <div class="box"><h4>Mennyi a „távol”?</h4><p class="small" style="margin:0">Kísérletek szerint a rézsű teherbírás-csökkentő hatása kb. 2–6·B távolságig érződik. Az amerikai építési szabályzat lefelé eső rézsű koronáján H/3 (legfeljebb 12,2 m), felfelé emelkedő rézsű tövénél H/2 (legfeljebb 4,6 m) távolságot ír elő – csak állékony rézsűre. Ezek tájékoztató értékek; az igazolás a csúszólapos számítás.</p></div>
     </div>
     <h3>Esetek</h3>
     <div class="case k4"><div class="yr">2011</div><div><h4>Kulcs – löszpart</h4><p>53 ingatlan került veszélybe, legalább 14 épületet le kellett bontani; a szakértők előre figyelmeztettek, de a partfal megerősítésére nem jutott pénz.</p></div></div>
-    <div class="case k4"><div class="yr">2008</div><div><h4>Dunaszekcső, Hold-hegy</h4><p>A 70 m magas löszfal 2008 februárjában megcsúszott és kb. 10 m-t süllyedt, a Duna medrében zátony keletkezett. A kutatások szerint a mozgást főleg a talajvízszint változása vezérli – hatása kb. tízszerese a Duna vízszintjének.</p></div></div>
+    <div class="case k4"><div class="yr">2008</div><div><h4>Dunaszekcső, löszmagaspart</h4><p>A kb. 50 m magas löszfal 2008 februárjában megcsúszott és kb. 10 m-t süllyedt, a Duna medrében zátony keletkezett. A kutatások szerint a mozgást főleg a talajvízszint változása vezérli – hatása legalább tízszer akkora, mint a Duna vízszintjéé.</p></div></div>
     <div class="case k4"><div class="yr">1914</div><div><h4>Balatonkenese – magaspart</h4><p>Csapadékos időszak után kb. 100 000 m³ lösz sodort a Balatonba egy vasúti szerelvényt; a mozdonyvezető időben megállt, áldozat nem volt.</p></div></div>
-    <div class="case k4"><div class="yr">1972</div><div><h4>Po Shan Road, Hongkong</h4><p>Három egymást követő napon napi 200 mm feletti eső, a rézsű lábánál egy 13 m mély, megtámasztatlan bevágás: kb. 80 000 t föld csúszott le 7–10 másodperc alatt, egy 12–13 emeletes lakóház leszakadt az alapjáról és ledőlt. 67 ember halt meg.</p></div></div>
+    <div class="case k4"><div class="yr">1972</div><div><h4>Po Shan Road, Hongkong</h4><p>Három egymást követő napon napi 200 mm feletti eső, a rézsű lábánál egy 13 m mély, megtámasztatlan bevágás: kb. 80 000 t föld csúszott le 7–10 másodperc alatt, egy 12 szintes lakóház leszakadt az alapjáról és ledőlt. 67 ember halt meg.</p></div></div>
     <div class="case k4"><div class="yr">2009</div><div><h4>Lotus Riverside, Sanghaj</h4><p>Egy 13 emeletes, cölöpalapozású ház szinte épen dőlt fel: az egyik oldalon mélygarázs-gödröt ástak, a kitermelt földet a másik oldalon, a patakparton kb. 10 m magasra halmozták. Cölöpös épület volt, és a hivatalos okot egy későbbi elemzés vitatja – a „töltés az épület mellett” veszélyét viszont jól mutatja.</p></div></div>
     <div class="note"><b>Kontraszt: Transcona, 1913.</b> A winnipegi gabonasiló 24 óra alatt kb. 27°-ra billent – ez azonban a lemezalap alatti talajtörés (teherbírás, GEO) volt, nem általános állékonyságvesztés és nem merev testként való felborulás.</div>
     <div class="quiz k4" id="q4"><div class="qh"><h4>Kvíz – általános állékonyság</h4><div class="dots"></div></div></div>
@@ -1171,7 +1183,7 @@ main .rag, footer .rag { text-align: left !important; }
     <div class="note"><b>Tájékoztatásul.</b> Ezen az oldalon minden magyarázat, mintapélda, szimulátor és kalkulátor a jelenleg érvényes MSZ EN 1997-1 és nemzeti melléklete szerint számol. Ez a fejezet csak azt mutatja be, mi változik majd a második generációs szabvánnyal.</div>
     <div class="split">
       <div class="box"><h4>Most – DA-2* és DA-3 szerinti igazolás</h4><ul><li>EQU: külön tényező a stabilizáló és destabilizáló hatásra (γ<sub>G;stb</sub> = 0,9; γ<sub>G;dst</sub> = 1,1)</li><li>elcsúszás, teherbírás: DA-2* (A1 + M1 + R2)</li><li>talajparaméterek jellemző értékkel, az ellenállás γ<sub>R</sub>-rel csökkentve</li><li>általános állékonyság: DA-3</li></ul></div>
-      <div class="box"><h4>Új – igazolási esetek + MFA / RFA</h4><ul><li>egyensúly és felhajtóerő: VC2</li><li>síkalap, rézsű, támfal: VC3 (MFA – tg φ′ és c′ tényezővel)</li><li>RFA: az ellenállás γ<sub>R</sub>-rel (teherbírás ≈ 1,4, elcsúszás 1,1); RFA-n belül VC1 vagy VC4 (≈ DA-2*)</li><li>az értékeket a nemzeti melléklet adja – ez még nem készült el</li></ul></div>
+      <div class="box"><h4>Új – igazolási esetek + MFA / RFA</h4><ul><li>egyensúly és felhajtóerő: VC2</li><li>síkalap, rézsű, támfal: VC3 (MFA – tg φ′ és c′ tényezővel)</li><li>RFA: az ellenállás γ<sub>R</sub>-rel (teherbírás ≈ 1,4, elcsúszás 1,1); RFA-n belül VC1 vagy VC4 (≈ DA-2*)</li><li>az értékeket a nemzeti melléklet adja meg</li></ul></div>
     </div>
     <div class="tblw"><table class="tbl"><thead><tr><th>Igazolási eset</th><th>Mire?</th><th>Régi megfelelője</th><th>Hatástényezők (tartós helyzet)</th></tr></thead><tbody>
       <tr><td>VC1</td><td>szerkezeti ellenállás, alapozás általában</td><td>STR, DA2</td><td>G: 1,35·k<sub>F</sub>; Q: 1,5·k<sub>F</sub></td></tr>
@@ -1182,11 +1194,11 @@ main .rag, footer .rag { text-align: left !important; }
     <div class="cols">
       <div>
         <h3>Síkalapoknál</h3>
-        <ul><li>A teherbírási képlet a főszövegbe került, várhatóan terephajlás-tényezővel.</li><li>A <b>felborulás</b> (statikus egyensúly, talajtörés nélkül) és az <b>átfordulás</b> (forgásos teherbírási törés) külön vizsgálat.</li><li>A külpontosság határa e ≤ B/3, kör alaprajznál <b>0,59·r</b>; használhatósági állapotban az alap szélén ne nyíljon rés.</li><li>A drénezetlen elcsúszás 0,4-es korlátja megmarad; az elcsúszás és a teherbírás tényezői számszerűen nem változnak (1,1 és 1,4).</li></ul>
+        <ul><li>A teherbírási képlet a főszövegbe került, új terephajlás-tényezővel.</li><li>A <b>felborulás</b> (statikus egyensúly, talajtörés nélkül) és az <b>átfordulás</b> (forgásos teherbírási törés) külön vizsgálat.</li><li>A külpontosság határa e ≤ B/3, kör alaprajznál <b>0,59·r</b>; használhatósági állapotban az alap szélén ne nyíljon rés.</li><li>A drénezetlen elcsúszás 0,4-es korlátja megmarad; az elcsúszás és a teherbírás tényezői számszerűen nem változnak (1,1 és 1,4).</li></ul>
       </div>
       <div>
         <h3>Új fogalmak</h3>
-        <ul><li><b>Talajmodell</b> (Ground Model) → <b>geotechnikai tervezési modell</b>: kötelező gondolatmenet.</li><li>A <b>geotechnikai kategória</b> a következményi osztály (CC) és a talajviszonyok bonyolultsága (GCC) együtteséből adódik.</li><li>Az általános állékonyság az <b>EN 1997-3 4. fejezetébe</b> (rézsűk, bevágások, töltések) kerül; új fogalom a hatászóna.</li><li>Karakterisztikus helyett <b>reprezentatív</b> érték.</li></ul>
+        <ul><li><b>Talajmodell</b> (Ground Model) → <b>geotechnikai tervezési modell</b>: kötelező gondolatmenet.</li><li>A <b>geotechnikai kategória</b> a következményosztály (CC) és a talajviszonyok bonyolultsága (GCC) együtteséből adódik.</li><li>Az általános állékonyság az <b>EN 1997-3 4. fejezetébe</b> (rézsűk, bevágások, töltések) kerül; új fogalom a hatászóna.</li><li>Karakterisztikus helyett <b>reprezentatív</b> érték.</li></ul>
       </div>
     </div>
     <div class="tline">
@@ -1196,7 +1208,7 @@ main .rag, footer .rag { text-align: left !important; }
       <div><b>2027. szept. 30.</b><span>nemzeti bevezetés határideje</span></div>
       <div><b>2028. márc. 30.</b><span>az első generáció visszavonása</span></div>
     </div>
-    <p class="small muted">A végleges szövegeket és a magyar nemzeti mellékletet a megjelenésük után érdemes ellenőrizni.</p>
+    <p class="small muted">A számértékeket a magyar nemzeti mellékletből kell venni.</p>
         <div class="quiz k5" id="q6"><div class="qh"><h4>Kvíz – az új Eurocode</h4><div class="dots"></div></div></div>
   </div>
 </section>
@@ -1685,14 +1697,14 @@ addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RA
     const draw = () => { const C = col(); g.clearRect(0, 0, W, Hh); const L = 70, R = W - 30, T = 30, B = Hh - 50; const sx = (v) => L + v / 10 * (R - L), sy = (v) => B - v * (B - T);
       g.strokeStyle = C.line; g.lineWidth = 1; for (const v of [0.5, 0.667, 1]) { g.beginPath(); g.moveTo(L, sy(v)); g.lineTo(R, sy(v)); g.stroke(); }
       g.strokeStyle = C.ink2; g.lineWidth = 1.5; g.beginPath(); g.moveTo(L, T); g.lineTo(L, B); g.lineTo(R, B); g.stroke();
-      label(g, 'E_p / E_{p,max}', L - 8, T - 12, C.ink2, 13, 'left'); label(g, 'elmozdulás / alapmélység (%)', R, B + 30, C.ink2, 13, 'right');
+      label(g, 'E_p / E_{p;max}', L - 8, T - 12, C.ink2, 13, 'left'); label(g, 'elmozdulás / alapmélység (%)', R, B + 30, C.ink2, 13, 'right');
       for (let v = 0; v <= 10; v += 2) label(g, String(v), sx(v), B + 14, C.mute, 12, 'center', 600);
       label(g, '½', L - 14, sy(0.5), C.c1, 14, 'center'); label(g, '⅔', L - 14, sy(0.667), C.c1, 14, 'center'); label(g, '1', L - 14, sy(1), C.mute, 13, 'center');
       const f = (x) => 1 - Math.exp(-x / 1.6);
       g.strokeStyle = C.water; g.lineWidth = 4; g.beginPath(); for (let x = 0; x <= 10; x += 0.1) { const X = sx(x), Y = sy(lost ? 0 : f(x)); x === 0 ? g.moveTo(X, Y) : g.lineTo(X, Y); } g.stroke();
       const v = lost ? 0 : f(u); g.fillStyle = C.water; g.beginPath(); g.arc(sx(u), sy(v), 8, 0, 7); g.fill();
       g.setLineDash([5, 5]); g.strokeStyle = C.water; g.beginPath(); g.moveTo(sx(u), B); g.lineTo(sx(u), sy(v)); g.lineTo(L, sy(v)); g.stroke(); g.setLineDash([]);
-      label(g, lost ? 'a talaj eltűnt a homlokfal elől: Rp = 0' : `mobilizált: ${fmt(v * 100, 0)} %`, sx(u) + 14, sy(v) - 14, lost ? C.bad : C.ink, 14);
+      { const tx = lost ? 'a talaj eltűnt a homlokfal elől: R_{p;d} = 0' : `mobilizált: ${fmt(v * 100, 0)} %`, low = sy(v) + 22 > B - 8; g.font = '700 14px Archivo, sans-serif'; const tw = g.measureText(tx).width; label(g, tx, Math.min(sx(u) + 14, R - tw), low ? sy(v) - 22 : sy(v) + 22, lost ? C.bad : C.ink, 14); }
     };
     bindRange('pa_u', (v) => { u = v; draw(); }, (v) => fmt(v, 1) + ' %'); seg('pa_lost', (v) => { lost = v === '1'; draw(); });
     addEventListener('themechange', draw); draw();
@@ -1806,56 +1818,56 @@ addEventListener('DOMContentLoaded', () => { RAG.later(700); setTimeout(() => RA
 /* ===== Kvízek, igaz/hamis állítások, osztályozó ===== */
 window.DATA = {
   q1: [
-    { q: 'Milyen határállapot az elcsúszás az EC7 szerint?', o: ['EQU – helyzeti állékonyság', 'GEO – a talaj tönkremenetele', 'UPL – felúszás', 'STR – szerkezeti tönkremenetel'], a: 1, e: 'Az elcsúszásnak a talaj (és az alap–talaj érintkezés) nyírószilárdsága áll ellen, ezért GEO határállapot.' },
-    { q: 'Mekkora a δ<sub>k</sub> súrlódási szög helyben betonozott alaptestnél?', o: ['⅔·φ′<sub>cv;k</sub>', 'φ′<sub>cv;k</sub>', 'a csúcsállapoti φ′<sub>k</sub>', '0 – csak a kohézió számít'], a: 1, e: 'Helyben betonozott alaptestnél δ = φ′<sub>cv;k</sub>, sima (előregyártott) alaptestnél ennek kétharmada. A kritikus állapotbeli szöget azért használjuk, mert elcsúszáskor nagy elmozdulás és a csúcs utáni viselkedés a jellemző.' },
-    { q: 'Mekkora a γ<sub>R;h</sub> parciális tényező a DA-2* tervezési módszerben?', o: ['1,0', '1,1', '1,4', '1,35'], a: 1, e: 'Elcsúszásra γ<sub>R;h</sub> = 1,1 (a teherbírásé γ<sub>R;v</sub> = 1,4).' },
-    { q: 'Drénezetlen esetben mi a nyírási ellenállás felső korlátja?', o: ['0,4 · V<sub>d</sub>', '0,6 · V<sub>d</sub>', 'A<sub>c</sub> · c<sub>u;k</sub>, korlát nélkül', 'nincs korlát'], a: 0, e: 'Az alap és a talaj közé víz vagy levegő juthat, ezért R<sub>d</sub> ≤ 0,4·V<sub>d</sub>. Csak akkor hagyható el, ha a szívás a hézag kialakulását ott is megakadályozza, ahol nincs pozitív talpfeszültség – ez ritka.' },
-    { q: 'Miért vehető figyelembe a passzív földellenállásnak általában csak a fele–kétharmada?', o: ['mert a talaj szilárdsága kisebb a vártnál', 'mert a teljes passzív ellenálláshoz jelentős elmozdulás kell', 'mert az EC7 megtiltja a teljes értéket', 'mert a talajvíz mindig csökkenti'], a: 1, e: 'A passzív ellenállás csak jelentős összenyomódás után mobilizálódik teljesen; a megengedhető elmozdulásnál ennek csak egy része ébred. Ráadásul erózió, utólagos kiásás vagy az agyag zsugorodása el is veheti.' },
+    { q: 'Milyen határállapot az elcsúszás az EC7 szerint?', o: ['EQU – helyzeti állékonyság', 'UPL – felúszás', 'GEO – a talaj tönkremenetele', 'STR – szerkezeti tönkremenetel'], a: 2, e: 'Az elcsúszásnak a talaj (és az alap–talaj érintkezés) nyírószilárdsága áll ellen, ezért GEO határállapot.' },
+    { q: 'Mekkora a δ<sub>k</sub> súrlódási szög helyben betonozott alaptestnél?', o: ['φ′<sub>cv;k</sub>', '⅔·φ′<sub>cv;k</sub>', 'a csúcsállapoti φ′<sub>k</sub>', '0 – csak a kohézió számít'], a: 0, e: 'Helyben betonozott alaptestnél δ = φ′<sub>cv;k</sub>, sima (előregyártott) alaptestnél ennek kétharmada. A kritikus állapotbeli szöget azért használjuk, mert elcsúszáskor nagy elmozdulás és a csúcs utáni viselkedés a jellemző.' },
+    { q: 'Mekkora a γ<sub>R;h</sub> parciális tényező a DA-2* tervezési módszerben?', o: ['1,0', '1,35', '1,4', '1,1'], a: 3, e: 'Elcsúszásra γ<sub>R;h</sub> = 1,1 (a teherbírásé γ<sub>R;v</sub> = 1,4).' },
+    { q: 'Drénezetlen esetben mi a nyírási ellenállás felső korlátja?', o: ['0,6 · V<sub>d</sub>', '0,4 · V<sub>d</sub>', 'A<sub>c</sub> · c<sub>u;k</sub>, korlát nélkül', 'nincs korlát'], a: 1, e: 'Az alap és a talaj közé víz vagy levegő juthat, ezért R<sub>d</sub> ≤ 0,4·V<sub>d</sub>. Csak akkor hagyható el, ha a szívás a hézag kialakulását ott is megakadályozza, ahol nincs pozitív talpfeszültség – ez ritka.' },
+    { q: 'Miért vehető figyelembe a passzív földellenállásnak általában csak a fele–kétharmada?', o: ['mert a talaj szilárdsága kisebb a vártnál', 'mert a talajvíz mindig csökkenti', 'mert az EC7 megtiltja a teljes értéket', 'mert a teljes passzív ellenálláshoz jelentős elmozdulás kell'], a: 3, e: 'A passzív ellenállás csak jelentős összenyomódás után mobilizálódik teljesen; a megengedhető elmozdulásnál ennek csak egy része ébred. Ráadásul erózió, utólagos kiásás vagy az agyag zsugorodása el is veheti.' },
     { q: 'Melyik esetleges teher vehető figyelembe V′<sub>k</sub>-ban?', o: ['minden esetleges teher', 'csak az, amely a H<sub>d</sub>-vel biztosan együtt működik', 'csak a szélteher', 'a háttöltésen álló forgalom mindig'], a: 1, e: 'A függőleges erő növeli az ellenállást, ezért csak olyan esetleges teher számolható, amely a vízszintes erővel biztosan egyszerre hat.' },
   ],
   q2: [
     { q: 'Mi a felborulás igazolásának alakja?', o: ['M<sub>dst;d</sub> ≤ M<sub>stb;d</sub>', 'H<sub>d</sub> ≤ R<sub>d</sub>', 'V<sub>d</sub> ≤ R<sub>d</sub>', 'e ≤ B/2'], a: 0, e: 'A felborító nyomaték tervezési értéke nem haladhatja meg a stabilizáló nyomatékét – mindkettőt ugyanarra a pontra írjuk fel.' },
-    { q: 'Melyek az EQU parciális tényezői (ajánlott értékek)?', o: ['γ<sub>G</sub> = 1,35; γ<sub>Q</sub> = 1,5', 'γ<sub>G;dst</sub> = 1,1; γ<sub>G;stb</sub> = 0,9; γ<sub>Q;dst</sub> = 1,5', 'γ<sub>G;dst</sub> = 1,0; γ<sub>G;stb</sub> = 0,9', 'minden tényező 1,0'], a: 1, e: 'EQU-ban külön tényező jár a felborító és a stabilizáló hatásnak; a kedvező esetleges teher nem vehető figyelembe.' },
-    { q: 'Hova írjuk fel a nyomatékokat talajon álló alapnál, első közelítésben?', o: ['a sarokpontra', 'a talp súlypontjára', 'a sarokponttól B/10 távolságra lévő pontra', 'a sarokponttól B/3-ra'], a: 2, e: 'Szilárd kőzeten a sarokpontra, talajon – mert a sarok alatt a talaj benyomódik – első közelítésben a sarokponttól B/10-re lévő pontra.' },
-    { q: 'Mi a teendő, ha e > B/3 (téglalap alaprajz)?', o: ['semmi, ha a nyomatéki igazolás megfelel', 'külön óvintézkedés kell', 'a talp automatikusan megfelel', 'a B/10-es forgáspontot kell használni'], a: 1, e: 'e > B/3 (kör alaprajznál e > 0,6·r) esetén a szabvány külön óvintézkedést ír elő – ilyenkor a talp fele már nem „dolgozik”.' },
-    { q: 'DA-2* szerint miből számítjuk a külpontosságot?', o: ['a hatások tervezési értékéből', 'a hatások karakterisztikus értékéből', 'a talajellenállásból', 'csak a szélteherből'], a: 1, e: 'DA-2*-ban a külpontosságot a karakterisztikus hatásokból határozzuk meg, a parciális tényezők nem módosítják.' },
-    { q: 'Egyirányú külpontosságnál, e = B/3 esetén a sarokfeszültség az átlagos talpfeszültség hányszorosa?', o: ['1,5-szerese', '2-szerese', '4-szerese', 'végtelen'], a: 2, e: 'e = B/3-nál a nyomott szakasz B/2, a háromszögeloszlás csúcsa 2V/(B/2·L) = 4·V/A – az átlag négyszerese.' },
+    { q: 'Melyek az EQU parciális tényezői (ajánlott értékek)?', o: ['γ<sub>G</sub> = 1,35; γ<sub>Q</sub> = 1,5', 'γ<sub>G;dst</sub> = 1,0; γ<sub>G;stb</sub> = 0,9', 'γ<sub>G;dst</sub> = 1,1; γ<sub>G;stb</sub> = 0,9; γ<sub>Q;dst</sub> = 1,5', 'minden tényező 1,0'], a: 2, e: 'EQU-ban külön tényező jár a felborító és a stabilizáló hatásnak; a kedvező esetleges teher nem vehető figyelembe.' },
+    { q: 'Hova írjuk fel a nyomatékokat talajon álló alapnál, első közelítésben?', o: ['a sarokpontra', 'a sarokponttól B/10 távolságra lévő pontra', 'a talp súlypontjára', 'a sarokponttól B/3-ra'], a: 1, e: 'Szilárd kőzeten a sarokpontra, talajon – mert a sarok alatt a talaj benyomódik – első közelítésben a sarokponttól B/10-re lévő pontra.' },
+    { q: 'Mi a teendő, ha e > B/3 (téglalap alaprajz)?', o: ['semmi, ha a nyomatéki igazolás megfelel', 'a B/10-es forgáspontot kell használni', 'a talp automatikusan megfelel', 'külön óvintézkedés kell'], a: 3, e: 'e > B/3 (kör alaprajznál e > 0,6·r) esetén a szabvány külön óvintézkedést ír elő – ilyenkor a talp fele már nem „dolgozik”.' },
+    { q: 'DA-2* szerint miből számítjuk a külpontosságot?', o: ['a hatások tervezési értékéből', 'a talajellenállásból', 'a hatások karakterisztikus értékéből', 'csak a szélteherből'], a: 2, e: 'DA-2*-ban a külpontosságot a karakterisztikus hatásokból határozzuk meg, a parciális tényezők nem módosítják.' },
+    { q: 'Egyirányú külpontosságnál, e = B/3 esetén a sarokfeszültség az átlagos talpfeszültség hányszorosa?', o: ['4-szerese', '2-szerese', '1,5-szerese', 'végtelen'], a: 0, e: 'e = B/3-nál a nyomott szakasz B/2, a háromszögeloszlás csúcsa 2V/(B/2·L) = 4·V/A – az átlag négyszerese.' },
   ],
   q3: [
     { q: 'Melyek az UPL állandó hatásainak tényezői?', o: ['γ<sub>G;dst</sub> = 1,1; γ<sub>G;stb</sub> = 0,9', 'γ<sub>G;dst</sub> = 1,00; γ<sub>G;stb</sub> = 0,90', 'γ<sub>G</sub> = 1,35; γ<sub>G</sub> = 1,0', 'mindkettő 1,0'], a: 1, e: 'UPL-ben a felhajtóerő tényezője 1,00, az önsúlyé 0,90; az esetleges destabilizáló hatásé 1,50, a kedvező esetlegesé 0.' },
     { q: 'Hogyan számítjuk a felhajtóerő tervezési értékét?', o: ['V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub>', 'a szerkezet súlyával', 'γ<sub>w</sub> · H', 'a horgonyerőből'], a: 0, e: 'A<sub>k</sub> a talajvízszint alatti bemerülő térfogat, γ<sub>w</sub> = 10 kN/m³; a felhajtóerő lényegében a szerkezetre ható víznyomás eredője.' },
     { q: 'Mekkora a felúszással szembeni globális biztonság súrlódás és horgony nélkül?', o: ['1,5', '1,35', '1,11', '1,0'], a: 2, e: 'γ<sub>G;dst</sub>/γ<sub>G;stb</sub> = 1,0/0,9 = 1,11 – kevés, ezért a vízszintet óvatosan kell felvenni.' },
-    { q: 'Hogyan vesszük figyelembe a mélygarázsban parkoló autókat?', o: ['kedvező esetleges teherként: 0-val', 'stabilizáló állandó teherként', '0,9-szeres szorzóval', '1,5-szeres szorzóval'], a: 0, e: 'A kedvező esetleges teher tényezője UPL-ben 0 – az üres garázsra kell igazolni.' },
-    { q: 'A 30×15 m-es dobozt 1 m-rel magasabb talajvíz éri. Mennyivel nő a felhajtóerő?', o: ['kb. 450 kN', 'kb. 4500 kN', 'kb. 45 000 kN', 'nem változik'], a: 1, e: '450 m² · 1 m · 10 kN/m³ = 4500 kN – a példában ez +20%.' },
-    { q: 'Melyik NEM felúszás elleni megoldás?', o: ['a talplemez túlnyújtása', 'lehorgonyzás', 'időszakos elárasztás', 'a talp alatti talaj tömörítése'], a: 3, e: 'A tömörítés a süllyedésen segít, a felhajtóerőn nem. A négy megoldás: túlnyújtás, lehorgonyzás, leszívás/drénezés, időszakos elárasztás.' },
+    { q: 'Hogyan vesszük figyelembe a mélygarázsban parkoló autókat?', o: ['1,5-szeres szorzóval', 'stabilizáló állandó teherként', '0,9-szeres szorzóval', 'kedvező esetleges teherként: 0-val'], a: 3, e: 'A kedvező esetleges teher tényezője UPL-ben 0 – az üres garázsra kell igazolni.' },
+    { q: 'A 30×15 m-es dobozt 1 m-rel magasabb talajvíz éri. Mennyivel nő a felhajtóerő?', o: ['kb. 450 kN', 'kb. 45 000 kN', 'kb. 4500 kN', 'nem változik'], a: 2, e: '450 m² · 1 m · 10 kN/m³ = 4500 kN – a példában ez +20 %.' },
+    { q: 'Melyik NEM felúszás elleni megoldás?', o: ['a talp alatti talaj tömörítése', 'lehorgonyzás', 'időszakos elárasztás', 'a talplemez túlnyújtása'], a: 0, e: 'A tömörítés a süllyedésen segít, a felhajtóerőn nem. A négy megoldás: túlnyújtás, lehorgonyzás, leszívás/drénezés, időszakos elárasztás.' },
   ],
   q4: [
-    { q: 'Mikor kell síkalapnál általános állékonyságot vizsgálni?', o: ['rézsű, munkagödör, támfal, part vagy üreg közelében', 'csak cölöpalapnál', 'csak sziklán', 'soha, ha a teherbírás megfelel'], a: 0, e: 'Az EN 1997-1 6.5.1 szerint: rézsűben vagy közelében, kiemelés vagy támfal közelében, folyó-, csatorna-, tó-, tározó- vagy tengerpart közelében, illetve bányaművelés vagy föld alatti szerkezetek közelében.' },
+    { q: 'Mikor kell síkalapnál általános állékonyságot vizsgálni?', o: ['soha, ha a teherbírás megfelel', 'csak cölöpalapnál', 'csak sziklán', 'rézsű, munkagödör, támfal, part vagy üreg közelében'], a: 3, e: 'Az EN 1997-1 6.5.1 szerint: rézsűben vagy közelében, kiemelés vagy támfal közelében, folyó-, csatorna-, tó-, tározó- vagy tengerpart közelében, illetve bányaművelés vagy föld alatti szerkezetek közelében.' },
     { q: 'Mi a jellemző tönkremeneteli kép?', o: ['a talp alatti kis ék törik ki', 'a talajtömeg az alappal együtt mozdul el, a csúszólap az alap alatt fut', 'a szerkezet felborul', 'a talp elcsúszik az alapsíkon'], a: 1, e: 'Az általános állékonyság az alapot és a környező talajtömeget együtt vizsgálja – a teherbírás megfelelhet, a rézsű nem.' },
-    { q: 'Mekkorák a DA-3 hatástényezői?', o: ['γ<sub>G</sub> = 1,35; γ<sub>Q</sub> = 1,5', 'γ<sub>G</sub> = 1,0; γ<sub>Q</sub> = 1,3', 'γ<sub>G;dst</sub> = 1,1; γ<sub>G;stb</sub> = 0,9', 'mindkettő 1,0'], a: 1, e: 'Az alap terhe geotechnikai hatásként, az A2 sorozattal lép be: 1,0 / 1,3; a nyírószilárdságot csökkentjük.' },
-    { q: 'Mit oszt a súrlódás parciális tényezője?', o: ['magát a φ′ szöget', 'a tg φ′ értékét', 'a lamella súlyát', 'a csúszólap sugarát'], a: 1, e: 'tg φ′<sub>d</sub> = tg φ′<sub>k</sub> / γ<sub>φ</sub> – például φ′<sub>k</sub> = 28° és γ = 1,35 esetén φ′<sub>d</sub> ≈ 21,5°.' },
-    { q: 'Mi a rézsűk állékonyságában rendszerint mértékadó?', o: ['a vízviszonyok', 'a hőmérséklet', 'az alap betonminősége', 'a szélteher'], a: 0, e: 'Csapadék, emelkedő talajvíz, szivárgás: a pórusvíznyomás csökkenti a csúszólapon a súrlódást. A hazai löszpart-csuszamlások és a hongkongi 1972-es eset is víz miatt indult.' },
-    { q: 'A ház alaptestének teherbírási vizsgálata megfelel. Biztos, hogy az általános állékonyság is?', o: ['igen', 'nem – a rézsű ettől még megcsúszhat', 'csak agyagban nem', 'csak homokban nem'], a: 1, e: 'A teherbírás a talp alatti helyi törést vizsgálja; az általános állékonyság a nagyobb földtömeg csúszását. A kettő külön igazolás.' },
+    { q: 'Mekkorák a DA-3 hatástényezői?', o: ['γ<sub>G</sub> = 1,0; γ<sub>Q</sub> = 1,3', 'γ<sub>G</sub> = 1,35; γ<sub>Q</sub> = 1,5', 'γ<sub>G;dst</sub> = 1,1; γ<sub>G;stb</sub> = 0,9', 'mindkettő 1,0'], a: 0, e: 'Az alap terhe geotechnikai hatásként, az A2 sorozattal lép be: 1,0 / 1,3; a nyírószilárdságot csökkentjük.' },
+    { q: 'Mit oszt a súrlódás parciális tényezője?', o: ['magát a φ′ szöget', 'a tg φ′ értékét', 'a lamella súlyát', 'a csúszólap sugarát'], a: 1, e: 'tg φ′<sub>d</sub> = tg φ′<sub>k</sub> / γ<sub>φ</sub> – például φ′<sub>k</sub> = 28° és γ<sub>φ</sub> = 1,35 esetén φ′<sub>d</sub> ≈ 21,5°.' },
+    { q: 'Mi a rézsűk állékonyságában rendszerint mértékadó?', o: ['az alap betonminősége', 'a hőmérséklet', 'a vízviszonyok', 'a szélteher'], a: 2, e: 'Csapadék, emelkedő talajvíz, szivárgás: a pórusvíznyomás csökkenti a csúszólapon a súrlódást. A hazai löszpart-csuszamlások és a hongkongi 1972-es eset is víz miatt indult.' },
+    { q: 'A ház alaptestének teherbírási vizsgálata megfelel. Biztos, hogy az általános állékonyság is?', o: ['igen', 'csak homokban nem', 'csak agyagban nem', 'nem – a rézsű ettől még megcsúszhat'], a: 3, e: 'A teherbírás a talp alatti helyi törést vizsgálja; az általános állékonyság a nagyobb földtömeg csúszását. A kettő külön igazolás.' },
   ],
   q5: [
     { q: 'Melyik tervezési módszert írja elő a hazai nemzeti melléklet síkalap teherbírására és elcsúszására?', o: ['DA-1', 'DA-2*', 'DA-3', 'megengedett feszültségek'], a: 1, e: 'DA-2*: A1 + M1 + R2. Általános állékonyságra DA-3.' },
-    { q: 'Mit jelent a csillag a DA-2* jelölésben?', o: ['a parciális tényezőket a számítás végén, a hatások következményére alkalmazzuk', 'kétszeres biztonsági tényezőt', 'csak drénezetlen állapotra érvényes', 'a talajjellemzőket is csökkentjük'], a: 0, e: 'A számítás karakterisztikus értékekkel fut (így a külpontosság is), a tényezők a végén jönnek.' },
-    { q: 'Mekkora az R2 csoportban a síkalap elcsúszási ellenállásának tényezője?', o: ['1,0', '1,1', '1,4', '1,5'], a: 1, e: 'γ<sub>R;h</sub> = 1,1; a teherbírásé γ<sub>R;v</sub> = 1,4.' },
-    { q: 'Melyik tényezőcsoport csökkenti a talaj szilárdsági jellemzőit?', o: ['A2', 'M2', 'R2', 'R3'], a: 1, e: 'M2: tg φ′ és c′ osztása (EN-ajánlás 1,25, c<sub>u</sub>-ra 1,4).' },
-    { q: 'Melyik határállapot dolgozik a tervezési módszertől függetlenül, saját tényezőkészlettel?', o: ['GEO – teherbírás', 'STR', 'UPL', 'GEO – elcsúszás'], a: 2, e: 'Az EQU, az UPL és a HYD saját tényezőket kap.' },
+    { q: 'Mit jelent a csillag a DA-2* jelölésben?', o: ['a talajjellemzőket is csökkentjük', 'kétszeres biztonsági tényezőt', 'csak drénezetlen állapotra érvényes', 'a parciális tényezőket a számítás végén, a hatások következményére alkalmazzuk'], a: 3, e: 'A számítás karakterisztikus értékekkel fut (így a külpontosság is), a tényezők a végén jönnek.' },
+    { q: 'Mekkora az R2 csoportban a síkalap elcsúszási ellenállásának tényezője?', o: ['1,0', '1,4', '1,1', '1,5'], a: 2, e: 'γ<sub>R;h</sub> = 1,1; a teherbírásé γ<sub>R;v</sub> = 1,4.' },
+    { q: 'Melyik tényezőcsoport csökkenti a talaj szilárdsági jellemzőit?', o: ['M2', 'A2', 'R2', 'R3'], a: 0, e: 'M2: tg φ′ és c′ osztása (EN-ajánlás 1,25, c<sub>u</sub>-ra 1,4).' },
+    { q: 'Melyik határállapot dolgozik a tervezési módszertől függetlenül, saját tényezőkészlettel?', o: ['GEO – teherbírás', 'STR', 'GEO – elcsúszás', 'UPL'], a: 3, e: 'Az EQU, az UPL és a HYD saját tényezőket kap.' },
   ],
 
   q6: [
     { q: 'Mi lép az új EC7-ben a tervezési módszerek (DA1–DA3) helyére?', o: ['igazolási esetek (VC1–VC4) és MFA / RFA', 'egyetlen globális biztonsági tényező', 'megengedett feszültségek', 'kizárólag numerikus modellezés'], a: 0, e: 'A határállapotok maradnak, a tényezők hozzárendelése változik: igazolási esetek és anyag- vagy ellenállás-tényezős megközelítés.' },
     { q: 'Melyik igazolási eset szól a statikus egyensúlyról és a felhajtóerőről?', o: ['VC1', 'VC2', 'VC3', 'VC4'], a: 1, e: 'VC2: statikus egyensúly, felhajtóerő (a régi EQU, UPL).' },
-    { q: 'Mit jelent az MFA?', o: ['az ellenállást osztjuk γ<sub>R</sub>-rel', 'a talaj szilárdsági paramétereit csökkentjük tényezővel', 'semmilyen tényezőt nem használunk', 'próbaterhelést végzünk'], a: 1, e: 'Material Factor Approach: tg φ′ és c′ tényezővel csökkentve. Az RFA az ellenállást csökkenti (≈ 1,4 teherbírásra, 1,1 elcsúszásra).' },
-    { q: 'Hová kerül az általános állékonyság az új szabványcsomagban?', o: ['EN 1997-3, 4. fejezet: rézsűk, bevágások, töltések', 'EN 1990', 'EN 1992', 'megszűnik mint külön vizsgálat'], a: 0, e: 'Az EN 1997-3 4. fejezete kifejezetten kiterjed a rézsűn vagy rézsű közelében álló alapokra is.' },
-    { q: 'Mikor kell az első generációs, ütköző szabványokat visszavonni?', o: ['2026. március 30.', '2027. szeptember 30.', '2028. március 30.', '2030. december 31.'], a: 2, e: 'A nemzeti bevezetés határideje 2027. szeptember 30., a régi szabványok visszavonásáé 2028. március 30.' },
+    { q: 'Mit jelent az MFA?', o: ['az ellenállást osztjuk γ<sub>R</sub>-rel', 'próbaterhelést végzünk', 'semmilyen tényezőt nem használunk', 'a talaj szilárdsági paramétereit csökkentjük tényezővel'], a: 3, e: 'Material Factor Approach: tg φ′ és c′ tényezővel csökkentve. Az RFA az ellenállást csökkenti (≈ 1,4 teherbírásra, 1,1 elcsúszásra).' },
+    { q: 'Hová kerül az általános állékonyság az új szabványcsomagban?', o: ['EN 1992', 'EN 1990', 'EN 1997-3, 4. fejezet: rézsűk, bevágások, töltések', 'megszűnik mint külön vizsgálat'], a: 2, e: 'Az EN 1997-3 4. fejezete kifejezetten kiterjed a rézsűn vagy rézsű közelében álló alapokra is.' },
+    { q: 'Mikor kell az első generációs, ütköző szabványokat visszavonni?', o: ['2028. március 30.', '2027. szeptember 30.', '2026. március 30.', '2030. december 31.'], a: 0, e: 'A nemzeti bevezetés határideje 2027. szeptember 30., a régi szabványok visszavonásáé 2028. március 30.' },
   ],
   sorter: [
     { s: 'Magas reklámtábla kis alaptesten, viharos szélben', a: 1, e: 'Nagy külpontosság: M<sub>dst;d</sub> ≤ M<sub>stb;d</sub> és e ≤ B/3 a kérdés.' },
     { s: 'Üres földalatti esővíztározó, magas talajvízszint', a: 2, e: 'A felhajtóerő legyőzheti az önsúlyt (UPL).' },
-    { s: 'Szögtámfal sima, előregyártott talppal, nagy földnyomás', a: 0, e: 'δ = ⅔·φ′<sub>cv</sub> – a talp alatti súrlódás kevés lehet.' },
+    { s: 'Szögtámfal sima, előregyártott talppal, nagy földnyomás', a: 0, e: 'δ<sub>k</sub> = ⅔·φ′<sub>cv;k</sub> – a talp alatti súrlódás kevés lehet.' },
     { s: 'Családi ház két méterre egy löszfal peremétől', a: 3, e: 'A csúszólap a ház alatt is átmehet: általános állékonyság.' },
     { s: 'Gyalogos aluljáró a Duna közelében, árvíz idején', a: 2, e: 'A tartós árvizet a talajvíz is követi – UPL.' },
     { s: 'Hídfő alaptest a háttöltés földnyomásával, telített agyagon, rövid távon', a: 0, e: 'Drénezetlen elcsúszás: R<sub>d</sub> = A<sub>c</sub>·c<sub>u;k</sub>/1,1 ≤ 0,4·V<sub>d</sub>.' },
@@ -1882,7 +1894,7 @@ window.DATA = {
     { s: 'DA-2* szerint a külpontosságot a tervezési hatásokból számítjuk.', t: false, e: 'A karakterisztikus hatásokból; a tényezők nem módosítják.' },
     { s: 'A korábbi hazai gyakorlat e ≤ B/6-ot követelt meg.', t: true, e: 'Az eredőnek a belső magon belül kellett maradnia.' },
     { s: 'Tartós felborító hatásnál (pl. földnyomás) a talp elemelkedése kedvezőtlenebb, mint rövid idejű szélnél.', t: true, e: 'Tartós külpontos tehernél az alap fokozatosan megbillenhet.' },
-    { s: 'Kör alaprajzú alapnál a belső mag sugara r/4.', t: true, e: 'Az EC7 szerint kör alaprajznál e > 0,6·r esetén kell külön óvintézkedés.' },
+    { s: 'Kör alaprajzú alapnál a belső mag sugara r/4.', t: true, e: 'e ≤ r/4 esetén a teljes talp nyomott; külön óvintézkedés csak e > 0,6·r felett kell.' },
     { s: 'UPL-ben a felhajtóerő tényezője 1,1.', t: false, e: '1,00 – az 1,1 az EQU értéke.' },
     { s: 'A felúszás vizsgálatakor a parkoló autókat stabilizáló teherként számíthatjuk.', t: false, e: 'Kedvező esetleges teher: γ<sub>Q;stb</sub> = 0.' },
     { s: 'A felúszással szembeni globális biztonság R<sub>d</sub> nélkül csak 1,11.', t: true, e: '1,0 / 0,9 = 1,11.' },
@@ -1900,7 +1912,7 @@ window.DATA = {
     { s: 'A rézsűk állékonyságában a vízviszonyok rendszerint mértékadók.', t: true, e: 'A pórusvíznyomás csökkenti a súrlódást a csúszólapon.' },
     { s: 'A teherbírási vizsgálat megfelelése garantálja az általános állékonyságot.', t: false, e: 'A teherbírás megfelelhet, a rézsű nem.' },
     { s: 'A hazai nemzeti melléklet szerint síkalapnál a DA-2* tervezési módszert alkalmazzuk.', t: true, e: 'Teherbírásra és elcsúszásra DA-2* (A1 + M1 + R2); általános állékonyságra DA-3.' },
-    { s: 'DA-2*-ban a külpontosságot a tervezési (tényezővel növelt) terhekből számítjuk.', t: false, e: 'A karakterisztikus hatásokból; a parciális tényezőket a végén, a hatások következményére alkalmazzuk.' },
+    { s: 'DA-3-ban a parciális tényező az ellenállást osztja, a talaj szilárdsági paraméterei változatlanok.', t: false, e: 'Fordítva: a tg φ′ és a c′ értékét osztjuk (M2), az ellenállás tényezője (R3) 1,0.' },
     { s: 'Az EQU, UPL és HYD határállapot saját parciális tényezőkészlettel dolgozik.', t: true, e: 'A tervezési módszertől függetlenül (MSZ EN 1997-1, A melléklet).' },
     { s: 'A hidraulikus talajtörés (HYD) kedvezőtlen állandó hatásának tényezője 1,1.', t: false, e: 'HYD: γ<sub>G;dst</sub> = 1,35, γ<sub>G;stb</sub> = 0,90, γ<sub>Q;dst</sub> = 1,50.' },
   ],
@@ -2021,7 +2033,7 @@ window.DATA = {
       S.push({ t: 'Megadott tervezési adatok', b: fl(Vks, u_(Vke, 1, un)) + fl(sb('H', 'd'), u_(Hd, 1, un)) + (ud ? fl(sb('V', 'd'), u_(Vd, 1, un)) + fl('B′', 'B − 2e', `${F(B, 2)} − 2 · ${F(Math.abs(e), 3)}`, u_(Bp, 3, 'm')) + (strip ? '' : fl('L′', 'L − 2e<sub>L</sub>', u_(Lp, 3, 'm'))) + fl(sb('A', 'c'), strip ? 'B′ · 1 m' : 'B′ · L′', u_(Ac, 3, strip ? 'm²/m' : 'm²')) : '') });
     }
     if (dr) S.push({ t: 'Drénezett nyírási ellenállás az alapsíkon (γ<sub>R;h</sub> = 1,1)', b: `<p class="cx-c">${p.cast === 'precast' ? 'Sima, előregyártott alaptest: ' + nw('δ<sub>k</sub> = ⅔ · φ′<sub>cv;k</sub>') : 'Helyben betonozott alaptest: ' + nw('δ<sub>k</sub> = φ′<sub>cv;k</sub>')}. A c′ hatékony kohéziót figyelmen kívül hagyjuk.</p>` + fl(sb('δ', 'k'), p.cast === 'precast' ? `⅔ · ${u_(p.phicv, 1, '°')}` : '', u_(delta, 2, '°')) + fl(sb('R', 'd'), `${Vks} · tg${NB}δ<sub>k</sub> / γ<sub>R;h</sub>`, `${F(Math.max(0, Vke), 1)} · tg${NB}${F(delta, 2)}° / 1,1`, `${F(Math.max(0, Vke), 1)} · ${F(tg(delta), 4)} / 1,1`, u_(RdD, 1, un)) });
-    if (ud) S.push({ t: 'Drénezetlen nyírási ellenállás és a 0,4·V<sub>d</sub> korlát', b: fl(sb('R', 'd;0'), 'A<sub>c</sub> · c<sub>u;k</sub> / γ<sub>R;h</sub>', `${F(Ac, 3)} · ${F(p.cu, 1)} / 1,1`, u_(Rd0, 1, un)) + fl('0,4 · V<sub>d</sub>', `0,4 · ${F(Vd, 1)}`, u_(cap, 1, un)) + fl(sb('R', 'd'), `min(${F(Rd0, 1)}; ${F(cap, 1)})`, u_(RdU, 1, un)) + (capGov ? '<p class="cx-c">A korlát a mértékadó: az alap és a talaj között hézag nyílhat, ezért nem számíthatunk a függőleges erő 40%-ánál nagyobb ellenállásra.</p>' : '') });
+    if (ud) S.push({ t: 'Drénezetlen nyírási ellenállás és a 0,4·V<sub>d</sub> korlát', b: fl(sb('R', 'd;0'), 'A<sub>c</sub> · c<sub>u;k</sub> / γ<sub>R;h</sub>', `${F(Ac, 3)} · ${F(p.cu, 1)} / 1,1`, u_(Rd0, 1, un)) + fl('0,4 · V<sub>d</sub>', `0,4 · ${F(Vd, 1)}`, u_(cap, 1, un)) + fl(sb('R', 'd'), `min(${F(Rd0, 1)}; ${F(cap, 1)})`, u_(RdU, 1, un)) + (capGov ? '<p class="cx-c">A korlát a mértékadó: az alap és a talaj között hézag nyílhat, ezért nem számíthatunk a függőleges erő 40 %-ánál nagyobb ellenállásra.</p>' : '') });
     if (nu > 0) {
       let b = `<p class="cx-c">Működési magasság: ${p.pH === 'face' ? 'az alaptest homloka' : 'a terepszinttől az alapsíkig'} (${nw(`${F(z1, 2)}…${F(z2, 2)}${NB}m`)}); mobilizált hányad ν = ${nu === 0.5 ? '½' : '⅔'}; γ<sub>R;e</sub> = 1,4.</p>`;
       if (dr) b += fl(sb('K', 'p'), `tg²(45° + φ′<sub>k</sub>/2)`, `tg²(45° + ${F(p.phiP, 1)}°/2)`, F(Kp, 3)) + fl(sb('E', 'p;k') + ' (drénezett)', `∫(K<sub>p</sub> · σ′<sub>v</sub> + 2c′√K<sub>p</sub>) dz${strip ? '' : ' · L'}`, u_(EpD, 2, un)) + fl(sb('R', 'p;d'), `ν · E<sub>p;k</sub> / γ<sub>R;e</sub>`, `${F(nu, 3)} · ${F(EpD, 2)} / 1,4`, u_(RpD, 1, un));
@@ -2341,7 +2353,7 @@ window.DATA = {
     Object.assign(v, { m, sr, crit, critF, F0, Fd, lam, phid, cd, ms, und, phid2: und ? 0 : deg(Math.atan(Math.tan(rad(p.phi2)) / p.gm)), cd2: und ? p.cu2 / p.gcu : p.c2 / p.gm });
     // figyelmeztetések
     if (!und && (p.phi < 10 || p.phi > 42)) R.warn.push(`Szokatlan φ′<sub>k</sub> = ${u_(p.phi, 1, '°')}.`);
-    if (!und && p.c > 60) R.warn.push(`Nagy hatékony kohézió (c′<sub>k</sub> = ${u_(p.c, 0, 'kPa')}) – a rézsű biztonságát erősen túlbecsülheti.`);
+    if (!und && p.c > 60) R.warn.push(`Nagy hatékony kohézió (c′<sub>k</sub> = ${u_(p.c, 0, 'kPa')}) – emiatt a számítás a rézsű biztonságát erősen túlbecsülheti.`);
     if (und && p.water !== 'none') R.info.push('Drénezetlen (teljes feszültségű) vizsgálatban a pórusvíznyomás nem szerepel külön – a víz hatása a c<sub>u</sub> értékében van.');
     if (!und && p.water === 'ru' && (p.ru < 0 || p.ru > 0.6)) R.warn.push(`Szokatlan pórusvíznyomás-arány: r<sub>u</sub> = ${F(p.ru, 2)}.`);
     if (p.n < 1) R.warn.push('1 : 1-nél meredekebb rézsű – ellenőrizd, hogy körhengeres csúszólap reális-e.');
@@ -2394,25 +2406,48 @@ window.DATA = {
   const r1 = (v) => Math.round(v * 10) / 10, PTS = (pts) => pts.map(p => r1(p[0]) + ',' + r1(p[1])).join(' ');
   function Sv(W, H) {
     const id = 'cv' + (++SVGID), o = [], k = W < 480 ? 0.86 : W < 640 ? 0.93 : 1;
-    const S = { W, H, id, o, k, add: (s) => o.push(s),
-      line: (x1, y1, x2, y2, c, ex = '') => o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="${c}" ${ex}/>`),
-      poly: (pts, c, ex = '') => o.push(`<polygon points="${PTS(pts)}" class="${c}" ${ex}/>`),
-      pl: (pts, c, ex = '') => o.push(`<polyline points="${PTS(pts)}" class="${c}" ${ex}/>`),
+    // Feliratelhelyező: minden vonal, nyíl, méretvonal és körvonal akadály; a feliratok a kirajzolás végén kerülnek a helyükre,
+    // és ha vonalba vagy másik feliratba lógnának, a legközelebbi szabad helyre csúsznak (a méretszöveg a méretvonala mentén).
+    const obs = [], txt = [], NOOBS = /cv-(soil|soild|water|rock|hatch|concp|mass|gc|upl|pbox|cz|ac|inner|ball|pres\b|pass|plate|wsym)/;
+    const seg = (x1, y1, x2, y2) => { if (isFinite(x1 + y1 + x2 + y2)) obs.push([x1, y1, x2, y2]); };
+    const ring = (pts) => { for (let i = 0; i < pts.length; i++) { const a = pts[i], b = pts[(i + 1) % pts.length]; seg(a[0], a[1], b[0], b[1]); } };
+    const S = { W, H, id, o, k, add: (s) => o.push(s), seg, ring,
+      line: (x1, y1, x2, y2, c, ex = '') => (seg(x1, y1, x2, y2), o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="${c}" ${ex}/>`)),
+      poly: (pts, c, ex = '') => { if (!NOOBS.test(c)) ring(pts); o.push(`<polygon points="${PTS(pts)}" class="${c}" ${ex}/>`); },
+      pl: (pts, c, ex = '') => { for (let i = 1; i < pts.length; i++) seg(pts[i - 1][0], pts[i - 1][1], pts[i][0], pts[i][1]); o.push(`<polyline points="${PTS(pts)}" class="${c}" ${ex}/>`); },
       path: (d, c, ex = '') => o.push(`<path d="${d}" class="${c}" ${ex}/>`),
-      rect: (x, y, w, h, c, ex = '') => o.push(`<rect x="${r1(Math.min(x, x + w))}" y="${r1(Math.min(y, y + h))}" width="${r1(Math.abs(w))}" height="${r1(Math.abs(h))}" class="${c}" ${ex}/>`),
-      circ: (x, y, rr, c, ex = '') => o.push(`<circle cx="${r1(x)}" cy="${r1(y)}" r="${r1(rr)}" class="${c}" ${ex}/>`),
-      text: (x, y, s, c = '', a = 'start', fs = 13, ex = '') => { fs = Math.round(fs * k * 10) / 10; const w = tw(s, fs); let xx = x; if (a === 'start') xx = Math.min(Math.max(x, 4), W - 4 - w); else if (a === 'end') xx = Math.max(Math.min(x, W - 4), 4 + w); else xx = Math.min(Math.max(x, 4 + w / 2), W - 4 - w / 2); o.push(`<text x="${r1(xx)}" y="${r1(y)}" class="cv-t ${c}" text-anchor="${a}" font-size="${fs}" ${ex}>${rich(s, fs)}</text>`); return { x: xx, w }; },
-      textR: (x, y, s, c = '', fs = 12) => (fs = Math.round(fs * k * 10) / 10, o.push(`<text x="${r1(x)}" y="${r1(y)}" class="cv-t ${c}" text-anchor="middle" font-size="${fs}" transform="rotate(-90 ${r1(x)} ${r1(y)})">${rich(s, fs)}</text>`)),
-      arrow: (x1, y1, x2, y2, c, w = 2.6, hd = 11) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 3) return; const ux = (x2 - x1) / L, uy = (y2 - y1) / L, h = Math.min(hd, L * 0.7), bx = x2 - ux * h, by = y2 - uy * h, px = -uy * h * 0.42, py = ux * h * 0.42; o.push(`<g class="cv-ar ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(bx + ux)}" y2="${r1(by + uy)}" stroke-width="${w}"/><polygon points="${PTS([[x2, y2], [bx + px, by + py], [bx - px, by - py]])}"/></g>`); },
-      dim: (x1, y1, x2, y2, s, c = '', fs = 12) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 4) return; const ux = (x2 - x1) / L, uy = (y2 - y1) / L, t = 4; o.push(`<g class="cv-dim ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}"/><line x1="${r1(x1 - t * (ux - uy))}" y1="${r1(y1 - t * (uy + ux))}" x2="${r1(x1 + t * (ux - uy))}" y2="${r1(y1 + t * (uy + ux))}"/><line x1="${r1(x2 - t * (ux - uy))}" y1="${r1(y2 - t * (uy + ux))}" x2="${r1(x2 + t * (ux - uy))}" y2="${r1(y2 + t * (uy + ux))}"/></g>`); const mx = (x1 + x2) / 2, my = (y1 + y2) / 2; if (Math.abs(ux) > 0.7) S.text(mx, my - 5, s, 'cv-dt ' + c, 'middle', fs); else S.textR(mx - 5, my, s, 'cv-dt ' + c, fs); },
-      ext: (x1, y1, x2, y2) => o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="cv-ext"/>`),
-      svg: (cls = '', label = '') => `<svg class="cv ${cls}" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${esc(label)}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-gs0"/><stop offset="1" class="cv-gs1"/></linearGradient><linearGradient id="${id}g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-g2s0"/><stop offset="1" class="cv-g2s1"/></linearGradient><pattern id="${id}d" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".9" class="cv-dot"/><circle cx="7" cy="8" r=".75" class="cv-dot"/><circle cx="8" cy="1.5" r=".55" class="cv-dot"/></pattern><pattern id="${id}h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="cv-hl"/></pattern><pattern id="${id}c" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".8" class="cv-cdot"/><path d="M9 9l2 -1l.6 1.8z" class="cv-cdot"/></pattern></defs>${o.join('')}</svg>`,
+      rect: (x, y, w, h, c, ex = '') => { if (!NOOBS.test(c)) ring([[x, y], [x + w, y], [x + w, y + h], [x, y + h]]); o.push(`<rect x="${r1(Math.min(x, x + w))}" y="${r1(Math.min(y, y + h))}" width="${r1(Math.abs(w))}" height="${r1(Math.abs(h))}" class="${c}" ${ex}/>`); },
+      circ: (x, y, rr, c, ex = '') => { if (!NOOBS.test(c)) { const n = rr > 12 ? 24 : 8, q = []; for (let i = 0; i < n; i++) q.push([x + rr * Math.cos(i / n * 6.2832), y + rr * Math.sin(i / n * 6.2832)]); ring(q); } o.push(`<circle cx="${r1(x)}" cy="${r1(y)}" r="${r1(rr)}" class="${c}" ${ex}/>`); },
+      text: (x, y, s, c = '', a = 'start', fs = 13, ex = '') => { fs = Math.round(fs * k * 10) / 10; const w = tw(s, fs); let xx = x; if (a === 'start') xx = Math.min(Math.max(x, 4), W - 4 - w); else if (a === 'end') xx = Math.max(Math.min(x, W - 4), 4 + w); else xx = Math.min(Math.max(x, 4 + w / 2), W - 4 - w / 2); const t = { x: xx, y, s, c, a, fs, ex, w, rot: false, along: null }; txt.push(t); o.push(t); return t; },
+      textR: (x, y, s, c = '', fs = 12) => { fs = Math.round(fs * k * 10) / 10; const t = { x, y, s, c, a: 'middle', fs, ex: '', w: tw(s, fs), rot: true, along: null }; txt.push(t); o.push(t); return t; },
+      arrow: (x1, y1, x2, y2, c, w = 2.6, hd = 11) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 3) return; seg(x1, y1, x2, y2); const ux = (x2 - x1) / L, uy = (y2 - y1) / L, h = Math.min(hd, L * 0.7), bx = x2 - ux * h, by = y2 - uy * h, px = -uy * h * 0.42, py = ux * h * 0.42; o.push(`<g class="cv-ar ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(bx + ux)}" y2="${r1(by + uy)}" stroke-width="${w}"/><polygon points="${PTS([[x2, y2], [bx + px, by + py], [bx - px, by - py]])}"/></g>`); },
+      dim: (x1, y1, x2, y2, s, c = '', fs = 12) => { const L = Math.hypot(x2 - x1, y2 - y1); if (L < 4) return; const ux = (x2 - x1) / L, uy = (y2 - y1) / L, t = 4; o.push(`<g class="cv-dim ${c}"><line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}"/><line x1="${r1(x1 - t * (ux - uy))}" y1="${r1(y1 - t * (uy + ux))}" x2="${r1(x1 + t * (ux - uy))}" y2="${r1(y1 + t * (uy + ux))}"/><line x1="${r1(x2 - t * (ux - uy))}" y1="${r1(y2 - t * (uy + ux))}" x2="${r1(x2 + t * (ux - uy))}" y2="${r1(y2 + t * (uy + ux))}"/></g>`); seg(x1, y1, x2, y2); seg(x1 - 5, y1 - 5, x1 + 5, y1 + 5); seg(x2 - 5, y2 - 5, x2 + 5, y2 + 5); const mx = (x1 + x2) / 2, my = (y1 + y2) / 2; const lb = Math.abs(ux) > 0.7 ? S.text(mx, my - 5, s, 'cv-dt ' + c, 'middle', fs) : S.textR(mx - 5, my, s, 'cv-dt ' + c, fs); lb.along = [ux, uy, L]; },
+      ext: (x1, y1, x2, y2) => (seg(x1, y1, x2, y2), o.push(`<line x1="${r1(x1)}" y1="${r1(y1)}" x2="${r1(x2)}" y2="${r1(y2)}" class="cv-ext"/>`)),
+      svg: (cls = '', label = '') => (place(), `<svg class="cv ${cls}" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${esc(label)}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-gs0"/><stop offset="1" class="cv-gs1"/></linearGradient><linearGradient id="${id}g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="cv-g2s0"/><stop offset="1" class="cv-g2s1"/></linearGradient><pattern id="${id}d" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".9" class="cv-dot"/><circle cx="7" cy="8" r=".75" class="cv-dot"/><circle cx="8" cy="1.5" r=".55" class="cv-dot"/></pattern><pattern id="${id}h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="cv-hl"/></pattern><pattern id="${id}c" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".8" class="cv-cdot"/><path d="M9 9l2 -1l.6 1.8z" class="cv-cdot"/></pattern></defs>${o.filter(q => typeof q === 'string').join('')}${txt.map(tsvg).join('')}</svg>`),
     };
+    const tsvg = (t) => t.rot ? `<text x="${r1(t.x)}" y="${r1(t.y)}" class="cv-t ${t.c}" text-anchor="middle" font-size="${t.fs}" transform="rotate(-90 ${r1(t.x)} ${r1(t.y)})">${rich(t.s, t.fs)}</text>` : `<text x="${r1(t.x)}" y="${r1(t.y)}" class="cv-t ${t.c}" text-anchor="${t.a}" font-size="${t.fs}" ${t.ex}>${rich(t.s, t.fs)}</text>`;
+    const box = (t, dx = 0, dy = 0) => { const sub = /_\{/.test(t.s) ? 0.2 * t.fs : 0, up = 0.74 * t.fs, dn = 0.16 * t.fs + sub;
+      if (t.rot) return [t.x + dx - up, t.y + dy - t.w / 2, t.x + dx + dn, t.y + dy + t.w / 2];
+      const x0 = t.a === 'start' ? t.x : t.a === 'end' ? t.x - t.w : t.x - t.w / 2; return [x0 + dx, t.y + dy - up, x0 + dx + t.w, t.y + dy + dn]; };
+    const hitSeg = (b, q) => { let t0 = 0, t1 = 1; const dx = q[2] - q[0], dy = q[3] - q[1]; const P = [-dx, dx, -dy, dy], Q = [q[0] - b[0], b[2] - q[0], q[1] - b[1], b[3] - q[1]];
+      for (let i = 0; i < 4; i++) { if (Math.abs(P[i]) < 1e-9) { if (Q[i] < 0) return false; } else { const r = Q[i] / P[i]; if (P[i] < 0) { if (r > t1) return false; if (r > t0) t0 = r; } else { if (r < t0) return false; if (r < t1) t1 = r; } } } return t1 - t0 > 1e-6 || (dx === 0 && dy === 0); };
+    const cost = (t, dx, dy, done) => { const b = box(t, dx, dy); if (b[0] < 3 || b[2] > W - 3 || b[1] < 3 || b[3] > H - 2) return 99; let n = 0; const bi = [b[0] + 1, b[1] + 1, b[2] - 1, b[3] - 1];
+      for (const q of obs) if (hitSeg(bi, q)) n++; for (const d of done) { const e = box(d); if (b[0] < e[2] + 2 && e[0] < b[2] + 2 && b[1] < e[3] + 1 && e[1] < b[3] + 1) n += 3; } return n; };
+    function place() { const done = []; const R = [6, 10, 14, 18, 24, 30, 38, 46, 56, 70];
+      for (const t of txt) { if (/cv-(hd|msg)/.test(t.c) || t.fixed) { done.push(t); continue; }
+        let best = [0, 0], bc = cost(t, 0, 0, done);
+        if (bc > 0) { const cand = [];
+          if (t.along) { const [ux, uy, L] = t.along, lim = Math.max(0, L / 2 - t.w / 2 - 4); for (const r of R) if (r <= lim) cand.push([ux * r, uy * r], [-ux * r, -uy * r]); }
+          const grid = []; for (const dx of [0, 8, -8, 16, -16, 26, -26, 40, -40, 58, -58]) for (const dy of [0, -7, 7, -12, 12, -18, 18, -26, 26, -36, 36, -48, 48]) if (dx || dy) grid.push([dx, dy]);
+          grid.sort((a, b) => Math.hypot(a[0] * 0.8, a[1]) - Math.hypot(b[0] * 0.8, b[1])); cand.push(...grid);
+          for (const [dx, dy] of cand) { const c2 = cost(t, dx, dy, done) + Math.hypot(dx, dy) * 0.004; if (c2 < bc - 0.5) { bc = c2; best = [dx, dy]; if (c2 < 0.5) break; } } }
+        if (G_.CVDBG) G_.CVDBG.push([t.s, box(t).map(Math.round), bc, best, obs.filter(q => hitSeg(box(t, best[0], best[1]), q)).map(q => q.map(Math.round))]);
+        t.x += best[0]; t.y += best[1]; done.push(t); } }
     S.soil = (pts, lay2) => { S.poly(pts, 'cv-soil', `fill="url(#${id}${lay2 ? 'g2' : 'g'})"`); S.poly(pts, 'cv-soild', `fill="url(#${id}d)"`); };
     S.conc = (pts) => { S.poly(pts, 'cv-conc'); S.poly(pts, 'cv-concp', `fill="url(#${id}c)"`); };
     S.hatch = (pts) => S.poly(pts, 'cv-hatch', `fill="url(#${id}h)"`);
-    S.gh = (x1, x2, y, step = 9, up = false) => { let d = ''; for (let x = x1 + 3; x < x2 - 2; x += step) d += `M${r1(x)} ${r1(y)}l${-5} ${up ? -5 : 5}`; if (d) o.push(`<path d="${d}" class="cv-gh"/>`); };
-    S.water = (x, y, lab) => { o.push(`<g class="cv-wsym"><polygon points="${PTS([[x, y - 1], [x - 6, y - 10], [x + 6, y - 10]])}"/><line x1="${r1(x - 6)}" y1="${r1(y + 4)}" x2="${r1(x + 6)}" y2="${r1(y + 4)}"/><line x1="${r1(x - 3.5)}" y1="${r1(y + 8)}" x2="${r1(x + 3.5)}" y2="${r1(y + 8)}"/></g>`); if (lab) S.text(x + 10, y - 4, lab, 'cv-wt', 'start', 12); };
+    S.gh = (x1, x2, y, step = 9, up = false) => { let d = ''; for (let x = x1 + 3; x < x2 - 2; x += step) d += `M${r1(x)} ${r1(y)}l${-5} ${up ? -5 : 5}`; if (d) { o.push(`<path d="${d}" class="cv-gh"/>`); seg(x1, y + (up ? -4 : 4), x2, y + (up ? -4 : 4)); } };
+    S.water = (x, y, lab) => { o.push(`<g class="cv-wsym"><polygon points="${PTS([[x, y - 1], [x - 6, y - 10], [x + 6, y - 10]])}"/><line x1="${r1(x - 6)}" y1="${r1(y + 4)}" x2="${r1(x + 6)}" y2="${r1(y + 4)}"/><line x1="${r1(x - 3.5)}" y1="${r1(y + 8)}" x2="${r1(x + 3.5)}" y2="${r1(y + 8)}"/></g>`); if (lab) S.text(x + 12, y + 15, lab, 'cv-wt', 'start', 12); };
     S.brk = (x1, x2, y) => { const m = (x1 + x2) / 2, k = Math.min(8, (x2 - x1) / 5); o.push(`<polyline points="${PTS([[x1 - 4, y], [m - k, y], [m - k / 2, y - k], [m + k / 2, y + k], [m + k, y], [x2 + 4, y]])}" class="cv-brk"/>`); };
     return S;
   }
@@ -2449,7 +2484,7 @@ window.DATA = {
       const f = v.dr ? v.epD : v.epU, emax = Math.max(1e-6, f(v.z2), f(v.z1)), kx = Math.max(0.7, 0.55 * (ext.x1 - B / 2)) / emax; const pts = [];
       for (let i = 0; i <= 24; i++) { const z = v.z1 + v.hp * i / 24; pts.push([X(B / 2 + f(z) * kx), Y(-z)]); }
       S.poly([[X(B / 2), Y(-v.z1)], ...pts, [X(B / 2), Y(-v.z2)]], 'cv-pass');
-      S.line(X(B / 2), Y(-D), X(B / 2 + wedge), Y(0), 'cv-wedge'); S.text(X(B / 2 + wedge * 0.62) + 6, Y(-D * 0.38) , 'passzív ék', 'cv-mt', 'start', 11);
+      S.line(X(B / 2), Y(-D), X(B / 2 + wedge), Y(0), 'cv-wedge'); S.text(X(B / 2 + wedge * 0.62) + 10, Y(-D * 0.38) + 13, 'passzív ék', 'cv-mt', 'start', 11);
       const zp = v.dr ? v.zpD : v.zpU, Rp = v.dr ? v.RpD : v.RpU, xs = X(B / 2 + f(zp) * kx) + 34;
       S.arrow(xs, Y(-zp), X(B / 2) + 2, Y(-zp), 'cv-res', 2.6);
       S.text(xs + 4, Y(-zp) + 4, `R_{p;d} = ${u_(Rp, 1, v.un)}`, 'cv-rt', 'start', 12);
@@ -2476,7 +2511,7 @@ window.DATA = {
     // méretvonalak
     const showD = (k) => !opt.dims || opt.dims.includes(k);
     const yd = Math.min(H - 10, yR + 8); if (showD('B')) { S.ext(X(-B / 2), Y(-D) + 3, X(-B / 2), yd + 4); S.ext(X(B / 2), Y(-D) + 3, X(B / 2), yd + 4); S.dim(X(-B / 2), yd, X(B / 2), yd, `B = ${u_(B, 2, 'm')}`); }
-    if (D > 0 && showD('D')) { const xdd = Math.max(X(L0) + 16, X(-B / 2) - 18); S.ext(X(-B / 2) - 2, Y(-D), xdd - 4, Y(-D)); S.dim(xdd, Y(0), xdd, Y(-D), `D = ${u_(D, 2, 'm')}`); }
+    if (D > 0 && showD('D')) { const xArr = v.Hd > 0 && yH < 0 && yH > -D ? X(xH) - len(v.Hd) - 16 : Infinity; const xdd = Math.max(X(L0) + 16, Math.min(X(-B / 2) - 18, xArr)); S.ext(X(-B / 2) - 2, Y(-D), xdd - 4, Y(-D)); S.dim(xdd, Y(0), xdd, Y(-D), `D = ${u_(D, 2, 'm')}`); }
     if (v.char && p.hH > 0 && v.Hd > 0 && showD('h')) { const xs0 = X(xH) - len(v.Hd) - 2, xh = Math.min(xs0, X(-B / 2)) - 40; if (xh > 24) { S.ext(xh - 4, Y(yH), xs0, Y(yH)); S.ext(xh - 4, Y(-D), X(-B / 2) - 2, Y(-D)); S.dim(xh, Y(-D), xh, Y(yH), `h_{H} = ${u_(p.hH, 2, 'm')}`, 'cv-dimh'); } }
     // fejléc
     // alaprajz (pilléralap, drénezetlen: nyomott felület)
@@ -2516,7 +2551,7 @@ window.DATA = {
       S.poly([[X(-B / 2), yB], ...pts, [X(B / 2), yB]], 'cv-pres'); S.pl(pts, 'cv-presl');
       const sR = sg(B / 2), sL = sg(-B / 2), right = sR >= sL; S.text(X(right ? B / 2 : -B / 2) + (right ? 6 : -6), yB + Math.max(sR, sL) * ks - 2, `σ_{max} = ${u_(Math.max(sR, sL), 1, 'kPa')}`, 'cv-prt', right ? 'start' : 'end', 12);
       if (ct.full) S.text(X(right ? -B / 2 : B / 2) + (right ? -6 : 6), yB + Math.min(sR, sL) * ks + 12, `σ_{min} = ${u_(Math.min(sR, sL), 1, 'kPa')}`, 'cv-prt', right ? 'end' : 'start', 11);
-      else { const x0 = Math.abs(ct.b) > 1e-12 ? -ct.a / ct.b : 0; const xe = right ? -B / 2 : B / 2; S.line(X(xe), yB + 3, X(x0), yB + 3, 'cv-lift'); S.text((X(xe) + X(x0)) / 2, yB + 17, 'elemelkedik', 'cv-lt', 'middle', 11); }
+      else { const x0 = Math.abs(ct.b) > 1e-12 ? -ct.a / ct.b : 0; const xe = right ? -B / 2 : B / 2; S.line(X(xe), yB + 3, X(x0), yB + 3, 'cv-lift'); S.text(X(xe) + (right ? -6 : 6), yB + 15, 'elemelkedik', 'cv-lt', right ? 'end' : 'start', 11); }
     }
     // alaptest + oszlop
     const ytop = yb0 + hmax;
@@ -2527,7 +2562,7 @@ window.DATA = {
     const g = v.gov, sgn = circ ? Math.sign(g.nx) || 1 : (g.nx ? Math.sign(g.nx) : 1), xp = (circ ? g.dp * (g.nx || 1) : (g.nx ? g.nx * g.dp : g.dp));
     const xP = circ ? g.dp * Math.sign(g.nx || 1) : xp;
     S.circ(X(xP), yB, 5.5, 'cv-piv'); S.text(X(xP) + (sgn > 0 ? -8 : 8), yB - 9, 'forgáspont', 'cv-pvt', sgn > 0 ? 'end' : 'start', 11);
-    if (v.fp > 0) { const xe = sgn * B / 2; S.dim(X(xe), yB - 22, X(xP), yB - 22, circ ? 'D/10' : 'B/10', 'cv-dimp', 10.5); }
+    if (v.fp > 0) { const xe = sgn * B / 2, thin = yB - Y(yft) < 40, near = yft < 0 && Y(yft) - Y(0) < 32, yq = thin ? (near ? Y(0) - 12 : Y(yft) - 9) : yB - 22; if (thin) { S.ext(X(xP), yB - 7, X(xP), yq - 3); } S.dim(X(xe), yq, X(xP), yq, circ ? 'D/10' : 'B/10', 'cv-dimp', 10.5); }
     // erők
     const fArrow = (H0, h, lab) => { if (!H0 || !isFinite(h)) return; const y = Y(yb0 + h), dir = Math.sign(H0), l = Math.min(0.22 * sw, 34 + Math.abs(H0) / Math.max(1, v.Vk) * 0.9 * sw); const x2 = X(xg - dir * bp / 2) - dir * 2; S.arrow(x2 - dir * l, y, x2, y, 'cv-act', 3); S.text(x2 - dir * (l + 6), y + 4, lab, 'cv-at', dir > 0 ? 'end' : 'start', 12.5); };
     fArrow(p.HQk, p.hQ, `H_{Q;k} = ${u_(p.HQk, 1, 'kN')}`); fArrow(p.HGk, p.hG, `H_{G;k} = ${u_(p.HGk, 1, 'kN')}`);
@@ -2588,12 +2623,13 @@ window.DATA = {
     const hole = [[-B / 2 + tw, yb + tb], [-B / 2 + tw, yt - tr], [B / 2 - tw, yt - tr], [B / 2 - tw, yb + tb]];
     S.path('M' + shell.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z M' + hole.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z', 'cv-conc', 'fill-rule="evenodd"');
     S.path('M' + shell.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z M' + hole.map(q => r1(X(q[0])) + ' ' + r1(Y(q[1]))).join('L') + 'Z', 'cv-concp', `fill-rule="evenodd" fill="url(#${S.id}c)"`);
+    S.ring(shell.map(q => [X(q[0]), Y(q[1])])); S.ring(hole.map(q => [X(q[0]), Y(q[1])]));
     for (let i = 1; i <= ni; i++) { const y = yb + tb + (Hb - tb - tr) * i / (ni + 1); S.conc([[-B / 2 + tw, y - ti / 2], [B / 2 - tw, y - ti / 2], [B / 2 - tw, y + ti / 2], [-B / 2 + tw, y + ti / 2]].map(q => [X(q[0]), Y(q[1])])); }
     if (!geom) S.text(X(0), Y((yb + yt) / 2), `G_{sz;k} = ${u_(v.Gs, 0, 'kN')}`, 'cv-pt', 'middle', 13);
     // felhajtóerő
     if (v.hw > 0) { const pu = GW * v.hw, hp = Math.min(up * 0.85, 0.4 + pu / 80) * T.s, y0 = Y(yb); S.rect(X(-Bo / 2), y0, X(Bo / 2) - X(-Bo / 2), hp, 'cv-upl');
       const na = Math.max(3, Math.min(9, Math.round((X(Bo / 2) - X(-Bo / 2)) / 46))); for (let i = 0; i < na; i++) { const x = X(-Bo / 2) + (i + 0.5) * (X(Bo / 2) - X(-Bo / 2)) / na; S.arrow(x, y0 + hp, x, y0 + 2, 'cv-wat', 2.2, 8); }
-      S.text(X(Bo / 2) + 8, y0 + hp / 2 + 4, `γ_{w}·h_{w} = ${u_(pu, 1, 'kPa')}`, 'cv-wt', 'start', 12); S.text(X(0), y0 + hp + 16, `V_{dst;d} = ${u_(v.Vdst, 0, 'kN')}`, 'cv-wt cv-bold', 'middle', 13); }
+      S.text(X(Bo / 2) + 8, y0 + hp / 2 + 4, `γ_{w}·h_{w} = ${u_(pu, 1, 'kPa')}`, 'cv-wt', 'start', 12); if (v.n > 0) S.text(X(Bo / 2) + 8, y0 + hp + 22, `V_{dst;d} = ${u_(v.Vdst, 0, 'kN')}`, 'cv-wt cv-bold', 'start', 13); else S.text(X(0), y0 + hp + 16, `V_{dst;d} = ${u_(v.Vdst, 0, 'kN')}`, 'cv-wt cv-bold', 'middle', 13); }
     // horgonyok
     if (v.n > 0) { const nv = Math.min(v.n, 9), al = anc * T.s; for (let i = 0; i < nv; i++) { const x = X(-Bo / 2 + 0.5) + (nv === 1 ? (X(Bo / 2 - 0.5) - X(-Bo / 2 + 0.5)) / 2 : i * (X(Bo / 2 - 0.5) - X(-Bo / 2 + 0.5)) / (nv - 1)); S.line(x, Y(yb), x, Y(yb) + al, 'cv-anc'); S.rect(x - 3.5, Y(yb) + al * 0.55, 7, al * 0.45, 'cv-ancb'); }
       S.text(X(-Bo / 2) - 6, Y(yb) + al * 0.8, `${v.n} × P_{d;1} = ${u_(v.Pd, 0, 'kN')}`, 'cv-rt', 'end', 12); }
@@ -2654,7 +2690,7 @@ window.DATA = {
     S.text(X(LX * 0.5) + 10, Y(-Hh * 0.5) - 8, `1 : ${F(m.n, 2)}`, 'cv-mt', 'start', 12);
     if (ls[0]) { const l = ls.reduce((a, b) => (b.a < a.a ? b : a)), hh = Math.min(2.6, Math.max(1.6, 0.25 * Hh)), yy = Y(hh + 1.9) - 6; if (X(0) - X(l.x1) > 6) { S.ext(X(l.x1), Y(-l.Df), X(l.x1), yy - 4); S.ext(X(0), Y(0), X(0), yy - 4); S.dim(X(l.x1), yy, X(0), yy, `a = ${u_(l.a, 2, 'm')}`, '', 11); } }
     // színskála
-    const lx = 14, ly = H - 36; if (W > 420) { for (let i = 0; i < 30; i++) S.rect(lx + i * 4, ly, 4.2, 7, 'cv-gc', `style="fill:${fcol(0.85 + 0.75 * i / 29)}"`); S.text(lx, ly + 22, '0,85', 'cv-mt', 'start', 10); S.text(lx + 60, ly + 22, '1,2', 'cv-mt', 'middle', 10); S.text(lx + 120, ly + 22, '≥ 1,6', 'cv-mt', 'end', 10); }
+    const lx = 18, yh = Y(m.yBot), ly = (yh > H - 62 && yh < H - 4) ? yh - 44 : H - 40; if (W > 420) { S.add(`<rect x="${lx - 8}" y="${r1(ly - 9)}" width="137" height="40" rx="7" class="cv-plate"/>`); S.ring([[lx - 8, ly - 9], [lx + 129, ly - 9], [lx + 129, ly + 31], [lx - 8, ly + 31]]); for (let i = 0; i < 30; i++) S.rect(lx + i * 4, ly, 4.2, 7, 'cv-gc', `style="fill:${fcol(0.85 + 0.75 * i / 29)}"`); S.text(lx, ly + 22, 'F = 0,85', 'cv-mt', 'start', 10).fixed = 1; S.text(lx + 68, ly + 22, '1,2', 'cv-mt', 'middle', 10).fixed = 1; S.text(lx + 120, ly + 22, '≥ 1,6', 'cv-mt', 'end', 10).fixed = 1; }
     return S.svg('cv-so', 'Általános állékonyság: rézsű a mértékadó csúszólappal');
   }
   const DRAW = { sliding: dSliding, overturn: dOverturn, uplift: dUplift, slope: dSlope };
@@ -2936,7 +2972,7 @@ window.DATA = {
         { t: 'A nyírási ellenállás tervezési értéke', r: Rd + ' = 159,1 kN/m', b: `${fl(Rd, `${Vk} · tg${NB}${dk} / ${gRh}`, '280 · 0,6249 / 1,1', u_(159.06, 1, 'kN/m'))}<p>A c′ hatékony kohéziót az ${nw('MSZ EN 1997‑1')} szerint figyelmen kívül hagyjuk: a talaj és a beton közötti tapadás a víztartalomtól erősen függ, nem megbízható.</p>` },
         { t: 'Igazolás', r: 'Λ = 0,57', b: `${fl(Hd + ' = 90 kN/m ≤ ' + Rd + ' = 159,1 kN/m')}${fl('Λ', `${Hd} / ${Rd}`, '90 / 159,1', '<b>0,57</b>')}` },
       ],
-      res: [{ ok: true, h: `${nw(Hd + ' = 90 kN/m < ' + Rd + ' = 159,1 kN/m')} – az alap elcsúszásra megfelel, a kihasználtság 57%.` }],
+      res: [{ ok: true, h: `${nw(Hd + ' = 90 kN/m < ' + Rd + ' = 159,1 kN/m')} – az alap elcsúszásra megfelel, a kihasználtság 57 %.` }],
       open: [{ p: 'mp1', l: 'Megnyitás a kalkulátorban' }] },
 
     { id: 'mp2', sub: 'GEO · δ = ⅔·φ′', n: 'MP2', k: 'k1', title: 'Monolit vagy előregyártott? – drénezett elcsúszás', short: 'Monolit vagy előregyártott', tags: ['GEO', DA2, 'δ = ⅔·φ′'],
@@ -2957,7 +2993,7 @@ window.DATA = {
       fig: { p: 'mp3', dims: ['B'], cap: 'Drénezetlen állapotban a nyomott felületen ébredő nyírás áll ellen; az alaprajzon a nyomott felület A<sub>c</sub>.' },
       steps: [
         { t: 'Nyírási ellenállás a nyomott felületen', r: '327,3 kN', b: fl(Rd, `A<sub>c</sub> · c<sub>u;k</sub> / ${gRh}`, '6,0 · 60 / 1,1', u_(327.27, 1, 'kN')) },
-        { t: 'A 0,4·V<sub>d</sub> korlát', r: Rd + ' = 280 kN', b: `<p>Az alap és a talaj között hézag nyílhat (erózió, zsugorodás, víz vagy levegő juthat a talp alá), ezért nem számíthatunk a függőleges erő 40%-ánál nagyobb nyírási ellenállásra:</p>${fl('0,4 · V<sub>d</sub>', '0,4 · 700', u_(280, 1, 'kN'))}<p>Mivel ${nw('327,3 kN > 280 kN')}, a korlát a mértékadó: ${nw(Rd + ' = 280 kN')}.</p>` },
+        { t: 'A 0,4·V<sub>d</sub> korlát', r: Rd + ' = 280 kN', b: `<p>Az alap és a talaj között hézag nyílhat (erózió, zsugorodás, víz vagy levegő juthat a talp alá), ezért nem számíthatunk a függőleges erő 40 %-ánál nagyobb nyírási ellenállásra:</p>${fl('0,4 · V<sub>d</sub>', '0,4 · 700', u_(280, 1, 'kN'))}<p>Mivel ${nw('327,3 kN > 280 kN')}, a korlát a mértékadó: ${nw(Rd + ' = 280 kN')}.</p>` },
         { t: 'Igazolás', r: 'Λ = 0,89', b: `${fl(Hd + ' = 250 kN ≤ ' + Rd + ' = 280 kN')}${fl('Λ', '250 / 280', '<b>0,89</b>')}` },
       ],
       res: [{ ok: true, h: `${nw(Hd + ' = 250 kN < ' + Rd + ' = 280 kN')} – megfelel. A 0,4·V<sub>d</sub> korlát nélkül tévesen 327 kN ellenállással számoltunk volna.` }],
@@ -2999,7 +3035,7 @@ window.DATA = {
         { t: 'a) H<sub>k</sub> = 50 kN – a belső magon belül', r: 'e = 0,30 m', b: `${fl('M<sub>k</sub>', '50 · 3,0', u_(150, 0, 'kNm'))}${fl('e', 'M<sub>k</sub> / V<sub>k</sub>', '150 / 500', u_(0.30, 2, 'm'))}<p>${nw('B/6 = 0,40 m')} → ${nw('e < B/6')}: az eredő a belső magon belül van, a teljes talpfelület nyomott (a korábbi, szigorúbb hazai követelmény is teljesül).</p>` },
         { t: 'a) Trapéz alakú talpfeszültség', r: 'σ<sub>max</sub> = 151,9 kPa', b: `${fl('σ<sub>max/min</sub>', 'V<sub>k</sub> / (B · L) · (1 ± 6e/B)', '86,8 · (1 ± 0,75)')}${fl('σ<sub>max</sub>', u_(151.9, 1, 'kPa'))}${fl('σ<sub>min</sub>', u_(21.7, 1, 'kPa'))}` },
         { t: 'b) H<sub>k</sub> = 100 kN – a magon kívül, a korláton belül', r: 'e = 0,60 m', b: `${fl('M<sub>k</sub>', '100 · 3,0', u_(300, 0, 'kNm'))}${fl('e', '300 / 500', u_(0.60, 2, 'm'))}<p>${nw('B/6 = 0,40 m < e ≤ B/3 = 0,80 m')}: megengedett, de a talp egy része elemelkedik.</p>` },
-        { t: 'b) Háromszög alakú talpfeszültség', r: 'σ<sub>max</sub> = 231,5 kPa', b: `${fl('c', 'B/2 − e', '1,20 − 0,60', u_(0.60, 2, 'm'))}${fl('nyomott hossz', '3c', u_(1.80, 2, 'm') + ' (a talp 75%-a)')}${fl('σ<sub>max</sub>', '2 · V<sub>k</sub> / (3 · c · L)', '2 · 500 / (3 · 0,60 · 2,4)', u_(231.5, 1, 'kPa'))}<p>Az élfeszültség a központos esethez (86,8 kPa) képest 2,7-szeresére nőtt.</p>` },
+        { t: 'b) Háromszög alakú talpfeszültség', r: 'σ<sub>max</sub> = 231,5 kPa', b: `${fl('c', 'B/2 − e', '1,20 − 0,60', u_(0.60, 2, 'm'))}${fl('nyomott hossz', '3c', u_(1.80, 2, 'm') + ' (a talp 75 %-a)')}${fl('σ<sub>max</sub>', '2 · V<sub>k</sub> / (3 · c · L)', '2 · 500 / (3 · 0,60 · 2,4)', u_(231.5, 1, 'kPa'))}<p>Az élfeszültség a központos esethez (86,8 kPa) képest 2,7-szeresére nőtt.</p>` },
       ],
       res: [{ ok: true, h: `a) ${nw('e = 0,30 m ≤ B/6 = 0,40 m')} – belső magon belül, ${nw('σ<sub>max</sub> = 151,9 kPa')}.` }, { ok: true, h: `b) ${nw('B/6 < e = 0,60 m ≤ B/3')} – megengedett, részleges elemelkedéssel, ${nw('σ<sub>max</sub> = 231,5 kPa')}.` }],
       notes: [{ cls: 'warn', h: `<b>Ha e > B/3</b> (itt 0,80 m felett), az alapsík fele sem dolgozna – ilyenkor külön óvintézkedés szükséges. Kör alaprajznál a korlát ${nw('e ≤ 0,6 · r')}.` },
@@ -3007,7 +3043,7 @@ window.DATA = {
       open: [{ p: 'mp6a', l: 'a) megnyitása' }, { p: 'mp6b', l: 'b) megnyitása' }] },
 
     { id: 'mp7', sub: 'UPL · leterhelés', n: 'MP7', k: 'k3', title: 'Felúszás leterheléssel (UPL)', short: 'Felúszás, földtakarás', tags: ['UPL', 'γ<sub>G;dst</sub> = 1,0', 'γ<sub>G;stb</sub> = 0,9'],
-      task: `<p>Egy ${nw('B × L = 12 × 30 m')} alaprajzú földalatti garázs alaplemezének alsó síkja felett a mértékadó talajvízszint ${nw('h<sub>w</sub> = 4,0 m')} magasan van. A szerkezet önsúlya ${nw('G<sub>sz;k</sub> = 11' + NN + '000 kN')}, a födémen ${nw('t = 0,8 m')} vastag földtakarás van (${nw('γ = 18 kN/m³')}, a talajvíz felett). Ellenőrizd a felúszási biztonságot UPL határállapotban! (${nw('γ<sub>w</sub> = 10 kN/m³')})</p>`,
+      task: `<p>Egy ${nw('B × L = 12 × 30 m')} alaprajzú földalatti garázs alaplemezének alsó síkja felett a tervezési talajvízszint ${nw('h<sub>w</sub> = 4,0 m')} magasan van. A szerkezet önsúlya ${nw('G<sub>sz;k</sub> = 11' + NN + '000 kN')}, a födémen ${nw('t = 0,8 m')} vastag földtakarás van (${nw('γ = 18 kN/m³')}, a talajvíz felett). Ellenőrizd a felúszási biztonságot UPL határállapotban! (${nw('γ<sub>w</sub> = 10 kN/m³')})</p>`,
       data: [['B × L', '12 × 30 m'], ['h<sub>w</sub>', '4,0 m'], ['G<sub>sz;k</sub>', '11' + NN + '000 kN'], ['földtakarás t', '0,8 m'], ['γ (takarás)', '18 kN/m³']],
       fig: { p: 'mp7', cap: 'A felhajtóerő az alaplemez alsó síkjára ható víznyomás eredője; ellene a szerkezet és a födémen lévő föld súlya dolgozik.' },
       steps: [
@@ -3015,8 +3051,8 @@ window.DATA = {
         { t: 'Stabilizáló hatások', r: 'G<sub>stb;d</sub> = 14' + NN + '566 kN', b: `${fl('G<sub>t;k</sub>', '360 · 0,8 · 18', u_(5184, 0, 'kN'))}${fl('G<sub>stb;d</sub>', 'γ<sub>G;stb</sub> · (G<sub>sz;k</sub> + G<sub>t;k</sub>)', `0,9 · (11${NN}000 + 5184)`, u_(14565.6, 0, 'kN'))}` },
         { t: 'Igazolás', r: 'Λ = 0,989', b: `${fl('V<sub>dst;d</sub> = 14' + NN + '400 kN ≤ G<sub>stb;d</sub> + R<sub>d</sub> = 14' + NN + '566 kN')}<p>Súrlódást és horgonyt nem veszünk figyelembe: ${nw('R<sub>d</sub> = 0')}.</p>${fl('Λ', `14${NN}400 / 14${NN}566`, '<b>0,989</b>')}` },
       ],
-      res: [{ ok: true, h: `${nw('V<sub>dst;d</sub> < G<sub>stb;d</sub>')} – megfelel, de a kihasználtság 99%!` }],
-      notes: [{ cls: 'warn', h: `<b>Tanulság.</b> A tartalék minimális, miközben a globális biztonság eleve csak ${nw('1,0/0,9 = 1,11')}. A talajvízszint geometriai adat: ha a mértékadó vízszintet csak 5 cm-rel magasabbra kell felvenni (${nw('h<sub>w</sub> > 4,046 m')}), az igazolás már nem teljesül. Ezért kell a vízszintet óvatosan felvenni, vagy védekezési megoldást (leterhelés, lehorgonyzás, leszívás, elárasztás) alkalmazni.` }],
+      res: [{ ok: true, h: `${nw('V<sub>dst;d</sub> < G<sub>stb;d</sub>')} – megfelel, de a kihasználtság 99 %!` }],
+      notes: [{ cls: 'warn', h: `<b>Tanulság.</b> A tartalék minimális, miközben a globális biztonság eleve csak ${nw('1,0/0,9 = 1,11')}. A talajvízszint geometriai adat: ha a tervezési vízszintet csak 5 cm-rel magasabbra kell felvenni (${nw('h<sub>w</sub> > 4,046 m')}), az igazolás már nem teljesül. Ezért kell a vízszintet óvatosan felvenni, vagy védekezési megoldást (leterhelés, lehorgonyzás, leszívás, elárasztás) alkalmazni.` }],
       open: [{ p: 'mp7', l: 'Megnyitás a kalkulátorban' }] },
 
     { id: 'mp8', sub: 'UPL · horgonyok', n: 'MP8', k: 'k3', title: 'Felúszás lehorgonyzással (UPL)', short: 'Felúszás, horgonyok', tags: ['UPL', 'γ<sub>a</sub> = 1,4'],
@@ -3056,7 +3092,7 @@ window.DATA = {
         { t: 'Az alapok tervezési terhe', r: 'P<sub>d</sub> = ' + u_(ld.Pd, 1, 'kN/m'), b: `${fl('P<sub>d</sub>', 'γ<sub>G</sub> · G<sub>k</sub> + γ<sub>Q</sub> · Q<sub>k</sub>', '1,0 · 72 + 1,3 · 18', u_(ld.Pd, 1, 'kN/m'))}<p>Alaponként, a ${nw('0,6 m')} széles talpon egyenletesen megoszlva: ${nw('q<sub>d</sub> = ' + u_(ld.q, 1, 'kPa'))}. A talaj önsúlyát ${nw('γ<sub>G</sub> = 1,0')} tényezővel vesszük figyelembe.</p>` },
         { t: 'A mértékadó csúszólap keresése', r: `r = ${u_(c.R, 1, 'm')}`, b: `<p>A körközéppontokat ${a.sr.nx} × ${a.sr.ny} pontos hálón vettük fel; minden középpontra a rézsűlábon átmenő és ${14} különböző mélységet érintő kört vizsgáltunk, majd a legkedvezőtlenebb körök környezetében finomítottunk. Az alaptestet metsző köröket kizártuk.</p><div class="cx-fl nw">középpont: O(${F(c.xc, 2)}; ${F(c.yc, 2)})${NB}m a rézsűéltől, sugár ${u_(c.R, 2, 'm')}</div><p>A csúszólap ${nw(u_(-c.x0, 2, 'm'))}-re a rézsűél mögött, mindkét sávalap mögött lép be, és ${exitTxt}: a ház teljes egészében a csúszó tömegen áll.</p>` },
         { t: 'Lamellás számítás (30 lamella, csoportosítva)', r: 'F<sub>d</sub> = ' + F(a.Fd, 3), b: `${fl('F<sub>d</sub>', `Σ [c′<sub>d</sub> · b + (W + P − u · b) · tg${NB}φ′<sub>d</sub>] / m<sub>α</sub> / Σ (W + P) · sin${NB}α`)}${fl('m<sub>α</sub>', `cos${NB}α + sin${NB}α · tg${NB}φ′<sub>d</sub> / F<sub>d</sub>`)}${tbl}<p>Az iteráció (F<sub>d</sub> mindkét oldalon szerepel) néhány lépésben konvergál:</p>${fl('F<sub>d</sub>', `${F(c.num, 1)} / ${F(c.den, 1)}`, `<b>${F(a.Fd, 3)}</b>`)}` },
-        { t: 'a) Igazolás – száraz állapot', r: 'Λ = ' + F(a.lam, 2), b: `${fl('Λ', '1 / F<sub>d</sub>', `1 / ${F(a.Fd, 3)}`, `<b>${F(a.lam, 3)}</b>`)}<p>${a.Fd >= 1 ? nw('F<sub>d</sub> ≥ 1,0') + ': az általános állékonyság megfelel.' : nw('F<sub>d</sub> < 1,0') + ': nem felel meg.'} A ház nélkül ugyanez a rézsű ${nw('F<sub>d</sub> = ' + F(a.F0, 3))} biztonságú lenne: a két sávalap terhe kb. ${F(drop, 0)}%-kal csökkenti a biztonságot.</p>` },
+        { t: 'a) Igazolás – száraz állapot', r: 'Λ = ' + F(a.lam, 2), b: `${fl('Λ', '1 / F<sub>d</sub>', `1 / ${F(a.Fd, 3)}`, `<b>${F(a.lam, 3)}</b>`)}<p>${a.Fd >= 1 ? nw('F<sub>d</sub> ≥ 1,0') + ': az általános állékonyság megfelel.' : nw('F<sub>d</sub> < 1,0') + ': nem felel meg.'} A ház nélkül ugyanez a rézsű ${nw('F<sub>d</sub> = ' + F(a.F0, 3))} biztonságú lenne: a két sávalap terhe kb. ${F(drop, 0)} %-kal csökkenti a biztonságot.</p>` },
         { t: 'b) Tartós átázás, r<sub>u</sub> = 0,2', r: 'F<sub>d</sub> = ' + F(b.Fd, 3), b: `<p>A pórusvíznyomás ${nw('u = r<sub>u</sub> · γ · h')} csökkenti a lamellák talpán a hatékony normálerőt, így a súrlódási ellenállást is. A keresést újra elvégezve:</p>${fl('F<sub>d</sub>', `<b>${F(b.Fd, 3)}</b>`)}${fl('Λ', `1 / ${F(b.Fd, 3)}`, `<b>${F(b.lam, 3)}</b>`)}` },
       ],
       res: [{ ok: a.Fd >= 1, h: `a) ${nw('F<sub>d</sub> = ' + F(a.Fd, 3) + (a.Fd >= 1 ? ' ≥ 1,0' : ' < 1,0'))} – ${a.Fd >= 1 ? 'megfelel' : 'nem felel meg'} (${nw('Λ = ' + F(a.lam, 2))}).` }, { ok: b.Fd >= 1, h: `b) ${nw('F<sub>d</sub> = ' + F(b.Fd, 3) + (b.Fd >= 1 ? ' ≥ 1,0' : ' < 1,0'))} – ${b.Fd >= 1 ? 'megfelel' : 'nem felel meg'} (${nw('Λ = ' + F(b.lam, 2))}): tartós átázásnál a ház alatt a rézsű nem állékony.` }],
@@ -3286,7 +3322,7 @@ class Sim {
     this.truck.visible = q > 0.5; this.truck.position.set(-6.5, G.ftop, -3);
     this.slide = r.lam > 1 ? Math.min(0.6, 0.25 + (r.lam - 1) * 1.2) : 0;
     this.setHud([`H<sub>d</sub> = ${fmt(r.Hd, 0)} kN/m`, `R<sub>d</sub> = ${fmt(r.Rd, 0)} kN/m`, `R<sub>p;d</sub> = ${fmt(r.Rpd, 0)} kN/m`]);
-    this.lam(r.lam, drained ? `V′<sub>k</sub> = ${fmt(r.Vk, 0)} kN/m · δ = ${fmt(r.delta, 1)}°` : `A<sub>c</sub>·c<sub>u</sub>/1,1 = ${fmt(r.Rcu, 0)} · 0,4·V<sub>d</sub> = ${fmt(r.R04, 0)} kN/m`);
+    this.lam(r.lam, drained ? `V′<sub>k</sub> = ${fmt(r.Vk, 0)} kN/m · δ = ${fmt(r.delta, 1)}°` : `A<sub>c</sub>·c<sub>u;k</sub>/1,1 = ${fmt(r.Rcu, 0)} · 0,4·V<sub>d</sub> = ${fmt(r.R04, 0)} kN/m`);
   }
 
   // ===================== FELBORULÁS: reklámtábla – átlátszó talajtömb, 3D talpfeszültség-test, kis ablakban az egész tábla =====================
@@ -3520,7 +3556,7 @@ class Sim {
     setArrow(this.gA, new THREE.Vector3(5.5, 5.5, 0.2), new THREE.Vector3(0, -1, 0), 4.6 / 2.6); this.setLbl('g', `G<sub>stb;d</sub> = 0,9 · G<sub>k</sub>`, 5.5, 6.4, 0.2);
     this.liftT = r.lam > 1 ? Math.min(0.9, 0.2 + (r.lam - 1) * 1.5) : 0;
     this.setHud([`talajvíz ${fmt(gw, 1)} m`, `V<sub>dst;d</sub> = ${fmt(r.V, 0)} kN`, `G<sub>stb;d</sub> + R<sub>d</sub> = ${fmt(r.R, 0)} kN`].concat(fr ? [`T<sub>d</sub> = ${fmt(r.Td, 0)} kN`] : []));
-    this.lam(r.lam, `önsúly ${fmt(r.Gk, 0)} kN · perem-talaj ${fmt(r.Grim, 0)} kN · horgony ${fmt(r.Pd, 0)} kN · víz ${fmt(r.Wf, 0)} kN · súrlódás ${fmt(r.Td, 0)} kN`);
+    this.lam(r.lam, `önsúly ${fmt(r.Gk, 0)} kN · peremre ülő talaj ${fmt(r.Grim, 0)} kN · horgony ${fmt(r.Pd, 0)} kN · víz ${fmt(r.Wf, 0)} kN · súrlódás ${fmt(r.Td, 0)} kN`);
   }
 
   // ===================== ÁLTALÁNOS ÁLLÉKONYSÁG: ház a rézsű koronáján =====================

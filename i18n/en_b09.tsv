@@ -62,7 +62,6 @@ dd76467	construction
 aea11b0	${nw('B = 2,4 m')}: ${nw('M<sub>dst;d</sub> = 360,0 kNm > M<sub>stb;d</sub> = 345,6 kNm')} – not satisfied.
 24582b5	${nw('B = 2,6 m')}: ${nw('M<sub>dst;d</sub> = 360,0 kNm < M<sub>stb;d</sub> = 374,4 kNm')} – satisfied.
 00537a0	characteristic
-47a3a74	 (75% of the base)
 1779a8a	UPL · anchors
 da9b20f	R<sub>k</sub> (one element)
 c870354	: not satisfied.
@@ -93,3 +92,37 @@ a3f86a4!	WE6
 d694689!	WE7
 807bff7!	WE8
 2a9038c!	WE9
+
+1e7901c	When buildings and structures are checked against uplift, the groundwater level is treated as a geometrical datum: its design value is either set directly or derived by adding a safety margin to the characteristic value. In the 30×15 m example car park, <b>water 1 m higher means +4500 kN, i.e. +20%</b> uplift force.
+0e8e8cb	mobilised: ${fmt(v * 100, 0)} %
+dd3acc4	450 m² · 1 m · 10 kN/m³ = 4500 kN – in the example this is +20%.
+c44eb97	<p class="cx-c">The limit governs: a gap may open between the footing and the soil, so no resistance greater than 40% of the vertical force may be counted on.</p>
+d243851	%.</p>
+ebd8843	${nw('V<sub>dst;d</sub> < G<sub>stb;d</sub>')} – satisfied, but the utilisation is 99%!
+09454c7	${fl('c', 'B/2 − e', '1,20 − 0,60', u_(0.60, 2, 'm'))}${fl('nyomott hossz', '3c', u_(1.80, 2, 'm') + ' (a talp 75 %-a)')}${fl('σ<sub>max</sub>', '2 · V<sub>k</sub> / (3 · c · L)', '2 · 500 / (3 · 0,60 · 2,4)', u_(231.5, 1, 'kPa'))}<p>The edge pressure has grown to 2.7 times the concentric value (86.8 kPa).</p>
+c4ca144	<p>A gap may open between the footing and the soil (erosion, shrinkage, water or air may get under the base), so no shear resistance greater than 40% of the vertical force may be counted on:</p>${fl('0,4 · V<sub>d</sub>', '0,4 · 700', u_(280, 1, 'kN'))}<p>Since ${nw('327,3 kN > 280 kN')}, the limit governs: ${nw(Rd + ' = 280 kN')}.</p>
+a1e60f9	${nw(Hd + ' = 90 kN/m < ' + Rd + ' = 159,1 kN/m')} – the footing is safe against sliding, the utilisation is 57%.
+b7bcc4c	The numerical values are to be taken from the Hungarian National Annex.
+912a94d	The <b>Geotechnical Category</b> results from the consequence class (CC) combined with the complexity of the ground conditions (GCC).
+4aba59e	The bearing resistance formula has moved into the main text, with a new ground inclination factor.
+da0e5d6	the values are set by the National Annex
+96fa673	Rain of more than 200 mm a day on three consecutive days, and a 13 m deep unsupported cut at the toe of the slope: about 80 000 t of soil slid down in 7–10 seconds, and a 12-storey block of flats was torn off its foundation and collapsed. 67 people died.
+829584c	In February 2008 the roughly 50 m high loess bluff slid and sank by about 10 m, and a shoal formed in the bed of the Danube. Research shows that the movement is driven mainly by changes in the groundwater level – its effect is at least ten times that of the Danube water level.
+38449c9	Dunaszekcső, loess bluff
+c13c553	Tests show that a slope reduces the bearing resistance up to a distance of about 2–6·B. The US building code requires H/3 (at most 12.2 m) on the crest of a descending slope and H/2 (at most 4.6 m) at the toe of an ascending slope – for stable slopes only. These are indicative values; the verification is the slip surface calculation.
+94ae25d	On a site near the Danube a long-lasting flood is followed by the groundwater along the bank as well: in South Buda after the 1965 flood the groundwater along the bank rose by more than 3 m and came close to the maximum level of the river. The design flood level of Budapest (MÁSZ) at Vigadó tér is 104.24 mBf (metres above Baltic Sea level) – derived from the discharge of the ice-free flood with a 1% probability.
+ad9fe60	For the resistance of friction and anchors EN 1997-1 recommends γ<sub>s;t</sub> = γ<sub>a</sub> = 1.4. They may be treated as stabilising permanent actions only if the National Annex allows it.
+89c6b73	For the circular raft of a wind turbine with radius R = 13.8 m, e = 6.7 m &lt; 0.59·R = 8.1 m – the usual limit for wind turbines: the gap may reach the centre at most.
+9a048a8	Some design software also offers to count on only one third or one half of the full passive earth resistance.
+1cb5da4	The ratio of the two is the <b>utilisation</b>: Λ = E<sub>d</sub> / R<sub>d</sub>. If Λ ≤ 1.0, the footing satisfies that limit state.
+422c170	The four buttons in the top bar take you to the start of the chapter of each of the four checks at any time.
+23b9e8f	the soil in front of the face is gone: R_{p;d} = 0
+c5999ae	The other way round: tan φ′ and c′ are divided (M2), and the resistance factor (R3) is 1.0.
+86cf14f	In DA-3 the partial factor divides the resistance, and the strength parameters of the ground are unchanged.
+c2fbc46	If e ≤ r/4 the whole base is in compression; special precautions are needed only above e > 0.6·r.
+fa76851	δ<sub>k</sub> = ⅔·φ′<sub>cv;k</sub> – the friction under the base may be too little.
+3220ccc	tan φ′<sub>d</sub> = tan φ′<sub>k</sub> / γ<sub>φ</sub> – for example with φ′<sub>k</sub> = 28° and γ<sub>φ</sub> = 1.35, φ′<sub>d</sub> ≈ 21.5°.
+f7da100	High effective cohesion (c′<sub>k</sub> = ${u_(p.c, 0, 'kPa')}) – the analysis may therefore greatly overestimate the safety of the slope.
+2a0eaf6	<p>The design groundwater level is ${nw('h<sub>w</sub> = 4,0 m')} above the underside of the base slab of an underground car park with a plan of ${nw('B × L = 12 × 30 m')}. The self-weight of the structure is ${nw('G<sub>sz;k</sub> = 11' + NN + '000 kN')}, and there is a ${nw('t = 0,8 m')} thick soil cover on the roof slab (${nw('γ = 18 kN/m³')}, above the groundwater). Check the safety against uplift in the UPL limit state. (${nw('γ<sub>w</sub> = 10 kN/m³')})</p>
+930929f	self-weight ${fmt(r.Gk, 0)} kN · soil on projection ${fmt(r.Grim, 0)} kN · anchors ${fmt(r.Pd, 0)} kN · water ${fmt(r.Wf, 0)} kN · friction ${fmt(r.Td, 0)} kN
+4c86ec6	<b>Lesson.</b> The reserve is minimal, while the global factor of safety is only ${nw('1,0/0,9 = 1,11')} in the first place. The groundwater level is a geometrical datum: if the design water level has to be set only 5 cm higher (${nw('h<sub>w</sub> > 4,046 m')}), the verification is no longer satisfied. This is why the water level must be chosen cautiously, or a countermeasure (surcharge, anchoring, dewatering, flooding) applied.
