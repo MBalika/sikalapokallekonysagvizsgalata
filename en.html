@@ -113,6 +113,7 @@ sub { font-size: .7em; line-height: 0; }
 @media (max-width: 480px) { .modes button { font-size: 11.5px; padding: 10px 2px; } }
 /* ---- fejezetek ---- */
 .chap { padding: 70px 0 20px; border-top: 1px solid var(--line); }
+#videok { padding: 38px 0 34px; }
 .chap:first-of-type { border-top: 0; }
 .chead { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; align-items: end; margin-bottom: 18px; }
 .code { grid-row: span 2; align-self: stretch; display: grid; place-items: center; min-width: 86px; border-radius: var(--r2); background: var(--k); color: var(--paper); font: 800 22px/1 var(--fd); font-stretch: 120%; padding: 10px 14px; white-space: nowrap; }
@@ -217,6 +218,10 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 .lam .scale span:nth-child(2) { position: relative; left: 16%; }
 /* videók */
 .vgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 20px; }
+/* keskenyebb képernyőn a videók egymás mellett, oldalra húzható sorban (nem csonka rács, nem hosszú oszlop) */
+@media (max-width: 1060px) { .vgrid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin: 20px -24px 0; padding: 2px 24px 12px; scroll-padding: 0 24px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+  .vgrid .vcard { flex: 0 0 min(300px, 74vw); scroll-snap-align: start; } }
+@media (max-width: 640px) { .vgrid { margin: 16px -16px 0; padding: 2px 16px 12px; scroll-padding: 0 16px; } }
 .vcard { text-align: left; border: 1px solid var(--line); background: var(--card); border-radius: var(--r2); overflow: hidden; cursor: pointer; padding: 0; color: var(--ink); box-shadow: var(--sh); }
 .vcard:hover .vthumb img { transform: scale(1.03); }
 .vthumb { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #000; }
@@ -774,6 +779,14 @@ main .rag, footer .rag { text-align: left !important; }
   </div>
 </section>
 
+<!-- ===================== VIDEÓK ===================== -->
+<section class="chap k0" id="videok">
+  <div class="wrap">
+    <div class="chead"><div class="code">▶</div><h2>Animated videos</h2><p>Five short 3D animations on the four limit states and the summary.</p></div>
+    <div class="vgrid"><button class="vcard" data-video="v1" type="button"></button><button class="vcard" data-video="v2" type="button"></button><button class="vcard" data-video="v3" type="button"></button><button class="vcard" data-video="v4" type="button"></button><button class="vcard" data-video="v5" type="button"></button></div>
+  </div>
+</section>
+
 <!-- ===================== ÁTTEKINTÉS ===================== -->
 <section class="chap k0" id="attekintes">
   <div class="wrap">
@@ -1231,13 +1244,6 @@ main .rag, footer .rag { text-align: left !important; }
   </div>
 </section>
 
-<!-- ===================== VIDEÓK ===================== -->
-<section class="chap k0" id="videok">
-  <div class="wrap">
-    <div class="chead"><div class="code">▶</div><h2>Animated videos</h2><p>Five short 3D animations on the four limit states and the summary.</p></div>
-    <div class="vgrid"><button class="vcard" data-video="v1" type="button"></button><button class="vcard" data-video="v2" type="button"></button><button class="vcard" data-video="v3" type="button"></button><button class="vcard" data-video="v4" type="button"></button><button class="vcard" data-video="v5" type="button"></button></div>
-  </div>
-</section>
 
 <!-- ===================== IGAZ / HAMIS ===================== -->
 <section class="chap k0" id="igazhamis">
