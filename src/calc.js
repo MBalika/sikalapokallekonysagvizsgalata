@@ -525,7 +525,7 @@
     S.conc = (pts) => { S.poly(pts, 'cv-conc'); S.poly(pts, 'cv-concp', `fill="url(#${id}c)"`); };
     S.hatch = (pts) => S.poly(pts, 'cv-hatch', `fill="url(#${id}h)"`);
     S.gh = (x1, x2, y, step = 9, up = false) => { let d = ''; for (let x = x1 + 3; x < x2 - 2; x += step) d += `M${r1(x)} ${r1(y)}l${-5} ${up ? -5 : 5}`; if (d) { o.push(`<path d="${d}" class="cv-gh"/>`); seg(x1, y + (up ? -4 : 4), x2, y + (up ? -4 : 4)); } };
-    S.water = (x, y, lab) => { o.push(`<g class="cv-wsym"><polygon points="${PTS([[x, y - 1], [x - 6, y - 10], [x + 6, y - 10]])}"/><line x1="${r1(x - 6)}" y1="${r1(y + 4)}" x2="${r1(x + 6)}" y2="${r1(y + 4)}"/><line x1="${r1(x - 3.5)}" y1="${r1(y + 8)}" x2="${r1(x + 3.5)}" y2="${r1(y + 8)}"/></g>`); if (lab) S.text(x + 12, y + 15, lab, 'cv-wt', 'start', 12); };
+    S.water = (x, y, lab) => { o.push(`<g class="cv-wsym"><polygon points="${PTS([[x, y - 1], [x - 6, y - 10], [x + 6, y - 10]])}"/><line x1="${r1(x - 6)}" y1="${r1(y + 4)}" x2="${r1(x + 6)}" y2="${r1(y + 4)}"/><line x1="${r1(x - 3.5)}" y1="${r1(y + 8)}" x2="${r1(x + 3.5)}" y2="${r1(y + 8)}"/></g>`); ring([[x - 7, y - 11], [x + 7, y - 11], [x + 7, y + 9], [x - 7, y + 9]]); if (lab) S.text(x + 13, y + 15, lab, 'cv-wt', 'start', 12); };
     S.brk = (x1, x2, y) => { const m = (x1 + x2) / 2, k = Math.min(8, (x2 - x1) / 5); o.push(`<polyline points="${PTS([[x1 - 4, y], [m - k, y], [m - k / 2, y - k], [m + k / 2, y + k], [m + k, y], [x2 + 4, y]])}" class="cv-brk"/>`); };
     return S;
   }
