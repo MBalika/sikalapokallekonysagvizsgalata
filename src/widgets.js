@@ -88,8 +88,9 @@
       g.save(); g.translate(sh, 0); g.fillStyle = C.conc; g.beginPath(); g.moveTo(-40, 0); g.lineTo(W + 40, 0); for (let x = W + 40; x >= -40; x -= 14) { const amp = rough ? 10 * Math.sin(x * 0.13) * Math.sin(x * 0.031 + 1) + 6 : 0; g.lineTo(x, 146 + amp); } g.closePath(); g.fill(); g.restore();
       label(g, rough ? 'Helyben betonozott – érdes felület, a szemcsék beakadnak' : 'Előregyártott – sima felület, a szemcsék elcsúsznak', 16, 22, C.ink, 15);
     }
-    const out = () => { const R1 = M.sliding({ phi, precast: false }), R2 = M.sliding({ phi, precast: true }); const R = typ === 'mono' ? R1 : R2;
-      $('#mi_delta').innerHTML = `${fmt(R.delta, 1)}°`; $('#mi_tg').textContent = fmt(Math.tan(R.delta * Math.PI / 180), 3); $('#mi_rd').innerHTML = `${fmt(R.Rd, 0)}<small>kN/m</small>`; const ro = $('#mi_lam'); ro.innerHTML = fmt(R.lam, 2); ro.parentElement.className = 'ro ' + (R.lam <= 1 ? 'ok' : 'bad'); };
+    const H0 = M.sliding({}).Hd;   // a példa vízszintes ereje rögzített (65 kN/m): itt csak a talp alatti súrlódás változik
+    const out = () => { const R1 = M.sliding({ phi, precast: false }), R2 = M.sliding({ phi, precast: true }); const R = typ === 'mono' ? R1 : R2; const lam = H0 / R.Rd;
+      $('#mi_delta').innerHTML = `${fmt(R.delta, 1)}°`; $('#mi_tg').textContent = fmt(Math.tan(R.delta * Math.PI / 180), 3); $('#mi_rd').innerHTML = `${fmt(R.Rd, 0)}<small>kN/m</small>`; const ro = $('#mi_lam'); ro.innerHTML = fmt(lam, 2); ro.parentElement.className = 'ro ' + (lam <= 1 ? 'ok' : 'bad'); };
     seg('mi_typ', (v) => { typ = v; out(); }); bindRange('mi_phi', (v) => { phi = v; out(); }, (v) => v + '°');
     const loop = (now) => { if (vis(cv)) draw(now / 1000); requestAnimationFrame(loop); }; draw(0); requestAnimationFrame(loop);
   })();

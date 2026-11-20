@@ -32,7 +32,6 @@ fc25ec9	Quiz – overturning
 c6dfc23	With a high groundwater table, a light structure of large volume may be acted on by an uplift force greater than the sum of the permanent loads.
 03e1c28	In design practice it happens countless times that a light but “voluminous” structure – an underground tank, a pedestrian underpass, an underground car park – is acted on by a greater uplift force at high groundwater than the sum of the permanent loads. The Eurocode defines a separate ultimate limit state for this: <b>UPL</b> (uplift).
 4467800	=
-89623b8	V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub> – the uplift force (A<sub>k</sub>: the volume submerged below the groundwater, γ<sub>w</sub> = 10 kN/m³)
 f07c6b3	G<sub>stb;d</sub> = G<sub>sz;d</sub> + G<sub>t;d</sub> – the weight of the structure and of the soil loading it, with γ<sub>G;stb</sub>
 1841877	R<sub>d</sub> = T<sub>d</sub> + P<sub>d</sub> – friction between the structure and the soil, and the anchor force
 e7c0af0	The utilisation: Λ = V<sub>dst;d</sub> / (G<sub>stb;d</sub> + R<sub>d</sub>).
@@ -111,7 +110,6 @@ d7cf9d9	<span>Utilisation Λ = 1/F<sub>d</sub></span><b id="sl_L"></b>
 780f356	3D simulator: house on the crest of a slope
 04d8d1a	Distance from the crest
 79e7f9c	Wetting r
-2569ad2	The red dashed line is the critical slip surface; if Λ &gt; 1, the sliding mass moves together with the house.
 8b0a6fb	Solutions
 09835e3	moving the footing further away from the crest;
 9586efb	founding deeper – below the slip surface;

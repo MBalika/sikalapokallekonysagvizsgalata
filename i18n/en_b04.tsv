@@ -49,7 +49,6 @@ febfedc	In UPL the factor on the uplift force is 1.00 and on the self-weight 0.9
 663ec3b	How is the design value of the uplift force calculated?
 6a41f66	with the weight of the structure
 40cd35b	from the anchor force
-f13a508	A<sub>k</sub> is the volume submerged below the groundwater level, γ<sub>w</sub> = 10 kN/m³; the uplift force is essentially the resultant of the water pressure acting on the structure.
 5d065f3	What is the global factor of safety against uplift without friction and anchors?
 4d4f13b	γ<sub>G;dst</sub>/γ<sub>G;stb</sub> = 1.0/0.9 = 1.11 – little, so the water level must be chosen cautiously.
 1f9ef77	How are the cars parked in an underground car park taken into account?

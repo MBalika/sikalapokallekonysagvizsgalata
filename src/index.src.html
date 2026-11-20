@@ -233,7 +233,7 @@
     <div class="cols">
       <div>
         <p>A tervezési gyakorlatban számtalan esetben előfordul, hogy kis önsúlyú, de nagy „térfogatú” műtárgyra – földalatti tartály, gyalogos aluljáró, földalatti garázs – magas talajvízálláskor nagyobb felhajtóerő hat, mint az állandó terhek összege. Az Eurocode erre külön teherbírási határállapotot jelöl meg: <b>UPL</b> (uplift).</p>
-        <div class="eq"><div class="f">V<sub>dst;d</sub> ≤ G<sub>stb;d</sub> + R<sub>d</sub></div><div class="w"><div>V<sub>dst;d</sub> = γ<sub>G;dst</sub> · A<sub>k</sub> · γ<sub>w</sub> – a felhajtóerő (A<sub>k</sub>: a talajvíz alatti bemerülő térfogat, γ<sub>w</sub> = 10 kN/m³)</div><div>G<sub>stb;d</sub> = G<sub>sz;d</sub> + G<sub>t;d</sub> – a szerkezet és a leterhelő talaj súlya, γ<sub>G;stb</sub>-vel</div><div>R<sub>d</sub> = T<sub>d</sub> + P<sub>d</sub> – súrlódás a szerkezet és a talaj között, illetve horgonyerő</div></div></div>
+        <div class="eq"><div class="f">V<sub>dst;d</sub> ≤ G<sub>stb;d</sub> + R<sub>d</sub></div><div class="w"><div>V<sub>dst;d</sub> = γ<sub>G;dst</sub> · γ<sub>w</sub> · h<sub>w</sub> · A<sub>k</sub> – a felhajtóerő (A<sub>k</sub>: az alaplemez alapterülete, h<sub>w</sub>: a talajvízszint magassága az alaplemez alsó síkja felett, γ<sub>w</sub> = 10 kN/m³)</div><div>G<sub>stb;d</sub> = G<sub>sz;d</sub> + G<sub>t;d</sub> – a szerkezet és a leterhelő talaj súlya, γ<sub>G;stb</sub>-vel</div><div>R<sub>d</sub> = T<sub>d</sub> + P<sub>d</sub> – súrlódás a szerkezet és a talaj között, illetve horgonyerő</div></div></div>
         <p>A kihasználtság: Λ = V<sub>dst;d</sub> / (G<sub>stb;d</sub> + R<sub>d</sub>).</p>
       </div>
       <div>
@@ -270,7 +270,7 @@
             <div class="rg"><label>e) Oldalfal-súrlódás a földnyomásból<span></span></label><div class="seg" id="fu_fr"><button class="on" data-v="0" type="button">nincs</button><button data-v="1" type="button">K<sub>0</sub> · tg δ</button></div></div>
           </div>
           <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
-          <p class="small muted" style="margin-top:10px">c) A leszívást a talajvízszint csúszkával modellezheted. Szemléltető példa: falak 0,4 m, födémek 0,35 és 0,30 m; a perem talaja a víz felett 19, alatta 20 kN/m³.</p>
+          <p class="small muted" style="margin-top:10px">c) A leszívást a talajvízszint csúszkával modellezheted. Szemléltető példa: falak 0,4 m, födémek 0,35 és 0,30 m (a közbenső födémben 10 % nyílás); a perem talaja a víz felett 19, alatta 20 kN/m³.</p>
           <p class="small muted simf">Oldalfal-súrlódás:</p>
           <ul class="small muted simf"><li>σ′<sub>h</sub> = K<sub>0</sub> · σ′<sub>v</sub></li><li>K<sub>0</sub> = 1 − sin 30° = 0,5</li><li>δ = ⅔ · φ′ = 20°</li><li>R<sub>d</sub> = T<sub>k</sub> / γ<sub>s;t</sub>, γ<sub>s;t</sub> = 1,4</li></ul>
         </div>
@@ -336,7 +336,7 @@
             <div class="rg"><label>γ<sub>φ</sub> = γ<sub>c</sub><span></span></label><div class="seg" id="al_gm"><button data-v="1.25" type="button">1,25</button><button class="on" data-v="1.35" type="button">1,35</button></div></div>
           </div>
           <div class="lam"><div class="t"><span>Kihasználtság Λ</span><b>–</b></div><div class="bar"><i></i></div><div class="scale"><span>0</span><span>1,0</span><span>1,5</span></div><p class="sub small muted" style="margin:8px 0 0"></p></div>
-          <p class="small muted" style="margin-top:10px">A piros szaggatott vonal a mértékadó csúszólap; ha Λ &gt; 1, a csúszó tömeg a házzal együtt elmozdul.</p>
+          <p class="small muted" style="margin-top:10px">A piros szaggatott vonal a mértékadó csúszólap; ha Λ &gt; 1, a csúszó tömeg a házzal együtt elmozdul. A két sávalap 0,6 m széles, alapsíkjuk 0,8 m mélyen van; az alaptestet metsző köröket kizárjuk.</p>
         </div>
       </div>
     </div>

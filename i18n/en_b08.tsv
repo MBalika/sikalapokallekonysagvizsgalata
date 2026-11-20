@@ -84,7 +84,6 @@ ef6404a	exits ${u_(c.x1 - a.m.LX, 2, 'm')} in front of the toe
 f1b0682	Design load of the footings
 ee2dde0	${fl('P<sub>d</sub>', 'γ<sub>G</sub> · G<sub>k</sub> + γ<sub>Q</sub> · Q<sub>k</sub>', '1,0 · 72 + 1,3 · 18', u_(ld.Pd, 1, 'kN/m'))}<p>Per footing, uniformly distributed over the ${nw('0,6 m')} wide base: ${nw('q<sub>d</sub> = ' + u_(ld.q, 1, 'kPa'))}. The self-weight of the soil is taken with a factor ${nw('γ<sub>G</sub> = 1,0')}.</p>
 2d1fc0b	Searching for the critical slip surface
-47560b5	<p>The centres of the circles were placed on a grid of ${a.sr.nx} × ${a.sr.ny} points; for each centre, circles passing through the toe of the slope and touching ${14} different depths were analysed, then the search was refined around the most unfavourable circles. Circles cutting through the footing were excluded.</p><div class="cx-fl nw">centre: O(${F(c.xc, 2)}; ${F(c.yc, 2)})${NB}m from the crest, radius ${u_(c.R, 2, 'm')}</div><p>The slip surface enters ${nw(u_(-c.x0, 2, 'm'))} behind the crest, behind both strip footings, and ${exitTxt}: the whole house stands on the sliding mass.</p>
 52169d0	Calculation by slices (30 slices, grouped)
 9e21fe6	<p>The iteration (F<sub>d</sub> appears on both sides) converges in a few steps:</p>
 37ecf16	a) Verification – dry state

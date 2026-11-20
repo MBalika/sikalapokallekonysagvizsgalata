@@ -65,7 +65,6 @@ b438a80	Slip surface involving the footings
 a681d25	 from the crest, 
 dcc5d23	 deep.</p>
 cdfaff3	Slip surface search
-920a99c	<p class="cx-c">A grid of ${sr.nx} × ${sr.ny} centres; for each centre, circles passing through the toe of the slope and touching ${sr.nx ? (p.fine ? 22 : 14) : 0} different depths, then refinement by pattern search. ${nw(sb('n', 'lamella') + ' = ' + m.ns)}. Computing time: ${nw(F(ms, 0) + NB + 'ms')}.</p>
 2fed8f8	<div class="cx-fl nw">critical circle: O(${F(crit.xc, 2)}; ${F(crit.yc, 2)})${NB}m, r = ${u_(crit.R, 2, 'm')}</div><div class="cx-fl nw">entry: ${u_(-crit.x0, 2, 'm')} behind the crest</div><div class="cx-fl nw">exit: ${Math.abs(crit.x1 - m.LX) < 0.05 ? 'a rézsűlábnál' : crit.x1 > m.LX ? u_(crit.x1 - m.LX, 2, 'm') + ' a rézsűláb előtt' : 'a rézsűn, ' + u_(m.H + m.ground(crit.x1), 2, 'm') + '-rel a láb felett'}</div><p class="cx-c">The origin of the coordinates is the crest; x is positive towards the toe, y upwards.</p>
 2405b81	at the toe of the slope
 c8d82d5	 in front of the toe
